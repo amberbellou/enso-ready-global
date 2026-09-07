@@ -36,7 +36,7 @@ function mtBanner() {
 function applySettings() {
   const s = LS.get("settings", {});
   const root = document.documentElement;
-  root.dataset.size = s.size || "normal"; root.dataset.contrast = s.contrast || "normal"; root.dataset.easy = s.easy ? "1" : "0";
+  root.dataset.size = s.size || "normal"; root.dataset.contrast = s.contrast || "normal"; root.dataset.easy = s.easy ? "1" : "0"; root.dataset.dys = s.dys ? "1" : "0"; root.dataset.motion = s.motion === false ? "0" : "1";
 }
 function settingsPanel() {
   const s = LS.get("settings", {});
@@ -45,7 +45,9 @@ function settingsPanel() {
     h("label", {}, ui("text_size")), h("div", { class: "row" }, ["normal", "large", "xlarge"].map(v => h("button", { class: "btn secondary", "aria-pressed": String((s.size || "normal") === v), onclick: () => set("size", v) }, v === "normal" ? "A" : v === "large" ? "A+" : "A++"))),
     h("div", { class: "row" },
       h("button", { class: "btn secondary", "aria-pressed": String(s.contrast === "high"), onclick: () => set("contrast", s.contrast === "high" ? "normal" : "high") }, ui("high_contrast")),
-      h("button", { class: "btn secondary", "aria-pressed": String(!!s.easy), onclick: () => set("easy", !s.easy) }, ui("easy_read"))));
+      h("button", { class: "btn secondary", "aria-pressed": String(!!s.easy), onclick: () => set("easy", !s.easy) }, ui("easy_read")),
+      h("button", { class: "btn secondary", "aria-pressed": String(!!s.dys), onclick: () => set("dys", !s.dys) }, ui("dyslexia")),
+      h("button", { class: "btn secondary", "aria-pressed": String(s.motion === false), onclick: () => set("motion", s.motion === false ? true : false) }, ui("reduce_motion"))));
 }
 
 // --- live seasonal forecast: ECMWF SEAS5 monthly anomaly via Open-Meteo (CC BY 4.0). Per-user IP, no key. ---
@@ -67,6 +69,9 @@ async function fetchForecast(lat, lon) {
 }
 
 // --- screens ---
+// Easy Read (Annex B.2): one sentence per line
+function sentences(text) { return String(text).split(/(?<=[.!?。؟])\s+/).filter(Boolean); }
+function para(text, ...extra) { const easy = LS.get("settings", {}).easy; if (!easy) return h("p", {}, text, ...extra); const wrap = h("div", { class: "easy" }); for (const t of sentences(text)) wrap.append(h("p", {}, t)); if (extra.length) wrap.append(h("p", {}, ...extra)); return wrap; }
 function statusBanner() {
   const st = state.data.status; if (!st) return null;
   return h("div", { class: "banner", role: "status" }, h("div", { class: "label" }, ui("app_name") + " · " + (st.issued || "")), h("div", {}, h("strong", {}, st.status), " — ", st.synopsis), h("div", { class: "src" }, h("a", { href: st.source_url, rel: "noopener" }, st.source)));
@@ -78,7 +83,7 @@ function homeScreen() {
   input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => search(input.value, list), 150); });
   const geo = h("button", { class: "btn secondary block", onclick: () => navigator.geolocation?.getCurrentPosition(p => chooseCoords(p.coords.latitude, p.coords.longitude), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
   const mapBtn = h("button", { class: "btn secondary block", onclick: () => openMap().catch(() => alert(ui("no_results"))) }, "🗺️ " + ui("pick_map"));
-  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", {}, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo, mapBtn), settingsPanel(),
+  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", { id: "main", tabindex: "-1" }, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo, mapBtn), settingsPanel(),
     h("p", { class: "muted" }, h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
 }
 async function search(q, list) {
@@ -119,7 +124,7 @@ async function openMap() {
 function choosePlace(p) { state.place = p; LS.set("place", p); state.screen = LS.get("livelihood") ? "briefing" : "who"; state.livelihood = LS.get("livelihood", "all"); render(); }
 function whoScreen() {
   const pick = (v) => { state.livelihood = v; LS.set("livelihood", v); state.screen = "briefing"; render(); };
-  return h("main", {}, h("h1", {}, ui("livelihood_q")), h("div", { class: "choices" }, ["farmer", "coastal", "urban", "all"].map(v => h("button", { onclick: () => pick(v) }, ui("livelihood_" + v)))));
+  return h("main", {}, h("h1", { id: "main", tabindex: "-1" }, ui("livelihood_q")), h("div", { class: "choices" }, ["farmer", "coastal", "urban", "all"].map(v => h("button", { onclick: () => pick(v) }, ui("livelihood_" + v)))));
 }
 async function briefingScreen() {
   const p = state.place; const S = state.strings;
@@ -144,15 +149,16 @@ function renderBlocks(blocks, facts, p, extra) {
   const main = h("main", {});
   const banner = mtBanner(); if (banner) main.append(banner);
   main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name}` : ""));
-  main.append(h("h1", { class: "headline " + cls }, head.text));
+  main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, head.text));
   const paras = blocks.filter(b => b.type === "para");
   const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral");
-  for (const b of lead) main.append(h("p", {}, b.text));
+  if (lead.length) main.append(para(lead.map(b => b.text).join(" ")));   // one chunk: risks + timing
   const fc = blocks.find(b => b.type === "forecast");
-  if (fc) main.append(h("p", {}, "📈 ", fc.text, fc.partial ? " " + fc.partial : "", " ", h("a", { class: "src", href: fc.source.url, rel: "noopener" }, "[" + fc.source.label + "]")));
+  if (fc) main.append(para("📈 " + fc.text + (fc.partial ? " " + fc.partial : ""), " ", h("a", { class: "src", href: fc.source.url, rel: "noopener" }, "[" + fc.source.label + "]")));
   else if (state.forecastFailed && facts.region) main.append(h("p", { class: "muted" }, ui("forecast_unavailable")));
+  main.append(h("button", { class: "btn block whatnow", onclick: () => { const el = document.getElementById("steps"); if (el) { el.scrollIntoView({ block: "start" }); const b = el.querySelector("button"); if (b) b.focus(); } } }, "✅ " + ui("what_now")));
   const more = h("details", {}, h("summary", {}, ui("tell_more")));
-  for (const b of paras.filter(b => !lead.includes(b))) more.append(h("p", {}, b.text, b.source ? [" ", h("a", { class: "src", href: b.source.url, rel: "noopener" }, "[" + b.source.id + "]")] : null));
+  for (const b of paras.filter(b => !lead.includes(b))) more.append(para(b.text, ...(b.source ? [" ", h("a", { class: "src", href: b.source.url, rel: "noopener" }, "[" + b.source.id + "]")] : [])));
   const hist = blocks.find(b => b.type === "history");
   if (hist) more.append(h("p", {}, hist.text), h("p", {}, hist.recent, " ", h("a", { class: "src", href: hist.source.url, rel: "noopener" }, "[" + hist.source.label + "]")));
   const st = blocks.find(b => b.type === "status");
@@ -171,7 +177,7 @@ function renderBlocks(blocks, facts, p, extra) {
   return main;
 }
 function stepsWidget(block) {
-  const steps = block.steps; const wrap = h("section", { class: "card" }, h("h2", {}, block.title));
+  const steps = block.steps; const wrap = h("section", { class: "card", id: "steps", "aria-labelledby": "steps-h" }, h("h2", { id: "steps-h" }, block.title));
   const done = LS.get("done", {});
   let i = Math.min(state.stepIdx, steps.length - 1); let showAll = false;
   const body = h("div", {});
@@ -194,6 +200,7 @@ function stepsWidget(block) {
 
 async function render() {
   const root = $("#app");
+  if (!$("#skip")) { const sk = h("a", { id: "skip", class: "skip", href: "#main" }, ui("skip")); document.body.prepend(sk); }
   try {
     if (state.screen === "home") root.replaceChildren(homeScreen());
     else if (state.screen === "who") root.replaceChildren(whoScreen());
@@ -204,6 +211,7 @@ async function render() {
     else root.replaceChildren(h("main", {}, h("p", {}, "Something went wrong: " + e.message)));
   }
   window.scrollTo(0, 0);
+  const focusTarget = root.querySelector("h1"); if (focusTarget) { focusTarget.id = "main"; focusTarget.tabIndex = -1; focusTarget.focus({ preventScroll: true }); }
 }
 (async function init() {
   applySettings();

@@ -103,7 +103,10 @@
     "data_note": "Data: {list}.",
     "near": "near {name}",
     "pick_map": "Pick on a map",
-    "map_hint": "Tap your location on the map. Zoom in for villages."
+    "map_hint": "Tap your location on the map. Zoom in for villages.",
+    "skip": "Skip to main content",
+    "dyslexia": "Dyslexia-friendly spacing",
+    "steps_shortcut_hint": "Jumps to your first step."
   },
   "timing_coming_one": "That season starts next month ({season}).",
   "hazards": {
