@@ -10,14 +10,20 @@ const en = JSON.parse(fs.readFileSync(path.join(ROOT, "i18n/en.json"), "utf8"));
 const slots = (s) => (String(s).match(/\{(\w+)\}/g) || []).sort().join(",");
 function flat(o, p = "") { const out = {}; for (const [k, v] of Object.entries(o)) { if (k.startsWith("_")) continue; if (v && typeof v === "object" && !Array.isArray(v)) Object.assign(out, flat(v, p + k + ".")); else out[p + k] = v; } return out; }
 const enFlat = flat(en);
-test("every language covers every English key with the same slots", () => {
+test("translated keys keep their slots; stale keys are gone; pending keys are reported", () => {
+  const report = [];
   for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) {
-    if (!f.endsWith(".json") || f === "en.json") continue;
-    const L = flat(JSON.parse(fs.readFileSync(path.join(ROOT, "i18n", f), "utf8")));
-    const missing = Object.keys(enFlat).filter(k => !(k in L) && !k.startsWith("steps.") && !k.startsWith("local_seasons."));
-    assert.deepEqual(missing, [], `${f} missing keys`);
+    if (!f.endsWith(".json") || f === "en.json" || f.startsWith(".")) continue;
+    const raw = JSON.parse(fs.readFileSync(path.join(ROOT, "i18n", f), "utf8"));
+    const L = flat(raw);
+    const pending = Object.keys(enFlat).filter(k => !(k in L));
+    const stale = Object.keys(L).filter(k => !(k in enFlat));
+    assert.deepEqual(stale, [], `${f} has keys that no longer exist in English`);
     for (const k of Object.keys(L)) if (k in enFlat && typeof enFlat[k] === "string") assert.equal(slots(L[k]), slots(enFlat[k]), `${f}:${k} slot mismatch`);
+    assert.ok(pending.length < Object.keys(enFlat).length * 0.25, `${f}: ${pending.length} pending keys is too many to ship (English fallback covers the rest)`);
+    if (pending.length) report.push(`${f}: ${pending.length} pending (English shown until translated)`);
   }
+  if (report.length) console.log("  i18n pending: " + report.join("; "));
 });
 test("keys referenced in engine.js and app.js exist in en.json", () => {
   const eng = fs.readFileSync(path.join(ROOT, "src/engine.js"), "utf8");

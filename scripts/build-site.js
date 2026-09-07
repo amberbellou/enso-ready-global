@@ -32,7 +32,9 @@ fs.copyFileSync(path.join(ROOT, "src/search.js"), path.join(SITE, "search.js"));
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(SITE, "style.css"));
 fs.mkdirSync(path.join(SITE, "i18n"), { recursive: true });
 const langIndex = [];
-for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) { if (!f.endsWith(".json") || f.startsWith(".")) continue; fs.copyFileSync(path.join(ROOT, "i18n", f), path.join(SITE, "i18n", f)); const L = J("i18n/" + f); langIndex.push({ code: f.replace(".json", ""), name: L._name || f, dir: L._dir || "ltr", status: L._status || "machine" }); }
+const flatKeys = (o, p = "") => Object.entries(o).flatMap(([k, v]) => k.startsWith("_") ? [] : (v && typeof v === "object" && !Array.isArray(v)) ? flatKeys(v, p + k + ".") : [p + k]);
+const enKeys = new Set(flatKeys(strings));
+for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) { if (!f.endsWith(".json") || f.startsWith(".")) continue; fs.copyFileSync(path.join(ROOT, "i18n", f), path.join(SITE, "i18n", f)); const L = J("i18n/" + f); const have = new Set(flatKeys(L)); const pending = [...enKeys].filter(k => !have.has(k)).length; langIndex.push({ code: f.replace(".json", ""), name: L._name || f, dir: L._dir || "ltr", status: L._status || "machine", pending }); }
 langIndex.sort((a, b) => (a.code === "en" ? -1 : b.code === "en" ? 1 : a.name.localeCompare(b.name)));
 W("i18n/index.json", JSON.stringify(langIndex));
 W("data/status.json", JSON.stringify(status));

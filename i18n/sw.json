@@ -1,0 +1,2248 @@
+{
+  "_lang": "sw",
+  "_name": "Kiswahili",
+  "_dir": "ltr",
+  "_status": "machine",
+  "all_year": "mwaka mzima",
+  "this_area": "eneo hili",
+  "el_nino": "El Niño",
+  "la_nina": "La Niña",
+  "neutral": "hali ya kawaida",
+  "rain_much_wetter": "mvua nyingi zaidi kuliko kawaida",
+  "rain_wetter": "mvua zaidi kuliko kawaida",
+  "rain_drier": "mvua kidogo kuliko kawaida",
+  "rain_much_drier": "mvua kidogo sana kuliko kawaida",
+  "rain_near_normal": "mvua karibu na kawaida",
+  "rain_mixed": "ishara ya mvua iliyochanganyika",
+  "rain_drier__north_and_east_": "mvua kidogo kuliko kawaida kaskazini na mashariki",
+  "rain_wetter__north_and_east_": "mvua zaidi kuliko kawaida kaskazini na mashariki",
+  "rain_drier__south_and_west_": "mvua kidogo kuliko kawaida kusini na magharibi",
+  "temp_warmer": "joto zaidi kuliko kawaida",
+  "temp_cooler": "baridi zaidi kuliko kawaida",
+  "temp_near_normal": "halijoto karibu na kawaida",
+  "temp_warmer__winter___cooler__summer_": "msimu wa baridi usio na baridi kali na msimu wa joto wenye joto kidogo",
+  "temp_cooler__winter___warmer__summer_": "msimu wa baridi wenye baridi kali zaidi na msimu wa joto wenye joto kali zaidi",
+  "conf_likely": "yenye uwezekano mkubwa",
+  "conf_leaning": "yenye mwelekeo huo tu",
+  "conf_uncertain": "isiyo na uhakika",
+  "headline": "{name}: {rain} {conf} katika {season}.",
+  "headline_neutral": "{name}: kwa sasa hakuna El Niño wala La Niña.",
+  "neutral_explain": "Mvua ya msimu hapa itategemea mambo mengine. Rudi kuangalia kila mwezi; ukurasa huu hubadilika hali zikibadilika.",
+  "timing_now": "Msimu huo unaendelea sasa ({season}).",
+  "timing_coming": "Msimu huo huanza baada ya takriban miezi {n} ({season}).",
+  "timing_passed": "Msimu huo umeshapita kwa tukio hili. Msimu unaofuata ni {season}; kufikia wakati huo tukio linaweza kuwa limepungua.",
+  "expect": "Wakati wa {phase}, {region} kwa kawaida hupata {rain} na {temp}.",
+  "agreement_agree": "Rekodi ya mvua ya hapa inakubaliana na mtindo unaojulikana, kwa hiyo taarifa hii ni {conf}.",
+  "agreement_disagree": "Rekodi ya mvua ya hapa haikubaliani wazi na mtindo unaojulikana, kwa hiyo chukulia taarifa hii kuwa {conf}.",
+  "agreement_weak": "Matukio ya zamani hapa yalikuwa mchanganyiko, kwa hiyo chukulia taarifa hii kuwa {conf}.",
+  "agreement_none": "Hakuna rekodi ya kuaminika ya mvua ya hapa kwa msimu huu, kwa hiyo chukulia taarifa hii kuwa {conf}.",
+  "history": "Katika matukio {n} makali ya {phase} yaliyopita, mvua ya {season} hapa ilikuwa wastani wa {pct}. Ilikuwa juu ya kawaida katika {wet}% ya matukio hayo.",
+  "history_recent": "Matukio ya karibuni zaidi: {recent}.",
+  "pct_above": "{n}% juu ya kawaida",
+  "pct_below": "{n}% chini ya kawaida",
+  "near_normal": "karibu na kawaida",
+  "no_data": "hakuna takwimu",
+  "status_line": "Hali ya dunia: {status} (imetolewa {issued}).",
+  "steps_title": "Cha kufanya sasa",
+  "defer": "Kwa maonyo, fuata {service}. Taarifa hii ni mtazamo wa msimu, si onyo.",
+  "ui": {
+    "app_name": "ENSO Ready",
+    "tagline": "El Niño hii ina maana gani kwako, na ufanye nini.",
+    "search_label": "Unaishi wapi?",
+    "search_placeholder": "Andika jina la mji",
+    "use_location": "Tumia mahali nilipo",
+    "see_briefing": "Ona taarifa yangu",
+    "livelihood_q": "Ipi inakuelezea vizuri zaidi?",
+    "livelihood_farmer": "Ninalima au ninafuga wanyama",
+    "livelihood_coastal": "Ninaishi karibu na bahari au mto",
+    "livelihood_urban": "Ninaishi mjini",
+    "livelihood_all": "Nionyeshe kila kitu",
+    "tell_more": "Nieleze zaidi",
+    "show_less": "Onyesha kidogo",
+    "step_of": "Hatua {i} kati ya {n}",
+    "why_matters": "Kwa nini hili ni muhimu",
+    "done": "Imekamilika",
+    "next_step": "Hatua inayofuata",
+    "show_all_steps": "Onyesha hatua zote",
+    "minutes": "dakika {n} hivi",
+    "what_now": "Nifanye nini sasa hivi?",
+    "read_aloud": "Soma kwa sauti",
+    "radio_script": "Maandishi ya redio ya sekunde 30",
+    "sms_text": "Toleo la SMS",
+    "sources": "Vyanzo",
+    "updated": "Taarifa zilisasishwa {date}",
+    "offline_note": "Hauko mtandaoni. Tunakuonyesha muhtasari wako wa mwisho wa {date}.",
+    "mt_banner": "Imetafsiriwa na mashine. Gusa ili kupendekeza masahihisho.",
+    "settings": "Mipangilio",
+    "text_size": "Ukubwa wa maandishi",
+    "high_contrast": "Rangi zenye tofauti kubwa",
+    "reduce_motion": "Punguza mwendo",
+    "easy_read": "Usomaji Rahisi",
+    "methodology": "Hii inafanya kazi vipi",
+    "back": "Rudi",
+    "change_place": "Badilisha mahali",
+    "no_results": "Hakuna mahali linalofanana. Jaribu mji mkubwa ulio karibu.",
+    "region_label": "Eneo",
+    "share": "Sambaza muhtasari huu",
+    "no_js": "Utafutaji unahitaji JavaScript. Bila hiyo, chagua nchi yako hapa chini.",
+    "forecast_unavailable": "Utabiri wa mfumo wa msimu haupatikani sasa (hauko mtandaoni au mfumo una shughuli nyingi). Mtazamo ulio juu unatumia mtindo unaojulikana na matukio ya zamani.",
+    "data_note": "Taarifa: {list}.",
+    "near": "karibu na {name}",
+    "pick_map": "Chagua kwenye ramani",
+    "map_hint": "Gusa mahali ulipo kwenye ramani. Kuza ili kuona vijiji.",
+    "skip": "Rukia hadi maudhui makuu",
+    "dyslexia": "Nafasi zinazorahisisha kusoma",
+    "steps_shortcut_hint": "Inakupeleka kwenye hatua yako ya kwanza."
+  },
+  "timing_coming_one": "Msimu huo unaanza mwezi ujao ({season}).",
+  "hazards": {
+    "FL": "mafuriko",
+    "FLR": "mafuriko ya mito",
+    "FF": "mafuriko ya kasi",
+    "LS": "maporomoko ya ardhi",
+    "DR": "ukame",
+    "WS": "uhaba wa maji",
+    "WF": "moto",
+    "HZ": "ukungu wa moshi",
+    "HT": "joto kali",
+    "EP": "milipuko ya magonjwa",
+    "CH": "kipindupindu",
+    "RVF": "homa ya Bonde la Ufa",
+    "CS": "mazao kudhoofika",
+    "CF": "mazao kushindwa kustawi",
+    "FI": "uhaba wa chakula",
+    "TC": "dhoruba za tropiki",
+    "TCE": "dhoruba za tropiki zinazofika mbali zaidi mashariki",
+    "ST": "dhoruba",
+    "HS": "mawimbi makubwa baharini",
+    "SI": "maji ya chumvi katika visima",
+    "FR": "baridi ya barafu katika nyanda za juu",
+    "SN": "theluji kidogo iliyokusanyika",
+    "HSN": "theluji nyingi",
+    "CD": "vipindi vya baridi kali",
+    "FLS": "mafuriko ya majira ya kuchipua",
+    "MW": "majira ya baridi ya wastani",
+    "CU": "majira ya joto yenye ubaridi"
+  },
+  "season_with_local": "{season} ({local})",
+  "risks": "Hatari kuu: {list}.",
+  "list_sep": ", ",
+  "list_last": " na ",
+  "forecast": "Utabiri wa hivi punde wa majira kwa {season} unasema {pct}.",
+  "forecast_agree": "Hii inalingana na mtindo wa kawaida.",
+  "forecast_disagree": "Hii hailingani na mtindo wa kawaida, kwa hiyo uhakika ni mdogo zaidi.",
+  "forecast_weak": "Hii ni karibu na hali ya kawaida, kwa hiyo mtindo huu unaweza kuwa hafifu mara hii.",
+  "forecast_none": "",
+  "forecast_partial": "(Utabiri unahusu miezi {n} kati ya {of}.)",
+  "history_few": "Matukio ya zamani yenye takwimu hapa ni machache mno kutoa wastani wa eneo hili.",
+  "local_seasons": {
+    "spring and summer": "majira ya kuchipua na majira ya joto",
+    "winter and spring": "majira ya baridi na majira ya kuchipua",
+    "the build-up and wet season": "kipindi cha unyevu kabla ya mvua na majira ya mvua",
+    "the monsoon": "monsuni",
+    "the summer rains": "mvua za majira ya joto",
+    "the Nordeste rainy season": "majira ya mvua ya Nordeste",
+    "the Amazon dry season": "majira ya kiangazi ya Amazon",
+    "the plum rains and summer flood season": "mvua za plum na mafuriko ya majira ya joto",
+    "the dry season": "majira ya kiangazi",
+    "the coastal rainy season": "majira ya mvua ya pwani",
+    "the Belg/Deyr rains": "mvua za Belg/Deyr",
+    "the Kiremt rains": "mvua za Kiremt",
+    "the wet season": "majira ya mvua",
+    "the rainy season and canícula": "msimu wa mvua na canícula",
+    "musim kemarau": "musim kemarau",
+    "the southwest monsoon": "monsuni ya kusini-magharibi",
+    "the northeast monsoon": "monsuni ya kaskazini-mashariki",
+    "the winter rains": "mvua za majira ya baridi",
+    "the short rains": "mvua za vuli",
+    "the Maha season rains": "mvua za majira ya Maha",
+    "the rainy season": "msimu wa mvua",
+    "winter": "majira ya baridi",
+    "the highland rains": "mvua za nyanda za juu",
+    "the Deyr rains": "mvua za Deyr",
+    "the Vuli rains": "mvua za Vuli",
+    "the second rains": "mvua za pili",
+    "spring": "majira ya kuchipua"
+  },
+  "pct_above_cap": "zaidi ya {n}% juu ya kawaida",
+  "steps": {
+    "flood-docs": {
+      "text": "Weka vitambulisho, hati za ardhi na namba za simu katika mfuko wa plastiki uliofungwa vizuri.",
+      "why": "Hati ni vitu vigumu zaidi kupata tena baada ya mafuriko."
+    },
+    "flood-route": {
+      "text": "Kubaliana na watu wa nyumbani kuhusu sehemu ya juu mtakapokwenda na njia ya kufika huko.",
+      "why": "Kuamua gizani, wakati wa mvua, ni wakati watu hujeruhiwa."
+    },
+    "flood-water": {
+      "text": "Weka maji safi ya kunywa katika vyombo vilivyofungwa, ya kutosha siku tatu.",
+      "why": "Mafuriko huchafua visima na mabomba kwanza."
+    },
+    "flood-drains": {
+      "text": "Safisha mifereji, mitaro na njia za maji karibu na nyumba yako sasa.",
+      "why": "Mifereji iliyofungwa hufanya mvua kubwa iwe mafuriko katika uwanja wako."
+    },
+    "flood-raise": {
+      "text": "Weka chakula, mbegu, mbolea na vitu vya thamani juu, mbali na sakafu.",
+      "why": "Hata maji kidogo huharibu chakula na mbegu zilizowekwa akiba."
+    },
+    "flood-animals": {
+      "text": "Panga sehemu ya juu ambapo wanyama wanaweza kwenda.",
+      "why": "Kufa kwa mifugo mara nyingi ni hasara kubwa zaidi ya mafuriko."
+    },
+    "flood-warnings": {
+      "text": "Tafuta jinsi tahadhari za eneo lako zinatolewa: redio, SMS, kipaza sauti au jirani.",
+      "why": "Tahadhari rasmi ni ishara ya kuchukua hatua."
+    },
+    "flood-medical": {
+      "text": "Weka dawa za kila siku za wiki moja katika mfuko wa dharura.",
+      "why": "Kliniki zinaweza kutofikika kwa siku kadhaa."
+    },
+    "river-level": {
+      "text": "Jua mto ulifika wapi katika mafuriko makubwa ya mwisho, na kaa juu ya kiwango hicho.",
+      "why": "Alama za maji ya juu za zamani ni mwongozo bora wa eneo lako."
+    },
+    "flash-avoid": {
+      "text": "Usivuke barabara iliyojaa maji au mkondo mkavu wa mto wakati wa mvua kubwa.",
+      "why": "Vifo vingi vya mafuriko ya kasi hutokea ndani ya magari na kwenye vivuko vya mito."
+    },
+    "slide-signs": {
+      "text": "Angalia nyufa mpya, miti inayoinama au chemchemi kwenye miteremko iliyo juu ya nyumba yako.",
+      "why": "Miteremko hutoa ishara za tahadhari kabla ya kuporomoka."
+    },
+    "slide-move": {
+      "text": "Kama unaishi chini ya mteremko mkali, panga sehemu salama zaidi ya kulala wakati wa mvua kubwa.",
+      "why": "Maporomoko ya udongo mara nyingi hutokea usiku baada ya siku kadhaa za mvua."
+    },
+    "drought-store": {
+      "text": "Rekebisha uvujaji na ongeza hifadhi ya maji: matangi, madumu, au shimo lenye kifuniko.",
+      "why": "Kila lita unayohifadhi sasa ni lita ambayo hutalazimika kuibeba baadaye."
+    },
+    "drought-seed": {
+      "text": "Muulize afisa ugani kuhusu mbegu zinazokomaa haraka au zinazovumilia ukame.",
+      "why": "Mazao ya msimu mfupi yanaweza kukomaa kabla mvua zisimame."
+    },
+    "drought-plant": {
+      "text": "Panda kwa awamu: baadhi mapema, baadhi kwa wakati wa kawaida, sio yote kwa mara moja.",
+      "why": "Hii inagawanya hatari ikiwa mvua zinaanza kisha zinasimama."
+    },
+    "drought-fodder": {
+      "text": "Vuna na hifadhi malisho ya ziada; fikiria kuuza mifugo dhaifu mapema.",
+      "why": "Bei hushuka wakati watu wote wanauza kwa wakati mmoja."
+    },
+    "drought-food": {
+      "text": "Nunua chakula kikuu kidogo kidogo sasa, wakati bei ni ya kawaida.",
+      "why": "Bei za chakula hupanda haraka zaidi mavuno yanapoharibika."
+    },
+    "drought-share": {
+      "text": "Patana na majirani jinsi kisima au tangi la pamoja litatumika kwa mgao.",
+      "why": "Makubaliano yaliyowekwa huzuia migogoro maji yanapopungua."
+    },
+    "droughtne-store": {
+      "text": "Hifadhi maji na panga umwagiliaji ikiwa unakaa kaskazini au mashariki.",
+      "why": "Majira ya joto ya El Niño mara nyingi huwa makavu huko."
+    },
+    "water-reuse": {
+      "text": "Tumia tena maji ya kufua kwa bustani na vyoo.",
+      "why": "Hii inapunguza matumizi ya maji ya nyumbani kwa theluthi moja."
+    },
+    "water-schedule": {
+      "text": "Jifunze ratiba ya mgao wa maji ya mji wako na jaza vyombo siku maji yanapotoka.",
+      "why": "Miji hutoa maji kwa mgao wakati wa kiangazi; kujua siku hukuepusha na mabomba matupu."
+    },
+    "fire-clear": {
+      "text": "Safisha nyasi kavu na vichaka kwa umbali wa mita 10 au zaidi kuzunguka majengo.",
+      "why": "Eneo lililosafishwa huzuia mioto mingi ya nyasi kufikia nyumba."
+    },
+    "fire-noburn": {
+      "text": "Usichome mashamba au taka siku za joto na upepo.",
+      "why": "Mioto mikubwa mingi huanza kama moto uliopangwa ambao ulitoroka."
+    },
+    "bush-plan": {
+      "text": "Panga kuondoka mapema na fuata viwango vya hatari vinavyotolewa na idara ya zimamoto.",
+      "why": "Kuondoka kwa kuchelewa ni uamuzi wenye hatari kubwa zaidi wakati wa moto wa vichaka."
+    },
+    "wild-plan": {
+      "text": "Tayarisha mkoba wa kuhama na ujue njia mbili za kutoka eneo lako.",
+      "why": "Moto wa mwituni unaweza kufunga barabara kuu kwa dakika chache."
+    },
+    "haze-mask": {
+      "text": "Weka barakoa kwa siku za moshi, na uwe na chumba kinachoweza kufungwa.",
+      "why": "Moshi huwadhuru watoto na wazee zaidi."
+    },
+    "heat-hours": {
+      "text": "Fanya kazi ngumu asubuhi mapema na jioni.",
+      "why": "Magonjwa ya joto huwa mengi zaidi katikati ya siku."
+    },
+    "heat-check": {
+      "text": "Angalia kila siku majirani wazee na watu wanaoishi peke yao.",
+      "why": "Vifo vingi vinavyosababishwa na joto hutokea nyumbani bila mtu kujua."
+    },
+    "heat-water": {
+      "text": "Kunywa maji mara nyingi, kabla ya kuhisi kiu.",
+      "why": "Kiu huja kwa kuchelewa, wakati mwili tayari umepungukiwa maji."
+    },
+    "disease-water": {
+      "text": "Chemsha au tibu maji ya kunywa mafuriko yanapofika visima au mabomba.",
+      "why": "Kipindupindu na kuharisha huenea kwa maji ya mafuriko."
+    },
+    "disease-mosquito": {
+      "text": "Mwaga maji yaliyosimama karibu na nyumba kila siku chache, na tumia vyandarua.",
+      "why": "Magonjwa yanayoenezwa na mbu huongezeka baada ya mvua kubwa."
+    },
+    "cholera-ors": {
+      "text": "Weka nyumbani chumvi za kurudisha maji mwilini (ORS) na ujue kliniki iliyo karibu.",
+      "why": "Kurudisha maji mwilini haraka huokoa maisha wakati wa mlipuko wa kipindupindu."
+    },
+    "rvf-animals": {
+      "text": "Toa taarifa kwa daktari wa mifugo kuhusu vifo vya ghafla au mimba zinazoharibika, na usishike mifugo wagonjwa.",
+      "why": "Homa ya Bonde la Ufa huwaambukiza watu kutoka mifugo wagonjwa baada ya mafuriko."
+    },
+    "crop-mulch": {
+      "text": "Tandaza matandazo shambani ili kuhifadhi unyevu wa udongo.",
+      "why": "Matandazo yanaweza kuhifadhi unyevu wa udongo kwa wiki moja au mbili zaidi."
+    },
+    "cropfail-diversify": {
+      "text": "Panda mazao mchanganyiko, pamoja na yale yanayohitaji maji kidogo.",
+      "why": "Kushindwa kwa zao moja kunaumiza kidogo ikiwa mazao mengine yanaendelea kukua."
+    },
+    "cropfail-insurance": {
+      "text": "Uliza kuhusu bima ya mazao au mpango wa msaada wa kikundi cha wakulima kabla ya kupanda.",
+      "why": "Mipango mingi hufunga usajili kabla msimu kuanza."
+    },
+    "food-network": {
+      "text": "Tafuta ni vikundi vipi vya hapa vinatoa chakula au msaada wa fedha, na jinsi ya kujiandikisha.",
+      "why": "Kujiandikisha mapema huepusha mistari mirefu msaada unapofika."
+    },
+    "hurr-kit": {
+      "text": "Tayarisha vifaa vya kimbunga: maji, chakula, tochi, redio, dawa, hati muhimu.",
+      "why": "Maduka na umeme vinaweza kukosekana kwa siku kadhaa baada ya dhoruba."
+    },
+    "hurr-shelter": {
+      "text": "Jua mahali pa hifadhi kilicho karibu nawe na jinsi utakavyofika huko.",
+      "why": "Sehemu za hifadhi hujaa haraka tahadhari inapotolewa."
+    },
+    "typh-kit": {
+      "text": "Tayarisha vifaa vya kimbunga: maji, chakula, tochi, redio, dawa, hati muhimu.",
+      "why": "Maduka na umeme vinaweza kukosekana kwa siku kadhaa baada ya dhoruba."
+    },
+    "typh-boats": {
+      "text": "Wavuvi: patana kuhusu mpango wa bandari salama na fuata tahadhari za kutokwenda baharini.",
+      "why": "Vifo vingi vya kimbunga baharini hutokea kwa boti zilizokutwa na kimbunga wakiwa majini."
+    },
+    "cyc-kit": {
+      "text": "Tayarisha vifaa vya kimbunga: maji, chakula, tochi, redio, dawa, hati muhimu.",
+      "why": "Maduka na umeme vinaweza kukosekana kwa siku kadhaa baada ya dhoruba."
+    },
+    "cyc-roof": {
+      "text": "Funga vizuri au tengeneza paa lililolegea kabla ya msimu.",
+      "why": "Mabati ya paa yaliyolegea ni chanzo kikuu cha uharibifu na majeraha wakati wa kimbunga."
+    },
+    "cycmoz-plan": {
+      "text": "Jua njia yako ya kuondoka na mahali pa hifadhi kabla ya msimu wa vimbunga.",
+      "why": "Vimbunga katika Mkondo wa Msumbiji huleta mafuriko hata mbali ndani ya nchi kavu."
+    },
+    "cycshift-plan": {
+      "text": "Jiandae kwa vimbunga hata kama kisiwa chako hupigwa mara chache.",
+      "why": "Wakati wa El Niño, vimbunga huundwa na kusafiri mashariki zaidi kuliko kawaida."
+    },
+    "storm-trees": {
+      "text": "Punguza matawi dhaifu na funga vitu vilivyo huru nje ya nyumba.",
+      "why": "Matawi yanayoanguka husababisha uharibifu mkubwa wa nyumba wakati wa dhoruba."
+    },
+    "seas-move": {
+      "text": "Hamisha vitu vya thamani na sehemu za kulala mbali na ufuo wakati wa maji kujaa sana baharini.",
+      "why": "Usawa wa bahari uko juu kuliko kawaida katika visiwa vya atoli vya Pasifiki wakati wa El Niño."
+    },
+    "salt-store": {
+      "text": "Weka akiba ya maji safi kabla ya msimu wa kiangazi; pima maji ya visima kuona kama yana chumvi.",
+      "why": "Mito ikipungua maji, maji ya bahari huingia katika visima na mifereji."
+    },
+    "frost-cover": {
+      "text": "Funika miche usiku na weka akiba ya mbegu kwa kupanda tena.",
+      "why": "Barafu ya usiku katika nyanda za juu wakati wa vipindi vya ukame inaweza kuua mazao yote kwa usiku mmoja."
+    },
+    "snow-water": {
+      "text": "Tarajia mito yenye maji kidogo majira ya joto yajayo; panga umwagiliaji na matumizi ya maji mapema.",
+      "why": "Theluji kidogo majira ya baridi inamaanisha maji kidogo baadaye mwakani."
+    },
+    "snow-kit": {
+      "text": "Weka akiba ya chakula, mafuta ya kupasha moto na dawa ikiwa barabara zitafungwa.",
+      "why": "Theluji nyingi inaweza kufunga njia za kufika mijini kwa siku kadhaa."
+    },
+    "cold-heat": {
+      "text": "Angalia vifaa vya kupasha moto, ukingo wa joto wa nyumba na nguo za joto kabla ya majira ya baridi.",
+      "why": "Vipindi vya baridi kali huwaathiri zaidi wazee na watoto wachanga."
+    },
+    "spring-melt": {
+      "text": "Tarajia mito kujaa zaidi majira ya machipuko theluji nyingi inapoyeyuka.",
+      "why": "Majira ya baridi yenye theluji nyingi mara nyingi huleta mafuriko ya machipuko."
+    },
+    "mild-pests": {
+      "text": "Tazama wadudu waharibifu wengi zaidi na ukungu; baridi hafifu huua wachache wao.",
+      "why": "Kwa kawaida baridi huzuia wadudu na magonjwa kuongezeka."
+    },
+    "cool-crop": {
+      "text": "Chagua aina za mazao yanayokomaa katika majira ya joto yenye ubaridi na mvua zaidi.",
+      "why": "Majira ya joto yenye ubaridi huchelewesha kukomaa na huongeza magonjwa ya mazao."
+    },
+    "always-official": {
+      "text": "Fuata shirika la hali ya hewa la nchi yako kwa tahadhari; taarifa hii ni mwelekeo wa msimu, si tahadhari.",
+      "why": "Mashirika rasmi tu hutoa tahadhari kwa siku na maeneo maalum."
+    },
+    "always-share": {
+      "text": "Mwambie jirani mmoja kile msimu huu unaweza kuleta.",
+      "why": "Jamii zinazozungumza kuhusu hatari mapema hujiandaa vizuri zaidi."
+    }
+  },
+  "regions": {
+    "peru-ecuador-coast": {
+      "name": "Pwani ya Peru na Ekuado",
+      "el_nino_note": "Maji ya joto ya pwani huleta mvua kubwa katika pwani ambayo kwa kawaida ni kavu. Miaka 1982-83, 1997-98 na 2017 ilileta mafuriko makubwa.",
+      "la_nina_note": "Bahari yenye ubaridi zaidi na pwani kavu zaidi."
+    },
+    "northern-south-america": {
+      "name": "Kaskazini ya Amerika Kusini na Amazoni",
+      "el_nino_note": "Mvua hafifu na joto huongeza hatari ya moto na ya maji kupungua mitoni katika mabonde ya Orinoko na Amazoni.",
+      "la_nina_note": "Mvua nyingi zaidi, hasa katika Kolombia na Venezuela."
+    },
+    "northeast-brazil": {
+      "name": "Kaskazini-mashariki ya Brazili (Nordeste)",
+      "el_nino_note": "Msimu mkuu wa mvua mara nyingi hushindikana au huchelewa katika miaka ya El Niño kali.",
+      "la_nina_note": "Msimu wa mvua huelekea kuwa na mvua nyingi zaidi."
+    },
+    "southeast-south-america": {
+      "name": "Kusini-mashariki ya Amerika Kusini",
+      "el_nino_note": "Kusini ya Brazili, Uruguai, kaskazini-mashariki ya Ajentina na Paragwai kwa kawaida hupata mvua kubwa majira ya machipuko na majira ya joto, pamoja na mafuriko ya mito.",
+      "la_nina_note": "Majira ya machipuko na ya joto kavu zaidi; mazao hupata shida mara nyingi."
+    },
+    "central-chile": {
+      "name": "Chile ya Kati",
+      "el_nino_note": "Dhoruba za majira ya baridi huelekea kuwa na mvua nyingi zaidi.",
+      "la_nina_note": "Mvua za majira ya baridi huelekea kuwa hafifu."
+    },
+    "altiplano": {
+      "name": "Nyanda za juu za Andes (Altiplano)",
+      "el_nino_note": "Mvua za majira ya joto huelekea kuwa hafifu katika uwanda wa juu; pwani iliyo chini inaweza kuwa na mvua kwa wakati huo huo.",
+      "la_nina_note": "Ishara ni hafifu na hubadilika."
+    },
+    "central-america-dry-corridor": {
+      "name": "Amerika ya Kati na kusini ya Meksiko",
+      "el_nino_note": "Msimu wa mvua huanza kwa kuchelewa na kipindi kikavu cha katikati ya majira ya joto (canícula) huwa kirefu zaidi, hasa katika Ukanda Mkavu.",
+      "la_nina_note": "Mvua nyingi zaidi na msimu wa vimbunga vya Atlantiki wenye shughuli nyingi zaidi."
+    },
+    "caribbean": {
+      "name": "Visiwa vya Karibiani",
+      "el_nino_note": "Msimu wa mvua ukavu zaidi na kwa kawaida vimbunga vichache vya Atlantiki.",
+      "la_nina_note": "Msimu wa vimbunga vya Atlantiki wenye shughuli nyingi zaidi."
+    },
+    "southern-us-north-mexico": {
+      "name": "Kusini ya Marekani na kaskazini ya Meksiko",
+      "el_nino_note": "Mkondo wa hewa wa juu wenye nguvu zaidi huleta dhoruba nyingi za majira ya baridi katika California, Kusini-magharibi, Texas, pwani ya Ghuba na Kusini-mashariki.",
+      "la_nina_note": "Majira ya baridi huelekea kuwa makavu na yenye joto katika majimbo ya kusini."
+    },
+    "us-pacific-northwest": {
+      "name": "Kaskazini-magharibi ya Pasifiki na magharibi ya Kanada",
+      "el_nino_note": "Majira ya baridi yenye upole zaidi na ukavu, na theluji kidogo milimani.",
+      "la_nina_note": "Majira ya baridi yenye ubaridi na mvua zaidi, na theluji nyingi zaidi."
+    },
+    "northern-us-southern-canada": {
+      "name": "Kaskazini mwa Marekani na kusini mwa Kanada",
+      "el_nino_note": "Majira ya baridi huwa na baridi kidogo kuliko kawaida katika nyanda za kaskazini, Midwest na Maziwa Makuu.",
+      "la_nina_note": "Majira ya baridi yenye baridi zaidi na theluji nyingi zaidi katika ukanda wa kaskazini na Bonde la Ohio."
+    },
+    "alaska": {
+      "name": "Alaska",
+      "el_nino_note": "Majira ya baridi kwa kawaida huwa na joto zaidi kuliko kawaida.",
+      "la_nina_note": "Majira ya baridi yenye baridi zaidi."
+    },
+    "hawaii": {
+      "name": "Hawaii",
+      "el_nino_note": "Msimu wa mvua mara nyingi huwa hafifu; hatari ya ukame huongezeka mwishoni wa majira ya baridi na katika majira ya machipuko.",
+      "la_nina_note": "Majira ya baridi yenye mvua nyingi zaidi."
+    },
+    "india-monsoon": {
+      "name": "India, Pakistan, Nepal na Bangladesh (monsuni ya majira ya joto)",
+      "el_nino_note": "Monsuni ya majira ya joto huelekea kuwa hafifu na mvua hunyesha kwa mabaka. Si kila El Niño huleta ukame, lakini hatari huwa kubwa zaidi.",
+      "la_nina_note": "Monsuni huelekea kuwa na nguvu zaidi na mafuriko mengi zaidi."
+    },
+    "sri-lanka-south-india": {
+      "name": "Sri Lanka na kusini mwa India (monsuni ya kaskazini-mashariki)",
+      "el_nino_note": "Mvua za Okt–Des huelekea kuwa nyingi zaidi.",
+      "la_nina_note": "Ishara ni hafifu."
+    },
+    "maritime-continent": {
+      "name": "Indonesia, Malaysia, Singapore, Brunei na Timor-Leste",
+      "el_nino_note": "Msimu wa kiangazi huwa mrefu na mkali zaidi, na msimu wa mvua huanza kwa kuchelewa. Moto wa misitu na wa ardhi ya mboji pamoja na moshi mzito ulikuwa mkubwa mwaka 1997 na 2015.",
+      "la_nina_note": "Msimu wa kiangazi wenye mvua zaidi na msimu wa mvua wenye mvua nyingi zaidi."
+    },
+    "philippines": {
+      "name": "Ufilipino",
+      "el_nino_note": "Mvua hunyesha chini ya kawaida kuanzia mwishoni wa mwaka hadi msimu wa kiangazi unaofuata. Vimbunga huelekea kutokea mbali zaidi upande wa mashariki na vinaweza kuwa na nguvu zaidi.",
+      "la_nina_note": "Mvua nyingi zaidi, na vimbunga vingi zaidi vinavyopita visiwani."
+    },
+    "mainland-southeast-asia": {
+      "name": "Vietnam, Thailand, Kambodia, Laos na Myanmar",
+      "el_nino_note": "Msimu wa kiangazi wenye joto na ukavu zaidi; monsuni huanza kwa kuchelewa; maji kidogo katika mto Mekong na maji ya chumvi huingia katika delta.",
+      "la_nina_note": "Monsuni yenye mvua nyingi zaidi na mafuriko mengi zaidi."
+    },
+    "southern-china": {
+      "name": "Kusini mwa China na bonde la Yangtze",
+      "el_nino_note": "Majira ya baridi na ya machipuko yenye mvua nyingi zaidi, na majira ya joto yanayofuata El Niño yenye nguvu mara nyingi huleta mafuriko katika mto Yangtze (1998, 2016).",
+      "la_nina_note": "Majira ya baridi yenye baridi zaidi na ukavu zaidi; ishara hubadilika mara kwa mara."
+    },
+    "northern-china-korea-japan": {
+      "name": "Kaskazini mwa China, Korea na Japani",
+      "el_nino_note": "Majira ya baridi huelekea kuwa na baridi kidogo; ishara ya majira ya joto ni hafifu na iliyochanganyika.",
+      "la_nina_note": "Majira ya baridi huelekea kuwa na baridi zaidi."
+    },
+    "png-melanesia": {
+      "name": "Papua New Guinea, Visiwa vya Solomon na Vanuatu",
+      "el_nino_note": "Vipindi virefu vya ukavu; barafu ya baridi kali katika nyanda za juu na mazao yaliyoharibika nchini PNG mwaka 1997 na 2015.",
+      "la_nina_note": "Mvua nyingi zaidi, na vimbunga vyenye uwezekano mkubwa upande wa magharibi."
+    },
+    "central-pacific-islands": {
+      "name": "Kiribati, Tuvalu, Nauru na Visiwa vya Marshall",
+      "el_nino_note": "Mvua huhamia kuelekea Pasifiki ya kati; visiwa vya matumbawe vya ikweta huwa na mvua nyingi zaidi, na kina cha bahari huwa juu zaidi katika maeneo mengine.",
+      "la_nina_note": "Ukame mkali katika visiwa vya matumbawe vya ikweta."
+    },
+    "southwest-pacific-islands": {
+      "name": "Fiji, Tonga, Samoa, Visiwa vya Cook na New Caledonia",
+      "el_nino_note": "Ukanda mkuu wa mvua huhamia kaskazini-mashariki, kwa hiyo Fiji, Tonga na New Caledonia huelekea kuwa kavu zaidi. Vimbunga vinaweza kufika mashariki zaidi kuliko kawaida.",
+      "la_nina_note": "Msimu wa mvua wenye mvua nyingi zaidi."
+    },
+    "eastern-australia": {
+      "name": "Mashariki na kaskazini mwa Australia",
+      "el_nino_note": "Mvua za majira ya baridi na ya machipuko kwa kawaida huwa chini sana ya kawaida, pamoja na vipindi vingi vya joto kali na hatari ya moto wa vichaka; msimu wa mvua wa kaskazini huanza kwa kuchelewa.",
+      "la_nina_note": "Mvua nyingi zaidi, mafuriko mengi zaidi na vimbunga vingi zaidi vya tropiki."
+    },
+    "southwest-australia": {
+      "name": "Kusini-magharibi na kusini mwa Australia",
+      "el_nino_note": "Ishara ni hafifu kuliko upande wa mashariki.",
+      "la_nina_note": "Ishara ni hafifu."
+    },
+    "new-zealand": {
+      "name": "New Zealand",
+      "el_nino_note": "Pepo za magharibi zenye nguvu zaidi: kavu zaidi upande wa kaskazini-mashariki, mvua zaidi upande wa kusini-magharibi, na baridi kidogo kwa ujumla.",
+      "la_nina_note": "Pepo nyingi zaidi kutoka kaskazini-mashariki huleta mvua kaskazini na mashariki."
+    },
+    "east-africa-short-rains": {
+      "name": "Kenya, Somalia, kusini mwa Ethiopia, Uganda na kaskazini mwa Tanzania",
+      "el_nino_note": "Mvua fupi za Okt–Des kwa kawaida huwa nyingi, na huleta mafuriko kando ya mito na katika maeneo ya chini. Mwaka 1997 na 2023 kulikuwa na mafuriko makali.",
+      "la_nina_note": "Mvua fupi hushindwa kunyesha mara nyingi zaidi; miaka ya La Niña iliyofuatana ilisababisha ukame wa Pembe ya Afrika wa mwaka 2020–23."
+    },
+    "ethiopia-sudan-summer": {
+      "name": "Nyanda za juu za Ethiopia, Eritrea na Sudan (mvua za majira ya joto)",
+      "el_nino_note": "Mvua kuu za kiremt huelekea kuwa hafifu zaidi; mwaka 2015 kulikuwa na ukame mkali nchini Ethiopia.",
+      "la_nina_note": "Mwelekeo hafifu wa majira ya joto yenye mvua nyingi zaidi."
+    },
+    "southern-africa": {
+      "name": "Kusini mwa Afrika",
+      "el_nino_note": "Mvua za majira ya joto kwa kawaida huwa chini ya kawaida, pamoja na vipindi vya joto kali; mavuno ya mahindi yaliharibika katika maeneo mengi mwaka 1992, 2016 na 2024.",
+      "la_nina_note": "Majira ya joto yenye mvua nyingi zaidi na mafuriko mengi zaidi."
+    },
+    "madagascar": {
+      "name": "Madagaska",
+      "el_nino_note": "Kusini na magharibi huelekea kuwa kavu zaidi; mwenendo wa vimbunga hubadilika.",
+      "la_nina_note": "Mwelekeo hafifu wa mvua nyingi zaidi."
+    },
+    "sahel": {
+      "name": "Sahel na kaskazini mwa Nigeria",
+      "el_nino_note": "Kuna mwelekeo wa msimu wa mvua kuwa dhaifu, lakini joto la Bahari ya Atlantiki na la Bahari ya Hindi lina athari kubwa zaidi hapa.",
+      "la_nina_note": "Mwelekeo dhaifu wa mvua kuwa nyingi zaidi."
+    },
+    "gulf-of-guinea": {
+      "name": "Pwani ya Afrika Magharibi (Ghuba ya Guinea)",
+      "el_nino_note": "Hakuna dalili ya kuaminika kuhusu mvua; joto huwa juu kidogo.",
+      "la_nina_note": "Hakuna dalili ya kuaminika."
+    },
+    "central-africa": {
+      "name": "Afrika ya Kati (bonde la Kongo)",
+      "el_nino_note": "Dalili ya mvua ni dhaifu; mara nyingi joto huwa juu ya kawaida.",
+      "la_nina_note": "Hakuna dalili ya kuaminika."
+    },
+    "southwest-asia": {
+      "name": "Iran, Iraq, Afghanistan, kaskazini mwa Pakistan na Rasi ya Uarabuni",
+      "el_nino_note": "Mvua za majira ya baridi na za majira ya machipuko huwa nyingi zaidi. Wakati mwingine husababisha mafuriko ya ghafla katika maeneo makavu.",
+      "la_nina_note": "Mvua na theluji za majira ya baridi huwa chache; hatari ya ukame huongezeka."
+    },
+    "central-asia": {
+      "name": "Asia ya Kati",
+      "el_nino_note": "Mwelekeo dhaifu wa majira ya baridi kuwa na mvua zaidi.",
+      "la_nina_note": "Mwelekeo dhaifu wa majira ya baridi kuwa makavu zaidi."
+    },
+    "north-africa-mediterranean": {
+      "name": "Afrika Kaskazini na eneo la Bahari ya Mediterania",
+      "el_nino_note": "ENSO haina athari ya uhakika hapa. Utabiri wa eneo lako una maana zaidi.",
+      "la_nina_note": "Hakuna dalili ya kuaminika."
+    },
+    "europe": {
+      "name": "Ulaya",
+      "el_nino_note": "Athari yoyote ni dhaifu na hubadilika badilika. Tumia utabiri wa nchi yako.",
+      "la_nina_note": "Athari ni dhaifu na hubadilika badilika."
+    },
+    "russia-siberia": {
+      "name": "Urusi na Siberia",
+      "el_nino_note": "Hakuna dalili ya kuaminika.",
+      "la_nina_note": "Hakuna dalili ya kuaminika."
+    },
+    "canada-arctic": {
+      "name": "Kaskazini mwa Kanada na Greenland",
+      "el_nino_note": "Kwa kawaida magharibi na katikati mwa Kanada huwa na majira ya baridi yasiyo makali sana.",
+      "la_nina_note": "Majira ya baridi kali zaidi magharibi mwa Kanada."
+    },
+    "southeast-brazil": {
+      "name": "Kusini-mashariki mwa Brazili (São Paulo, Rio, Minas Gerais)",
+      "el_nino_note": "Eneo hili liko kati ya kusini yenye mvua na kaskazini iliyo kavu; dalili ya mvua imechanganyika, lakini joto lina uwezekano mkubwa zaidi.",
+      "la_nina_note": "Dalili imechanganyika."
+    },
+    "mexico-north-us-southwest": {
+      "name": "Kusini-magharibi mwa Marekani na kaskazini-magharibi mwa Meksiko",
+      "el_nino_note": "Majira ya baridi yenye mvua zaidi katika Arizona, New Mexico, Texas na kaskazini mwa Meksiko.",
+      "la_nina_note": "Majira ya baridi makavu na yenye joto; hatari ya ukame huongezeka."
+    },
+    "south-atlantic-uruguay": {
+      "name": "Uruguay na nyanda za Pampas",
+      "el_nino_note": "Kwa kawaida mvua za majira ya machipuko huwa nyingi.",
+      "la_nina_note": "Hatari ya ukame ni kubwa; ukame wa mwaka 2022-23 ulikuwa mkali."
+    },
+    "tanzania-south-mozambique-north": {
+      "name": "Kusini mwa Tanzania na kaskazini mwa Msumbiji",
+      "el_nino_note": "Eneo hili liko mpakani kati ya Afrika Mashariki yenye mvua zaidi na Afrika ya Kusini iliyo kavu zaidi; utabiri wa eneo lako una maana zaidi.",
+      "la_nina_note": "Dalili imechanganyika."
+    },
+    "japan": {
+      "name": "Japani",
+      "el_nino_note": "Majira ya baridi yasiyo makali na majira ya joto yenye ubaridi na mvua hutokea mara nyingi kidogo zaidi.",
+      "la_nina_note": "Majira ya baridi kali na majira ya joto yenye joto kali hutokea mara nyingi kidogo zaidi."
+    }
+  },
+  "months": [
+    "Jan",
+    "Feb",
+    "Mac",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Des"
+  ],
+  "_meta": {
+    "all_year": {
+      "hash": "f1c9633186",
+      "mt": true
+    },
+    "this_area": {
+      "hash": "a8c1c36359",
+      "mt": true
+    },
+    "el_nino": {
+      "hash": "489d765bdc",
+      "mt": true
+    },
+    "la_nina": {
+      "hash": "8d0aa98ae7",
+      "mt": true
+    },
+    "neutral": {
+      "hash": "dd09ebb8c4",
+      "mt": true
+    },
+    "rain_much_wetter": {
+      "hash": "501440ed57",
+      "mt": true
+    },
+    "rain_wetter": {
+      "hash": "435a6edd44",
+      "mt": true
+    },
+    "rain_drier": {
+      "hash": "a4e4b62433",
+      "mt": true
+    },
+    "rain_much_drier": {
+      "hash": "d6900d2e5a",
+      "mt": true
+    },
+    "rain_near_normal": {
+      "hash": "7cec499708",
+      "mt": true
+    },
+    "rain_mixed": {
+      "hash": "5064569973",
+      "mt": true
+    },
+    "rain_drier__north_and_east_": {
+      "hash": "89fcba887d",
+      "mt": true
+    },
+    "rain_wetter__north_and_east_": {
+      "hash": "e9cde59c37",
+      "mt": true
+    },
+    "rain_drier__south_and_west_": {
+      "hash": "35a58f150c",
+      "mt": true
+    },
+    "temp_warmer": {
+      "hash": "9d982226b2",
+      "mt": true
+    },
+    "temp_cooler": {
+      "hash": "468cede68e",
+      "mt": true
+    },
+    "temp_near_normal": {
+      "hash": "6f1a5b8040",
+      "mt": true
+    },
+    "temp_warmer__winter___cooler__summer_": {
+      "hash": "adec56a0cf",
+      "mt": true
+    },
+    "temp_cooler__winter___warmer__summer_": {
+      "hash": "1c58e6ce6e",
+      "mt": true
+    },
+    "conf_likely": {
+      "hash": "3dd3164fb4",
+      "mt": true
+    },
+    "conf_leaning": {
+      "hash": "18768aae84",
+      "mt": true
+    },
+    "conf_uncertain": {
+      "hash": "6f1fa906d7",
+      "mt": true
+    },
+    "headline": {
+      "hash": "ab3ffc2e08",
+      "mt": true
+    },
+    "headline_neutral": {
+      "hash": "17b475da62",
+      "mt": true
+    },
+    "neutral_explain": {
+      "hash": "f65ee3e7a4",
+      "mt": true
+    },
+    "timing_now": {
+      "hash": "54b77bd18e",
+      "mt": true
+    },
+    "timing_coming": {
+      "hash": "c3ba1d5344",
+      "mt": true
+    },
+    "timing_passed": {
+      "hash": "e74967b04a",
+      "mt": true
+    },
+    "expect": {
+      "hash": "5d9e6827b7",
+      "mt": true
+    },
+    "agreement_agree": {
+      "hash": "5f821dcb30",
+      "mt": true
+    },
+    "agreement_disagree": {
+      "hash": "a7cf95531b",
+      "mt": true
+    },
+    "agreement_weak": {
+      "hash": "baac3207fd",
+      "mt": true
+    },
+    "agreement_none": {
+      "hash": "2fcd8339d1",
+      "mt": true
+    },
+    "history": {
+      "hash": "e43a8568a6",
+      "mt": true
+    },
+    "history_recent": {
+      "hash": "2a46b61e80",
+      "mt": true
+    },
+    "pct_above": {
+      "hash": "98540154fc",
+      "mt": true
+    },
+    "pct_below": {
+      "hash": "3ebaebc457",
+      "mt": true
+    },
+    "near_normal": {
+      "hash": "2658423dff",
+      "mt": true
+    },
+    "no_data": {
+      "hash": "4d968a30a0",
+      "mt": true
+    },
+    "status_line": {
+      "hash": "6422d75e27",
+      "mt": true
+    },
+    "steps_title": {
+      "hash": "ed355255c2",
+      "mt": true
+    },
+    "defer": {
+      "hash": "9efeddd2d1",
+      "mt": true
+    },
+    "ui.app_name": {
+      "hash": "e1f03bc41c",
+      "mt": true
+    },
+    "ui.tagline": {
+      "hash": "886c125193",
+      "mt": true
+    },
+    "ui.search_label": {
+      "hash": "210e7830b0",
+      "mt": true
+    },
+    "ui.search_placeholder": {
+      "hash": "131fcc93cf",
+      "mt": true
+    },
+    "ui.use_location": {
+      "hash": "0132375d9a",
+      "mt": true
+    },
+    "ui.see_briefing": {
+      "hash": "c4353228f3",
+      "mt": true
+    },
+    "ui.livelihood_q": {
+      "hash": "9d9412554a",
+      "mt": true
+    },
+    "ui.livelihood_farmer": {
+      "hash": "b644c74680",
+      "mt": true
+    },
+    "ui.livelihood_coastal": {
+      "hash": "64185ab657",
+      "mt": true
+    },
+    "ui.livelihood_urban": {
+      "hash": "569f2e8e61",
+      "mt": true
+    },
+    "ui.livelihood_all": {
+      "hash": "3befd91cbd",
+      "mt": true
+    },
+    "ui.tell_more": {
+      "hash": "fb7345b8f3",
+      "mt": true
+    },
+    "ui.show_less": {
+      "hash": "4c852b26d1",
+      "mt": true
+    },
+    "ui.step_of": {
+      "hash": "ebdba52ab7",
+      "mt": true
+    },
+    "ui.why_matters": {
+      "hash": "76ff2a4c8e",
+      "mt": true
+    },
+    "ui.done": {
+      "hash": "e9b450d14b",
+      "mt": true
+    },
+    "ui.next_step": {
+      "hash": "5500eef9fd",
+      "mt": true
+    },
+    "ui.show_all_steps": {
+      "hash": "ee928d9eb6",
+      "mt": true
+    },
+    "ui.minutes": {
+      "hash": "cfbf89eeb2",
+      "mt": true
+    },
+    "ui.what_now": {
+      "hash": "12c0d19bc2",
+      "mt": true
+    },
+    "ui.read_aloud": {
+      "hash": "562107b866",
+      "mt": true
+    },
+    "ui.radio_script": {
+      "hash": "ee0b56915e",
+      "mt": true
+    },
+    "ui.sms_text": {
+      "hash": "ffbcb26fe4",
+      "mt": true
+    },
+    "ui.sources": {
+      "hash": "2eb56be3c2",
+      "mt": true
+    },
+    "ui.updated": {
+      "hash": "23026832c1",
+      "mt": true
+    },
+    "ui.offline_note": {
+      "hash": "557e92a910",
+      "mt": true
+    },
+    "ui.mt_banner": {
+      "hash": "9cbbddfdac",
+      "mt": true
+    },
+    "ui.settings": {
+      "hash": "c7f73bb54d",
+      "mt": true
+    },
+    "ui.text_size": {
+      "hash": "3cc6e124a8",
+      "mt": true
+    },
+    "ui.high_contrast": {
+      "hash": "5add073ddb",
+      "mt": true
+    },
+    "ui.reduce_motion": {
+      "hash": "25a5aef562",
+      "mt": true
+    },
+    "ui.easy_read": {
+      "hash": "adc5145473",
+      "mt": true
+    },
+    "ui.methodology": {
+      "hash": "b895a8c34e",
+      "mt": true
+    },
+    "ui.back": {
+      "hash": "b52b36b726",
+      "mt": true
+    },
+    "ui.change_place": {
+      "hash": "29636d31c0",
+      "mt": true
+    },
+    "ui.no_results": {
+      "hash": "a98e70ae8d",
+      "mt": true
+    },
+    "ui.region_label": {
+      "hash": "0f21717994",
+      "mt": true
+    },
+    "ui.share": {
+      "hash": "adbd0519ed",
+      "mt": true
+    },
+    "ui.no_js": {
+      "hash": "ba8932754d",
+      "mt": true
+    },
+    "ui.forecast_unavailable": {
+      "hash": "05fdbc88ff",
+      "mt": true
+    },
+    "ui.data_note": {
+      "hash": "ce82b0a7f6",
+      "mt": true
+    },
+    "ui.near": {
+      "hash": "08543b8a6a",
+      "mt": true
+    },
+    "ui.pick_map": {
+      "hash": "e98e54ec60",
+      "mt": true
+    },
+    "ui.map_hint": {
+      "hash": "c3d9a75b3c",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
+      "mt": true
+    },
+    "timing_coming_one": {
+      "hash": "3987c0293e",
+      "mt": true
+    },
+    "hazards.FL": {
+      "hash": "08e2a5ac9b",
+      "mt": true
+    },
+    "hazards.FLR": {
+      "hash": "13da0bac99",
+      "mt": true
+    },
+    "hazards.FF": {
+      "hash": "27a80c3b13",
+      "mt": true
+    },
+    "hazards.LS": {
+      "hash": "fca7721325",
+      "mt": true
+    },
+    "hazards.DR": {
+      "hash": "7d52e6d4b2",
+      "mt": true
+    },
+    "hazards.WS": {
+      "hash": "275738c454",
+      "mt": true
+    },
+    "hazards.WF": {
+      "hash": "13cee95aff",
+      "mt": true
+    },
+    "hazards.HZ": {
+      "hash": "8d63f933a3",
+      "mt": true
+    },
+    "hazards.HT": {
+      "hash": "b6ebd01078",
+      "mt": true
+    },
+    "hazards.EP": {
+      "hash": "5609575941",
+      "mt": true
+    },
+    "hazards.CH": {
+      "hash": "7167eb22b8",
+      "mt": true
+    },
+    "hazards.RVF": {
+      "hash": "18cf62a72a",
+      "mt": true
+    },
+    "hazards.CS": {
+      "hash": "caa64184c5",
+      "mt": true
+    },
+    "hazards.CF": {
+      "hash": "c0e789b765",
+      "mt": true
+    },
+    "hazards.FI": {
+      "hash": "765c343eed",
+      "mt": true
+    },
+    "hazards.TC": {
+      "hash": "cddc3765a5",
+      "mt": true
+    },
+    "hazards.TCE": {
+      "hash": "41bb8ad957",
+      "mt": true
+    },
+    "hazards.ST": {
+      "hash": "9f38cb5f09",
+      "mt": true
+    },
+    "hazards.HS": {
+      "hash": "636882e939",
+      "mt": true
+    },
+    "hazards.SI": {
+      "hash": "375c4c342e",
+      "mt": true
+    },
+    "hazards.FR": {
+      "hash": "b10a95c04c",
+      "mt": true
+    },
+    "hazards.SN": {
+      "hash": "3bbcded6ca",
+      "mt": true
+    },
+    "hazards.HSN": {
+      "hash": "58ab54ac97",
+      "mt": true
+    },
+    "hazards.CD": {
+      "hash": "45183e6cf4",
+      "mt": true
+    },
+    "hazards.FLS": {
+      "hash": "1c6c25ca85",
+      "mt": true
+    },
+    "hazards.MW": {
+      "hash": "7424878994",
+      "mt": true
+    },
+    "hazards.CU": {
+      "hash": "c713fa6f2e",
+      "mt": true
+    },
+    "season_with_local": {
+      "hash": "d0679d3a7f",
+      "mt": true
+    },
+    "risks": {
+      "hash": "76fe80aff4",
+      "mt": true
+    },
+    "list_sep": {
+      "hash": "d3bc9a378d",
+      "mt": true
+    },
+    "list_last": {
+      "hash": "4f413364b4",
+      "mt": true
+    },
+    "forecast": {
+      "hash": "1c18b13750",
+      "mt": true
+    },
+    "forecast_agree": {
+      "hash": "ec8fc2a412",
+      "mt": true
+    },
+    "forecast_disagree": {
+      "hash": "1c5e067fb8",
+      "mt": true
+    },
+    "forecast_weak": {
+      "hash": "39bc45b64c",
+      "mt": true
+    },
+    "forecast_none": {
+      "hash": "da39a3ee5e",
+      "mt": true
+    },
+    "forecast_partial": {
+      "hash": "7c90e5c66c",
+      "mt": true
+    },
+    "history_few": {
+      "hash": "d67d610a47",
+      "mt": true
+    },
+    "local_seasons.spring and summer": {
+      "hash": "2beab03ea3",
+      "mt": true
+    },
+    "local_seasons.winter and spring": {
+      "hash": "eb50ad4748",
+      "mt": true
+    },
+    "local_seasons.the build-up and wet season": {
+      "hash": "b7a7b1032c",
+      "mt": true
+    },
+    "local_seasons.the monsoon": {
+      "hash": "fee83dcde5",
+      "mt": true
+    },
+    "local_seasons.the summer rains": {
+      "hash": "a1e4b46bdb",
+      "mt": true
+    },
+    "local_seasons.the Nordeste rainy season": {
+      "hash": "1891a60a8a",
+      "mt": true
+    },
+    "local_seasons.the Amazon dry season": {
+      "hash": "4781ae8a2f",
+      "mt": true
+    },
+    "local_seasons.the plum rains and summer flood season": {
+      "hash": "8ff2b6e29d",
+      "mt": true
+    },
+    "local_seasons.the dry season": {
+      "hash": "849b3de3fe",
+      "mt": true
+    },
+    "local_seasons.the coastal rainy season": {
+      "hash": "30c0382e37",
+      "mt": true
+    },
+    "local_seasons.the Belg/Deyr rains": {
+      "hash": "9ed0b9f201",
+      "mt": true
+    },
+    "local_seasons.the Kiremt rains": {
+      "hash": "719879a9bd",
+      "mt": true
+    },
+    "local_seasons.the wet season": {
+      "hash": "2cbc9993bb",
+      "mt": true
+    },
+    "local_seasons.the rainy season and canícula": {
+      "hash": "bbb48b5ea2",
+      "mt": true
+    },
+    "local_seasons.musim kemarau": {
+      "hash": "c353def5c6",
+      "mt": true
+    },
+    "local_seasons.the southwest monsoon": {
+      "hash": "6792e2a7da",
+      "mt": true
+    },
+    "local_seasons.the northeast monsoon": {
+      "hash": "866fc440c2",
+      "mt": true
+    },
+    "local_seasons.the winter rains": {
+      "hash": "9add54eba6",
+      "mt": true
+    },
+    "local_seasons.the short rains": {
+      "hash": "9c705fd8db",
+      "mt": true
+    },
+    "local_seasons.the Maha season rains": {
+      "hash": "e403556e29",
+      "mt": true
+    },
+    "local_seasons.the rainy season": {
+      "hash": "be512abfaf",
+      "mt": true
+    },
+    "local_seasons.winter": {
+      "hash": "1ef41af417",
+      "mt": true
+    },
+    "local_seasons.the highland rains": {
+      "hash": "b1f029ffed",
+      "mt": true
+    },
+    "local_seasons.the Deyr rains": {
+      "hash": "162d7fd1a2",
+      "mt": true
+    },
+    "local_seasons.the Vuli rains": {
+      "hash": "9b6eb5305a",
+      "mt": true
+    },
+    "local_seasons.the second rains": {
+      "hash": "cd054135ef",
+      "mt": true
+    },
+    "local_seasons.spring": {
+      "hash": "248902131a",
+      "mt": true
+    },
+    "pct_above_cap": {
+      "hash": "4f496b388c",
+      "mt": true
+    },
+    "steps.flood-docs.text": {
+      "hash": "3d05d88de4",
+      "mt": true
+    },
+    "steps.flood-docs.why": {
+      "hash": "9fae9d8189",
+      "mt": true
+    },
+    "steps.flood-route.text": {
+      "hash": "861cd0bced",
+      "mt": true
+    },
+    "steps.flood-route.why": {
+      "hash": "f515ee449c",
+      "mt": true
+    },
+    "steps.flood-water.text": {
+      "hash": "5e44b323c5",
+      "mt": true
+    },
+    "steps.flood-water.why": {
+      "hash": "e5062c9725",
+      "mt": true
+    },
+    "steps.flood-drains.text": {
+      "hash": "48765a8083",
+      "mt": true
+    },
+    "steps.flood-drains.why": {
+      "hash": "241b2a8c70",
+      "mt": true
+    },
+    "steps.flood-raise.text": {
+      "hash": "87146063e5",
+      "mt": true
+    },
+    "steps.flood-raise.why": {
+      "hash": "913fcd317f",
+      "mt": true
+    },
+    "steps.flood-animals.text": {
+      "hash": "45f507f58d",
+      "mt": true
+    },
+    "steps.flood-animals.why": {
+      "hash": "9331e336cc",
+      "mt": true
+    },
+    "steps.flood-warnings.text": {
+      "hash": "f26a219703",
+      "mt": true
+    },
+    "steps.flood-warnings.why": {
+      "hash": "622aeeead3",
+      "mt": true
+    },
+    "steps.flood-medical.text": {
+      "hash": "8001d7920c",
+      "mt": true
+    },
+    "steps.flood-medical.why": {
+      "hash": "7f18944e34",
+      "mt": true
+    },
+    "steps.river-level.text": {
+      "hash": "194f95816b",
+      "mt": true
+    },
+    "steps.river-level.why": {
+      "hash": "9406a6f619",
+      "mt": true
+    },
+    "steps.flash-avoid.text": {
+      "hash": "57f000eda6",
+      "mt": true
+    },
+    "steps.flash-avoid.why": {
+      "hash": "28e06f1c05",
+      "mt": true
+    },
+    "steps.slide-signs.text": {
+      "hash": "856ed31ebf",
+      "mt": true
+    },
+    "steps.slide-signs.why": {
+      "hash": "81b0b74713",
+      "mt": true
+    },
+    "steps.slide-move.text": {
+      "hash": "12d6877a30",
+      "mt": true
+    },
+    "steps.slide-move.why": {
+      "hash": "b34f694eb6",
+      "mt": true
+    },
+    "steps.drought-store.text": {
+      "hash": "ea07622c67",
+      "mt": true
+    },
+    "steps.drought-store.why": {
+      "hash": "01317828a7",
+      "mt": true
+    },
+    "steps.drought-seed.text": {
+      "hash": "18d877ccc8",
+      "mt": true
+    },
+    "steps.drought-seed.why": {
+      "hash": "3ec630347c",
+      "mt": true
+    },
+    "steps.drought-plant.text": {
+      "hash": "a889a855a3",
+      "mt": true
+    },
+    "steps.drought-plant.why": {
+      "hash": "4e5b2fcc1a",
+      "mt": true
+    },
+    "steps.drought-fodder.text": {
+      "hash": "ae508d6715",
+      "mt": true
+    },
+    "steps.drought-fodder.why": {
+      "hash": "aec1da0550",
+      "mt": true
+    },
+    "steps.drought-food.text": {
+      "hash": "5b2b5ba084",
+      "mt": true
+    },
+    "steps.drought-food.why": {
+      "hash": "e618cd8be8",
+      "mt": true
+    },
+    "steps.drought-share.text": {
+      "hash": "265766e514",
+      "mt": true
+    },
+    "steps.drought-share.why": {
+      "hash": "4aa5331a90",
+      "mt": true
+    },
+    "steps.droughtne-store.text": {
+      "hash": "647befe8ee",
+      "mt": true
+    },
+    "steps.droughtne-store.why": {
+      "hash": "b8d5e1b0f3",
+      "mt": true
+    },
+    "steps.water-reuse.text": {
+      "hash": "827c80fea9",
+      "mt": true
+    },
+    "steps.water-reuse.why": {
+      "hash": "494e8755f5",
+      "mt": true
+    },
+    "steps.water-schedule.text": {
+      "hash": "d32ed44dad",
+      "mt": true
+    },
+    "steps.water-schedule.why": {
+      "hash": "2c974672ed",
+      "mt": true
+    },
+    "steps.fire-clear.text": {
+      "hash": "e6fa342e2a",
+      "mt": true
+    },
+    "steps.fire-clear.why": {
+      "hash": "3284656e83",
+      "mt": true
+    },
+    "steps.fire-noburn.text": {
+      "hash": "f016b71f78",
+      "mt": true
+    },
+    "steps.fire-noburn.why": {
+      "hash": "ca25c67f8c",
+      "mt": true
+    },
+    "steps.bush-plan.text": {
+      "hash": "ceadf009c7",
+      "mt": true
+    },
+    "steps.bush-plan.why": {
+      "hash": "3f5353f076",
+      "mt": true
+    },
+    "steps.wild-plan.text": {
+      "hash": "785681eb5f",
+      "mt": true
+    },
+    "steps.wild-plan.why": {
+      "hash": "4020d622e9",
+      "mt": true
+    },
+    "steps.haze-mask.text": {
+      "hash": "441c2e1017",
+      "mt": true
+    },
+    "steps.haze-mask.why": {
+      "hash": "7ef77435c7",
+      "mt": true
+    },
+    "steps.heat-hours.text": {
+      "hash": "df6f81e5c2",
+      "mt": true
+    },
+    "steps.heat-hours.why": {
+      "hash": "de5af42696",
+      "mt": true
+    },
+    "steps.heat-check.text": {
+      "hash": "b701a56f36",
+      "mt": true
+    },
+    "steps.heat-check.why": {
+      "hash": "f717f74862",
+      "mt": true
+    },
+    "steps.heat-water.text": {
+      "hash": "840fcd741d",
+      "mt": true
+    },
+    "steps.heat-water.why": {
+      "hash": "1d7c728adf",
+      "mt": true
+    },
+    "steps.disease-water.text": {
+      "hash": "cd9ed96a5d",
+      "mt": true
+    },
+    "steps.disease-water.why": {
+      "hash": "609e79a42d",
+      "mt": true
+    },
+    "steps.disease-mosquito.text": {
+      "hash": "d277705c95",
+      "mt": true
+    },
+    "steps.disease-mosquito.why": {
+      "hash": "64cc50098a",
+      "mt": true
+    },
+    "steps.cholera-ors.text": {
+      "hash": "0277acbef2",
+      "mt": true
+    },
+    "steps.cholera-ors.why": {
+      "hash": "07d8416a58",
+      "mt": true
+    },
+    "steps.rvf-animals.text": {
+      "hash": "953a8fe014",
+      "mt": true
+    },
+    "steps.rvf-animals.why": {
+      "hash": "35366a2fe8",
+      "mt": true
+    },
+    "steps.crop-mulch.text": {
+      "hash": "6a6e800208",
+      "mt": true
+    },
+    "steps.crop-mulch.why": {
+      "hash": "8668e30a49",
+      "mt": true
+    },
+    "steps.cropfail-diversify.text": {
+      "hash": "a31d242364",
+      "mt": true
+    },
+    "steps.cropfail-diversify.why": {
+      "hash": "5ee3096bd2",
+      "mt": true
+    },
+    "steps.cropfail-insurance.text": {
+      "hash": "6b0353d909",
+      "mt": true
+    },
+    "steps.cropfail-insurance.why": {
+      "hash": "b1716a98b9",
+      "mt": true
+    },
+    "steps.food-network.text": {
+      "hash": "1a210487d7",
+      "mt": true
+    },
+    "steps.food-network.why": {
+      "hash": "afeea7b9e6",
+      "mt": true
+    },
+    "steps.hurr-kit.text": {
+      "hash": "abb101e569",
+      "mt": true
+    },
+    "steps.hurr-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.hurr-shelter.text": {
+      "hash": "0080b18c75",
+      "mt": true
+    },
+    "steps.hurr-shelter.why": {
+      "hash": "8c25c7204e",
+      "mt": true
+    },
+    "steps.typh-kit.text": {
+      "hash": "e0d8db76d7",
+      "mt": true
+    },
+    "steps.typh-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.typh-boats.text": {
+      "hash": "1c150d1989",
+      "mt": true
+    },
+    "steps.typh-boats.why": {
+      "hash": "7685454866",
+      "mt": true
+    },
+    "steps.cyc-kit.text": {
+      "hash": "06cfb88fea",
+      "mt": true
+    },
+    "steps.cyc-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.cyc-roof.text": {
+      "hash": "843534fe8b",
+      "mt": true
+    },
+    "steps.cyc-roof.why": {
+      "hash": "1698e07fd3",
+      "mt": true
+    },
+    "steps.cycmoz-plan.text": {
+      "hash": "453be0b4c3",
+      "mt": true
+    },
+    "steps.cycmoz-plan.why": {
+      "hash": "8b54522f29",
+      "mt": true
+    },
+    "steps.cycshift-plan.text": {
+      "hash": "fa3a23ca92",
+      "mt": true
+    },
+    "steps.cycshift-plan.why": {
+      "hash": "14e389b1f4",
+      "mt": true
+    },
+    "steps.storm-trees.text": {
+      "hash": "a50a64282b",
+      "mt": true
+    },
+    "steps.storm-trees.why": {
+      "hash": "7f76a6e49b",
+      "mt": true
+    },
+    "steps.seas-move.text": {
+      "hash": "f9efa47d57",
+      "mt": true
+    },
+    "steps.seas-move.why": {
+      "hash": "16b8257dd2",
+      "mt": true
+    },
+    "steps.salt-store.text": {
+      "hash": "705f4bb501",
+      "mt": true
+    },
+    "steps.salt-store.why": {
+      "hash": "f474f7234a",
+      "mt": true
+    },
+    "steps.frost-cover.text": {
+      "hash": "fddb786ef9",
+      "mt": true
+    },
+    "steps.frost-cover.why": {
+      "hash": "a66dfb5b64",
+      "mt": true
+    },
+    "steps.snow-water.text": {
+      "hash": "239ff8da8f",
+      "mt": true
+    },
+    "steps.snow-water.why": {
+      "hash": "4052afb178",
+      "mt": true
+    },
+    "steps.snow-kit.text": {
+      "hash": "65b18bfdf2",
+      "mt": true
+    },
+    "steps.snow-kit.why": {
+      "hash": "9dfbd15d6e",
+      "mt": true
+    },
+    "steps.cold-heat.text": {
+      "hash": "06bebacb8c",
+      "mt": true
+    },
+    "steps.cold-heat.why": {
+      "hash": "ed28f5f75b",
+      "mt": true
+    },
+    "steps.spring-melt.text": {
+      "hash": "18dfb3fec4",
+      "mt": true
+    },
+    "steps.spring-melt.why": {
+      "hash": "3d6e5eac2c",
+      "mt": true
+    },
+    "steps.mild-pests.text": {
+      "hash": "f683aa8e7a",
+      "mt": true
+    },
+    "steps.mild-pests.why": {
+      "hash": "42fbbbc954",
+      "mt": true
+    },
+    "steps.cool-crop.text": {
+      "hash": "e5a2841e3a",
+      "mt": true
+    },
+    "steps.cool-crop.why": {
+      "hash": "c4a9f0876a",
+      "mt": true
+    },
+    "steps.always-official.text": {
+      "hash": "85bd687447",
+      "mt": true
+    },
+    "steps.always-official.why": {
+      "hash": "631bc4f8c3",
+      "mt": true
+    },
+    "steps.always-share.text": {
+      "hash": "c83543ac1d",
+      "mt": true
+    },
+    "steps.always-share.why": {
+      "hash": "4136cba5a9",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.name": {
+      "hash": "4bd8e5d024",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.el_nino_note": {
+      "hash": "c50a49a276",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.la_nina_note": {
+      "hash": "37d2bc4dc0",
+      "mt": true
+    },
+    "regions.northern-south-america.name": {
+      "hash": "6333997449",
+      "mt": true
+    },
+    "regions.northern-south-america.el_nino_note": {
+      "hash": "3a0e6957a2",
+      "mt": true
+    },
+    "regions.northern-south-america.la_nina_note": {
+      "hash": "d9a7fcb72e",
+      "mt": true
+    },
+    "regions.northeast-brazil.name": {
+      "hash": "f2a6cc9026",
+      "mt": true
+    },
+    "regions.northeast-brazil.el_nino_note": {
+      "hash": "f8f7bdee40",
+      "mt": true
+    },
+    "regions.northeast-brazil.la_nina_note": {
+      "hash": "bd8f72d8e9",
+      "mt": true
+    },
+    "regions.southeast-south-america.name": {
+      "hash": "cbd7b587f1",
+      "mt": true
+    },
+    "regions.southeast-south-america.el_nino_note": {
+      "hash": "0da09b128b",
+      "mt": true
+    },
+    "regions.southeast-south-america.la_nina_note": {
+      "hash": "4422f8cc1b",
+      "mt": true
+    },
+    "regions.central-chile.name": {
+      "hash": "25794eff22",
+      "mt": true
+    },
+    "regions.central-chile.el_nino_note": {
+      "hash": "05faac8e70",
+      "mt": true
+    },
+    "regions.central-chile.la_nina_note": {
+      "hash": "ed86c85956",
+      "mt": true
+    },
+    "regions.altiplano.name": {
+      "hash": "5bb47c010f",
+      "mt": true
+    },
+    "regions.altiplano.el_nino_note": {
+      "hash": "965e4efaec",
+      "mt": true
+    },
+    "regions.altiplano.la_nina_note": {
+      "hash": "a71addf244",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.name": {
+      "hash": "7381e00bbe",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.el_nino_note": {
+      "hash": "549733f1b0",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.la_nina_note": {
+      "hash": "7178467c40",
+      "mt": true
+    },
+    "regions.caribbean.name": {
+      "hash": "c6b0b3422f",
+      "mt": true
+    },
+    "regions.caribbean.el_nino_note": {
+      "hash": "d1bb4967b6",
+      "mt": true
+    },
+    "regions.caribbean.la_nina_note": {
+      "hash": "4841a41403",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.name": {
+      "hash": "b53b5d0b6d",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.el_nino_note": {
+      "hash": "fb9f274218",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.la_nina_note": {
+      "hash": "5709973657",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.name": {
+      "hash": "a7a6e7b2cc",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.el_nino_note": {
+      "hash": "2a8c5508d0",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.la_nina_note": {
+      "hash": "16e4a82b1f",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.name": {
+      "hash": "27476331e0",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.el_nino_note": {
+      "hash": "d8bda1dbec",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.la_nina_note": {
+      "hash": "3354e1a47b",
+      "mt": true
+    },
+    "regions.alaska.name": {
+      "hash": "7288f7f860",
+      "mt": true
+    },
+    "regions.alaska.el_nino_note": {
+      "hash": "b6f41aabb5",
+      "mt": true
+    },
+    "regions.alaska.la_nina_note": {
+      "hash": "4cd5e58eee",
+      "mt": true
+    },
+    "regions.hawaii.name": {
+      "hash": "a1be950918",
+      "mt": true
+    },
+    "regions.hawaii.el_nino_note": {
+      "hash": "bc350f8d9d",
+      "mt": true
+    },
+    "regions.hawaii.la_nina_note": {
+      "hash": "1d84e19499",
+      "mt": true
+    },
+    "regions.india-monsoon.name": {
+      "hash": "b2afc38c08",
+      "mt": true
+    },
+    "regions.india-monsoon.el_nino_note": {
+      "hash": "403b5597d1",
+      "mt": true
+    },
+    "regions.india-monsoon.la_nina_note": {
+      "hash": "0a32e2bcee",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.name": {
+      "hash": "51fe1e478f",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.el_nino_note": {
+      "hash": "01960dff7f",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.la_nina_note": {
+      "hash": "f702ef58b1",
+      "mt": true
+    },
+    "regions.maritime-continent.name": {
+      "hash": "ca14e7da76",
+      "mt": true
+    },
+    "regions.maritime-continent.el_nino_note": {
+      "hash": "8d26f3fb46",
+      "mt": true
+    },
+    "regions.maritime-continent.la_nina_note": {
+      "hash": "911f9aec08",
+      "mt": true
+    },
+    "regions.philippines.name": {
+      "hash": "8067364d44",
+      "mt": true
+    },
+    "regions.philippines.el_nino_note": {
+      "hash": "ee1dc32389",
+      "mt": true
+    },
+    "regions.philippines.la_nina_note": {
+      "hash": "fc1111154b",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.name": {
+      "hash": "6a3956f353",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.el_nino_note": {
+      "hash": "4959fa9c1f",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.la_nina_note": {
+      "hash": "4fe7f9bda0",
+      "mt": true
+    },
+    "regions.southern-china.name": {
+      "hash": "03c3604f43",
+      "mt": true
+    },
+    "regions.southern-china.el_nino_note": {
+      "hash": "05e6c852d7",
+      "mt": true
+    },
+    "regions.southern-china.la_nina_note": {
+      "hash": "1f79a6bfb5",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.name": {
+      "hash": "ae5a1047e9",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.el_nino_note": {
+      "hash": "54499e2ceb",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.la_nina_note": {
+      "hash": "a0d1540b22",
+      "mt": true
+    },
+    "regions.png-melanesia.name": {
+      "hash": "b743088daf",
+      "mt": true
+    },
+    "regions.png-melanesia.el_nino_note": {
+      "hash": "3a8a4241a0",
+      "mt": true
+    },
+    "regions.png-melanesia.la_nina_note": {
+      "hash": "27814d6b01",
+      "mt": true
+    },
+    "regions.central-pacific-islands.name": {
+      "hash": "e5087944d4",
+      "mt": true
+    },
+    "regions.central-pacific-islands.el_nino_note": {
+      "hash": "900c08a2bc",
+      "mt": true
+    },
+    "regions.central-pacific-islands.la_nina_note": {
+      "hash": "7d172fd806",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.name": {
+      "hash": "f536239269",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.el_nino_note": {
+      "hash": "374944d38e",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.la_nina_note": {
+      "hash": "27884614f3",
+      "mt": true
+    },
+    "regions.eastern-australia.name": {
+      "hash": "a39e30eb85",
+      "mt": true
+    },
+    "regions.eastern-australia.el_nino_note": {
+      "hash": "3c82f83329",
+      "mt": true
+    },
+    "regions.eastern-australia.la_nina_note": {
+      "hash": "b756a0dc46",
+      "mt": true
+    },
+    "regions.southwest-australia.name": {
+      "hash": "8cac0639b4",
+      "mt": true
+    },
+    "regions.southwest-australia.el_nino_note": {
+      "hash": "b7e0636e8e",
+      "mt": true
+    },
+    "regions.southwest-australia.la_nina_note": {
+      "hash": "f702ef58b1",
+      "mt": true
+    },
+    "regions.new-zealand.name": {
+      "hash": "a2238e9190",
+      "mt": true
+    },
+    "regions.new-zealand.el_nino_note": {
+      "hash": "e8bb52268a",
+      "mt": true
+    },
+    "regions.new-zealand.la_nina_note": {
+      "hash": "49c4ddb4d3",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.name": {
+      "hash": "0161c8f37d",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.el_nino_note": {
+      "hash": "f826f8f4b4",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.la_nina_note": {
+      "hash": "2318693352",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.name": {
+      "hash": "bfacb56113",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.el_nino_note": {
+      "hash": "29a194abff",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.la_nina_note": {
+      "hash": "0923c2cd67",
+      "mt": true
+    },
+    "regions.southern-africa.name": {
+      "hash": "c5801c4163",
+      "mt": true
+    },
+    "regions.southern-africa.el_nino_note": {
+      "hash": "90f4372ae3",
+      "mt": true
+    },
+    "regions.southern-africa.la_nina_note": {
+      "hash": "83252a4623",
+      "mt": true
+    },
+    "regions.madagascar.name": {
+      "hash": "f92bcb6a06",
+      "mt": true
+    },
+    "regions.madagascar.el_nino_note": {
+      "hash": "941bfb0cb0",
+      "mt": true
+    },
+    "regions.madagascar.la_nina_note": {
+      "hash": "6a51e6a858",
+      "mt": true
+    },
+    "regions.sahel.name": {
+      "hash": "fae9b49155",
+      "mt": true
+    },
+    "regions.sahel.el_nino_note": {
+      "hash": "ee2057ff78",
+      "mt": true
+    },
+    "regions.sahel.la_nina_note": {
+      "hash": "6a51e6a858",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.name": {
+      "hash": "1162994886",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.el_nino_note": {
+      "hash": "8546988879",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.central-africa.name": {
+      "hash": "a5311b8b18",
+      "mt": true
+    },
+    "regions.central-africa.el_nino_note": {
+      "hash": "c0799e318b",
+      "mt": true
+    },
+    "regions.central-africa.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.southwest-asia.name": {
+      "hash": "75fcae0982",
+      "mt": true
+    },
+    "regions.southwest-asia.el_nino_note": {
+      "hash": "5eadcd5597",
+      "mt": true
+    },
+    "regions.southwest-asia.la_nina_note": {
+      "hash": "d9b952786b",
+      "mt": true
+    },
+    "regions.central-asia.name": {
+      "hash": "0da9e99790",
+      "mt": true
+    },
+    "regions.central-asia.el_nino_note": {
+      "hash": "74a493e1ed",
+      "mt": true
+    },
+    "regions.central-asia.la_nina_note": {
+      "hash": "0124095b6a",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.name": {
+      "hash": "542c282326",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.el_nino_note": {
+      "hash": "c0557c0759",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.europe.name": {
+      "hash": "576347ec82",
+      "mt": true
+    },
+    "regions.europe.el_nino_note": {
+      "hash": "5ece22c62c",
+      "mt": true
+    },
+    "regions.europe.la_nina_note": {
+      "hash": "88523cb182",
+      "mt": true
+    },
+    "regions.russia-siberia.name": {
+      "hash": "ba509ec436",
+      "mt": true
+    },
+    "regions.russia-siberia.el_nino_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.russia-siberia.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.canada-arctic.name": {
+      "hash": "691e7991f2",
+      "mt": true
+    },
+    "regions.canada-arctic.el_nino_note": {
+      "hash": "704f5c7927",
+      "mt": true
+    },
+    "regions.canada-arctic.la_nina_note": {
+      "hash": "7029325cfd",
+      "mt": true
+    },
+    "regions.southeast-brazil.name": {
+      "hash": "7cb69c82aa",
+      "mt": true
+    },
+    "regions.southeast-brazil.el_nino_note": {
+      "hash": "79eee3ad53",
+      "mt": true
+    },
+    "regions.southeast-brazil.la_nina_note": {
+      "hash": "1bf11cef54",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.name": {
+      "hash": "e42637f1ea",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.el_nino_note": {
+      "hash": "acef481eae",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.la_nina_note": {
+      "hash": "7f965fbd78",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.name": {
+      "hash": "b6be355f97",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.el_nino_note": {
+      "hash": "28194e1196",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.la_nina_note": {
+      "hash": "3dc296ee41",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.name": {
+      "hash": "8e85650118",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.el_nino_note": {
+      "hash": "f29aee1eff",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.la_nina_note": {
+      "hash": "1bf11cef54",
+      "mt": true
+    },
+    "regions.japan.name": {
+      "hash": "fcf29f6cad",
+      "mt": true
+    },
+    "regions.japan.el_nino_note": {
+      "hash": "d4e0ac6b10",
+      "mt": true
+    },
+    "regions.japan.la_nina_note": {
+      "hash": "7f59878da1",
+      "mt": true
+    },
+    "months": {
+      "hash": "5c7855da89",
+      "mt": true
+    }
+  }
+}

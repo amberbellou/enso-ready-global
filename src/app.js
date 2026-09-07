@@ -14,9 +14,12 @@ function ui(k, vars = {}) { const t = (state.strings.ui || {})[k] || k; return t
 function h(tag, attrs = {}, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "onclick") e.addEventListener("click", v); else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; }
 
 // --- language (template-first i18n; machine-translated languages carry a banner, Annex C.2.2) ---
+// Strings a language has not received yet fall back to English (never to a raw key name).
+function mergeStrings(en, lang) { const out = Array.isArray(en) ? (lang || en) : { ...en }; if (!Array.isArray(en)) for (const [k, v] of Object.entries(lang || {})) out[k] = (v && typeof v === "object" && !Array.isArray(v) && en[k] && typeof en[k] === "object") ? mergeStrings(en[k], v) : v; return out; }
+async function loadStrings(lang) { const en = state.data.en ||= await getJSON("i18n/en.json"); if (lang === "en") return en; const L = await getJSON(`i18n/${lang}.json`); return mergeStrings(en, L); }
 async function setLang(lang) {
   state.lang = lang; LS.set("lang", lang);
-  state.strings = await getJSON(`i18n/${lang}.json`);
+  state.strings = await loadStrings(lang);
   document.documentElement.lang = lang; document.documentElement.dir = state.strings._dir || "ltr";
   render();
 }
@@ -219,7 +222,7 @@ async function render() {
   const params0 = new URLSearchParams(location.search);
   const wanted = params0.get("lang") || LS.get("lang") || (navigator.language || "en").slice(0, 2);
   state.lang = state.data.langs.some(l => l.code === wanted) ? wanted : "en";
-  state.strings = await getJSON(`i18n/${state.lang}.json`);
+  state.strings = await loadStrings(state.lang);
   document.documentElement.lang = state.lang; document.documentElement.dir = state.strings._dir || "ltr";
   try { state.data.status = await getJSON("data/status.json"); } catch { state.data.status = null; }
   const params = new URLSearchParams(location.search);
