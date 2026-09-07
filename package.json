@@ -1,0 +1,13 @@
+{
+  "name": "enso-ready-global",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plain-language El Niño / La Niña personal impact briefings for any place on Earth, in your language.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "ingest:status": "node scripts/ingest-enso-status.js",
+    "test": "node --test tests/"
+  }
+}
