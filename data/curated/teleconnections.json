@@ -50,7 +50,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Typical El Niño Effects on Temperature and Precipitation (ENSO Cycle)",
+     "supports": "el_nino",
+     "quote": "Wetter than normal conditions tend to be observed during December-February (DJF) along coastal Ecuador, northwestern Peru ... warmer than normal conditions during June-August along the west coast of South America.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Typical La Niña Effects on Temperature and Precipitation (ENSO Cycle)",
+     "supports": "la_nina",
+     "quote": "Drier than normal conditions are generally observed along coastal Ecuador, northwestern Peru and equatorial eastern Africa during DJF ... cooler than normal conditions during June-August ... along the west coast of South America.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://adgeo.copernicus.org/articles/14/231/2008/adgeo-14-231-2008.pdf",
+     "publisher": "Advances in Geosciences (Copernicus), Lagos, Silva, Nickl and Mosquera 2008",
+     "title": "El Niño-related precipitation variability in Perú",
+     "supports": "el_nino",
+     "quote": "El Niño in Peru is characterized by above normal sea surface temperatures (SSTs) along the coast and heavy precipitation in the northern coastal desert. The warming and rains typically begin just after Christmas ... In the extreme northern coast, seasonal precipitation begins during El Niños around November and ends around March.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/one-forecaster%E2%80%99s-view-extreme-el-ni%C3%B1o-eastern-pacific",
+     "publisher": "NOAA Climate.gov ENSO Blog (Ken Takahashi, 24 Aug 2015)",
+     "title": "One forecaster's view on extreme El Niño in the eastern Pacific",
+     "supports": "el_nino",
+     "quote": "Piura, a city in the coastal desert in northern Peru, experienced annual rainfall amounts equivalent to the other 40 rainiest years combined! ... Especially in Peru, El Niño can lead to very different rainfall impacts depending on whether the warming occurs in the eastern (wetter) or central Pacific (drier).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/event-tracker/heavy-summer-rains-flood-peru",
+     "publisher": "NOAA Climate.gov Event Tracker (10 Mar 2017)",
+     "title": "Heavy summer rains flood Peru",
+     "supports": "el_nino",
+     "quote": "Water temperatures off the coast of South America, especially Peru and Ecuador, were well-above normal, exceeding 9°F in some locations. ... The Southern Hemisphere summer—December through March—is also roughly the rainy season for most of Peru—rains extend into April.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - NOAA CPC, Climate.gov and Lagos et al. (2008) all show much-wetter conditions along coastal Ecuador and northern Peru with warm coastal SSTs in the austral summer (rains start ~Nov/Dec, peak Jan-Mar, taper in April), with the caveat that the wet signal is strongest for eastern-Pacific/coastal El Niños and can be weak or even dry for central-Pacific events.",
+    "la_nina": "partly - CPC shows drier-than-normal DJF along coastal Ecuador/northwestern Peru, but because the coast is a desert that receives significant rain only in El Niño years the \"drier\" signal is essentially the absence of El Niño rains rather than a marked drought; the cooler signal on the CPC map is drawn for June-August along the west coast, not December-April.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño: keep \"much wetter, warmer, Dec-Apr\" but consider adding a note that the strong wet signal applies to eastern-Pacific/coastal El Niños; central-Pacific events can leave coastal Peru near-normal or drier (Climate.gov/Takahashi 2015). Temperature: CPC's typical-effects map places the warm anomaly along the west coast of South America in Jun-Aug, though coastal SSTs are also anomalously warm in Dec-Apr during coastal events. La Niña: change \"drier\" to \"drier (already arid; mainly absence of El Niño rains)\" and note that CPC's cooler-than-normal signal for the west coast is drawn for Jun-Aug rather than Dec-Apr; medium confidence is appropriate.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "northern-south-america",
@@ -97,7 +149,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Climate Prediction Center - El Niño Temperature and Precipitation Patterns",
+     "supports": "el_nino",
+     "quote": "Drier than normal conditions generally observed over northern South America, Central America and southern Africa during DJF, and over eastern Australia during JJA.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Climate Prediction Center - La Niña Patterns",
+     "supports": "la_nina",
+     "quote": "Wetter than normal conditions tend to be observed during December-February (DJF) over northern South America ... cooler than normal conditions during June-August ... across northern South America and portions of central America.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+     "publisher": "World Meteorological Organization",
+     "title": "WMO: Prepare for El Niño (2 June 2026)",
+     "supports": "el_nino",
+     "quote": "increased rainfall in parts of southern South America, the southern United States, parts of the Horn of Africa and central Asia, and drier conditions over Central America, northern South America, the Caribbean, Australia, Indonesia, and parts of southern Asia.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.nature.com/articles/s43017-020-0040-3",
+     "publisher": "Nature Reviews Earth & Environment (Cai et al. 2020, vol. 1, 215-231)",
+     "title": "Climate impacts of the El Niño–Southern Oscillation on South America",
+     "supports": "el_nino",
+     "quote": "El Niño is typically accompanied by drought in the Amazon and north-eastern SA, but flooding in the tropical west coast and south-eastern SA",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/assessments/assess_97/samer.html",
+     "publisher": "NOAA Climate Prediction Center (1997-98 warm episode assessment)",
+     "title": "South America",
+     "supports": "el_nino",
+     "quote": "During warm episodes, drier-than-normal conditions are generally observed across northeastern South America during July-March",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly - the drier signal is strongly and consistently supported (CPC, WMO, Cai et al. 2020), but the fetched sources anchor it to Dec-Feb (CPC) or Jul-Mar (CPC 1997 assessment / Ropelewski & Halpert), not Dec-May, and none of the fetched pages explicitly list northern South America as warmer (CPC's DJF warm list names southeastern Brazil, not the north), so the temperature entry rests on general Amazon-drought literature rather than a quoted teleconnection page.",
+    "la_nina": "agree - CPC's La Niña pattern page gives wetter-than-normal Dec-Feb over northern South America and lists no DJF temperature anomaly there (near normal is a fair reading), though it does add a cooler-than-normal signal for Jun-Aug across northern South America that the row omits; only one fetched authoritative source covers this phase, so medium confidence is appropriate.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño season: change \"Dec-May\" to \"Dec-Feb (core); dry signal often begins Jul-Sep\" - CPC's teleconnection page places the northern South America dry signal in DJF and the CPC 1997 assessment (following Ropelewski & Halpert 1987) gives Jul-Mar for northeastern South America; no fetched source extends the signal to May. El Niño temp: keep \"warmer\" but note it is not on CPC's DJF warm-anomaly list for northern South America (rain signal is the robust one). La Niña temp: change \"near normal\" to \"near normal (Dec-Feb); cooler Jun-Aug\" per CPC's La Niña page.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "northeast-brazil",
@@ -138,7 +242,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/research_papers/ncep_cpc_atlas/9/atlas9.htm",
+     "publisher": "NOAA Climate Prediction Center (NCEP/CPC Atlas No. 9)",
+     "title": "Linkage between ENSO and precipitation in Brazil",
+     "supports": "el_nino",
+     "quote": "During the southern hemisphere warm season (JFM), the El Niño episodes feature enhanced precipitation in northwestern and southeastern Brazil and reduced rainfall in northeastern Brazil.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/assessments/assess_97/samer.html",
+     "publisher": "NOAA Climate Prediction Center (Climate Assessment for 1997, South America section)",
+     "title": "South America",
+     "supports": "el_nino",
+     "quote": "During warm episodes, drier-than-normal conditions are generally observed across northeastern South America during July-March (Ropelewski and Halpert 1987).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0187-62362002000200003",
+     "publisher": "Atmósfera (UNAM), vol. 15 no. 2, 2002 – De Souza & Ambrizzi",
+     "title": "ENSO impacts on the South American rainfall during 1980s: Hadley and Walker circulation",
+     "supports": "both",
+     "quote": "El Niño: \"caused drought conditions in the rainy seasons of the Guyana, Surinam, French Guiana, center-east of the Amazon and most of the Northeast Brazil\". La Niña: \"the Guyana, the Amazon and the Brazilian Northeast regions exhibit significant positive deviations of precipitation in the periods of DJF and MAM\".",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013GL058703",
+     "publisher": "Geophysical Research Letters (AGU), 41, 1012-1018, 2014 – Rodrigues & McPhaden (abstract retrieved via Crossref record for DOI 10.1002/2013GL058703)",
+     "title": "Why did the 2011–2012 La Niña cause a severe drought in the Brazilian Northeast?",
+     "supports": "la_nina",
+     "quote": "The Brazilian Northeast (NE) is strongly affected by El Niño–Southern Oscillation (ENSO). During La Niña events, the precipitation over the NE is generally above average. However, during the last La Niña event in 2011–2012, the NE went through its worst drought in the last 30 years.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://acct.metoffice.gov.uk/research/climate/seasonal-to-decadal/long-range/north-east-brazil-rainfall",
+     "publisher": "UK Met Office",
+     "title": "North-east Brazil rainfall",
+     "supports": "both",
+     "quote": "The wet season is between February and May with considerable year-to-year and decade-to-decade variability.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree (rain and season); temperature unsupported — NOAA CPC and Ropelewski & Halpert-based sources consistently show reduced rainfall in Northeast Brazil during El Niño in the JFM / DJF-MAM rainy season, but none of the fetched sources documents a warmer-than-normal temperature signal for the Nordeste specifically (CPC's warm-episode temperature composites name southeastern Brazil, not the Northeast).",
+    "la_nina": "agree, with a documented exception — La Niña rainfall over the Nordeste is \"generally above average\" in DJF-MAM (De Souza & Ambrizzi 2002; Rodrigues & McPhaden 2014), but Central-Pacific-type La Niñas can flip the tropical Atlantic SST gradient and produce drought (2011-12 was the worst in 30 years), which justifies keeping confidence at medium rather than high.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Rain and season wording are fine (Feb-May matches the Met Office definition of the wet season and the JFM/DJF-MAM windows in the NOAA/peer-reviewed sources; the CPC composite actually shows dryness extending Jul-Mar, so Feb-May is a conservative core). Two refinements: (1) El Niño temp \"warmer\" has no direct published support for the Nordeste in the fetched sources — either downgrade the temperature element to low confidence or reword to \"warmer (indirect: reduced cloud/rain)\"; (2) add a La Niña caveat such as \"wetter (not guaranteed: Central-Pacific-type La Niñas, e.g. 2011-12, can bring drought)\", since the sign of the NE rainfall anomaly depends on the tropical Atlantic SST gradient set up by the La Niña flavour.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southeast-south-america",
@@ -183,7 +339,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/warm_impacts.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Typical Impacts of Warm (El Niño) Episodes",
+     "supports": "el_nino",
+     "quote": "Wetter than normal conditions during warm episodes are observed along the west coast of tropical South America, and at subtropical latitudes of North America (Gulf Coast) and South America (southern Brazil to central Argentina).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/lanina/cold_impacts.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Typical Impacts of Cold (La Niña) Episodes",
+     "supports": "la_nina",
+     "quote": "Drier than normal conditions during cold episodes are observed along the west coast of tropical South America, and at subtropical latitudes of North America (Gulf Coast) and South America (southern Brazil to central Argentina) during their respective winter seasons.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.nature.com/articles/s43017-020-0040-3",
+     "publisher": "Nature Reviews Earth & Environment (Cai et al. 2020)",
+     "title": "Climate impacts of the El Niño–Southern Oscillation on South America",
+     "supports": "el_nino",
+     "quote": "El Niño is typically accompanied by drought in the Amazon and north-eastern SA, but flooding in the tropical west coast and south-eastern SA, with marked socio-economic effects.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://public.wmo.int/media/news/la-nina-has-peaked-impacts-continue",
+     "publisher": "World Meteorological Organization",
+     "title": "La Niña has peaked, but impacts continue (9 Feb 2021)",
+     "supports": "la_nina",
+     "quote": "Much of this region has seen below normal rainfall over the last few months, with Uruguay, central Brazil and northern Argentina seeing significantly below normal rainfall totals.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+     "publisher": "World Meteorological Organization",
+     "title": "WMO: Prepare for El Niño (2 Jun 2026)",
+     "supports": "el_nino",
+     "quote": "It is typically associated with increased rainfall in parts of southern South America, the southern United States, parts of the Horn of Africa and central Asia...",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - NOAA CPC, WMO and the Cai et al. 2020 review all state wetter-than-normal conditions (with flood risk) from southern Brazil to central/northeastern Argentina and Uruguay during El Niño; none of the fetched sources give a temperature signal, consistent with \"near normal\".",
+    "la_nina": "partly - NOAA CPC lists drier-than-normal conditions from southern Brazil to central Argentina under La Niña and WMO documented significantly below-normal Oct-Dec 2020 rainfall in Uruguay and northern Argentina, but the CPC text frames the typical dry signal \"during their respective winter seasons\", so the fetched agency wording does not squarely support an Oct-Mar season for the La Niña phase.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Keep rain signs and \"near normal\" temperature; refine season. El Niño: \"wetter, strongest Oct-Dec (austral spring) and again Apr-Jun; weaker in mid-summer\" - the peer-reviewed literature (Grimm, Barros & Doyle 2000 J. Climate; Cai et al. 2020) places the SESA wet peak in spring/early summer with a secondary autumn-winter response, so a flat Oct-Mar overstates Jan-Mar. La Niña: \"drier, mainly Oct-Dec and winter (JJA); signal weaker and less consistent than El Niño\" - the CPC page explicitly ties the La Niña dry signal to the winter season, and La Niña teleconnections to SESA are known to be weaker/asymmetric, so lower the La Niña confidence to medium unless the season is widened.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "central-chile",
@@ -223,7 +431,59 @@
    },
    "sources": [
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/assessments/assess_97/samer.html",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Climate Assessment for 1997 - South America",
+     "supports": "el_nino",
+     "quote": "During warm episodes, drier-than-normal conditions are generally observed across northeastern South America during July-March, while enhanced precipitation tends to be observed throughout southeastern South America during November-February (Ropelewski and Halpert 1987), and throughout central Chile during the austral winter (Aceituno 1988).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/el-ni%C3%B1o-likely-what-climate-impacts-are-favored-summer",
+     "publisher": "NOAA Climate.gov (ENSO Blog, A. Barnston, 28 May 2015)",
+     "title": "With El Niño likely, what climate impacts are favored for this summer?",
+     "supports": "el_nino",
+     "quote": "Central Chile tends to be wetter than average, as does southeastern South America (e.g., eastern Argentina). [in the section 'Global El Niño Impacts during June-August']",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cr2.cl/analisis-cr2-la-nina-que-viene/",
+     "publisher": "Center for Climate and Resilience Research (CR)2, Universidad de Chile (Garreaud, Aceituno, Rondanelli, Martinez-Villalobos)",
+     "title": "Analisis CR2 | La Nina que viene...",
+     "supports": "both",
+     "quote": "los inviernos de años El Niño tienden a presentar lluvias sobre el promedio, mientras que inviernos durante la Niña tienden a ser deficitarias.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://repositorio.uchile.cl/handle/2250/126006",
+     "publisher": "Journal of Climate 16(2), 281-296 (2003), via Universidad de Chile repository",
+     "title": "Montecinos & Aceituno (2003): Seasonality of the ENSO-Related Rainfall Variability in Central Chile and Associated Circulation Anomalies",
+     "supports": "both",
+     "quote": "During El Niño episodes there is a tendency for the occurrence of above-average precipitation between 30° and 35°S in winter [June-July-August (JJA)] and from 35° to 38°S in late spring [October-November (ON)], while rainfall deficit is typically observed from around 38° to 41°S during the following summer [January-February-March (JFM)] ... Opposite rainfall anomalies are characteristic during La Niña events.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.dgac.gob.cl/fenomenos-el-nino-y-la-nina-proyeccion-otono-invierno/",
+     "publisher": "Direccion General de Aeronautica Civil / Direccion Meteorologica de Chile",
+     "title": "Fenomenos El Nino y La Nina: proyeccion otono-invierno (updated 9 Mar 2026)",
+     "supports": "el_nino",
+     "quote": "este fenómeno suele asociarse a mayores precipitaciones en la zona centro y centro-sur durante otoño e invierno, además de temperaturas mínimas ligeramente más altas",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - NOAA CPC, Climate.gov, the Chilean met service (DMC/DGAC) and the peer-reviewed literature all state that central Chile winters (JJA, rainy season May-Oct peaking Jun-Jul) tend to be wetter than average during El Niño; the signal is one of the most robust ENSO teleconnections in South America.",
+    "la_nina": "agree - CR2 (Garreaud/Aceituno et al.) and Montecinos & Aceituno (2003) state La Niña winters tend to have below-average rainfall in central Chile (\"opposite rainfall anomalies\"); the drying signal is real but somewhat less consistent than the El Niño wet signal, so medium confidence is appropriate.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Rain/season wording is essentially right but could be refined: the El Niño wet / La Niña dry signal is strongest for roughly 30-35S (Coquimbo to Maule, incl. Santiago) in JJA; the rainy season runs May-Oct, so \"May-Sep\" or \"Jun-Aug\" would match the published seasons slightly better than \"Jun-Sep\". Note the sign reverses toward the south: from ~38-41S (Araucania/Los Rios) El Niño tends to bring drier conditions in the following summer (JFM), so the row should be scoped to central Chile north of ~38S. For temperature, DMC/DGAC notes El Niño winters tend to have slightly higher minimum temperatures (milder winters), so \"near normal / slightly milder nights\" is more accurate than plain \"near normal\" for El Niño.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "altiplano",
@@ -265,7 +525,43 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cr2.cl/eng/analysis-the-chilean-altiplano-when-it-rains-it-pours/",
+     "publisher": "Center for Climate and Resilience Research (CR2), Universidad de Chile - analysis by René Garreaud",
+     "title": "Analysis | The Chilean Altiplano: When it rains, it pours",
+     "supports": "both",
+     "quote": "years with more prevailing easterly winds – which tend to occur during La Niña conditions – favour precipitation in the Altiplano. In contrast, in years where westerlies are more prevalent – which tends to happen with El Niño – precipitation in the Altiplano is reduced.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://nhess.copernicus.org/articles/21/995/2021/",
+     "publisher": "Natural Hazards and Earth System Sciences (Copernicus / EGU) - Canedo-Rosso et al. 2021",
+     "title": "Drought impact in the Bolivian Altiplano agriculture associated with the El Niño–Southern Oscillation using satellite imagery data",
+     "supports": "both",
+     "quote": "The positive phase of ENSO is generally associated with warmer and dryer conditions, while the negative phase is associated with cooling and wetter conditions.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.grida.no/resources/12828",
+     "publisher": "UNEP/GRID-Arendal",
+     "title": "The effect of El Niño on weather in the Andes",
+     "supports": "both",
+     "quote": "areas above 2,000 m receive less rain and experience higher temperatures than normal ... During La Niña years ... the opposite generally occurs",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - Garreaud (CR2), Canedo-Rosso et al. 2021 (NHESS) and GRID-Arendal all state that El Niño brings reduced summer (DJF, the ~70%-of-annual-rain monsoon season) precipitation and warmer conditions to the Altiplano via strengthened westerlies and tropospheric warming, though the literature notes that not every El Niño produces drought and the signal is strongest over the western/southern Altiplano.",
+    "la_nina": "agree - the same sources describe La Niña as the wet phase (easterlies favour Altiplano summer rainfall) with cooler conditions; the sign is consistent across sources, but the wet response is less robust than the El Niño dry response and weakens toward the eastern Andean slopes near the Amazon.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Rain/temp/season wording is supported as written (El Niño drier and warmer, La Niña wetter and cooler, Dec-Mar wet season). Suggest raising La Niña confidence from low to medium, since Garreaud (CR2) and Canedo-Rosso et al. (NHESS 2021) both state the wet/cool La Niña association explicitly. Optionally add a qualifier: \"signal strongest in the western and southern Altiplano (Lake Titicaca-Poopó basin, Chilean/Bolivian plateau); weaker and less consistent on the eastern slopes; not every El Niño produces drought.\"",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "central-america-dry-corridor",
@@ -316,7 +612,51 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+     "publisher": "World Meteorological Organization",
+     "title": "WMO: Prepare for El Niño (2 June 2026)",
+     "supports": "el_nino",
+     "quote": "...it is typically associated with increased rainfall in parts of southern South America, the southern United States, parts of the Horn of Africa and central Asia, and drier conditions over Central America, northern South America, the Caribbean, Australia, Indonesia, and parts of southern Asia. [...] The Central America region expects drier and warmer conditions according to the Central America Climate Outlook Forum.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/media/news/wmo-steps-action-la-nina",
+     "publisher": "World Meteorological Organization",
+     "title": "WMO steps up action on La Niña (23 December 2020)",
+     "supports": "la_nina",
+     "quote": "Meanwhile, wetter than average conditions are forecast across Australia, especially along the east coast, where there has recently been severe flooding. The western equatorial Pacific and Central America are also more likely to see above average rainfall.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.imn.ac.cr/en/enos",
+     "publisher": "Instituto Meteorológico Nacional de Costa Rica (national met service)",
+     "title": "ENSO - IMN",
+     "supports": "el_nino",
+     "quote": "When the Intertropical Convergence Zone is located in the South of Central America, and over South America, under the ENSO warm phase alters rainfall in a large part of Central America, decreasing in the Pacific regions, on the other hand in the Caribbean heaviest rains occur that the climatological average.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://fews.net/latin-america-and-caribbean/special-report/july-2014",
+     "publisher": "FEWS NET (USAID / USGS / NOAA-supported)",
+     "title": "El Niño event likely to result in decreased rainfall in Central America and the Caribbean (9 July 2014)",
+     "supports": "el_nino",
+     "quote": "Strong precipitation decreases relative to average typically occur during El Niño events over Central America and the Caribbean. [...] maize crops are likely to be negatively affected during the final stages of crop development due to a prolonged canícula.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - WMO, FEWS NET and the Costa Rica IMN all describe El Niño as drier and warmer over Central America during the May-Dec rainy season (prolonged Jul-Aug canícula, weak Aug-Dec postrera), with the one refinement that the signal is strongest on the Pacific slope / Dry Corridor while the Caribbean slope of Costa Rica and Panama can be wetter than normal.",
+    "la_nina": "partly - WMO and the Central America Climate Outlook Forum support above-normal rainfall in Central America under La Niña (the Aug-Oct 2024 LXXV FCAC outlook, issued with La Niña developing, projected above-normal rain and a weaker/wetter canícula on the Pacific, North and Central regions of Nicaragua), but the fetched WMO sentence refers to a Jan-Mar outlook, the wet signal is weaker and less consistent than the El Niño dry signal, and the Caribbean side can be drier; near-normal temperature is not contradicted (WMO's Nov 2022 release only noted raised odds of above-normal temperatures in northern Central America).",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño: keep \"drier / warmer\" but qualify as \"drier on the Pacific slope and Dry Corridor (Guatemala, El Salvador, Honduras, Nicaragua, Pacific Costa Rica, southern Mexico); Caribbean slope of Costa Rica and Panama often wetter\", season \"May-Dec\" (WMO/FAO cite Jun-Dec; a prolonged Jul-Aug canícula and a weak Aug-Dec postrera are the hallmark impacts), because IMN and FEWS NET document the opposite-sign Caribbean response. La Niña: change \"wetter\" to \"wetter, mainly on the Pacific slope (weaker canícula, wetter Aug-Nov); signal weaker and less consistent than El Niño's and can persist into Dec-Mar\", because the WMO statement supporting the wet signal covers Jan-Mar and the regional forums place the wet response on the Pacific regions rather than region-wide.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "caribbean",
@@ -372,7 +712,43 @@
    "sources": [
     "cpc_impacts",
     "noaa_blog"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://rcc.cimh.edu.bb/glossary-of-terms/",
+     "publisher": "Caribbean Institute for Meteorology and Hydrology (CIMH) / Caribbean Regional Climate Centre (WMO RCC)",
+     "title": "Glossary of Terms – Caribbean Regional Climate Centre",
+     "supports": "both",
+     "quote": "El Niño conditions are a major driver of regional drought in the Caribbean and can further decrease the Atlantic Hurricane Season activity. Furthermore, El Niño conditions tend to also increase temperatures in the Caribbean for several months. [...] La Niña conditions tend to increase chances of extreme rainfall in the Caribbean and can increase the Atlantic Hurricane Season activity. Furthermore, La Niña conditions tend to also slightly decrease temperatures in the Caribbean for several months.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+     "publisher": "World Meteorological Organization (WMO)",
+     "title": "WMO: Prepare for El Niño (2 June 2026)",
+     "supports": "el_nino",
+     "quote": "El Niño is typically associated with increased rainfall in parts of southern South America, the southern United States, parts of the Horn of Africa and central Asia, and drier conditions over Central America, northern South America, the Caribbean, Australia, Indonesia, and parts of southern Asia.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://rcc.cimh.edu.bb/files/2022/01/caricofjfmamj.pdf",
+     "publisher": "Caribbean Climate Outlook Forum (CariCOF) / CIMH",
+     "title": "Caribbean Climate Outlook Newsletter, January to March 2022 (Brief Climate Outlook April to June 2022)",
+     "supports": "la_nina",
+     "quote": "Expected impacts on rainfall and temperatures: La Niña tilts the odds to more rainfall activity in JFM and AMJ, except in the northern Caribbean where it tilts the odds to less rainfall. [...] The ABC islands and the Windward Islands may end up drier than normal with the rest of the region predicted to be as wet or wetter than normal.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — the regional WMO climate centre (CIMH) calls El Niño a major driver of Caribbean drought with raised temperatures for several months, and WMO lists the Caribbean among regions with drier conditions; the sources do not pin the season to Jun-Nov exactly, but the drought signal is a wet-season (roughly Jun-Oct, strongest Aug-Oct) effect, with warmth and dryness often persisting into the following dry season (Dec-Apr).",
+    "la_nina": "partly — CIMH says La Niña raises the chance of extreme rainfall and more active hurricane seasons and slightly lowers temperatures, but CariCOF outlooks show the wetter signal is not region-wide: the northern/northwestern Caribbean (Bahamas, Cuba, Cayman), the ABC islands and sometimes the Windwards tilt drier, so \"wetter\" applies mainly to the central and eastern Caribbean, and \"near normal\" temperature is acceptable (sources say slightly cooler).",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño: keep \"drier / warmer, Jun-Nov\" but note that the drought signal is strongest in the late wet season (Aug-Oct) and that heat and dryness commonly persist into the following dry season (Dec-Apr); also suppressed Atlantic hurricane activity. La Niña: change \"wetter\" to \"wetter (mainly central and eastern Caribbean); northwestern Caribbean (Cuba, Bahamas, Cayman) and ABC islands can be drier\" and change temp to \"near normal to slightly cooler\"; add \"increased extreme-rainfall and hurricane risk\". Reason: CariCOF/CIMH outlooks show an opposite-sign La Niña rainfall response in the northern Caribbean and ABC islands, and CIMH describes La Niña temperatures as slightly decreased rather than unchanged.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southern-us-north-mexico",
@@ -416,7 +792,43 @@
    "sources": [
     "cpc_impacts",
     "noaa_blog"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/united-states-el-ni%C3%B1o-impacts-0",
+     "publisher": "NOAA Climate.gov (ENSO Blog)",
+     "title": "United States El Niño Impacts",
+     "supports": "el_nino",
+     "quote": "In general, El Niño-related temperature and precipitation impacts across the United States occur during the cold half of the year (October through March). The most reliable of these signals (the one that has been observed most frequently) is wetter-than-average conditions along the Gulf Coast from Texas to Florida during this 6-month period.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/enso-and-southwest-united-states-megadrought",
+     "publisher": "NOAA Climate.gov (ENSO Blog)",
+     "title": "ENSO and the southwest United States \"megadrought\"",
+     "supports": "both",
+     "quote": "El Niño is generally associated with cooler and wetter winters in the Southwest ... La Niña is linked to drier, warmer winters over the region.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/winner-or-bust-did-la-nina-shape-north-american-precipitation-winter",
+     "publisher": "NOAA Climate.gov (ENSO Blog)",
+     "title": "Winner or bust? Did La Niña shape North American precipitation this winter as expected?",
+     "supports": "la_nina",
+     "quote": "Storms are deflected toward the northern part of North America, keeping southern North America drier than average. ... most of the southern U.S. and northern Mexico were predicted to be and turned out to be drier than average",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — NOAA Climate.gov confirms wetter (and cooler) cold-season conditions across the southern tier, with the Gulf Coast Texas-to-Florida wet signal the most reliable ENSO signal in the U.S. (>80% of events), though the wet relationship is weaker and strength-dependent over California/the Southwest and the cooler-temperature signal is less robust than the rain signal.",
+    "la_nina": "agree — NOAA Climate.gov describes the typical La Niña winter as warmer- and drier-than-average across the southern tier of the United States and drier than average across northern Mexico, driven by the northward-shifted Pacific jet stream.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "Season is fine but NOAA frames the El Niño impact window as October-March (cold half of the year), so \"Oct-Mar\" would match the source more closely than \"Nov-Mar\". Consider a footnote that the El Niño wet signal is strongest along the Gulf Coast (Texas to Florida) and weaker/strength-dependent over California and the Southwest, and that the \"cooler\" temperature signal is less reliable than the \"wetter\" rain signal (NOAA's national impact page does not name a southern-US temperature signal at all; only regional pages describe it as cooler). Northern Mexico evidence from NOAA is for La Niña drier; the El Niño wetter/cooler statement for northern Mexico rests on secondary sources, so confidence for the Mexico part of the row is medium rather than high.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "us-pacific-northwest",
@@ -459,7 +871,67 @@
    "sources": [
     "cpc_impacts",
     "noaa_blog"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.weather.gov/otx/elnino",
+     "publisher": "NOAA National Weather Service, Spokane WA",
+     "title": "El Nino Pattern and Inland Northwest Snow Stats",
+     "supports": "el_nino",
+     "quote": "El Nino winters often bring warmer than normal temperatures and below normal snowfall. These impacts are largely due to the Pacific jet steam sending low pressure systems south of the region into California, and the polar jet stream keeping cold air bottled up across eastern Canada.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.weather.gov/otx/LaNina",
+     "publisher": "NOAA National Weather Service, Spokane WA",
+     "title": "La Nina Pattern and Inland Northwest Snow Stats",
+     "supports": "la_nina",
+     "quote": "La Nina winters often bring cooler than normal temperatures and above normal precipitation. This combination brings above normal snowfall for an average La Nina. These impacts are largely due to blocking high pressure that builds in the Eastern Pacific, resulting in a cooler northwest flow with the storm track aimed at the Pacific Northwest.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/united-states-el-ni%C3%B1o-impacts-0",
+     "publisher": "NOAA Climate.gov ENSO Blog",
+     "title": "United States El Niño Impacts",
+     "supports": "el_nino",
+     "quote": "there is a less-reliable dry signal in the Pacific Northwest and the northern Rockies",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climatehubs.usda.gov/hubs/northwest/topic/la-nina-northwest-what-can-we-expect",
+     "publisher": "USDA Northwest Climate Hub",
+     "title": "La Niña in the Northwest: What can we expect?",
+     "supports": "la_nina",
+     "quote": "In Idaho, Oregon, Washington, and most of Alaska, winter is usually cooler during La Niña events, and conditions can be wetter than normal",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/nawinter.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "ENSO Cycle: Typical North American Winter Impacts",
+     "supports": "el_nino",
+     "quote": "milder than normal winter across the northern states and western Canada",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/el-nino.html",
+     "publisher": "Environment and Climate Change Canada",
+     "title": "Weather: El Niño",
+     "supports": "el_nino",
+     "quote": "El Niño often brings milder weather to western, northwestern and central Canada. Canada is mostly affected by El Niño during winter and spring.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly: the warmer signal is robust and consistently stated by NWS, CPC and ECCC, but Climate.gov explicitly calls the Pacific Northwest dry signal \"less-reliable\" and NWS/UW frame the main precipitation impact as reduced snowfall/snowpack (more rain than snow) rather than a strong deficit in total precipitation.",
+    "la_nina": "agree: NWS Spokane and the USDA Northwest Climate Hub both state cooler-than-normal winters with above-normal precipitation and snowfall, driven by the storm track aimed at the Pacific Northwest; western Canada coverage is weaker (ECCC page fetched covers only El Niño), and USDA hedges the wet signal as \"can be wetter\".",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Keep Nov-Mar and \"warmer\" for El Niño, but soften \"drier\" to \"slightly drier / less snow\" (or note \"warmer; reduced mountain snowpack; weak dry signal\"), because Climate.gov describes the PNW dry signal as less reliable and the NWS/UW sources emphasize below-normal snowfall from warmth rather than a strong precipitation deficit. Temperature confidence for El Niño could be high while precipitation stays low; the combined row rating of medium is defensible. Climate.gov uses Oct-Mar as the impact window, so Nov-Mar is compatible.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "northern-us-southern-canada",
@@ -502,7 +974,51 @@
    "sources": [
     "cpc_impacts",
     "noaa_blog"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/nawinter.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "ENSO Cycle: North American winter impacts of El Niño and La Niña",
+     "supports": "both",
+     "quote": "This shift results in an exceptionally stormy winter and increased precipitation across California and the southern U.S, and less stormy conditions across the northern part of the country. ... These conditions result in a milder than normal winter across the northern states and western Canada. [La Niña:] large portions of central North America experience increased storminess, increased precipitation, and an increased frequency of significant cold-air outbreaks",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/featured-images/how-el-ni%C3%B1o-and-la-ni%C3%B1a-affect-winter-jet-stream-and-us-climate",
+     "publisher": "NOAA Climate.gov",
+     "title": "How El Niño and La Niña affect the winter jet stream and U.S. climate",
+     "supports": "both",
+     "quote": "Southern and interior Alaska and the Pacific Northwest tend to be cooler and wetter than average ... the Ohio and Upper Mississippi River Valleys may be wetter than usual. ... During El Niño, these deviations from the average are approximately (but not exactly) reversed.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.canada.ca/en/environment-climate-change/services/weather-general-tools-resources/el-nino.html",
+     "publisher": "Environment and Climate Change Canada",
+     "title": "Weather: El Niño",
+     "supports": "el_nino",
+     "quote": "El Niño often brings milder weather to western, northwestern and central Canada, while eastern Canada usually experiences lesser effects.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://climatedata.ca/news/get-climate-smart-el-nino/",
+     "publisher": "ClimateData.ca (ECCC / CRIM / Ouranos / PCIC)",
+     "title": "Get Climate Smart: El Niño",
+     "supports": "both",
+     "quote": "El Niño typically results in warmer and drier winters in northern US and Western Canada ... La Niña often brings a colder and snowier winter to western provinces, particularly British Columbia and the Prairies, and can lead to increased snowfall in parts of Ontario and Quebec",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly — the \"warmer, Dec-Feb\" signal is strongly supported (CPC, NWS, ECCC all say milder winters across the northern states and western Canada), but the published sources describe precipitation as \"less stormy\"/drier over the northern tier, Pacific Northwest, northern Rockies and western/southern Canada rather than \"near normal\", with the dry signal weak and unreliable east of the Rockies (Great Lakes/Northeast/eastern Canada).",
+    "la_nina": "agree — CPC describes increased storminess, increased precipitation and more frequent significant cold-air outbreaks over central North America, Climate.gov shows the Pacific Northwest cooler and wetter and the Ohio/Upper Mississippi valleys wetter, and Canadian sources describe colder, snowier winters in BC and the Prairies with more snow in parts of Ontario/Quebec; the signal is weakest in the Northeast and eastern Canada.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño rain: change \"near normal\" to \"near normal to drier\" (or \"drier in the west, near normal in the east\"). Reason: NOAA CPC says El Niño brings \"less stormy conditions across the northern part of the country\", Climate.gov notes a (less-reliable) dry signal in the Pacific Northwest and northern Rockies, and Canadian sources describe drier winters with less snow in western/southern Canada; the dry tendency fades toward the Great Lakes, Northeast and eastern Canada. Temperature \"warmer\" and season Dec-Feb are correct for both phases. La Niña wording is fine, but a note that the cool/wet signal is strongest in the Pacific Northwest, northern Rockies/Plains, Ohio Valley and western Canada and weak in the Northeast/eastern Canada would refine it.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "alaska",
@@ -541,7 +1057,51 @@
    },
    "sources": [
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/united-states-el-ni%C3%B1o-impacts-0",
+     "publisher": "NOAA Climate.gov (ENSO Blog, M. Halpert)",
+     "title": "United States El Niño Impacts",
+     "supports": "el_nino",
+     "quote": "However, winters are typically warmer than average over large parts of the state during El Nino years. ... There isn't a well defined precipitation signal over Alaska in any case.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/moose-tracks-through-alaska-and-enso",
+     "publisher": "NOAA Climate.gov (ENSO Blog, B. Brettschneider, 23 Jun 2022)",
+     "title": "Moose tracks through Alaska and ENSO",
+     "supports": "both",
+     "quote": "La Niña winters are typically cooler than average (22 out of 28 winters), El Niño winters are typically warmer than average (20 out of 30 winters) ... there is a strong inverse relationship between ENSO and winter precipitation in Alaska",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/featured-images/how-el-ni%C3%B1o-and-la-ni%C3%B1a-affect-winter-jet-stream-and-us-climate",
+     "publisher": "NOAA Climate.gov",
+     "title": "How El Niño and La Niña affect the winter jet stream and U.S. climate",
+     "supports": "la_nina",
+     "quote": "Southern and interior Alaska and the Pacific Northwest tend to be cooler and wetter than average [during La Niña winters].",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.weather.gov/fgz/Ella",
+     "publisher": "NOAA National Weather Service (Flagstaff, AZ)",
+     "title": "La Nina, El Nino and Northern Arizona Weather",
+     "supports": "both",
+     "quote": "Western Canada and Alaska along with portions of the Midwestern United States tend to enjoy a much warmer than normal winter as well. ... Western Canada and Alaska tend to experience a cooler than normal winter as well.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — NOAA sources consistently give warmer-than-average Alaska winters under El Niño (20 of 30 winters per Brettschneider), and precipitation is either undefined (Halpert) or slightly drier (Brettschneider), so \"near normal / warmer / Nov-Mar\" is well supported, with winter (DJF) being the core season.",
+    "la_nina": "partly — cooler winters are strongly supported (22 of 28 winters), but the precipitation entry is arguable: Climate.gov's jet-stream graphic and Brettschneider both describe La Niña Alaska winters as wetter, while the Halpert blog says there is no well-defined precipitation signal, so \"near normal\" is defensible but \"slightly wetter\" would match the more recent Alaska-specific analysis.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "Consider changing La Niña rain from \"near normal\" to \"near normal to wetter\" (Climate.gov: \"Southern and interior Alaska ... tend to be cooler and wetter than average\"; Brettschneider: \"strong inverse relationship between ENSO and winter precipitation\"), and optionally El Niño rain to \"near normal to drier\"; keep the precip wording hedged because Halpert states there is no well-defined precipitation signal over Alaska. Temperature signals are strongest in DJF; Nov-Mar is acceptable but note that the relationship weakens or reverses in spring and fall. La Niña temperature confidence could be raised to high (22 of 28 winters cooler).",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "hawaii",
@@ -581,7 +1141,51 @@
    },
    "sources": [
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/surf%E2%80%99s-how-does-enso-impact-hawaii",
+     "publisher": "NOAA Climate.gov (ENSO Blog, Nat Johnson, 26 May 2022)",
+     "title": "Surf's up: How does ENSO impact Hawaii?",
+     "supports": "both",
+     "quote": "El Niño is favorable for below-average rainfall in Hawai'i ... rainfall has been about 3 inches below average during El Niño ... That leads to an elevated likelihood of a wet winter during La Niña ... La Niñas have brought about an additional inch of rainfall above the long-term average",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificrisa.org/wp-content/uploads/2015/11/Pacific-Region-EL-NINO-Fact-Sheet_Hawaii_2015-FINAL.pdf",
+     "publisher": "NOAA Pacific ENSO Applications Climate (PEAC) Center / NWS Honolulu / Pacific RISA fact sheet (2015)",
+     "title": "El Niño and its Impacts on The Hawaiian Islands",
+     "supports": "el_nino",
+     "quote": "By November, a rapid decline in rainfall begins, sinking to well below average by February of the following year. The level of these dry conditions depends on the intensity of the El Niño event, though widespread dryness across the Hawai'ian Islands is typical.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.soest.hawaii.edu/MET/Hsco/publications/2020%20Hawaii%20El%20Nino.pdf",
+     "publisher": "Journal of Climate 33(22):9929-9948 (Lu, Chu, Kim & Karamperidou 2020, doi:10.1175/JCLI-D-19-0985.1)",
+     "title": "Hawaiian Regional Climate Variability during Two Types of El Niño",
+     "supports": "el_nino",
+     "quote": "As a result of this robust signal, dry conditions prevail in Hawaii ... The near-surface minimum temperature from three stations in Hawaii reveals cooling during EP winters and slight warming during CP winters.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.weather.gov/media/hfo/MediaAdvisory-2021-22HawaiiWetSeasonOutlook.pdf",
+     "publisher": "NOAA National Weather Service Honolulu (Media Advisory, 15 Oct 2021)",
+     "title": "Wet Season Rainfall Outlook for the State of Hawaii (October 2021 through April 2022)",
+     "supports": "la_nina",
+     "quote": "La Nina has returned and is expected to continue into spring 2022. Climate model consensus favors above average rainfall through the wet season. Stronger La Nina events can have a higher than normal trade wind frequency which will focus rainfall on windward areas.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly: the drier Nov-Apr wet-season signal is strongly and consistently supported (NOAA Climate.gov, PEAC/NWS Honolulu, Chu 1995 lineage, Lu et al. 2020), but no fetched official source states that El Niño makes Hawaii's air temperature warmer, and Lu et al. 2020 found station minimum temperatures cool during eastern-Pacific El Niño winters (only slight warming in central-Pacific events), so \"warmer\" is not supported.",
+    "la_nina": "agree, with a caveat: NOAA Climate.gov and NWS Honolulu wet-season outlooks describe an elevated likelihood of an above-average Nov-Apr wet season, but the signal is weaker than El Niño's (about +1 inch vs -3 inches at Honolulu), has weakened since 1983 (O'Connor et al. 2015 as cited in Lu et al. 2020), weak La Niña winters have had near-average rainfall (NWS Honolulu 2016), and stronger events focus rain on windward slopes while leeward areas can stay dry; \"near normal\" temperature is consistent with the absence of any documented temperature signal.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Change El Niño temp from \"warmer\" to \"near normal\" (or \"mixed/near normal\"): published evidence describes El Niño impacts on Hawaii as a rainfall (drier, Nov-Apr, strongest Jan-Feb) and ocean-temperature signal, not an air-temperature warming; Lu et al. 2020 found cooler minimum temperatures in EP El Niño winters. Keep rain \"drier\", season \"Nov-Apr\" (optionally note \"strongest Jan-Mar\" and that the preceding Aug-Oct of a developing El Niño tends to be wetter). El Niño rain confidence can be raised to high. For La Niña, consider \"wetter (weaker signal; windward-focused in strong events)\" and keep season Nov-Apr at medium confidence.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "india-monsoon",
@@ -629,7 +1233,43 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/enso-and-indian-monsoon%E2%80%A6-not-straightforward-you%E2%80%99d-think",
+     "publisher": "NOAA Climate.gov (ENSO Blog)",
+     "title": "ENSO and the Indian Monsoon… not as straightforward as you'd think (Tom Di Liberto, 1 July 2014)",
+     "supports": "both",
+     "quote": "El Niño generally suppresses monsoon rainfall ... During the 14 El Niño years, summer rains ranged from well below-average to average, and even above-average. ... during the 16 La Niña years, Indian summer rains were above or around average nearly every time.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "http://iridl.ldeo.columbia.edu/maproom/ENSO/Climate_Impacts/India_Rainfall.html",
+     "publisher": "IRI (Columbia University) Data Library Maproom",
+     "title": "ENSO and All-India Rainfall",
+     "supports": "both",
+     "quote": "ENSO has a profound impact on summer monsoonal rainfall across India as most major droughts are shown to occur during El Niño events. Conversely, above average rainfall is shown to occur during La Niña events.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://rcc.imdpune.gov.in/SASCOF/sascof34/SASCOF34_outlook_statement_JJAS2026.pdf",
+     "publisher": "South Asian Climate Outlook Forum (SASCOF-34), WMO RCC Pune / IMD",
+     "title": "SASCOF-34 Consensus Outlook Statement for the 2026 Southwest Monsoon Season (June–September)",
+     "supports": "el_nino",
+     "quote": "Below normal rainfall is most likely during the 2026 southwest monsoon season (June – September) over most parts of South Asia, particularly across the central parts of the region. ... minimum and maximum temperatures are expected to be above normal across most of South Asia.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree (partly on temperature): NOAA, IRI and the WMO-backed SASCOF-34 outlook all tie El Niño to below-normal Jun-Sep monsoon rain over South Asia, but NOAA stresses the link is imperfect (1997-98 strong El Niño gave above-average rain), SASCOF says the dry signal is strongest over the central region while north-western, north-eastern and parts of the southern region may be normal to above normal, and \"warmer\" rests only on the 2026 SASCOF outlook rather than a documented ENSO temperature teleconnection.",
+    "la_nina": "agree: NOAA (above or around average in nearly all 16 La Niña years) and IRI (above-average rainfall during La Niña events) support wetter Jun-Sep conditions for India; no fetched source addressed monsoon-season temperature under La Niña, so \"near normal\" is unverified but not contradicted, and evidence is India-centric rather than Pakistan/Nepal/Bangladesh-specific.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño rain: \"drier (strongest over central India / central South Asia; north-west Pakistan, north-east India/Bangladesh and parts of the south can be near or above normal; not every El Niño brings deficit)\". El Niño temp: \"warmer (low confidence; based on RCOF outlooks, not an established ENSO teleconnection)\". La Niña rain: \"wetter (India; weaker evidence for Pakistan, Nepal, Bangladesh)\". Reason: SASCOF-34 documents sub-regional exceptions and NOAA documents the 1997-98 counter-example; the temperature signal is not documented as a climatological teleconnection in any fetched source.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "sri-lanka-south-india",
@@ -668,7 +1308,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://journals.ametsoc.org/view/journals/clim/32/1/jcli-d-18-0034.1.pdf",
+     "publisher": "American Meteorological Society, Journal of Climate (Sengupta & Nigam 2018/2019; abstract retrieved via Semantic Scholar API record for DOI 10.1175/JCLI-D-18-0034.1)",
+     "title": "The Northeast Winter Monsoon over the Indian Subcontinent and Southeast Asia: Evolution, Interannual Variability, and Model Simulations",
+     "supports": "el_nino",
+     "quote": "El Niño–Southern Oscillation's (ENSO) impact on NEM rainfall is shown to be significant, leading to stronger NEM rainfall over southeastern peninsular India and Sri Lanka but diminished rainfall over Thailand, Vietnam, and the Philippines. The impact varies subseasonally, being weak in October and strong in November.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://hess.copernicus.org/articles/23/1905/2019/",
+     "publisher": "Hydrology and Earth System Sciences (Copernicus), De Silva & Hornberger 2019",
+     "title": "Identifying El Niño–Southern Oscillation influences on rainfall with classification models: implications for water resource management of Sri Lanka",
+     "supports": "el_nino",
+     "quote": "During El Niño events rainfall increases for the first 3 months of the Maha season (SIM: October–December) and decreases during the last 3 months (NEM: January–March).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://link.springer.com/article/10.1007/s00382-025-07590-2",
+     "publisher": "Climate Dynamics (Springer), Kajakokulan, Santoso & Zhao 2025; abstract retrieved via Semantic Scholar API record for the DOI",
+     "title": "Asymmetric response of Sri Lanka Northeast Monsoon rainfall to El Niño/La Niña",
+     "supports": "both",
+     "quote": "we found that Sri Lanka's winter rainfall response to El Niño/La Niña is asymmetric, with a significant response during El Niño. [...] This shift enhances cyclone over the BoB, resulting in enhanced moisture convergence and rainfall over Sri Lanka, with a magnitude that is weaker than that of the El Niño-induced PSAC.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.themorning.lk/articles/Zg2afUce0AImdy8SX6wS",
+     "publisher": "The Morning (Sri Lanka), quoting Sri Lanka Department of Meteorology duty meteorologist Malith Fernando, 2026",
+     "title": "El Niño: NOAA points to Oct.–Dec. impact",
+     "supports": "el_nino",
+     "quote": "A significant increase in rainfall may occur during October and November, followed by decreased rainfall from January to around April",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - peer-reviewed work (Sengupta & Nigam; De Silva & Hornberger; Zubair & Ropelewski 2006 cited but not fetched) and the Sri Lanka Department of Meteorology all indicate wetter Oct-Dec over Sri Lanka and southeastern peninsular India during El Niño, with the signal weak in October, strongest in November, and reversing to drier from roughly January onward; no source addressed temperature, so \"near normal\" is unverified but not contradicted.",
+    "la_nina": "partly - the only fetched La Niña evidence (Kajakokulan et al. 2025) finds the La Niña rainfall response over Sri Lanka is significantly weaker than the El Niño response (asymmetric), which supports a weak/near-normal entry at low confidence; unfetched secondary sources (IMD Chennai NEM reports, Prasanna et al. 2020) suggest pure La Niña years tend toward below-normal northeast-monsoon rain over Tamil Nadu, so a slight dry lean cannot be ruled out.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño rain: keep \"wetter\" but note the wet signal is concentrated in Oct-Nov (second inter-monsoon; weak in October, strongest in November) and tends to flip drier from about January, so Oct-Dec is the right window and Dec-Feb should not be extended. La Niña rain: \"near normal to slightly drier (weak, asymmetric signal)\" rather than plain \"near normal\", since the La Niña response is weaker than El Niño's and secondary sources lean dry for Tamil Nadu. Temperature \"near normal\" for both phases is unsupported by any fetched source (no evidence either way).",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "maritime-continent",
@@ -718,7 +1402,59 @@
     "cpc_impacts",
     "iri_impacts",
     "bom_enso"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/impacts/enso.html",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Typical Impacts of Warm (El Niño) and Cold (La Niña) Episodes",
+     "supports": "both",
+     "quote": "Warm episodes (both Dec-Feb and Jun-Aug): \"abnormally dry conditions over northern Australia, Indonesia and the Philippines\". Cold episodes (Dec-Feb): \"Wetter than normal conditions develop farther west over northern Australia and Indonesia\".",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.met.gov.my/en/pendidikan/fenomena-cuaca/",
+     "publisher": "Malaysian Meteorological Department (MetMalaysia)",
+     "title": "Weather Phenomena: El Niño and La Niña",
+     "supports": "both",
+     "quote": "\"rainfall in Sabah and Sarawak will be far below average during the Southwest monsoon (June-August) and Northeast monsoon (November-February)\"; \"unusually dry conditions in Malaysia, Indonesia, the Philippines and northern Australia during El Niño\"; La Niña: \"atmospheric surface pressure in the western equatorial Pacific region decreases, causing more active cloud formation and heavy rain\".",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.mss-int.sg/sea-rcc-network/long-range-forecasting/climate-indices/enso/enso-outlook",
+     "publisher": "Meteorological Service Singapore / ASEAN Regional Climate Centre",
+     "title": "ENSO Outlook",
+     "supports": "both",
+     "quote": "\"The typical impact of El Niño on Southeast Asia is drier-than-average rainfall conditions, including for much of the Maritime Continent during December to February\"; \"Warmer temperature conditions typically follow drier periods.\"; \"The opposite conditions for rainfall (and consequently temperature) are observed during La Niña years.\"",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/understanding-climate/el-nino-and-la-nina-frequently-asked-questions",
+     "publisher": "NOAA Climate.gov",
+     "title": "El Niño and La Niña: Frequently asked questions",
+     "supports": "both",
+     "quote": "El Niño: \"rainfall is below average over Indonesia and above average over the central or eastern Pacific.\" La Niña: \"Rainfall increases over Indonesia (where waters remain warm) and decreases over the central tropical Pacific (which is cool).\"",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.weather.gov.sg/climate-el-la/",
+     "publisher": "Meteorological Service Singapore",
+     "title": "El Niño/La Niña Status",
+     "supports": "both",
+     "quote": "\"During the Southwest Monsoon months from June to September the correlation of ENSO with rainfall over Singapore is strong\"",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - NOAA CPC, MetMalaysia, MSS/ASEAN RCC and Climate.gov all give below-average rainfall over Indonesia/Malaysia/Maritime Continent with warmer conditions following the dry spells; the drying spans the Jun-Aug dry season through the Nov-Feb northeast monsoon for Borneo and eastern Indonesia, while for Peninsular Malaysia and Singapore MetMalaysia and MSS place the reliable signal in the Jun-Sep southwest monsoon.",
+    "la_nina": "partly - wetter is well supported (CPC, MetMalaysia, MSS, Climate.gov), but CPC's schematic places the Indonesia wet anomaly in the Dec-Feb season rather than Jun-Dec, MSS states La Niña brings the opposite of El Niño in temperature too (i.e. slightly cooler, not near normal), and the sources treat the La Niña response as the weaker, less consistent mirror of El Niño.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño: keep \"much drier / warmer\" but widen the season to Jun-Feb (CPC shows dry Indonesia in both Jun-Aug and Dec-Feb; MetMalaysia gives Jun-Aug plus Nov-Feb for Sabah/Sarawak; MSS notes Dec-Feb drying across the Maritime Continent), noting the signal for Peninsular Malaysia/Singapore is concentrated in the Jun-Sep southwest monsoon. La Niña: \"wetter, slightly cooler\" (MSS: opposite conditions for rainfall and consequently temperature) with season Jun-Feb, since CPC places the wet anomaly in Dec-Feb; lower confidence to medium because the La Niña response is weaker and less consistent than El Niño's.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "philippines",
@@ -763,7 +1499,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://pagasa.dost.gov.ph/press-release/216",
+     "publisher": "DOST-PAGASA (Philippine national meteorological service)",
+     "title": "El Niño Advisory (09 June 2026)",
+     "supports": "el_nino",
+     "quote": "El Niño typically increases the likelihood of below-normal rainfall conditions across much of the country, raising the risk of dry spells and drought... above-normal rainfall conditions may still occur, particularly over the western sections of the Philippines during the Southwest Monsoon (i.e., Habagat) season.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pagasa.dost.gov.ph/press-release/95",
+     "publisher": "DOST-PAGASA",
+     "title": "Onset of La Niña / La Niña Advisory #1 (15 October 2021)",
+     "supports": "la_nina",
+     "quote": "Rainfall forecast from October 2021 to March 2022 suggests that most parts of the country will likely receive near to above normal rainfall conditions... could trigger floods, flashfloods and rain-induced landslides over susceptible areas, particularly in the eastern sections of the country.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pagasa.dost.gov.ph/press-release/195",
+     "publisher": "DOST-PAGASA",
+     "title": "La Niña Advisory #1 (04 December 2025)",
+     "supports": "la_nina",
+     "quote": "La Niña is usually associated with above-normal rainfall conditions across most areas of the country. ... Higher chances of above-normal rainfall in the December 2025 to February 2026 season are expected, which may cause floods, flashfloods, and rain-induced landslides.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://pubfiles.pagasa.dost.gov.ph/climps/climateforum/outlook.pdf",
+     "publisher": "DOST-PAGASA Climate Monitoring and Prediction Section",
+     "title": "Climate Outlook September 2026 – February 2027 (El Niño Advisory #3, issued 26 August 2026)",
+     "supports": "el_nino",
+     "quote": "A moderate to strong El Niño is present in the Tropical Pacific. ... November: Way-below-normal to below-normal rainfall conditions are expected across the country. ... Predominantly slightly warmer to warmer-than-usual surface air temperatures in most parts of the country.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidspjd09-1enso.pdf",
+     "publisher": "Philippine Journal of Development (PIDS), Hilario, de Guzman, Ortega, Hayman & Alexander, 2009",
+     "title": "El Niño Southern Oscillation in the Philippines: Impacts, Forecasts, and Risk Management",
+     "supports": "both",
+     "quote": "Figure 2 shows the general impact of drier conditions during warm events and wetter conditions during cool events and that the main impact of ENSO is in the fourth quarter of the year and the first quarter of the following year for the Philippines.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - PAGASA advisories and Hilario et al. (2009) confirm below-normal rainfall concentrated in Q4 and the following Q1 extending into the Mar-May dry season, with warmer-than-usual surface air temperatures in PAGASA's El Niño-season outlook; the one refinement is that western/north-central Philippines can be wetter than average in Jul-Sep (Habagat) during El Niño, which falls outside the row's Oct-May window and so does not contradict it.",
+    "la_nina": "agree - PAGASA states La Niña is \"usually associated with above-normal rainfall conditions across most areas of the country\" and its Oct-Mar outlooks call for near to above normal rainfall, strongest in the eastern sections; Hilario et al. (2009) place the main wet signal in Q4 and Q1. No published source found on La Niña temperature, so \"near normal\" temp stands unverified.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Optional refinement only: for La Niña rain consider \"wetter (near to above normal), strongest in eastern sections\" because PAGASA's Oct-Mar outlooks word it as \"near to above normal\" and single out eastern Philippines; for El Niño, a footnote that \"western sections may still be wetter than normal in Jun-Sep (southwest monsoon)\" would reflect PAGASA's standard caveat, though the Oct-May drier/warmer wording itself is correct.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "mainland-southeast-asia",
@@ -810,7 +1598,59 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://asmc.asean.org/asmc-el-nino/",
+     "publisher": "ASEAN Specialised Meteorological Centre (ASMC, WMO Regional Climate Centre network)",
+     "title": "Regional Climate - El Niño / La Niña",
+     "supports": "both",
+     "quote": "The typical impact of El Niño on Southeast Asia is drier-than-average rainfall conditions, including for much of the Maritime Continent during June – August. ... the impact of El Niño is typically stronger over the southern and eastern part of South East Asia during the months of Jun – Oct. ... In South East Asia, higher than normal rainfall tends to occur during a La Niña episode which may result in an increased occurrence of floods.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño-related global temperature and rainfall patterns",
+     "supports": "el_nino",
+     "quote": "warmer than normal conditions during December-February across southeastern Asia ... drier than normal conditions over northern Australia, Indonesia and the Philippines",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña-related global temperature and rainfall patterns",
+     "supports": "la_nina",
+     "quote": "During La Niña episodes rainfall is enhanced across the western equatorial Pacific, Indonesia and the Philippines ... cooler than normal conditions during June-August across India and southeastern Asia",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://weather.ou.edu/~spark/AMON/v2_n1/FORUM/Sukawat/home.html",
+     "publisher": "Thai Meteorological Department (Numerical Weather Prediction Office; hosted by Univ. of Oklahoma AMON forum)",
+     "title": "El Niño Impact on Thailand",
+     "supports": "el_nino",
+     "quote": "Statistical analysis shows that for Thailand El Niño results in higher than normal in temperature during winter, but shows no significant effect on rainfall amount.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.nationthailand.com/news/world/40037818",
+     "publisher": "The Nation (Thailand), quoting the Thai Meteorological Department",
+     "title": "Thailand may not feel full impact of La Niña this year",
+     "supports": "la_nina",
+     "quote": "La Niña will bring more rain to most parts of Thailand. However, apart from bringing temperatures down slightly across the country, La Niña has yet to bring the heavy rain as previously forecast.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly — \"warmer\" is well supported for Dec-Feb (NOAA CPC; Thai Met Dept winter-temperature finding), but \"drier\" is weaker and mistimed for the mainland: ASMC places the strongest El Niño drying in Jun-Oct over the southern/eastern (maritime) part of the region, CPC names only Indonesia/Philippines as drier, and the TMD analysis found no statistically significant rainfall signal for Thailand.",
+    "la_nina": "partly — \"wetter\" is supported by ASMC (higher-than-normal rainfall, more floods) and CPC (enhanced rainfall over Indonesia/Philippines), but the temperature entry \"near normal\" is contradicted: CPC lists \"cooler than normal conditions during June-August across India and southeastern Asia\" and TMD reports La Niña \"bringing temperatures down slightly across the country\".",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño: keep temp \"warmer\" but tie it to Dec-Feb (CPC: warmer DJF across southeastern Asia; TMD: winter temperature higher). Change rain from \"drier, Nov-May\" to \"slightly drier (weak/inconsistent signal on the mainland), mainly Jun-Oct monsoon season\" — ASMC states the drying is strongest over southern/eastern Southeast Asia in Jun-Oct, CPC's drier area is Indonesia/Philippines, and TMD found no significant El Niño rainfall effect for Thailand; consider lowering rain confidence to low while keeping temp at medium. La Niña: change temp from \"near normal\" to \"cooler (Jun-Aug)\" per CPC and TMD; keep rain \"wetter\" for the Jun-Nov wet season.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southern-china",
@@ -854,7 +1694,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.hko.gov.hk/en/lrf/enso/enso-impact.htm",
+     "publisher": "Hong Kong Observatory",
+     "title": "The impact of El Niño and La Niña on Hong Kong climate",
+     "supports": "both",
+     "quote": "In winter (Dec-Feb) and spring (Mar-May), El Niño affects the atmospheric circulation over the northern part of the South China Sea, bringing generally more rainfall to the coastal region compared to the ENSO-neutral state. ... During La Niña, the northeast monsoon over southern China is generally stronger in autumn (Sep-Nov) and winter (Dec-Feb), bringing lower temperature in Hong Kong",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/29623",
+     "publisher": "NOAA Institutional Repository (Zhang et al. 2016, Geophysical Research Letters 43, 11375-11382)",
+     "title": "Unraveling El Niño's impact on the East Asian Monsoon and Yangtze River summer flooding",
+     "supports": "el_nino",
+     "quote": "Strong El Niño events are followed by massive summer monsoon flooding over the Yangtze River basin (YRB), home to about a third of the population in China.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://impact.ornl.gov/en/publications/pacific-east-asian-teleconnection-how-does-enso-affect-east-asian/",
+     "publisher": "Oak Ridge National Laboratory publication record (Wang, Wu & Fu 2000, Journal of Climate 13, 1517-1536)",
+     "title": "Pacific-East Asian teleconnection: How does ENSO affect East Asian climate?",
+     "supports": "both",
+     "quote": "anomalously wet (dry) conditions along the East Asian polar front stretching from southern China northeastward to the east of Japan ... develop rapidly in late fall of the year when a strong warm or cold event matures ... persist until the following spring or early summer",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://html.rhhz.net/qxxb_en/html/20140224.htm",
+     "publisher": "Journal of Meteorological Research (Yuan, Li & Yang 2014)",
+     "title": "Decadal Anomalies of Winter Precipitation over Southern China in Association with El Niño and La Niña",
+     "supports": "both",
+     "quote": "El Niño is an important external forcing factor resulting in above-normal winter precipitation in southern China. ... the impact of La Niña on the winter precipitation in southern China has a decadal variability.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — HKO, Wang et al. 2000 and Zhang et al. 2016 together document wetter coastal South China in the El Niño winter and spring and enhanced Yangtze summer rainfall/flooding in the decay summer, so a Dec-Aug wet signal is supported, although the post-El Niño summer response is known to vary between events (Zhang et al. 2020, Frontiers) and HKO's reprint notes El Niño years tend to be warmer rather than near normal.",
+    "la_nina": "partly — the cooler signal is well supported (HKO: stronger northeast monsoon and lower temperatures in autumn and winter), but the drier signal is weak and inconsistent: Wang et al. 2000 give dry conditions along the polar front from southern China in cold events, while Yuan et al. 2014 find that since about 1980 La Niña winters in southern China have often been cold and wet, and HKO's reprint finds no symmetric dry response to La Niña.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño: keep rain \"wetter\" for Dec-Aug (wet winter/spring on the South China coast, wet Yangtze summer in the decay year) but consider temp \"warmer\" rather than \"near normal\" for the winter half, since HKO reports El Niño onset/following years tend to be warmer on the whole. La Niña: extend the cooler season to Sep-Feb (HKO cites a stronger northeast monsoon in both autumn and winter) and soften rain to \"drier (weak/inconsistent)\" because published work shows La Niña winters since ~1980 have often been cold and wet in southern China; low confidence is appropriate.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "northern-china-korea-japan",
@@ -897,7 +1781,59 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.data.jma.go.jp/cpd/data/elnino/learning/tenkou/nihon1.html",
+     "publisher": "Japan Meteorological Agency (JMA)",
+     "title": "エルニーニョ現象発生時の日本の天候の特徴 (Characteristics of Japan's weather during El Niño events), winter (Dec-Feb) statistics 1947/48-2020/21",
+     "supports": "el_nino",
+     "quote": "気温：西日本で並か高い傾向。降水量：東日本太平洋側、沖縄・奄美で多い傾向。 [Temperature: normal or high tendency in western Japan. Precipitation: tendency to be above normal on the Pacific side of eastern Japan and in Okinawa/Amami.]",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.data.jma.go.jp/cpd/data/elnino/learning/tenkou/nihon2.html",
+     "publisher": "Japan Meteorological Agency (JMA)",
+     "title": "ラニーニャ現象発生時の日本の天候の特徴 (Characteristics of Japan's weather during La Niña events), winter (Dec-Feb) statistics",
+     "supports": "la_nina",
+     "quote": "平均気温：なし。降水量：なし。 [Winter (Dec-Feb): Mean temperature: no (statistically significant) tendency. Precipitation: no tendency.]",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2023.1098517/full",
+     "publisher": "Frontiers in Earth Science (peer-reviewed review), Ma & Chen 2023",
+     "title": "Recent progress in understanding the interaction between ENSO and the East Asian winter monsoon: A review",
+     "supports": "both",
+     "quote": "El Niño is usually accompanied by a weakening of the EAWM, which advects warm and moist air to East Asia such as southern China, Japan, and Korea; reversed conditions are observed in the La Niña winters, but with smaller amplitudes",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://ds.data.jma.go.jp/tcc/tcc/library/jmspEAWM9/ENSO.pdf",
+     "publisher": "Japan Meteorological Agency / Tokyo Climate Center (Nakamigawa, 9th Joint Meeting on Seasonal Prediction of the East Asian Winter Monsoon, 2008)",
+     "title": "ENSO and its influence over East Asia",
+     "supports": "la_nina",
+     "quote": "For example, during La Niña event, below normal temperature tends to be observed over East Asia. La Niña events occurred in 2005/2006 and 2007/2008 winter and cold weather were observed in East Asia in both winters.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.koreaherald.com/article/10863060",
+     "publisher": "The Korea Herald, reporting a Korea Meteorological Administration (KMA) statement, 5 Sep 2026",
+     "title": "Warmer winter awaits S. Korea as El Nino expected to get stronger",
+     "supports": "el_nino",
+     "quote": "Korea has historically experienced warmer and wetter winters when El Nino is at its strongest, although other factors also influence the country's winter weather.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree: JMA's own Dec-Feb statistics, a KMA statement and a peer-reviewed review all give a weak-to-moderate warm tendency (weakened East Asian winter monsoon), but the warm signal is only \"normal or high\" in JMA's regional statistics and JMA/KMA show a wetter, not near-normal, tendency on the Pacific side of Japan, Okinawa and Korea.",
+    "la_nina": "partly: the strengthened-winter-monsoon cold tendency is documented by JMA (2008) and the Ma & Chen review, but with \"smaller amplitudes\" than El Niño, and JMA's current Dec-Feb statistics show no statistically significant temperature or precipitation tendency for any region of Japan; the cold signal is also strongest in southern East Asia and in the first winter of a La Niña event.",
+    "suggested_confidence": {
+     "el_nino": "low",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño rain: change \"near normal\" to \"near normal; wetter on Pacific side of Japan, Okinawa and Korea\" (JMA winter statistics show above-normal precipitation on the Pacific side of eastern Japan and Okinawa/Amami; KMA reports warmer and wetter winters). El Niño temp: keep \"warmer\" but note the signal is modest (JMA: \"normal or warmer\" in western Japan, strongest in the first half of winter and weaker when El Niño onsets late). La Niña temp: keep \"cooler\" but qualify as \"slightly cooler / weak and inconsistent\" because JMA finds no statistically significant Dec-Feb temperature or precipitation tendency in Japan, the review describes La Niña effects as of smaller amplitude than El Niño, and JMA's global map places the cold tendency over southern rather than northern East Asia. Season Dec-Feb is correct for both phases.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "png-melanesia",
@@ -943,7 +1879,43 @@
    "sources": [
     "bom_enso",
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/06/14_PACCSAP-PNG-11pp_WEB.pdf",
+     "publisher": "Pacific-Australia Climate Change Science and Adaptation Planning Program (Australian Bureau of Meteorology / CSIRO) with Papua New Guinea National Weather Service",
+     "title": "Current and future climate of Papua New Guinea (2015)",
+     "supports": "both",
+     "quote": "Generally in Papua New Guinea El Niño years are usually drier than normal while La Niña events are usually wetter. [...] The dry season at Port Moresby is cooler than normal in El Niño years and warmer than normal in La Niña years, while the wet season tends to be warmer and drier than normal during an El Niño event.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://content.vmgd.gov.vu/wp-content/uploads/2024/08/Current-and-future-climate-of-Vanuatu.pdf",
+     "publisher": "Vanuatu Meteorology and Geo-hazards Department with PACCSAP (Australian Bureau of Meteorology / CSIRO)",
+     "title": "Current and future climate of Vanuatu (2015)",
+     "supports": "both",
+     "quote": "In both Port Vila and Aneityum El Niño events tend to bring drier conditions as well as a late start to the wet season and cooler than normal dry seasons. The opposite occurs during La Niña events.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/09/Solomon-Islands.pdf",
+     "publisher": "Pacific Climate Change Science Program (Australian Bureau of Meteorology / CSIRO) with Solomon Islands Meteorological Service",
+     "title": "Climate Change in the Pacific, Volume 2: Country Reports, Chapter 13: Solomon Islands (2011)",
+     "supports": "both",
+     "quote": "El Niño events tend to bring drier conditions in the wet season through a delayed onset of the WPM, often until late January or February, and a weaker or displaced SPCZ and ITCZ. [...] During La Niña years wet season rainfall is usually above normal and temperatures are usually lower.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly: all three national/PACCSAP sources confirm El Niño is clearly drier (delayed monsoon onset, droughts) across PNG, Solomon Islands and Vanuatu, but the temperature sign is season-dependent - warmer only in the wet season (Nov-Apr), while the dry season (May-Oct) is explicitly cooler than normal in all three countries, so a blanket \"warmer\" over a Jun-Feb window is wrong for roughly half that window.",
+    "la_nina": "agree (with refinement): sources say La Niña years are usually wetter (PNG, Solomon Islands wet season, Vanuatu \"the opposite\"), with flooding and landslides; temperature is mixed rather than strictly near normal - cooler wet season (Solomon Islands) but warmer dry season (PNG, Vanuatu), which nets out to roughly \"near normal\" over a multi-season window.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño temp: change \"warmer\" to \"warmer in wet season (Nov-Apr), cooler in dry season (May-Oct)\" or simply \"mixed\" - PNG, Vanuatu and Solomon Islands sources all state El Niño dry seasons are cooler than normal (cooler surrounding ocean, reduced cloud only in wet season), and only wet-season temperatures are above normal. La Niña temp: \"near normal\" is acceptable but \"cooler wet season, warmer dry season\" is more faithful. Season: keep Jun-Feb for the rain impact if the intent is the drought window (dry season plus delayed monsoon onset \"often until late January or February\"), but note the statistically significant rainfall signal at Honiara/Santa Cruz is confined to the wet season (Nov-Apr); dry-season rainfall correlations with ENSO are not significant there, and only dry-season maximum temperature responds.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "central-pacific-islands",
@@ -995,7 +1967,51 @@
    "sources": [
     "bom_enso",
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/06/11_PCCSP_Kiribati_8pp.pdf",
+     "publisher": "Australian Bureau of Meteorology and CSIRO (Pacific Climate Change Science Program)",
+     "title": "Current and future climate of Kiribati",
+     "supports": "both",
+     "quote": "Across Kiribati, El Niño events tend to bring wetter, warmer conditions than normal. [...] Droughts can be very severe in Kiribati, and are usually associated with La Niña events. [...] The wet season usually lasts from around November to April.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/06/4_PCCSP_Tuvalu_8pp.pdf",
+     "publisher": "Australian Bureau of Meteorology and CSIRO (Pacific Climate Change Science Program)",
+     "title": "Current and future climate of Tuvalu",
+     "supports": "both",
+     "quote": "In Funafuti, El Niño events tend to bring wetter, warmer conditions than normal, while La Niña events usually bring drier, cooler than normal conditions. [...] a wet season from November to April and a dry season from May to October",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/06/6_PCCSP_Nauru_8pp.pdf",
+     "publisher": "Australian Bureau of Meteorology and CSIRO (Pacific Climate Change Science Program)",
+     "title": "Current and future climate of Nauru",
+     "supports": "both",
+     "quote": "In Nauru, El Niño events tend to bring warmer, wetter conditions than normal, while La Niña events are associated with a delayed onset of the wet season and drier than normal conditions, often resulting in an extended drought.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificrisa.org/wp-content/uploads/2015/11/Pacific-Region-EL-NINO-Fact-Sheet_RMI_2015-FINAL-v2.pdf",
+     "publisher": "NOAA Pacific ENSO Applications Climate (PEAC) Center / Pacific RISA",
+     "title": "El Niño and its Impacts on the Republic of the Marshall Islands",
+     "supports": "el_nino",
+     "quote": "El Niño poses the threat of major drought for the RMI. Rainfall during El Niño is greater than average during the first half of the year. After September, the monthly rainfall begins a steady decline, sinking to well below average during the first few months (January through May) of the year following El Niño.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly: the \"much wetter, warmer\" signal is well documented for Kiribati, Tuvalu and Nauru (BoM/CSIRO country profiles), but for the Marshall Islands PEAC shows the opposite sign within the row's Oct-Apr window, with rainfall declining after September and falling well below average from January to May of the year after El Niño, often producing severe drought.",
+    "la_nina": "agree: BoM/CSIRO profiles for Kiribati, Tuvalu and Nauru all tie La Niña to drier-than-normal conditions and severe or extended drought (Nauru also a delayed wet-season onset); the Tuvalu profile describes La Niña as cooler than normal rather than near normal, and the Marshall Islands are generally reported as near-normal rainfall under La Niña (PEAC bulletins, not fetched here), so the \"much drier\" label is strongest for the three equatorial nations.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "Season: change \"Oct-Apr\" to \"Nov-Apr\" (BoM/CSIRO give the wet season as November to April for Tarawa and Funafuti; note Kiritimati's wet season is Jan-Jun, so eastern Kiribati peaks later). El Niño: keep \"much wetter, warmer\" for Kiribati, Tuvalu and Nauru but footnote or split out the Marshall Islands, where rain is above average only in the first half of the El Niño year and drops well below average Jan-May of the following year (PEAC), i.e. drought rather than wet during the row's season; El Niño confidence can return to \"high\" if RMI is separated. La Niña temp: \"near normal to slightly cooler\" (Tuvalu profile says cooler than normal). La Niña rain: \"much drier\" holds for Kiribati/Tuvalu/Nauru; RMI is closer to near-normal.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southwest-pacific-islands",
@@ -1050,7 +2066,59 @@
    },
    "sources": [
     "bom_enso"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.met.gov.fj/media/climate_product_files/Fiji_Climate_Outlook_March_2026.pdf",
+     "publisher": "Fiji Meteorological Service",
+     "title": "Fiji Climate Outlook, March 2026 (Vol. 20, Issue 3) - El Niño Southern Oscillation (ENSO) section",
+     "supports": "both",
+     "quote": "El Niño events usually result in reduction of Fiji's rainfall. [...] It is the suppression of rainfall during the Cool/Dry Season (May to October) that is normally of most concern. [...] Usually La Niña results in wetter than normal conditions for Fiji, occasionally leading to flooding during the Warm/Wet Season (November to April).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/10/1.-Cooks-GH-Poster.pdf",
+     "publisher": "Cook Islands Meteorological Service / Pacific Climate Change Science Program (BoM-CSIRO)",
+     "title": "Climate, climate variability and change of Cook Islands",
+     "supports": "both",
+     "quote": "During La Niña events rainfall increases during the wet season (November to April), when the SPCZ lies northwest to southeast over the island group. During El Niño years the SPCZ moves more to the northeast of the Southern Cooks causing lower than normal rainfall, drought like conditions and stronger south-east trade winds.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificclimatechangescience.org/wp-content/uploads/2013/09/Fiji.pdf",
+     "publisher": "Australian Bureau of Meteorology and CSIRO, Pacific Climate Change Science Program",
+     "title": "Climate Change in the Pacific: Scientific Assessment and New Research, Volume 2: Country Reports, Chapter 5: Fiji Islands (section 5.5 Climate Variability)",
+     "supports": "both",
+     "quote": "In the wet season the impact of ENSO is very strong. In El Niño years Nadi Airport wet seasons are drier [...] and days are warmer. Much of this variability is driven by the SPCZ, which moves to the north-east, away from Fiji, during El Niño events. [...] The opposite changes tend to occur in La Niña years.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://meteo.nc/fr/actualites/el-nino-quels-impacts-pour-la-nouvelle-caledonie",
+     "publisher": "Météo-France Nouvelle-Calédonie",
+     "title": "El Niño : quels impacts pour la Nouvelle-Calédonie ? (19 June 2026)",
+     "supports": "el_nino",
+     "quote": "une diminution des précipitations entre septembre et avril (de l'ordre de – 20 % en moyenne) [...] des températures plus basses (– 0,5 °C en moyenne) entre mai et janvier, pendant la phase montante d'El Niño",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.pacificrisa.org/wp-content/uploads/2015/11/Pacific-Region-EL-NINO-Fact-Sheet_ASamoa_2015-FINAL-v2.pdf",
+     "publisher": "Pacific RISA / NOAA (East-West Center, University of Hawaii)",
+     "title": "El Niño and its Impacts on American Samoa (2015 fact sheet)",
+     "supports": "el_nino",
+     "quote": "Rainfall during the year of a strong El Niño starts out below normal in August and dryness continues through June of the year after El Niño. [...] With weak and moderate El Niño's rainfall can be above normal, however this response is not consistent.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - Fiji Met Service, Cook Islands Met Service, Météo-France NC, Tonga Met Service (via PINA, 22 Jun 2026) and the BoM/CSIRO PCCSP Fiji chapter all state El Niño brings below-normal rainfall via a north-eastward SPCZ shift, though the dry signal begins in the preceding May-Oct dry season (Fiji says that is the season of most concern) and the Samoa response is weaker/inconsistent for weak-moderate events.",
+    "la_nina": "agree - Fiji Met Service (\"wetter than normal ... flooding during the Warm/Wet Season (November to April)\") and Cook Islands Met Service (\"rainfall increases during the wet season (November to April)\") directly support wetter Nov-Apr; the PCCSP Fiji chapter says the opposite of the El Niño changes occurs in La Niña years; no fetched source gives a Samoa- or Tonga-specific La Niña statement.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño season: widen to \"May-Apr (dry-season onset May-Oct through wet season Nov-Apr)\" or add a note that the drying starts in the May-Oct dry season - Fiji Met Service says dry-season rainfall suppression is \"normally of most concern\" and Météo-France NC gives Sep-Apr (about -20%); Nov-Apr alone understates the exposure. El Niño temp: \"near normal\" is a simplification - PCCSP Fiji reports warmer days in the wet season at Nadi and cooler, drier dry seasons, and Météo-France NC reports about -0.5 °C during the El Niño ramp-up (May-Jan); consider \"mixed: cooler nights/dry season, warmer days in wet season\" or keep \"near normal\" with low confidence on temp. Regional caveat: the Samoa signal is weaker and inconsistent for weak-moderate El Niño (Pacific RISA fact sheet), because Samoa sits near the SPCZ pivot; consider flagging Samoa as lower confidence. La Niña Nov-Apr wetter is supported as written.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "eastern-australia",
@@ -1093,7 +2161,51 @@
    },
    "sources": [
     "bom_enso"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.bom.gov.au/climate/updates/articles/a008-el-nino-and-australia.shtml",
+     "publisher": "Australian Bureau of Meteorology",
+     "title": "What is El Niño and what might it mean for Australia?",
+     "supports": "el_nino",
+     "quote": "The shift in rainfall away from the western Pacific, associated with El Niño, means that Australian rainfall is usually reduced through winter–spring, particularly across the eastern and northern parts of the continent. Nine of the ten driest winter–spring periods on record for eastern Australia occurred during El Niño years.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.bom.gov.au/climate/updates/articles/a020.shtml",
+     "publisher": "Australian Bureau of Meteorology",
+     "title": "What is La Niña and how does it impact Australia?",
+     "supports": "la_nina",
+     "quote": "The increased rainfall and cloudiness in the western Pacific associated with La Niña usually means above-average winter–spring rainfall for Australia, particularly across the east and north. ... Unlike El Niño years, the impacts of La Niña often continue into the warm months.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/el-ni%C3%B1o-other-side-pacific-pond",
+     "publisher": "NOAA Climate.gov (ENSO Blog, Andrew Watkins, 24 Sep 2015)",
+     "title": "El Niño from the other side of the Pacific pond",
+     "supports": "el_nino",
+     "quote": "in Australia, it often brings the exact opposite: a dry winter and spring in the east, coupled with unusually warm to hot weather.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.bom.gov.au/resources/learn-and-explore/climate-knowledge-centre/climate-factors/el-nino-and-la-nina",
+     "publisher": "Australian Bureau of Meteorology",
+     "title": "El Niño and La Niña (Climate knowledge centre)",
+     "supports": "both",
+     "quote": "The greatest impact on Australia's weather is in winter and spring – and for La Niña, into summer.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly: drier and warmer for eastern/northern Australia is well supported, but BOM places the signal in winter–spring (Jun–Nov) and states the rainfall influence \"typically reduces around early summer\", so the Jun–Feb season is too long; also BOM notes warmer daytime maxima are strongest in southern Australia while winter–spring nights are often cooler (more frost) in the east, and northern-tropics rainfall is only reduced in the early wet season.",
+    "la_nina": "agree: BOM documents above-average winter–spring rainfall across the east and north that, unlike El Niño, continues into summer (Dec–Mar rainfall in eastern Australia ~20% above average), with cooler daytime maxima south of the tropics; the one refinement is that overnight minima tend to be warmer across northern and eastern Australia, so \"cooler\" applies to daytime temperatures.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "El Niño season should be \"Jun-Nov\" (winter–spring), not Jun-Feb: BOM says Australian rainfall is reduced \"through winter–spring\" and \"the influence on Australia's rainfall patterns typically reduces around early summer\"; consider temp wording \"warmer days\" (nights can be cooler/frostier in winter–spring in the east). La Niña Jun-Feb is fine (BOM: impacts \"continue into the warm months\"; Dec–Mar eastern rainfall 20% above average); consider \"cooler days\" since minima are warmer in the north and east.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southwest-australia",
@@ -1130,7 +2242,51 @@
    },
    "sources": [
     "bom_enso"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.bom.gov.au/climate/updates/articles/a008-el-nino-and-australia.shtml",
+     "publisher": "Australian Bureau of Meteorology",
+     "title": "What is El Niño and how does it impact Australia? (issued June 2014, updated March 2021)",
+     "supports": "el_nino",
+     "quote": "Australian rainfall is usually reduced through winter–spring, particularly across the eastern and northern parts of the continent. ... El Niño years tend to see warmer-than-average temperatures across most of southern Australia, particularly during the second half of the year.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.bom.gov.au/climate/updates/articles/a020.shtml",
+     "publisher": "Australian Bureau of Meteorology",
+     "title": "What is La Niña and how does it impact Australia? (issued August 2016)",
+     "supports": "la_nina",
+     "quote": "La Niña usually means above-average winter–spring rainfall for Australia, particularly across the east and north. ... La Niña years tend to see cooler than average maximum temperatures across most of mainland Australia south of the tropics, particularly during the second half of the year.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL118454",
+     "publisher": "Geophysical Research Letters (AGU/Wiley), van Rensch, McGregor & Gallant, 31 Dec 2025 (Vol. 53, Issue 1)",
+     "title": "The Extent of El Niño and La Niña Influence on Australian Rainfall",
+     "supports": "both",
+     "quote": "The reduction of rainfall during El Niño is comparatively limited; confined mainly to El Niño's developing phase and the southeast and northeast of Australia. ... El Niño can suppress rainfall for up to 5 months in localized coastal regions of northern and southwest Australia. ... A reduced chance of rainfall during El Niño is only expected in about 3–4 months of the year in winter-spring",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.watercorporation.com.au/about-us/latest-updates/august-2026/what-is-el-nino",
+     "publisher": "Water Corporation (Western Australia state water utility)",
+     "title": "What is El Niño and how does it affect WA?",
+     "supports": "el_nino",
+     "quote": "When El Niño occurs alongside a positive IOD or positive SAM, warmer and drier conditions become more likely, particularly across southern Western Australia.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly - BOM confirms warmer-than-average conditions across most of southern Australia in the second half of the year and reduced winter-spring rainfall, but BOM and van Rensch et al. (2026) both place the rainfall reduction mainly in eastern/northern and southeastern Australia, with only localized coastal drying in southwest WA; the Water Corporation notes the SW-WA drying signal becomes likely mainly when El Niño coincides with a positive IOD or positive SAM.",
+    "la_nina": "partly - \"near normal\" rain is defensible for southwest WA because BOM's above-average winter-spring rainfall statement is qualified to the east and north (and van Rensch shows La Niña wetting mainly eastern/northern Australia), but \"near normal\" temperature is contradicted by BOM, which states La Niña brings cooler-than-average maximum temperatures across most of mainland Australia south of the tropics in the second half of the year.",
+    "suggested_confidence": {
+     "el_nino": "low",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño: rain \"slightly drier (weak/localized in SW WA; clearer for southern SA/Vic; stronger when a positive IOD or SAM coincides)\", temp \"warmer days (spring emphasis)\", season Jun-Nov OK; keep rain confidence low but temperature signal is better supported (BOM: warmer across most of southern Australia in second half of year). La Niña: rain \"near normal to slightly wetter\" is fine, but change temp from \"near normal\" to \"cooler days\" (BOM: cooler-than-average maximum temperatures across most of mainland Australia south of the tropics, particularly second half of year), season Jun-Nov OK. Consider splitting \"southwestern\" from \"southern\" Australia: the ENSO rainfall signal is much clearer for southern SA/Victoria than for southwest WA, where winter rainfall is driven mainly by SAM and the subtropical ridge.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "new-zealand",
@@ -1170,7 +2326,43 @@
    },
    "sources": [
     "bom_enso"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://niwa.co.nz/climate-and-weather/el-nino-and-la-nina/impact-el-nino-and-la-nina-new-zealands-climate",
+     "publisher": "NIWA / Earth Sciences New Zealand",
+     "title": "The impact of El Niño and La Niña on New Zealand's climate",
+     "supports": "both",
+     "quote": "In summer, stronger or more frequent winds from the west... drier-than-normal conditions in east coast areas and more rain than normal in the west. In winter, colder southerly winds tend to prevail. [La Niña:] More north-easterly winds are characteristic, which tend to bring moist, rainy conditions to the north-east of the North Island, and reduced rainfall to the south and south-west of the South Island.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://niwa.co.nz/climate-and-weather/el-nino-and-la-nina/el-nino-maps-and-charts",
+     "publisher": "NIWA / Earth Sciences New Zealand",
+     "title": "El Niño maps and charts",
+     "supports": "el_nino",
+     "quote": "Summer rainfall during previous El Niño events was lower than normal across large parts of New Zealand, but especially in the north and east of both islands.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://about.metservice.com/learning/el-nio-and-la-nia",
+     "publisher": "MetService (Meteorological Service of New Zealand)",
+     "title": "El Niño and La Niña",
+     "supports": "both",
+     "quote": "Aotearoa New Zealand typically experiences more westerlies during El Niño... This leads to wetter and cooler conditions in the west of the country but drier and warmer conditions in the east. [La Niña:] more frequent northeasterly winds... bringing more rainfall to the northeast of the North Island. Temperatures are generally warmer than normal around the country.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly - the drier north-and-east rain signal in summer is well supported (NIWA, MetService), but \"cooler\" is a winter/west-of-country signal: NIWA ties cooling to winter southerlies, and MetService and NIWA's 2026 outlook say the east is typically warmer/drier in summer (Salinger in The Conversation: cooler overall, although eastern areas can still experience warmer than average summers).",
+    "la_nina": "agree - NIWA and MetService both give more north-easterlies with wetter conditions in the north-east of the North Island, reduced rainfall in the south/south-west of the South Island, and generally warmer-than-normal temperatures; neither source ties the signal specifically to Dec-Feb (described as a general/year-round tendency).",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "El Niño temp: change \"cooler\" to \"cooler in the west/south, but warmer and drier in the east\" (or \"mixed: cooler overall, east often warmer\"), because NIWA attributes the national cooling to winter southerlies while summer brings westerlies that make the east drier and warmer (MetService; NIWA El Niño 2026 outlook notes eastern spikes in high temperatures). El Niño rain: keep \"drier (north and east)\" but optionally add \"wetter west/Southland\" since the western side is wetter. La Niña rain: refine \"wetter (north and east)\" to \"wetter (north-east of North Island); drier south/south-west of South Island\" per NIWA and MetService. Both phases: consider noting that NIWA states ENSO explains less than 25 percent of year-to-year variance in seasonal rainfall and temperature at most NZ locations, which justifies medium rather than high confidence; the Dec-Feb season is directly supported for El Niño rain but La Niña is described as a general tendency rather than a summer-specific one.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "east-africa-short-rains",
@@ -1224,7 +2416,43 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/assessments/assess_97/africa.html",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "Climate Assessment for 1997 - Africa (Equatorial Eastern Africa)",
+     "supports": "both",
+     "quote": "The year-to-year variability of rainfall during the OND season shows a strong relationship to the ENSO (Ropelewski and Halpert 1987, 1989), with above-normal rainfall observed during Pacific warm episodes and below-normal rainfall observed during Pacific cold episodes.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.icpac.net/news/el-ni%C3%B1o-southern-oscillation-and-indian-ocean-dipole-watch-for-the-eastern-africa-short-rains-season-october-december-2023/",
+     "publisher": "ICPAC (IGAD Climate Prediction and Applications Centre, WMO Regional Climate Centre)",
+     "title": "El Niño Southern Oscillation and Indian Ocean Dipole Watch for the Eastern Africa short rains season (October-December 2023)",
+     "supports": "both",
+     "quote": "El Niño is frequently associated with enhanced rainfall in the eastern part of Eastern Africa during the OND season. ... During the La Niña phase of ENSO when the SSTs are reversed, suppressed rainfall is often observed in the equatorial parts of the region, as experienced in OND 2020, 2021, and 2022.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.climate.gov/news-features/blogs/enso/november-el-ni%C3%B1o-update-it%E2%80%99s-small-world",
+     "publisher": "NOAA Climate.gov (ENSO Blog, Emily Becker)",
+     "title": "November El Niño update: It's a small world",
+     "supports": "el_nino",
+     "quote": "El Niño tends to enhance the 'short rains' rainy season (the 'long rains' season, which is much less ENSO-sensitive, is March-May), leading to wetter conditions.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — NOAA CPC, Climate.gov and ICPAC all state El Niño enhances the Oct-Dec short rains (record 5-10x normal in OND 1997), though ICPAC stresses the signal is strongest in the eastern part of the region and can fail when the Indian Ocean Dipole is unfavourable (e.g. OND 2018 was below average despite El Niño).",
+    "la_nina": "agree — CPC states below-normal OND rainfall during Pacific cold episodes and ICPAC documents suppressed OND rainfall in the equatorial parts of the region in La Niña years 2020, 2021 and 2022 (and forecast the same for 2024), with the strongest impact in Somalia, southern Ethiopia and the arid/semi-arid lands of Kenya.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "Keep season Oct-Dec and signs, but qualify the region: El Niño rain 'wetter, often much wetter in eastern Kenya, Somalia and southern Ethiopia; weaker and less consistent in Uganda and northern Tanzania' — ICPAC restricts the strong signal to the eastern part of Eastern Africa and CPC's statement is for equatorial eastern Africa, and ICPAC notes El Niño does not always deliver above-normal rains (OND 2018 was below average) because the Indian Ocean Dipole strongly modulates the outcome. La Niña 'drier' is well supported for Somalia, southern Ethiopia and eastern Kenya; consider 'drier (strongest in Somalia, southern Ethiopia and eastern Kenya)'. Temperature: none of the fetched sources gives an ENSO temperature signal for this season, so 'near normal' is unverified rather than contradicted; consider lowering temp confidence or marking as 'no clear signal'.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "ethiopia-sudan-summer",
@@ -1268,7 +2496,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://igad.int/understanding-el-nino-and-la-nina-implications-for-the-igad-region/",
+     "publisher": "IGAD (Intergovernmental Authority on Development / ICPAC)",
+     "title": "Understanding El Niño and La Niña: Implications for the IGAD Region (29 June 2025)",
+     "supports": "both",
+     "quote": "During the June to September (JJAS) season, which is significant over the western and northern parts of IGAD, El Nino is known to cause depressed seasonal rainfall. [...] La Niña...often results in...enhanced rainfall during the JJAS season and northern parts of the GHA region.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.icpac.net/fsnwg/fsnwg-special-report-on-el-ni%C3%B1o/",
+     "publisher": "ICPAC / Food Security and Nutrition Working Group",
+     "title": "FSNWG Special Report on El Niño (August 2026)",
+     "supports": "el_nino",
+     "quote": "In the western parts of the region, where El Niño is associated with below-average rainfall during the June-September season, parts of central and northern Ethiopia, the pastoral belt of Sudan, most of Eritrea and Djibouti...",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://fews.net/east-africa/seasonal-monitor/july-2026",
+     "publisher": "FEWS NET (USAID)",
+     "title": "East Africa Seasonal Monitor, July 2026: Deepening concerns across East Africa following severe June rainfall deficits and forecast below-average July–September rains",
+     "supports": "el_nino",
+     "quote": "El Niño conditions typically suppress the June–September rains in western and northern areas of East Africa.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/71705/noaa_71705_DS1.pdf",
+     "publisher": "NOAA Institutional Repository (Cai et al., peer-reviewed review, Nature Reviews Earth & Environment)",
+     "title": "Climate Impacts of the El Niño-Southern Oscillation in Africa",
+     "supports": "el_nino",
+     "quote": "During El Niño, the Somali Jet onset tends to be later and the intensity is weaker such that many drought years over the Ethiopian plateau coincide with an El Niño. [...] spatially coherent dry conditions occur from Senegal to Ethiopia accompanied by anomalously high air temperatures in sub-Saharan Africa.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — IGAD, ICPAC, FEWS NET and the Cai et al. review all state El Niño suppresses the June-September (Kiremt/Karan) rains over northern/central Ethiopia, Eritrea and Sudan, and the review adds anomalously high temperatures with the drying, so \"drier, warmer, Jun-Sep\" is supported.",
+    "la_nina": "partly — IGAD states La Niña \"often results in enhanced rainfall during the JJAS season\" over the northern Greater Horn, supporting \"wetter\", but only one fetched source addresses it and none speaks to temperature, so the \"near normal\" temperature entry is unverified rather than contradicted.",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Season and signs are fine; refine the region note: El Niño drying is strongest over central, northern and northeastern Ethiopia, the Rift Valley, Eritrea and Sudan's pastoral belt, and weaker/less consistent in the western and southwestern highlands (ICPAC FSNWG 2026; FEWS NET 2026). Cai et al. also note the El Niño signal can be offset in some years by Atlantic SST/Saharan heat-low modulation, so \"drier\" should read as a tendency, not a certainty. La Niña temperature \"near normal\" has no published support found; consider \"no clear signal\".",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southern-africa",
@@ -1322,7 +2594,51 @@
    "sources": [
     "cpc_impacts",
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño Temperature and Precipitation Patterns",
+     "supports": "el_nino",
+     "quote": "Drier than normal conditions generally observed over northern South America, Central America and southern Africa during DJF ... warmer than normal conditions during December-February across southeastern Asia, southeastern Africa, Japan, southern Alaska and western/central Canada",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña Patterns",
+     "supports": "la_nina",
+     "quote": "wetter than normal conditions tend to be observed during December-February (DJF) over northern South America and southern Africa ... below-normal temperatures during December-February over southeastern Africa, Japan, southern Alaska and western/central Canada, and southeastern Brazil",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/themes/el-nino-la-nina-phenomena",
+     "publisher": "World Meteorological Organization",
+     "title": "El Niño / La Niña Phenomena",
+     "supports": "el_nino",
+     "quote": "drought conditions in eastern and northern Australia, Indonesia, southern Africa, and parts of South Asia due to suppressed monsoon activity",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://iopscience.iop.org/article/10.1088/1748-9326/ade60e",
+     "publisher": "Environmental Research Letters (Steinkopf & Engelbrecht 2025)",
+     "title": "The El Niño–Southern Oscillation teleconnection to southern Africa in a changing climate",
+     "supports": "both",
+     "quote": "El Niño (La Niña) events in southern Africa characterized by dry (wet) conditions during the austral summer",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree: NOAA CPC, WMO and Steinkopf & Engelbrecht (2025) all describe drier and warmer-than-normal austral summer (DJF) conditions over southern/southeastern Africa during El Niño.",
+    "la_nina": "partly: rainfall \"wetter\" in DJF is well supported (CPC, ERL 2025), but CPC's composite gives below-normal (cooler) DJF temperatures over southeastern Africa rather than \"near normal\".",
+    "suggested_confidence": {
+     "el_nino": "high",
+     "la_nina": "high"
+    },
+    "suggested_wording_change": "La Niña temp: change \"near normal\" to \"cooler\" (NOAA CPC La Niña composite lists below-normal DJF temperatures over southeastern Africa; SAWS also describes La Niña summers as cooler and wetter). Season: sources anchor the signal to DJF (austral summer); \"Dec-Mar\" is acceptable but \"Dec-Feb\" matches the published composites more exactly. Optionally note that the signal is strongest over the summer-rainfall region (roughly south of 15°S, especially eastern South Africa/Zimbabwe/Mozambique/Botswana) and that the winter-rainfall Western Cape does not follow this pattern.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "madagascar",
@@ -1363,7 +2679,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://iri.columbia.edu/wp-content/uploads/2023/05/ELNINO-RAINFALL-2023.pdf",
+     "publisher": "IRI, Columbia Climate School",
+     "title": "El Niño and Rainfall (ENSO teleconnection map, 2023; based on Mason & Goddard 2001 and Lenssen, Goddard & Mason 2020)",
+     "supports": "el_nino",
+     "quote": "El Niño conditions in the tropical Pacific are known to shift rainfall patterns in many different parts of the world. The regions and seasons shown on the map below indicate typical but not guaranteed impacts of El Niño. [Map: 'Dry' region labelled 'Nov-Mar' covers southern Africa and the southern half of Madagascar; northern Madagascar is unshaded.]",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://iri.columbia.edu/wp-content/uploads/2023/05/LANINA_RAINFALL_2023.pdf",
+     "publisher": "IRI, Columbia Climate School",
+     "title": "La Niña and Rainfall (ENSO teleconnection map, 2023)",
+     "supports": "la_nina",
+     "quote": "La Niña conditions in the tropical Pacific are known to shift rainfall patterns in many different parts of the world. The regions and seasons shown on the map below indicate typical but not guaranteed impacts of La Niña. [Map: 'Wet' region labelled 'Nov-Apr' covers southern Africa and the southern/south-western third of Madagascar only.]",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/71705/noaa_71705_DS1.pdf",
+     "publisher": "NOAA Institutional Repository (accepted manuscript of Cai et al., Nature Reviews Earth & Environment, 2025)",
+     "title": "Climate Impacts of the El Niño-Southern Oscillation in Africa",
+     "supports": "both",
+     "quote": "During El Niño, southern Africa (south of ~15oS) experiences warmer and drier conditions in austral summer (Fig. 2c) (Supplementary Fig. 2c) as low-level moisture convergence and cloud band development are suppressed. [...] During La Niña, the impact reverses. [...] leading to colder and wetter conditions south of ~15oS.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.worldweatherattribution.org/wp-content/uploads/ScientificReport_Madagascar.pdf",
+     "publisher": "World Weather Attribution (Harrington et al., 2021; co-authored with Madagascar Direction Générale de la Météorologie)",
+     "title": "Attribution of severe low rainfall in southern Madagascar, 2019-21",
+     "supports": "both",
+     "quote": "a statistically significant relationship between ENSO and seasonal rainfall was found over both Southern Africa and Eastern Africa, with El Niño events aligning with low- and high-rainfall anomalies, respectively (see Figure 10 below). However, the strength of this correlation was less significant over southern Madagascar",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree (partly on season): IRI's map shows a typical Nov-Mar dry signal over southern Madagascar (not the north) and Cai et al. 2025 give warmer and drier austral-summer conditions south of ~15°S, but WWA (Harrington et al. 2021) finds the ENSO-rainfall correlation weaker over southern Madagascar than over mainland southern Africa and notes the strong 1997/98 El Niño brought a normal rainy season there.",
+    "la_nina": "partly: IRI's La Niña map shows a Nov-Apr wet signal reaching only the southern/south-western third of Madagascar and Cai et al. 2025 describe colder and wetter conditions south of ~15°S, but WWA documents an extremely dry 2020/21 summer in southern Madagascar during a moderate La Niña, so the signal is weak and regionally limited; \"near normal\" temperature is defensible though the review says cooler.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "Season: change both phases from \"Dec-Mar\" to \"Nov-Mar\" (El Niño) and \"Nov-Apr\" (La Niña) to match the IRI teleconnection maps. La Niña rain: change \"wetter\" to \"wetter (south and west)\" because the IRI wet region covers only the southern/south-western third of the island, and northern Madagascar shows no signal in either phase. Optionally La Niña temp \"near normal to slightly cooler\" (Cai et al. 2025: \"colder and wetter conditions south of ~15°S\"), keeping confidence low given the dry 2020/21 La Niña summer in the Grand Sud.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "sahel",
@@ -1410,7 +2770,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://iri.columbia.edu/news/new-research-el-nino-teleconnections-in-sahel-east-africa",
+     "publisher": "IRI (Columbia University)",
+     "title": "New Research: El Niño Teleconnections in the Sahel & East Africa (26 Feb 2016)",
+     "supports": "el_nino",
+     "quote": "The Sahel, for example, usually experiences drier-than-normal conditions during its rainy season (Jul-Aug-Sep) ... If a location's typical rainy season coincides with the growth phase (usually July – September) of the El Niño, a drier response is the outcome",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/71705",
+     "publisher": "NOAA Institutional Repository (Cai et al. 2025, Nature Reviews Earth & Environment 6:503-520)",
+     "title": "Climate impacts of the El Niño-Southern Oscillation in Africa",
+     "supports": "both",
+     "quote": "During El Niño-developing JAS, Sahel is drier and hotter than normal ... Conversely, during a La Niña-developing JAS, a tropospheric cooling promotes atmosphere instability over the Sahel. ... CP La Niña-induced wet anomaly in the Sahel in JAS (Fig. 2i) is +0.30 mm day-1, greater than +0.12 mm day-1 during EP La Niña.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://content-drupal.climate.gov/news-features/featured-images/historically-how-has-el-nino-influenced-summer-temperature-and",
+     "publisher": "NOAA Climate.gov (Lindsey & Brettschneider, 24 Aug 2023)",
+     "title": "Historically, how has El Niño influenced summer temperature and precipitation around the world?",
+     "supports": "el_nino",
+     "quote": "Across the tropics in places as scattered as the African Sahel and Hawaii, 20 or more out of 29 El Niño summers on record (close to 70 percent) were warmer than average.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://fews.net/west-africa/seasonal-monitor/june-2026",
+     "publisher": "FEWS NET (USAID)",
+     "title": "West Africa Seasonal Monitor, June 2026",
+     "supports": "el_nino",
+     "quote": "Historically, El Niño events are associated with elevated chances of below-normal June through September (JJAS) rainfall across the Sahel.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - IRI, NOAA Climate.gov, FEWS NET and the Cai et al. 2025 review all state the Sahel tends to be drier (and warmer/\"hotter\") during the Jul-Sep rainy season of a developing El Niño, so the row's rain, temp and season are correct and the signal is better documented than \"low\" confidence implies.",
+    "la_nina": "partly - Cai et al. 2025 confirms a wetter Sahel in JAS during a developing La Niña (roughly +0.1 to +0.3 mm/day, i.e. a modest signal, stronger for central-Pacific events), and the review notes the relationship is roughly linear in Niño3.4 SST; no fetched source characterises La Niña temperature for the Sahel, so \"near normal\" is unverified rather than contradicted.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "Keep rain/temp/season as written, but qualify: El Niño \"drier, warmer, Jul-Sep\" -> raise confidence to medium and note the signal applies to the developing (first-year) El Niño's Jul-Sep season and is stronger for eastern-Pacific events (Cai et al. 2025: -0.73 mm/day EP vs -0.12 CP), and that it is modulated by Atlantic/Indian Ocean SSTs so not every El Niño summer is dry. La Niña \"wetter, Jul-Sep\" is supported but weak (+0.12 to +0.30 mm/day); \"near normal\" temperature is not supported by any fetched source - consider \"slightly cooler or near normal\" or leave temp blank. Optionally widen the season label to Jun-Sep (JJAS) to match FEWS NET/AGRHYMET usage for the Sahel rainy season.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "gulf-of-guinea",
@@ -1453,7 +2857,43 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/71705/noaa_71705_DS1.pdf",
+     "publisher": "NOAA Institutional Repository (Cai et al. 2025, Nature Reviews Earth & Environment 6, 503-520)",
+     "title": "Climate impacts of the El Niño-Southern Oscillation in Africa",
+     "supports": "el_nino",
+     "quote": "upper-level anomalously increased subsidence over western Africa decreases rainfall over the Guinea coast in late boreal spring and subsequently over the Sahel in the peak season of West African monsoon, with a commensurate reduction in the frequency of wet days and heavy rainfall events",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña Patterns (typical La Niña temperature and precipitation patterns)",
+     "supports": "la_nina",
+     "quote": "cooler than normal conditions during June-August across India and southeastern Asia, along the west coast of South America, across the Gulf of Guinea region, and across northern South America and portions of central America",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño Temperature and Precipitation Patterns",
+     "supports": "el_nino",
+     "quote": "warmer than normal conditions during June-August along the west coast of South America and across southeastern Brazil",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly - the Cai et al. 2025 review documents a drier tendency on the Guinea coast in late boreal spring (roughly May-Jun) rather than \"near normal\", and no fetched source gives a Gulf of Guinea temperature signal for El Niño (the CPC composite lists none), so \"warmer\" rests only on the generic global warm tendency.",
+    "la_nina": "partly - no fetched source documents a Guinea-coast rainfall signal for La Niña (consistent with \"near normal\"), but the NOAA CPC La Niña composite lists cooler-than-normal June-August conditions across the Gulf of Guinea region, contradicting \"near normal\" temperature.",
+    "suggested_confidence": {
+     "el_nino": "low",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño rain: \"near normal; drier tendency in late spring (May-Jun)\" - Cai et al. 2025 report reduced Guinea-coast rainfall in late boreal spring before the Sahel signal. El Niño temp: keep \"warmer\" but flag as generic (no regional teleconnection documented in the CPC El Niño composite). La Niña temp: change \"near normal\" to \"cooler (Jun-Aug)\" - CPC La Niña composite lists cooler-than-normal JJA conditions across the Gulf of Guinea region. Season \"Apr-Oct\" is acceptable but the only documented signals fall in May-Jun (El Niño rain) and Jun-Aug (La Niña temp).",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "central-africa",
@@ -1495,7 +2935,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://repository.library.noaa.gov/view/noaa/71705/noaa_71705_DS1.pdf",
+     "publisher": "NOAA Institutional Repository (accepted manuscript of Cai et al. 2025, Nature Reviews Earth & Environment, doi:10.1038/s43017-025-00705-7)",
+     "title": "Climate Impacts of the El Niño-Southern Oscillation in Africa",
+     "supports": "el_nino",
+     "quote": "As El Niño develops, eastern and central Africa short rain increases (Fig. 2b) although surface temperature anomalies are less clear because the associated increase in evaporative cooling offset the warm anomalies (Supplementary Fig. 2b).",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño-related global temperature and rainfall patterns",
+     "supports": "el_nino",
+     "quote": "wetter than normal conditions tend to be observed 1) during December-February (DJF) along coastal Ecuador, northwestern Peru, southern Brazil, central Argentina, and equatorial eastern Africa ... warmer than normal conditions during December-February across southeastern Asia, southeastern Africa, Japan, southern Alaska and western/central Canada, southeastern Brazil and southeastern Australia",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña-related global temperature and rainfall patterns",
+     "supports": "la_nina",
+     "quote": "December-February (DJF) over northern South America and southern Africa, and during June-August (JJA) over southeastern Australia ... [cooler] June-August across India and southeastern Asia, along the west coast of South America, across the Gulf of Guinea region",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/news/media-centre/wmo-prepare-el-nino",
+     "publisher": "World Meteorological Organization",
+     "title": "WMO: Prepare for El Niño",
+     "supports": "el_nino",
+     "quote": "El Niño typically increases global temperatures and drives more extreme weather and rainfall patterns",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly — The canonical NOAA CPC teleconnection composites list no Congo-basin signal at all (only equatorial eastern Africa wet and southeastern Africa warm in DJF), which is consistent with \"near normal / low confidence\", but the 2025 Cai et al. review states that as El Niño develops the Oct–Dec short rains increase over \"eastern and central Africa\" while surface-temperature anomalies there are \"less clear\" because evaporative cooling offsets the warming, so \"warmer, all year\" is only weakly supported (mainly via WMO's generic statement that El Niño raises global temperatures) and the rain entry should acknowledge a possible wet tilt in the eastern Congo basin in the short-rain season.",
+    "la_nina": "agree — No fetched source documents a La Niña rainfall or temperature signal for the Congo basin proper; CPC's composites mention Africa only for southern Africa (wet DJF), equatorial eastern Africa (dry DJF) and cooler JJA conditions \"across the Gulf of Guinea region\", which touches only the Atlantic fringe (Cameroon/Gabon coast) of the region, so \"near normal / near normal / low confidence\" is the defensible entry.",
+    "suggested_confidence": {
+     "el_nino": "low",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "El Niño: rain \"near normal; slight wet tilt in the eastern Congo basin/Great Lakes side during the Oct–Dec short rains\" (Cai et al. 2025 report increased short rains over eastern and central Africa as El Niño develops); temp \"slightly warmer (weak, offset by evaporative cooling where rain increases)\" rather than an unqualified \"warmer\"; season \"no strong seasonal signal; short-rain season (Oct–Dec) is where any effect appears\". La Niña: keep \"near normal / near normal\", optionally note \"coastal Gulf of Guinea fringe slightly cooler in Jun–Aug\" per NOAA CPC. Keep both confidences low: no WMO/NOAA/IRI product identifies a robust ENSO teleconnection for the Congo basin interior.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southwest-asia",
@@ -1549,7 +3033,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://journals.ametsoc.org/view/journals/clim/30/8/jcli-d-16-0519.1.xml",
+     "publisher": "American Meteorological Society, Journal of Climate (Hoell, Barlow, Cannon and Xu, 2017, vol. 30, 2885-2903)",
+     "title": "Oceanic Origins of Historical Southwest Asia Precipitation During the Boreal Cold Season",
+     "supports": "both",
+     "quote": "El Niño was persistently related with anomalously wet conditions throughout 1901–2012, whereas La Niña was not closely linked to precipitation anomalies prior to the 1970s but has been associated with exceptionally dry conditions thereafter.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://journals.ametsoc.org/view/journals/clim/15/7/1520-0442_2002_015_0697_dicasa_2.0.co_2.xml",
+     "publisher": "American Meteorological Society, Journal of Climate (Barlow, Cullen and Lyon, 2002, vol. 15, 697-700)",
+     "title": "Drought in Central and Southwest Asia: La Niña, the Warm Pool, and Indian Ocean Precipitation",
+     "supports": "la_nina",
+     "quote": "Both the prolonged duration of the 1998–2001 cold phase ENSO (La Niña) event and unusually warm ocean waters in the western Pacific appear to contribute to the severity of the drought. [...] This year (2001) marks the third consecutive year of drought for a broad region centered on Iran, Afghanistan, and Pakistan",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://api.crossref.org/works/10.1029/2007GL030078",
+     "publisher": "AGU / Wiley, Geophysical Research Letters (Mariotti, 2007, doi:10.1029/2007GL030078); abstract read via the Crossref metadata record because the Wiley page returned 403",
+     "title": "How ENSO impacts precipitation in southwest central Asia",
+     "supports": "el_nino",
+     "quote": "Enhanced precipitation in SWCA during warm ENSO events results from an anomalous southwesterly moisture flux coming from the Arabian Sea and tropical Africa [...] The ENSO impact on SWCA precipitation is found to be greatest in the transition seasons of autumn and spring, but the dynamical impact on pressure and circulation persists throughout the year.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://journals.ametsoc.org/view/journals/clim/28/18/jcli-d-14-00757.1.xml",
+     "publisher": "American Meteorological Society, Journal of Climate (Hoell, Funk and Barlow, 2015, vol. 28)",
+     "title": "The Forcing of Monthly Precipitation Variability over Southwest Asia during the Boreal Cold Season",
+     "supports": "both",
+     "quote": "Southwest Asia, defined as the region containing the countries of Afghanistan, Iran, Iraq, and Pakistan, is water scarce and receives nearly 75% of its annual rainfall during the boreal cold season of November–April. [...] Seasonally averaged November–April precipitation over southwest Asia is significantly correlated with sea surface temperature (SST) patterns consistent with Pacific decadal variability (PDV), El Niño–Southern Oscillation (ENSO)",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - Peer-reviewed work on the Nov-Apr cold season (Hoell et al. 2017; Mariotti 2007) finds El Niño persistently linked to wetter conditions over Iraq, Iran, Afghanistan and Pakistan, though the signal is strongest in the autumn and spring transition months and has strengthened since the 1980s; the \"near normal\" temperature entry is not addressed by any source I could load.",
+    "la_nina": "agree - La Niña is associated with below-normal Nov-Apr precipitation and the 1998-2001 drought centred on Iran, Afghanistan and Pakistan (Barlow et al. 2002; Hoell et al. 2017), but Hoell et al. note the La Niña link was weak before the 1970s and only became robust thereafter, so it is less consistent than the El Niño signal.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Keep rain: \"wetter\" (El Niño) / \"drier\" (La Niña) and season \"Nov-Apr\", but add a note that the signal is strongest in the autumn (Oct-Dec) and spring (Mar-Apr) shoulders of the season rather than midwinter (Mariotti 2007), and that the La Niña drying is less consistent than El Niño wetting (Hoell et al. 2017: El Niño wet throughout 1901-2012, La Niña dry only since the 1970s). The \"near normal\" temperature entries could not be verified from any fetched source and should be flagged as unverified. The Arabian Peninsula is only indirectly supported (Hoell et al. 2015 note Nov-Apr southwest Asia rainfall co-varies with Arabian Peninsula and Middle East rainfall); no fetched source gives a direct ENSO signal there, so consider marking the Peninsula as lower confidence or listing it separately. I could not load WMO, NOAA Climate.gov, IRI or national met-service pages that state this teleconnection in text (CPC's ENSO pattern pages and the archived Climate.gov impacts page do not mention southwest Asia, and the IRI impact maprooms are map-only), so the evidence base is peer-reviewed literature rather than agency education pages.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "central-asia",
@@ -1592,7 +3120,51 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://fews.net/sites/default/files/2023-03/White%20Paper%20-%20La%20Nina_1.pdf",
+     "publisher": "Famine Early Warning Systems Network (FEWS NET / USAID; UCSB Climate Hazards Center)",
+     "title": "La Niña and Precipitation (FEWS NET white paper, 2020)",
+     "supports": "la_nina",
+     "quote": "Over Central Asia, dry conditions are most likely during the winter and spring precipitation seasons.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://doi.org/10.1029/2007GL030078",
+     "publisher": "Geophysical Research Letters (AGU) — abstract retrieved via CrossRef record for DOI 10.1029/2007GL030078",
+     "title": "How ENSO impacts precipitation in southwest central Asia (Mariotti, 2007)",
+     "supports": "el_nino",
+     "quote": "Enhanced precipitation in SWCA during warm ENSO events results from an anomalous southwesterly moisture flux coming from the Arabian Sea and tropical Africa ... The ENSO impact on SWCA precipitation is found to be greatest in the transition seasons of autumn and spring, but the dynamical impact on pressure and circulation persists throughout the year.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://doi.org/10.1175/JCLI-D-21-0238.1",
+     "publisher": "Journal of Climate (AMS) — abstract retrieved via Semantic Scholar record for DOI 10.1175/JCLI-D-21-0238.1",
+     "title": "Different Responses of Central Asian Precipitation to Strong and Weak El Niño Events (J. Climate 35(5), 2022)",
+     "supports": "el_nino",
+     "quote": "It is found that strong El Niño events persistently enhance Central Asian precipitation from the mature winter to decaying summer. ... During weak El Niño events, significant wet anomalies are only seen in the developing autumn, ... and the abnormal signals are weak in the other seasons.",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://iopscience.iop.org/article/10.1088/1748-9326/ac6229",
+     "publisher": "Environmental Research Letters (IOP)",
+     "title": "Regionalization of climate teleconnections across Central Asian mountains improves the predictability of seasonal precipitation (Umirbekov, Peña-Guerrero & Müller, 2022)",
+     "supports": "both",
+     "quote": "Here, we investigated teleconnections between global climate oscillations and the peak precipitation season from February to June in the Tian-Shan and Pamir Mountains of Central Asia ... The seasonal precipitation and SOI exhibit a statistically significant negative correlation already three months prior to the start of the season in most subregions.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree — the fetched evidence consistently shows El Niño (warm ENSO) enhances Central Asian precipitation, but the signal peaks in the autumn and spring transition seasons and the mid-winter wet response is robust mainly for strong events, so \"wetter Nov-Apr\" is directionally right but slightly mis-timed and amplitude-dependent.",
+    "la_nina": "agree — FEWS NET's 21-event composite states dry conditions are most likely over Central Asia in the winter and spring precipitation seasons, and the negative SOI-precipitation correlation in the Tian Shan/Pamir implies the same sign; however no source I could fetch quantifies the La Niña signal separately, so it rests on one operational composite plus symmetry.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "Rain wording is fine (\"wetter\"/\"drier\"), but the season should be widened or re-centred: published evidence puts the strongest El Niño wet signal in the autumn and spring transition seasons (roughly Oct-Nov and Mar-May), with a persistent Dec-Feb wet anomaly only in strong El Niño events (weak events show little beyond the developing autumn); FEWS NET's La Niña composite likewise says \"winter and spring precipitation seasons\". Suggest \"Oct-May (strongest Mar-May; winter signal mainly in strong events)\". Two caveats: (1) the evidence is concentrated on southwest Central Asia (Iran/Afghanistan/Turkmenistan/Uzbekistan/Tajikistan) and the Tian Shan-Pamir mountains, not northern Kazakhstan, so consider noting the signal is weaker/unclear in the north; (2) none of the fetched sources addresses temperature, so \"near normal\" is unsupported rather than contradicted — keep it but do not raise its confidence. No NOAA/WMO/IRI page describing Central Asia specifically could be verified (fetch blocked / search budget exhausted).",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "north-africa-mediterranean",
@@ -1729,7 +3301,43 @@
    },
    "sources": [
     "iri_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño: Typical Global Temperature and Precipitation Impacts (Dec-Feb / Jun-Aug)",
+     "supports": "el_nino",
+     "quote": "warmer than normal conditions during December-February across southeastern Asia, southeastern Africa, Japan, southern Alaska and western/central Canada, southeastern Brazil and southeastern Australia",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña: Typical Global Temperature and Precipitation Impacts (Dec-Feb / Jun-Aug)",
+     "supports": "la_nina",
+     "quote": "below-normal temperatures during December-February over southeastern Africa, Japan, southern Alaska and western/central Canada, and southeastern Brazil",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://wmo.int/topics/el-nino-la-nina",
+     "publisher": "World Meteorological Organization",
+     "title": "El Niño/La Niña",
+     "supports": "both",
+     "quote": "Not all regions of the world are affected, and even within a region, impacts can be different.",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "agree - NOAA CPC's canonical DJF El Niño impact list (temperature and precipitation) names no part of Russia or Siberia, and WMO states that not all regions are affected, so \"near normal / low confidence\" is consistent with the published evidence, though the support is by omission rather than an explicit statement of no signal.",
+    "la_nina": "agree - NOAA CPC's canonical DJF La Niña impact list likewise omits Russia and Siberia entirely (its nearest listed region is Japan), so \"near normal / low confidence\" is consistent with the published evidence, again by omission.",
+    "suggested_confidence": {
+     "el_nino": "low",
+     "la_nina": "low"
+    },
+    "suggested_wording_change": "Consider rendering rain and temp as \"no consistent signal\" (or a footnote such as \"Russia/Siberia is not among the regions with a documented ENSO signal in NOAA/WMO impact summaries\") rather than \"near normal\", because the sources do not state that conditions are near normal; they simply do not list the region as affected. Season Dec-Feb is fine to keep as the period for which the canonical impact maps were checked. No web-search budget was available in this session, so peer-reviewed sources (Lenssen et al. 2020 returned HTTP 403 from AMS) could not be added; a WebSearch-enabled follow-up could look for literature on El Niño-related warming over western Siberia to see whether a weak positive temperature tendency should be noted.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "canada-arctic",
@@ -1769,7 +3377,43 @@
    },
    "sources": [
     "cpc_impacts"
-   ]
+   ],
+   "citations": [
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/elninosfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño (Warm Episode) Global Impacts",
+     "supports": "el_nino",
+     "quote": "warmer than normal conditions during December-February across southeastern Asia, southeastern Africa, Japan, southern Alaska and western/central Canada",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/laninasfc.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "La Niña (Cold Episode) Global Impacts",
+     "supports": "la_nina",
+     "quote": "below-normal temperatures during December-February over southeastern Africa, Japan, southern Alaska and western/central Canada, and southeastern Brazil",
+     "status": "fetched_unverified"
+    },
+    {
+     "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensocycle/nawinter.shtml",
+     "publisher": "NOAA Climate Prediction Center",
+     "title": "El Niño and La Niña-related winter features over North America",
+     "supports": "both",
+     "quote": "El Niño: \"less storminess and milder-than-average conditions across the North\" ... \"milder than normal winter across the northern states and western Canada\". La Niña: \"colder and stormier than average conditions across the North\".",
+     "status": "fetched_unverified"
+    }
+   ],
+   "review": {
+    "el_nino": "partly - NOAA CPC confirms a DJF warm signal over southern Alaska and western/central Canada (Yukon, NWT, western Nunavut), and no agency page lists any precipitation signal there (consistent with \"near normal\"), but none of the fetched sources extend the warm signal to the eastern Arctic or Greenland, so the row over-generalizes to Greenland.",
+    "la_nina": "partly - NOAA CPC confirms DJF below-normal temperatures over southern Alaska and western/central Canada and \"colder and stormier\" conditions across the North, with no stated precipitation signal, but again the documented cool signal covers western/central northern Canada only, not the eastern Arctic or Greenland.",
+    "suggested_confidence": {
+     "el_nino": "medium",
+     "la_nina": "medium"
+    },
+    "suggested_wording_change": "Keep \"warmer\" (El Niño) / \"cooler\" (La Niña), \"near normal\" rain, and \"Dec-Feb\", but narrow the region label or add a caveat: the published NOAA CPC signal is for \"southern Alaska and western/central Canada\" (Yukon, NWT, western Nunavut). No fetched WMO/NOAA/IRI source documents a DJF temperature or precipitation teleconnection for the eastern Canadian Arctic or Greenland, so either rename the row \"Northwestern/central Arctic Canada\" or note that the Greenland/eastern Arctic part of the region is low confidence (the El Niño-Greenland link operates weakly through the NAO and is not part of the canonical CPC maps). Also note CPC describes La Niña winters as \"stormier\" across the North, so \"near normal\" rain is acceptable but slightly understates the La Niña storminess signal.",
+    "status": "owner review pending"
+   }
   },
   {
    "id": "southeast-brazil",

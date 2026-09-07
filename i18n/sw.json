@@ -23,7 +23,7 @@
   "temp_warmer__winter___cooler__summer_": "msimu wa baridi usio na baridi kali na msimu wa joto wenye joto kidogo",
   "temp_cooler__winter___warmer__summer_": "msimu wa baridi wenye baridi kali zaidi na msimu wa joto wenye joto kali zaidi",
   "conf_likely": "yenye uwezekano mkubwa",
-  "conf_leaning": "yenye mwelekeo huo tu",
+  "conf_leaning": "yenye uwezekano wa kiasi",
   "conf_uncertain": "isiyo na uhakika",
   "headline": "{name}: {rain} {conf} katika {season}.",
   "headline_neutral": "{name}: kwa sasa hakuna El Niño wala La Niña.",
@@ -35,8 +35,8 @@
   "agreement_agree": "Rekodi ya mvua ya hapa inakubaliana na mtindo unaojulikana, kwa hiyo taarifa hii ni {conf}.",
   "agreement_disagree": "Rekodi ya mvua ya hapa haikubaliani wazi na mtindo unaojulikana, kwa hiyo chukulia taarifa hii kuwa {conf}.",
   "agreement_weak": "Matukio ya zamani hapa yalikuwa mchanganyiko, kwa hiyo chukulia taarifa hii kuwa {conf}.",
-  "agreement_none": "Hakuna rekodi ya kuaminika ya mvua ya hapa kwa msimu huu, kwa hiyo chukulia taarifa hii kuwa {conf}.",
-  "history": "Katika matukio {n} makali ya {phase} yaliyopita, mvua ya {season} hapa ilikuwa wastani wa {pct}. Ilikuwa juu ya kawaida katika {wet}% ya matukio hayo.",
+  "agreement_none": "Hakuna rekodi ya kuaminika ya mvua ya hapa kwa msimu huu, kwa hiyo chukulia kuwa taarifa hii {conf}.",
+  "history": "Katika matukio {n} makubwa ya {phase} yaliyopita, mvua ya {season} hapa kwa wastani ilikuwa {pct}. Mvua ilikuwa nyingi kuliko kawaida katika {wet}% ya matukio hayo.",
   "history_recent": "Matukio ya karibuni zaidi: {recent}.",
   "pct_above": "{n}% juu ya kawaida",
   "pct_below": "{n}% chini ya kawaida",
@@ -44,7 +44,7 @@
   "no_data": "hakuna takwimu",
   "status_line": "Hali ya dunia: {status} (imetolewa {issued}).",
   "steps_title": "Cha kufanya sasa",
-  "defer": "Kwa maonyo, fuata {service}. Taarifa hii ni mtazamo wa msimu, si onyo.",
+  "defer": "Ili kupata tahadhari, fuata {service}. Taarifa hii ni matarajio ya msimu, si tahadhari.",
   "ui": {
     "app_name": "ENSO Ready",
     "tagline": "El Niño hii ina maana gani kwako, na ufanye nini.",
@@ -81,11 +81,11 @@
     "methodology": "Hii inafanya kazi vipi",
     "back": "Rudi",
     "change_place": "Badilisha mahali",
-    "no_results": "Hakuna mahali linalofanana. Jaribu mji mkubwa ulio karibu.",
+    "no_results": "Hakuna mji unaolingana. Jaribu mji mkubwa ulio karibu.",
     "region_label": "Eneo",
-    "share": "Sambaza muhtasari huu",
+    "share": "Sambaza taarifa hii",
     "no_js": "Utafutaji unahitaji JavaScript. Bila hiyo, chagua nchi yako hapa chini.",
-    "forecast_unavailable": "Utabiri wa mfumo wa msimu haupatikani sasa (hauko mtandaoni au mfumo una shughuli nyingi). Mtazamo ulio juu unatumia mtindo unaojulikana na matukio ya zamani.",
+    "forecast_unavailable": "Utabiri wa msimu kutoka kwenye mfumo wa kompyuta haupatikani sasa (mfumo hauko mtandaoni au una shughuli nyingi). Taarifa iliyo hapo juu inatumia mwenendo unaojulikana na matukio ya zamani.",
     "data_note": "Taarifa: {list}.",
     "near": "karibu na {name}",
     "pick_map": "Chagua kwenye ramani",
@@ -98,7 +98,7 @@
   "hazards": {
     "FL": "mafuriko",
     "FLR": "mafuriko ya mito",
-    "FF": "mafuriko ya kasi",
+    "FF": "mafuriko ya ghafla",
     "LS": "maporomoko ya ardhi",
     "DR": "ukame",
     "WS": "uhaba wa maji",
@@ -111,10 +111,10 @@
     "CS": "mazao kudhoofika",
     "CF": "mazao kushindwa kustawi",
     "FI": "uhaba wa chakula",
-    "TC": "dhoruba za tropiki",
-    "TCE": "dhoruba za tropiki zinazofika mbali zaidi mashariki",
+    "TC": "vimbunga vya kitropiki",
+    "TCE": "vimbunga vya tropiki vinavyofika mbali zaidi mashariki",
     "ST": "dhoruba",
-    "HS": "mawimbi makubwa baharini",
+    "HS": "maji ya bahari kupanda",
     "SI": "maji ya chumvi katika visima",
     "FR": "baridi ya barafu katika nyanda za juu",
     "SN": "theluji kidogo iliyokusanyika",
@@ -128,7 +128,7 @@
   "risks": "Hatari kuu: {list}.",
   "list_sep": ", ",
   "list_last": " na ",
-  "forecast": "Utabiri wa hivi punde wa majira kwa {season} unasema {pct}.",
+  "forecast": "Utabiri wa msimu wa hivi punde kwa {season} unaonyesha mvua ya {pct}.",
   "forecast_agree": "Hii inalingana na mtindo wa kawaida.",
   "forecast_disagree": "Hii hailingani na mtindo wa kawaida, kwa hiyo uhakika ni mdogo zaidi.",
   "forecast_weak": "Hii ni karibu na hali ya kawaida, kwa hiyo mtindo huu unaweza kuwa hafifu mara hii.",
@@ -143,7 +143,7 @@
     "the summer rains": "mvua za majira ya joto",
     "the Nordeste rainy season": "majira ya mvua ya Nordeste",
     "the Amazon dry season": "majira ya kiangazi ya Amazon",
-    "the plum rains and summer flood season": "mvua za plum na mafuriko ya majira ya joto",
+    "the plum rains and summer flood season": "mvua za Meiyu na msimu wa mafuriko ya majira ya joto",
     "the dry season": "majira ya kiangazi",
     "the coastal rainy season": "majira ya mvua ya pwani",
     "the Belg/Deyr rains": "mvua za Belg/Deyr",
@@ -172,7 +172,7 @@
     },
     "flood-route": {
       "text": "Kubaliana na watu wa nyumbani kuhusu sehemu ya juu mtakapokwenda na njia ya kufika huko.",
-      "why": "Kuamua gizani, wakati wa mvua, ni wakati watu hujeruhiwa."
+      "why": "Watu hujeruhiwa wanapoamua gizani, mvua ikinyesha."
     },
     "flood-water": {
       "text": "Weka maji safi ya kunywa katika vyombo vilivyofungwa, ya kutosha siku tatu.",
@@ -204,7 +204,7 @@
     },
     "flash-avoid": {
       "text": "Usivuke barabara iliyojaa maji au mkondo mkavu wa mto wakati wa mvua kubwa.",
-      "why": "Vifo vingi vya mafuriko ya kasi hutokea ndani ya magari na kwenye vivuko vya mito."
+      "why": "Vifo vingi vya mafuriko ya ghafla hutokea ndani ya magari na kwenye vivuko vya mito."
     },
     "slide-signs": {
       "text": "Angalia nyufa mpya, miti inayoinama au chemchemi kwenye miteremko iliyo juu ya nyumba yako.",
@@ -220,7 +220,7 @@
     },
     "drought-seed": {
       "text": "Muulize afisa ugani kuhusu mbegu zinazokomaa haraka au zinazovumilia ukame.",
-      "why": "Mazao ya msimu mfupi yanaweza kukomaa kabla mvua zisimame."
+      "why": "Mazao ya msimu mfupi yanaweza kukomaa kabla mvua hazijaisha."
     },
     "drought-plant": {
       "text": "Panda kwa awamu: baadhi mapema, baadhi kwa wakati wa kawaida, sio yote kwa mara moja.",
@@ -256,7 +256,7 @@
     },
     "fire-noburn": {
       "text": "Usichome mashamba au taka siku za joto na upepo.",
-      "why": "Mioto mikubwa mingi huanza kama moto uliopangwa ambao ulitoroka."
+      "why": "Mioto mikubwa mingi huanza kama moto uliowashwa kwa makusudi ambao ulienea bila kudhibitiwa."
     },
     "bush-plan": {
       "text": "Panga kuondoka mapema na fuata viwango vya hatari vinavyotolewa na idara ya zimamoto.",
@@ -283,7 +283,7 @@
       "why": "Kiu huja kwa kuchelewa, wakati mwili tayari umepungukiwa maji."
     },
     "disease-water": {
-      "text": "Chemsha au tibu maji ya kunywa mafuriko yanapofika visima au mabomba.",
+      "text": "Chemsha maji ya kunywa au weka dawa ya kusafisha maji, mafuriko yanapofika kwenye visima au mabomba.",
       "why": "Kipindupindu na kuharisha huenea kwa maji ya mafuriko."
     },
     "disease-mosquito": {
@@ -319,7 +319,7 @@
       "why": "Maduka na umeme vinaweza kukosekana kwa siku kadhaa baada ya dhoruba."
     },
     "hurr-shelter": {
-      "text": "Jua mahali pa hifadhi kilicho karibu nawe na jinsi utakavyofika huko.",
+      "text": "Jua mahali pa hifadhi palipo karibu nawe na jinsi utakavyofika huko.",
       "why": "Sehemu za hifadhi hujaa haraka tahadhari inapotolewa."
     },
     "typh-kit": {
@@ -328,7 +328,7 @@
     },
     "typh-boats": {
       "text": "Wavuvi: patana kuhusu mpango wa bandari salama na fuata tahadhari za kutokwenda baharini.",
-      "why": "Vifo vingi vya kimbunga baharini hutokea kwa boti zilizokutwa na kimbunga wakiwa majini."
+      "why": "Vifo vingi vya kimbunga baharini ni vya watu wanaokutwa na kimbunga wakiwa kwenye boti."
     },
     "cyc-kit": {
       "text": "Tayarisha vifaa vya kimbunga: maji, chakula, tochi, redio, dawa, hati muhimu.",
@@ -347,7 +347,7 @@
       "why": "Wakati wa El Niño, vimbunga huundwa na kusafiri mashariki zaidi kuliko kawaida."
     },
     "storm-trees": {
-      "text": "Punguza matawi dhaifu na funga vitu vilivyo huru nje ya nyumba.",
+      "text": "Kata matawi dhaifu na funga vizuri vitu vya nje vinavyoweza kupeperushwa na upepo.",
       "why": "Matawi yanayoanguka husababisha uharibifu mkubwa wa nyumba wakati wa dhoruba."
     },
     "seas-move": {
@@ -371,7 +371,7 @@
       "why": "Theluji nyingi inaweza kufunga njia za kufika mijini kwa siku kadhaa."
     },
     "cold-heat": {
-      "text": "Angalia vifaa vya kupasha moto, ukingo wa joto wa nyumba na nguo za joto kabla ya majira ya baridi.",
+      "text": "Kabla ya majira ya baridi, angalia vifaa vya kupasha joto, ziba mianya inayoingiza baridi nyumbani, na andaa nguo za joto.",
       "why": "Vipindi vya baridi kali huwaathiri zaidi wazee na watoto wachanga."
     },
     "spring-melt": {
@@ -379,7 +379,7 @@
       "why": "Majira ya baridi yenye theluji nyingi mara nyingi huleta mafuriko ya machipuko."
     },
     "mild-pests": {
-      "text": "Tazama wadudu waharibifu wengi zaidi na ukungu; baridi hafifu huua wachache wao.",
+      "text": "Tarajia wadudu waharibifu na ukungu kuongezeka; majira ya baridi yasiyo makali huua wachache tu.",
       "why": "Kwa kawaida baridi huzuia wadudu na magonjwa kuongezeka."
     },
     "cool-crop": {
@@ -387,7 +387,7 @@
       "why": "Majira ya joto yenye ubaridi huchelewesha kukomaa na huongeza magonjwa ya mazao."
     },
     "always-official": {
-      "text": "Fuata shirika la hali ya hewa la nchi yako kwa tahadhari; taarifa hii ni mwelekeo wa msimu, si tahadhari.",
+      "text": "Fuata shirika la hali ya hewa la nchi yako ili kupata tahadhari; taarifa hii ni mwelekeo wa msimu, si tahadhari.",
       "why": "Mashirika rasmi tu hutoa tahadhari kwa siku na maeneo maalum."
     },
     "always-share": {
@@ -458,7 +458,7 @@
     },
     "hawaii": {
       "name": "Hawaii",
-      "el_nino_note": "Msimu wa mvua mara nyingi huwa hafifu; hatari ya ukame huongezeka mwishoni wa majira ya baridi na katika majira ya machipuko.",
+      "el_nino_note": "Msimu wa mvua mara nyingi huwa hafifu; hatari ya ukame huongezeka mwishoni mwa majira ya baridi na katika majira ya kuchipua.",
       "la_nina_note": "Majira ya baridi yenye mvua nyingi zaidi."
     },
     "india-monsoon": {
@@ -503,7 +503,7 @@
     },
     "central-pacific-islands": {
       "name": "Kiribati, Tuvalu, Nauru na Visiwa vya Marshall",
-      "el_nino_note": "Mvua huhamia kuelekea Pasifiki ya kati; visiwa vya matumbawe vya ikweta huwa na mvua nyingi zaidi, na kina cha bahari huwa juu zaidi katika maeneo mengine.",
+      "el_nino_note": "Mvua huhamia kuelekea Pasifiki ya kati; visiwa vya matumbawe vya ikweta huwa na mvua nyingi zaidi, na usawa wa bahari huwa juu zaidi katika maeneo mengine.",
       "la_nina_note": "Ukame mkali katika visiwa vya matumbawe vya ikweta."
     },
     "southwest-pacific-islands": {
@@ -528,8 +528,8 @@
     },
     "east-africa-short-rains": {
       "name": "Kenya, Somalia, kusini mwa Ethiopia, Uganda na kaskazini mwa Tanzania",
-      "el_nino_note": "Mvua fupi za Okt–Des kwa kawaida huwa nyingi, na huleta mafuriko kando ya mito na katika maeneo ya chini. Mwaka 1997 na 2023 kulikuwa na mafuriko makali.",
-      "la_nina_note": "Mvua fupi hushindwa kunyesha mara nyingi zaidi; miaka ya La Niña iliyofuatana ilisababisha ukame wa Pembe ya Afrika wa mwaka 2020–23."
+      "el_nino_note": "Mvua za vuli (Okt–Des) kwa kawaida huwa nyingi, na huleta mafuriko kando ya mito na katika maeneo ya chini. Mwaka 1997 na mwaka 2023 kulikuwa na mafuriko makali.",
+      "la_nina_note": "Mvua za vuli hukosa kunyesha mara nyingi zaidi; miaka ya La Niña iliyofuatana ilisababisha ukame wa Pembe ya Afrika wa mwaka 2020–23."
     },
     "ethiopia-sudan-summer": {
       "name": "Nyanda za juu za Ethiopia, Eritrea na Sudan (mvua za majira ya joto)",
@@ -608,7 +608,7 @@
     },
     "tanzania-south-mozambique-north": {
       "name": "Kusini mwa Tanzania na kaskazini mwa Msumbiji",
-      "el_nino_note": "Eneo hili liko mpakani kati ya Afrika Mashariki yenye mvua zaidi na Afrika ya Kusini iliyo kavu zaidi; utabiri wa eneo lako una maana zaidi.",
+      "el_nino_note": "Eneo hili liko mpakani kati ya Afrika Mashariki yenye mvua zaidi na Kusini mwa Afrika ambako ni kavu zaidi; utabiri wa eneo lako ni muhimu zaidi.",
       "la_nina_note": "Dalili imechanganyika."
     },
     "japan": {
@@ -630,6 +630,13 @@
     "Okt",
     "Nov",
     "Des"
+  ],
+  "usdm_levels": [
+    "abnormally dry conditions",
+    "moderate drought",
+    "severe drought",
+    "extreme drought",
+    "exceptional drought"
   ],
   "_meta": {
     "all_year": {

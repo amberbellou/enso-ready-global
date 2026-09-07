@@ -13,7 +13,7 @@
   "rain_drier": "menos lluvia de lo normal",
   "rain_much_drier": "mucha menos lluvia de lo normal",
   "rain_near_normal": "lluvia cerca de lo normal",
-  "rain_mixed": "una señal de lluvia mixta",
+  "rain_mixed": "lluvia sin tendencia clara",
   "rain_drier__north_and_east_": "menos lluvia de lo normal en el norte y el este",
   "rain_wetter__north_and_east_": "más lluvia de lo normal en el norte y el este",
   "rain_drier__south_and_west_": "menos lluvia de lo normal en el sur y el oeste",
@@ -32,9 +32,9 @@
   "timing_coming": "Esa temporada empieza en unos {n} meses ({season}).",
   "timing_passed": "Esa temporada ya pasó para este evento. La siguiente es {season}; para entonces el evento puede haberse debilitado.",
   "expect": "Durante {phase}, en {region} suele haber {rain} y {temp}.",
-  "agreement_agree": "El registro local de lluvia coincide con el patrón conocido, así que esta perspectiva es {conf}.",
+  "agreement_agree": "El registro local de lluvia coincide con el patrón conocido, así que esto es {conf}.",
   "agreement_disagree": "El registro local de lluvia no coincide claramente con el patrón conocido, así que tome esto como {conf}.",
-  "agreement_weak": "Los eventos pasados aquí fueron mezclados, así que tome esto como {conf}.",
+  "agreement_weak": "Los eventos pasados aquí dieron resultados variados, así que tome esto como {conf}.",
   "agreement_none": "No hay un registro local de lluvia confiable para esta temporada, así que tome esto como {conf}.",
   "history": "En los últimos {n} eventos fuertes de {phase}, la lluvia de {season} aquí fue en promedio {pct}. Llovió más de lo normal en {wet}% de ellos.",
   "history_recent": "Eventos más recientes: {recent}.",
@@ -44,9 +44,9 @@
   "no_data": "sin datos",
   "status_line": "Estado global: {status} (publicado el {issued}).",
   "steps_title": "Qué hacer ahora",
-  "defer": "Para los avisos de alerta, siga a {service}. Este informe es una perspectiva de temporada, no una alerta.",
+  "defer": "Para los avisos, siga las indicaciones de {service}. Este informe es una perspectiva de temporada, no un aviso.",
   "ui": {
-    "app_name": "Listos para el ENSO",
+    "app_name": "ENSO Ready",
     "tagline": "Lo que este El Niño significa para usted y qué hacer al respecto.",
     "search_label": "¿Dónde vive?",
     "search_placeholder": "Escriba un pueblo o una ciudad",
@@ -71,8 +71,8 @@
     "sms_text": "Versión para SMS",
     "sources": "Fuentes",
     "updated": "Datos actualizados: {date}",
-    "offline_note": "No tienes conexión. Se muestra tu último informe del {date}.",
-    "mt_banner": "Traducción automática. Toca para sugerir una corrección.",
+    "offline_note": "No tiene conexión. Se muestra su último informe del {date}.",
+    "mt_banner": "Traducción automática. Toque para sugerir una corrección.",
     "settings": "Ajustes",
     "text_size": "Tamaño del texto",
     "high_contrast": "Alto contraste",
@@ -81,17 +81,17 @@
     "methodology": "Cómo funciona esto",
     "back": "Atrás",
     "change_place": "Cambiar de lugar",
-    "no_results": "No hay coincidencias. Prueba con un pueblo más grande que esté cerca.",
+    "no_results": "No hay coincidencias. Pruebe con un pueblo más grande que esté cerca.",
     "region_label": "Región",
     "share": "Compartir este informe",
-    "no_js": "La búsqueda necesita JavaScript. Sin él, elige tu país aquí abajo.",
-    "forecast_unavailable": "El pronóstico del modelo estacional no está disponible ahora (sin conexión o el servicio está ocupado). El panorama de arriba usa el patrón conocido y los eventos pasados.",
+    "no_js": "La búsqueda necesita JavaScript. Sin él, elija su país aquí abajo.",
+    "forecast_unavailable": "El pronóstico del modelo estacional no está disponible ahora (sin conexión o el servicio está ocupado). La perspectiva de arriba usa el patrón conocido y los eventos pasados.",
     "data_note": "Datos: {list}.",
     "near": "cerca de {name}",
     "pick_map": "Elegir en un mapa",
     "map_hint": "Toque su ubicación en el mapa. Acerque el mapa para ver los pueblos.",
     "skip": "Ir al contenido principal",
-    "dyslexia": "Espaciado fácil para la dislexia",
+    "dyslexia": "Espaciado apto para dislexia",
     "steps_shortcut_hint": "Lleva a su primer paso."
   },
   "timing_coming_one": "Esa temporada empieza el mes que viene ({season}).",
@@ -114,12 +114,12 @@
     "TC": "tormentas tropicales",
     "TCE": "tormentas tropicales que llegan más al este",
     "ST": "tormentas",
-    "HS": "olas altas en el mar",
+    "HS": "marejadas",
     "SI": "agua salada en los pozos",
     "FR": "heladas en zonas altas",
     "SN": "poca nieve acumulada",
     "HSN": "nevadas fuertes",
-    "CD": "días muy fríos",
+    "CD": "olas de frío",
     "FLS": "inundaciones de primavera",
     "MW": "un invierno templado",
     "CU": "un verano fresco"
@@ -143,7 +143,7 @@
     "the summer rains": "las lluvias de verano",
     "the Nordeste rainy season": "la temporada de lluvias del Nordeste",
     "the Amazon dry season": "la temporada seca de la Amazonía",
-    "the plum rains and summer flood season": "las lluvias de las ciruelas y la temporada de crecidas de verano",
+    "the plum rains and summer flood season": "las lluvias de ciruela y la temporada de crecidas de verano",
     "the dry season": "la temporada seca",
     "the coastal rainy season": "la temporada de lluvias de la costa",
     "the Belg/Deyr rains": "las lluvias Belg/Deyr",
@@ -183,7 +183,7 @@
       "why": "Los desagües tapados convierten la lluvia fuerte en una inundación en su patio."
     },
     "flood-raise": {
-      "text": "Suba del suelo la comida, las semillas, el fertilizante y las cosas de valor.",
+      "text": "Levante del suelo la comida, las semillas, el fertilizante y las cosas de valor.",
       "why": "Incluso el agua poco profunda arruina la comida y las semillas guardadas."
     },
     "flood-animals": {
@@ -215,7 +215,7 @@
       "why": "Los derrumbes ocurren casi siempre de noche, después de varios días de lluvia."
     },
     "drought-store": {
-      "text": "Repare las fugas y agregue lugares para guardar agua: tanques, tambores o un pozo tapado.",
+      "text": "Repare las fugas y agregue lugares para guardar agua: tanques, tambores o un aljibe tapado.",
       "why": "Cada litro que guarde ahora es un litro que no tendrá que cargar después."
     },
     "drought-seed": {
@@ -243,7 +243,7 @@
       "why": "Allí los veranos de El Niño suelen ser secos."
     },
     "water-reuse": {
-      "text": "Vuelva a usar el agua de lavar en el huerto y en el baño.",
+      "text": "Vuelva a usar el agua de lavar para regar el huerto y para el inodoro.",
       "why": "Reduce en un tercio el uso de agua en la casa."
     },
     "water-schedule": {
@@ -316,7 +316,7 @@
     },
     "hurr-kit": {
       "text": "Prepare un kit para huracanes: agua, comida, linterna, radio, medicinas, documentos.",
-      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+      "why": "Después de una tormenta, las tiendas pueden estar cerradas y puede no haber luz durante varios días."
     },
     "hurr-shelter": {
       "text": "Sepa cuál es el refugio más cercano y cómo va a llegar allí.",
@@ -324,7 +324,7 @@
     },
     "typh-kit": {
       "text": "Prepare un kit para tifones: agua, comida, linterna, radio, medicinas, documentos.",
-      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+      "why": "Después de una tormenta, las tiendas pueden estar cerradas y puede no haber luz durante varios días."
     },
     "typh-boats": {
       "text": "Pescadores: acuerden un plan de puerto seguro y respeten los avisos de no salir al mar.",
@@ -332,7 +332,7 @@
     },
     "cyc-kit": {
       "text": "Prepare un kit para ciclones: agua, comida, linterna, radio, medicinas, documentos.",
-      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+      "why": "Después de una tormenta, las tiendas pueden estar cerradas y puede no haber luz durante varios días."
     },
     "cyc-roof": {
       "text": "Amarre o repare las partes flojas del techo antes de la temporada.",
@@ -351,7 +351,7 @@
       "why": "Las ramas que caen causan la mayor parte de los daños a las casas durante las tormentas."
     },
     "seas-move": {
-      "text": "Durante las mareas muy altas, aleje de la orilla sus cosas de valor y los lugares donde duermen.",
+      "text": "Durante las mareas muy altas, aleje de la orilla sus cosas de valor y duerma lejos del agua.",
       "why": "En los atolones del Pacífico, el nivel del mar es más alto de lo normal durante El Niño."
     },
     "salt-store": {
@@ -379,7 +379,7 @@
       "why": "Un invierno con mucha nieve suele traer inundaciones en primavera."
     },
     "mild-pests": {
-      "text": "Esté atento a más plagas y moho. Un invierno templado mata menos de ellos.",
+      "text": "Esté atento a más plagas y moho. Un invierno templado mata menos plagas y moho.",
       "why": "Normalmente el frío mantiene controladas las plagas y las enfermedades."
     },
     "cool-crop": {
@@ -407,7 +407,7 @@
       "la_nina_note": "Lluvias más fuertes, sobre todo en Colombia y Venezuela."
     },
     "northeast-brazil": {
-      "name": "Nordeste de Brasil (Nordeste)",
+      "name": "Noreste de Brasil (Nordeste)",
       "el_nino_note": "En los años de El Niño fuerte, la temporada de lluvias principal muchas veces falla o llega tarde.",
       "la_nina_note": "La temporada de lluvias suele ser más fuerte."
     },
@@ -487,13 +487,13 @@
       "la_nina_note": "Monzón con más lluvia y más inundaciones."
     },
     "southern-china": {
-      "name": "El sur de China y la cuenca del río Yangtsé",
+      "name": "Sur de China y cuenca del río Yangtsé",
       "el_nino_note": "Invierno y primavera con más lluvia. El verano después de un El Niño fuerte suele traer inundaciones en el Yangtsé (1998, 2016).",
       "la_nina_note": "Inviernos más fríos y con menos lluvia. La señal es variable."
     },
     "northern-china-korea-japan": {
-      "name": "El norte de China, Corea y Japón",
-      "el_nino_note": "Los inviernos tienden a ser templados. La señal del verano es débil y mezclada.",
+      "name": "Norte de China, Corea y Japón",
+      "el_nino_note": "Los inviernos tienden a ser templados. La señal del verano es débil y mixta.",
       "la_nina_note": "Los inviernos tienden a ser fríos."
     },
     "png-melanesia": {
@@ -512,12 +512,12 @@
       "la_nina_note": "Temporada de lluvias con más lluvia."
     },
     "eastern-australia": {
-      "name": "El este y el norte de Australia",
+      "name": "Este y norte de Australia",
       "el_nino_note": "La lluvia de invierno y primavera suele estar muy por debajo de lo normal. Hay más olas de calor y más riesgo de incendios de matorral. En el norte, la temporada de lluvias empieza más tarde.",
       "la_nina_note": "Más lluvia, con más inundaciones y más ciclones tropicales."
     },
     "southwest-australia": {
-      "name": "El suroeste y el sur de Australia",
+      "name": "Suroeste y sur de Australia",
       "el_nino_note": "La señal es más débil que en el este.",
       "la_nina_note": "Señal débil."
     },
@@ -537,7 +537,7 @@
       "la_nina_note": "Tendencia débil a veranos con más lluvia."
     },
     "southern-africa": {
-      "name": "El sur de África",
+      "name": "África austral",
       "el_nino_note": "Las lluvias de verano suelen estar por debajo de lo normal y hay periodos de calor. En 1992, 2016 y 2024 se perdieron muchas cosechas de maíz.",
       "la_nina_note": "Veranos con más lluvia y más inundaciones."
     },
@@ -630,6 +630,13 @@
     "oct",
     "nov",
     "dic"
+  ],
+  "usdm_levels": [
+    "abnormally dry conditions",
+    "moderate drought",
+    "severe drought",
+    "extreme drought",
+    "exceptional drought"
   ],
   "_meta": {
     "all_year": {

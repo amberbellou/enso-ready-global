@@ -114,8 +114,8 @@ async function chooseCoords(lat, lon) { const nm = await nameFromCoords(lat, lon
 // Map picker: Leaflet + OpenStreetMap tiles, loaded only when tapped (never in the first load).
 async function openMap() {
   if (!window.L) {
-    await new Promise((res, rej) => { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.append(l);
-      const sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; sc.onload = res; sc.onerror = rej; document.head.append(sc); });
+    await new Promise((res, rej) => { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = `${BASE}/vendor/leaflet.css`; document.head.append(l);
+      const sc = document.createElement("script"); sc.src = `${BASE}/vendor/leaflet.js`; sc.onload = res; sc.onerror = rej; document.head.append(sc); });
   }
   const root = $("#app"); const box = h("main", {}, h("p", {}, ui("map_hint")), h("div", { id: "map", style: "height:60vh;border-radius:12px;border:1px solid var(--line)" }),
     h("p", { class: "src" }, "© OpenStreetMap contributors"), h("button", { class: "btn secondary block", onclick: () => render() }, ui("back")));
@@ -209,6 +209,7 @@ function stepsWidget(block) {
 async function render() {
   const root = $("#app");
   if (!$("#skip")) { const sk = h("a", { id: "skip", class: "skip", href: "#main" }, ui("skip")); document.body.prepend(sk); }
+  if (state.screen === "briefing") root.replaceChildren(h("main", { "aria-busy": "true" }, h("p", { class: "muted", role: "status" }, ui("loading"))));
   try {
     if (state.screen === "home") root.replaceChildren(homeScreen());
     else if (state.screen === "who") root.replaceChildren(whoScreen());
@@ -216,7 +217,7 @@ async function render() {
   } catch (e) {
     const last = LS.get("last");
     if (last && state.screen === "briefing") { root.replaceChildren(h("main", {}, h("p", { class: "mt" }, ui("offline_note", { date: last.date.slice(0, 10) })), renderBlocks(last.blocks, { region: null }, last.place, { radio: last.radio, sms: last.sms }))); }
-    else root.replaceChildren(h("main", {}, h("p", {}, "Something went wrong: " + e.message)));
+    else root.replaceChildren(h("main", {}, h("h1", { id: "main", tabindex: "-1" }, ui("error_title")), h("p", {}, ui("error_body")), h("button", { class: "btn block", onclick: () => render() }, ui("retry")), h("button", { class: "btn secondary block", onclick: () => { state.screen = "home"; render(); } }, "← " + ui("change_place"))));
   }
   window.scrollTo(0, 0);
   const focusTarget = root.querySelector("h1"); if (focusTarget) { focusTarget.id = "main"; focusTarget.tabIndex = -1; focusTarget.focus({ preventScroll: true }); }

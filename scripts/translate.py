@@ -71,7 +71,7 @@ def main(langs):
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("No ANTHROPIC_API_KEY. Put ANTHROPIC_API_KEY=sk-ant-... in .env (git-ignored) or export it.", file=sys.stderr); sys.exit(2)
     import anthropic
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(timeout=1800.0, max_retries=3)
     en = json.loads((ROOT / "i18n/en.json").read_text())
     for lang in langs:
         if lang not in LANGS: print(f"unknown language {lang}", file=sys.stderr); continue

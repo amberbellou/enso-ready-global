@@ -106,7 +106,11 @@
     "map_hint": "Tap your location on the map. Zoom in for villages.",
     "skip": "Skip to main content",
     "dyslexia": "Dyslexia-friendly spacing",
-    "steps_shortcut_hint": "Jumps to your first step."
+    "steps_shortcut_hint": "Jumps to your first step.",
+    "loading": "Getting your briefing…",
+    "error_title": "We could not load your briefing.",
+    "error_body": "Check your connection and try again. Your last briefing, if you had one, is kept on this phone.",
+    "retry": "Try again"
   },
   "timing_coming_one": "That season starts next month ({season}).",
   "hazards": {

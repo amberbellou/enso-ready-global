@@ -13,7 +13,7 @@
   "rain_drier": "hujan lebih sedikit dari biasanya",
   "rain_much_drier": "hujan jauh lebih sedikit dari biasanya",
   "rain_near_normal": "hujan mendekati normal",
-  "rain_mixed": "tanda-tanda hujan yang bercampur",
+  "rain_mixed": "hujan yang tidak menentu",
   "rain_drier__north_and_east_": "hujan lebih sedikit dari biasanya di utara dan timur",
   "rain_wetter__north_and_east_": "hujan lebih banyak dari biasanya di utara dan timur",
   "rain_drier__south_and_west_": "hujan lebih sedikit dari biasanya di selatan dan barat",
@@ -23,18 +23,18 @@
   "temp_warmer__winter___cooler__summer_": "musim dingin yang lebih hangat dan musim panas yang lebih sejuk",
   "temp_cooler__winter___warmer__summer_": "musim dingin yang lebih dingin dan musim panas yang lebih panas",
   "conf_likely": "kemungkinan besar",
-  "conf_leaning": "condong ke arah itu",
-  "conf_uncertain": "belum pasti",
-  "headline": "{name}: {rain} ({conf}) pada {season}.",
+  "conf_leaning": "cenderung terjadi",
+  "conf_uncertain": "belum pasti terjadi",
+  "headline": "{name}: {conf} {rain} pada {season}.",
   "headline_neutral": "{name}: saat ini tidak ada El Niño maupun La Niña.",
   "neutral_explain": "Hujan musiman di sini akan bergantung pada hal-hal lain. Periksa lagi setiap bulan; halaman ini diperbarui saat keadaan berubah.",
   "timing_now": "Musim itu sedang berlangsung sekarang ({season}).",
   "timing_coming": "Musim itu mulai sekitar {n} bulan lagi ({season}).",
   "timing_passed": "Musim itu sudah lewat untuk kejadian ini. Musim berikutnya adalah {season}; saat itu kejadian ini mungkin sudah melemah.",
   "expect": "Saat {phase}, {region} biasanya mengalami {rain} dan {temp}.",
-  "agreement_agree": "Catatan hujan setempat cocok dengan pola yang sudah dikenal, jadi tingkat keyakinan perkiraan ini: {conf}.",
-  "agreement_disagree": "Catatan hujan setempat tidak jelas cocok dengan pola yang sudah dikenal, jadi anggap tingkat keyakinannya: {conf}.",
-  "agreement_weak": "Kejadian di masa lalu di sini hasilnya bercampur, jadi anggap tingkat keyakinannya: {conf}.",
+  "agreement_agree": "Catatan hujan setempat cocok dengan pola yang sudah dikenal. Jadi, perkiraan ini {conf}.",
+  "agreement_disagree": "Catatan hujan setempat tidak sepenuhnya cocok dengan pola yang sudah dikenal, jadi anggap perkiraan ini {conf}.",
+  "agreement_weak": "Kejadian di masa lalu di sini hasilnya tidak seragam. Jadi, anggap perkiraan ini {conf}.",
   "agreement_none": "Tidak ada catatan hujan setempat yang bisa dipercaya untuk musim ini, jadi anggap tingkat keyakinannya: {conf}.",
   "history": "Pada {n} kejadian {phase} kuat yang terakhir, hujan {season} di sini rata-rata {pct}. Hujannya lebih banyak dari normal pada {wet}% kejadian itu.",
   "history_recent": "Kejadian terbaru: {recent}.",
@@ -44,7 +44,7 @@
   "no_data": "tidak ada data",
   "status_line": "Status global: {status} (diterbitkan {issued}).",
   "steps_title": "Apa yang bisa dilakukan sekarang",
-  "defer": "Untuk peringatan, ikuti {service}. Ringkasan ini adalah perkiraan musim, bukan peringatan.",
+  "defer": "Untuk peringatan, ikuti {service}. Ringkasan ini adalah prakiraan musiman, bukan peringatan.",
   "ui": {
     "app_name": "ENSO Ready",
     "tagline": "Apa arti El Niño ini bagi Anda, dan apa yang bisa Anda lakukan.",
@@ -66,7 +66,7 @@
     "show_all_steps": "Tampilkan semua langkah",
     "minutes": "sekitar {n} menit",
     "what_now": "Apa yang harus saya lakukan sekarang?",
-    "read_aloud": "Bacakan dengan suara",
+    "read_aloud": "Bacakan",
     "radio_script": "Naskah radio 30 detik",
     "sms_text": "Versi SMS",
     "sources": "Sumber",
@@ -102,7 +102,7 @@
     "LS": "tanah longsor",
     "DR": "kekeringan",
     "WS": "kekurangan air",
-    "WF": "kebakaran",
+    "WF": "kebakaran hutan dan lahan",
     "HZ": "kabut asap",
     "HT": "cuaca sangat panas",
     "EP": "wabah penyakit",
@@ -143,7 +143,7 @@
     "the summer rains": "hujan musim panas",
     "the Nordeste rainy season": "musim hujan Nordeste",
     "the Amazon dry season": "musim kemarau Amazon",
-    "the plum rains and summer flood season": "hujan plum dan musim banjir musim panas",
+    "the plum rains and summer flood season": "hujan awal musim panas dan musim banjir musim panas",
     "the dry season": "musim kemarau",
     "the coastal rainy season": "musim hujan di pesisir",
     "the Belg/Deyr rains": "hujan Belg/Deyr",
@@ -204,14 +204,14 @@
     },
     "flash-avoid": {
       "text": "Jangan pernah melintasi jalan yang banjir atau dasar sungai yang kering saat hujan lebat.",
-      "why": "Sebagian besar korban meninggal karena banjir bandang terjadi di dalam kendaraan dan di tempat penyeberangan sungai."
+      "why": "Sebagian besar kematian akibat banjir bandang terjadi di dalam kendaraan dan saat menyeberangi sungai."
     },
     "slide-signs": {
       "text": "Perhatikan retakan baru, pohon yang miring atau mata air baru di lereng di atas rumah Anda.",
       "why": "Lereng memberi tanda peringatan sebelum runtuh."
     },
     "slide-move": {
-      "text": "Jika Anda tinggal di bawah lereng yang terjal, siapkan tempat tidur yang lebih aman saat hujan lebat.",
+      "text": "Jika Anda tinggal di bawah lereng yang terjal, siapkan tempat yang lebih aman untuk tidur saat hujan lebat.",
       "why": "Tanah longsor paling sering terjadi pada malam hari setelah hujan beberapa hari."
     },
     "drought-store": {
@@ -224,7 +224,7 @@
     },
     "drought-plant": {
       "text": "Tanam bertahap: sebagian lebih awal, sebagian pada waktu biasa, jangan semua sekaligus.",
-      "why": "Risiko terbagi jika hujan pertama ternyata berhenti lagi."
+      "why": "Kalau hujan pertama ternyata berhenti lagi, tidak semua tanaman ikut rusak."
     },
     "drought-fodder": {
       "text": "Potong dan simpan pakan ternak cadangan. Pikirkan menjual ternak yang lemah lebih awal.",
@@ -248,7 +248,7 @@
     },
     "water-schedule": {
       "text": "Cari tahu jadwal pembagian air di kota Anda, dan isi wadah air pada hari air mengalir.",
-      "why": "Kota membagi air saat musim kering. Dengan tahu harinya, Anda tidak kehabisan air ketika keran kosong."
+      "why": "Saat musim kemarau, kota menggilir aliran air. Kalau Anda tahu harinya, Anda bisa menampung air lebih dulu supaya tidak kehabisan."
     },
     "fire-clear": {
       "text": "Bersihkan rumput kering dan semak sejauh paling sedikit 10 meter di sekitar bangunan.",
@@ -271,7 +271,7 @@
       "why": "Kabut asap paling membahayakan anak-anak dan orang lanjut usia."
     },
     "heat-hours": {
-      "text": "Pindahkan pekerjaan berat ke pagi hari dan sore hari.",
+      "text": "Lakukan pekerjaan berat pada pagi-pagi sekali dan sore hari.",
       "why": "Sakit karena panas paling banyak terjadi pada tengah hari."
     },
     "heat-check": {
@@ -287,7 +287,7 @@
       "why": "Kolera dan diare menyebar lewat air banjir."
     },
     "disease-mosquito": {
-      "text": "Buang air yang tergenang di sekitar rumah setiap beberapa hari, dan pakai kelambu.",
+      "text": "Buang genangan air di sekitar rumah setiap beberapa hari, dan pakai kelambu.",
       "why": "Penyakit dari nyamuk meningkat setelah hujan lebat."
     },
     "cholera-ors": {
@@ -315,7 +315,7 @@
       "why": "Mendaftar lebih awal membuat Anda tidak perlu antre saat bantuan datang."
     },
     "hurr-kit": {
-      "text": "Siapkan tas siaga badai hurricane: air, makanan, senter, radio, obat, dan dokumen.",
+      "text": "Siapkan tas siaga badai: air, makanan, senter, radio, obat, dan dokumen.",
       "why": "Toko bisa tutup dan listrik bisa padam sampai berhari-hari setelah badai."
     },
     "hurr-shelter": {
@@ -372,7 +372,7 @@
     },
     "cold-heat": {
       "text": "Periksa alat penghangat, penahan dingin rumah, dan pakaian hangat sebelum musim dingin.",
-      "why": "Serangan udara dingin paling berat dirasakan orang lanjut usia dan bayi."
+      "why": "Udara dingin yang datang mendadak paling berat dirasakan oleh orang lanjut usia dan bayi."
     },
     "spring-melt": {
       "text": "Perkirakan air sungai lebih tinggi pada musim semi, saat salju tebal mencair.",
@@ -387,7 +387,7 @@
       "why": "Musim panas yang sejuk memperlambat pematangan dan menambah penyakit tanaman."
     },
     "always-official": {
-      "text": "Ikuti badan cuaca nasional untuk peringatan; penjelasan ini adalah prakiraan musim, bukan peringatan.",
+      "text": "Ikuti badan cuaca nasional untuk peringatan; ringkasan ini adalah prakiraan musim, bukan peringatan.",
       "why": "Hanya badan resmi yang mengeluarkan peringatan untuk hari dan tempat tertentu."
     },
     "always-share": {
@@ -417,7 +417,7 @@
       "la_nina_note": "Musim semi dan musim panas lebih kering; tanaman sering tertekan karena kurang air."
     },
     "central-chile": {
-      "name": "Cile bagian tengah",
+      "name": "Chili bagian tengah",
       "el_nino_note": "Badai musim dingin cenderung membawa lebih banyak hujan.",
       "la_nina_note": "Hujan musim dingin cenderung lemah."
     },
@@ -462,12 +462,12 @@
       "la_nina_note": "Musim dingin lebih basah."
     },
     "india-monsoon": {
-      "name": "India, Pakistan, Nepal dan Bangladesh (monsun musim panas)",
-      "el_nino_note": "Monsun musim panas cenderung lebih lemah dan tidak merata. Tidak setiap El Niño membawa kekeringan, tetapi risikonya jelas lebih tinggi.",
-      "la_nina_note": "Monsun cenderung lebih kuat dengan lebih banyak banjir."
+      "name": "India, Pakistan, Nepal dan Bangladesh (muson musim panas)",
+      "el_nino_note": "Muson musim panas cenderung lebih lemah dan tidak merata. Tidak setiap El Niño membawa kekeringan, tetapi risikonya jelas lebih tinggi.",
+      "la_nina_note": "Angin muson cenderung lebih kuat dengan lebih banyak banjir."
     },
     "sri-lanka-south-india": {
-      "name": "Sri Lanka dan India bagian selatan (monsun timur laut)",
+      "name": "Sri Lanka dan India bagian selatan (muson timur laut)",
       "el_nino_note": "Hujan pada Okt–Des cenderung lebih lebat.",
       "la_nina_note": "Pengaruhnya lemah."
     },
@@ -483,8 +483,8 @@
     },
     "mainland-southeast-asia": {
       "name": "Vietnam, Thailand, Kamboja, Laos dan Myanmar",
-      "el_nino_note": "Musim kemarau lebih panas dan lebih kering. Monsun datang terlambat. Aliran Sungai Mekong rendah dan air asin masuk ke delta.",
-      "la_nina_note": "Monsun lebih basah dan banjir lebih banyak."
+      "el_nino_note": "Musim kemarau lebih panas dan lebih kering. Muson datang terlambat. Aliran Sungai Mekong rendah dan air asin masuk ke delta.",
+      "la_nina_note": "Muson lebih basah dan banjir lebih banyak."
     },
     "southern-china": {
       "name": "Tiongkok bagian selatan dan daerah aliran Sungai Yangtze",
@@ -630,6 +630,13 @@
     "Okt",
     "Nov",
     "Des"
+  ],
+  "usdm_levels": [
+    "abnormally dry conditions",
+    "moderate drought",
+    "severe drought",
+    "extreme drought",
+    "exceptional drought"
   ],
   "_meta": {
     "all_year": {

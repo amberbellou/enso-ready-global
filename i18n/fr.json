@@ -13,7 +13,7 @@
   "rain_drier": "moins de pluie que d'habitude",
   "rain_much_drier": "beaucoup moins de pluie que d'habitude",
   "rain_near_normal": "une pluie proche de la normale",
-  "rain_mixed": "un signal de pluie mélangé",
+  "rain_mixed": "un signal de pluie mitigé",
   "rain_drier__north_and_east_": "moins de pluie que d'habitude dans le nord et l'est",
   "rain_wetter__north_and_east_": "plus de pluie que d'habitude dans le nord et l'est",
   "rain_drier__south_and_west_": "moins de pluie que d'habitude dans le sud et l'ouest",
@@ -23,7 +23,7 @@
   "temp_warmer__winter___cooler__summer_": "un hiver plus doux et un été plus frais",
   "temp_cooler__winter___warmer__summer_": "un hiver plus froid et un été plus chaud",
   "conf_likely": "probable",
-  "conf_leaning": "plutôt probable",
+  "conf_leaning": "possible",
   "conf_uncertain": "incertain",
   "headline": "{name} : en {season}, {rain} — {conf}.",
   "headline_neutral": "{name} : ni El Niño ni La Niña n'est actif en ce moment.",
@@ -32,10 +32,10 @@
   "timing_coming": "Cette saison commence dans environ {n} mois ({season}).",
   "timing_passed": "Cette saison est déjà passée pour cet épisode. La prochaine est {season} ; d'ici là, l'épisode peut s'être affaibli.",
   "expect": "Pendant {phase}, {region} connaît en général {rain} et {temp}.",
-  "agreement_agree": "Les relevés de pluie de la région correspondent au schéma connu. Niveau de confiance : {conf}.",
-  "agreement_disagree": "Les relevés de pluie de la région ne correspondent pas clairement au schéma connu. Niveau de confiance : {conf}.",
-  "agreement_weak": "Ici, les épisodes passés ont donné des résultats variés. Niveau de confiance : {conf}.",
-  "agreement_none": "Il n'y a pas de relevé de pluie fiable ici pour cette saison. Niveau de confiance : {conf}.",
+  "agreement_agree": "Les relevés de pluie de la région correspondent au schéma connu. Ce qui est prévu ici est donc {conf}.",
+  "agreement_disagree": "Les relevés de pluie de la région ne correspondent pas clairement au schéma connu. Considérez donc cela comme {conf}.",
+  "agreement_weak": "Ici, les épisodes passés ont donné des résultats variés. Considérez donc ce qui est prévu comme {conf}.",
+  "agreement_none": "Il n'y a pas de relevé de pluie fiable ici pour cette saison. Considérez donc ce qui est prévu comme {conf}.",
   "history": "Lors des {n} derniers épisodes forts ({phase}), la pluie de {season} ici était en moyenne {pct}. Elle a été plus abondante que la normale dans {wet} % des cas.",
   "history_recent": "Épisodes les plus récents : {recent}.",
   "pct_above": "{n} % au-dessus de la normale",
@@ -55,7 +55,7 @@
     "livelihood_q": "Qu'est-ce qui vous décrit le mieux ?",
     "livelihood_farmer": "Je cultive la terre ou j'élève des animaux",
     "livelihood_coastal": "J'habite près de la côte ou d'une rivière",
-    "livelihood_urban": "J'habite dans un village ou une ville",
+    "livelihood_urban": "J'habite en ville",
     "livelihood_all": "Montrez-moi tout",
     "tell_more": "En savoir plus",
     "show_less": "Afficher moins",
@@ -81,11 +81,11 @@
     "methodology": "Comment ça marche",
     "back": "Retour",
     "change_place": "Changer de lieu",
-    "no_results": "Aucun résultat. Essayez une plus grande ville proche.",
+    "no_results": "Aucun résultat. Essayez une ville plus grande à proximité.",
     "region_label": "Région",
     "share": "Partager ce bulletin",
     "no_js": "La recherche a besoin de JavaScript. Sans lui, choisissez votre pays ci-dessous.",
-    "forecast_unavailable": "La prévision du modèle saisonnier n'est pas disponible en ce moment (hors ligne ou service occupé). Le texte ci-dessus se base sur le schéma habituel et sur les événements passés.",
+    "forecast_unavailable": "La prévision du modèle saisonnier n'est pas disponible en ce moment (hors ligne ou service occupé). Le texte ci-dessus se base sur le schéma habituel et sur les épisodes passés.",
     "data_note": "Données : {list}.",
     "near": "près de {name}",
     "pick_map": "Choisir sur une carte",
@@ -103,7 +103,7 @@
     "DR": "sécheresse",
     "WS": "manque d'eau",
     "WF": "incendies",
-    "HZ": "brume de fumée",
+    "HZ": "fumée des incendies",
     "HT": "chaleur extrême",
     "EP": "épidémies",
     "CH": "choléra",
@@ -114,7 +114,7 @@
     "TC": "tempêtes tropicales",
     "TCE": "tempêtes tropicales qui vont plus loin vers l'est",
     "ST": "tempêtes",
-    "HS": "mer agitée",
+    "HS": "mer plus haute que d'habitude",
     "SI": "eau salée dans les puits",
     "FR": "gel en altitude",
     "SN": "peu de neige accumulée",
@@ -134,7 +134,7 @@
   "forecast_weak": "C'est proche de la normale, donc le schéma pourrait être plus faible cette fois.",
   "forecast_none": "",
   "forecast_partial": "(La prévision couvre {n} mois sur {of}.)",
-  "history_few": "Trop peu d'événements passés ont des données ici pour donner une moyenne locale.",
+  "history_few": "Il y a trop peu d'épisodes passés avec des données ici pour calculer une moyenne locale.",
   "local_seasons": {
     "spring and summer": "le printemps et l'été",
     "winter and spring": "l'hiver et le printemps",
@@ -154,14 +154,14 @@
     "the southwest monsoon": "la mousson du sud-ouest",
     "the northeast monsoon": "la mousson du nord-est",
     "the winter rains": "les pluies d'hiver",
-    "the short rains": "les courtes pluies",
+    "the short rains": "les petites pluies",
     "the Maha season rains": "les pluies de la saison Maha",
     "the rainy season": "la saison des pluies",
     "winter": "l'hiver",
     "the highland rains": "les pluies des hautes terres",
     "the Deyr rains": "les pluies Deyr",
     "the Vuli rains": "les pluies Vuli",
-    "the second rains": "les deuxièmes pluies",
+    "the second rains": "la deuxième saison des pluies",
     "spring": "le printemps"
   },
   "pct_above_cap": "plus de {n} % au-dessus de la normale",
@@ -195,7 +195,7 @@
       "why": "L'alerte officielle est le signal pour agir."
     },
     "flood-medical": {
-      "text": "Gardez une semaine de vos médicaments de chaque jour dans le sac d'urgence.",
+      "text": "Gardez dans le sac d'urgence une semaine des médicaments que vous prenez chaque jour.",
       "why": "Les centres de santé peuvent rester inaccessibles pendant plusieurs jours."
     },
     "river-level": {
@@ -240,7 +240,7 @@
     },
     "droughtne-store": {
       "text": "Stockez de l'eau et prévoyez l'irrigation si vous êtes dans le nord ou dans l'est.",
-      "why": "Là-bas, les étés El Niño sont souvent secs."
+      "why": "Dans ces régions, les étés El Niño sont souvent secs."
     },
     "water-reuse": {
       "text": "Réutilisez l'eau de lavage pour le jardin et les toilettes.",
@@ -256,10 +256,10 @@
     },
     "fire-noburn": {
       "text": "Ne brûlez pas les champs ni les ordures les jours chauds et venteux.",
-      "why": "La plupart des grands incendies commencent par un feu contrôlé qui a échappé."
+      "why": "La plupart des grands incendies commencent par un feu allumé exprès qui a échappé à tout contrôle."
     },
     "bush-plan": {
-      "text": "Préparez un plan pour partir tôt et suivez les niveaux de danger annoncés par votre service d'incendie.",
+      "text": "Préparez un plan pour partir tôt et suivez les niveaux de danger annoncés par les pompiers.",
       "why": "Partir tard est le choix le plus dangereux lors d'un feu de brousse."
     },
     "wild-plan": {
@@ -291,7 +291,7 @@
       "why": "Les maladies transmises par les moustiques augmentent après de fortes pluies."
     },
     "cholera-ors": {
-      "text": "Gardez des sels de réhydratation orale à la maison et sachez où se trouve la clinique la plus proche.",
+      "text": "Gardez des sels de réhydratation orale à la maison et sachez où se trouve le centre de santé le plus proche.",
       "why": "Une réhydratation rapide sauve des vies pendant les épidémies de choléra."
     },
     "rvf-animals": {
@@ -379,7 +379,7 @@
       "why": "Un hiver très neigeux amène souvent des crues au printemps."
     },
     "mild-pests": {
-      "text": "Surveillez les ravageurs et les moisissures, plus nombreux : un hiver doux en tue moins.",
+      "text": "Attendez-vous à plus de ravageurs et de moisissures : un hiver doux en tue moins.",
       "why": "D'habitude, le froid limite les ravageurs et les maladies."
     },
     "cool-crop": {
@@ -387,7 +387,7 @@
       "why": "Les étés frais retardent la maturité et augmentent les maladies des cultures."
     },
     "always-official": {
-      "text": "Suivez votre service météorologique national pour les alertes. Ce document est une prévision saisonnière, pas une alerte.",
+      "text": "Suivez votre service météorologique national pour les alertes. Ce bulletin est une prévision saisonnière, pas une alerte.",
       "why": "Seuls les services officiels émettent des alertes pour des jours et des lieux précis."
     },
     "always-share": {
@@ -449,7 +449,7 @@
     "northern-us-southern-canada": {
       "name": "Nord des États-Unis et sud du Canada",
       "el_nino_note": "Les hivers sont plutôt plus doux que d'habitude dans le nord des Plaines, le Midwest et la région des Grands Lacs.",
-      "la_nina_note": "Hivers plus froids et plus neigeux dans la bande nord et la vallée de l'Ohio."
+      "la_nina_note": "Hivers plus froids et plus neigeux dans les États du nord et la vallée de l'Ohio."
     },
     "alaska": {
       "name": "Alaska",
@@ -538,7 +538,7 @@
     },
     "southern-africa": {
       "name": "Afrique australe",
-      "el_nino_note": "Les pluies d'été sont en général en dessous de la normale, avec des périodes de chaleur. Les récoltes de maïs ont échoué dans beaucoup de zones en 1992, en 2016 et en 2024.",
+      "el_nino_note": "Les pluies d'été sont en général en dessous de la normale, avec des périodes de chaleur. Les récoltes de maïs ont été perdues dans beaucoup de zones en 1992, en 2016 et en 2024.",
       "la_nina_note": "Étés plus humides, avec plus d'inondations."
     },
     "madagascar": {
@@ -573,7 +573,7 @@
     },
     "north-africa-mediterranean": {
       "name": "Afrique du Nord et Méditerranée",
-      "el_nino_note": "ENSO a peu d'effet régulier ici. Les prévisions locales comptent davantage.",
+      "el_nino_note": "L'ENSO a peu d'effet constant ici. Les prévisions locales comptent davantage.",
       "la_nina_note": "Pas de signal fiable."
     },
     "europe": {
@@ -630,6 +630,13 @@
     "oct.",
     "nov.",
     "déc."
+  ],
+  "usdm_levels": [
+    "abnormally dry conditions",
+    "moderate drought",
+    "severe drought",
+    "extreme drought",
+    "exceptional drought"
   ],
   "_meta": {
     "all_year": {
