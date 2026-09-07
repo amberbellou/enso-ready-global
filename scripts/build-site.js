@@ -99,7 +99,7 @@ const shell = ({ title, body, base = ".", lang = "en", dir = "ltr", desc = "" })
 <body>
 <header class="top"><a class="brand" href="${base}/">🌦️ ENSO Ready</a><a href="${base}/methodology.html">${esc(strings.ui.methodology)}</a></header>
 ${body}
-<footer>${esc(strings.ui.updated.replace("{date}", buildDate))} · Independent, open-source, no ads, no tracking. Not an official warning service. <a href="https://github.com/amberbellou/enso-ready-global">Source code</a><br>Data: <a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS (UCSB CHC)</a>, <a href="https://www.ncei.noaa.gov/products/global-precipitation-climatology-project">GPCP (NOAA)</a>, <a href="https://www.cpc.ncep.noaa.gov/">NOAA CPC</a>, <a href="https://open-meteo.com/">ECMWF SEAS5 via Open-Meteo (CC BY 4.0)</a>, <a href="https://www.geonames.org/">GeoNames (CC BY 4.0)</a>, <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</footer>
+<footer>${esc(strings.ui.updated.replace("{date}", buildDate))} · Independent, open-source, no ads, no tracking. Not an official warning service. <a href="https://github.com/amberbellou/enso-ready-global">Source code</a><br><nav aria-label="About this service"><a href="${base}/about.html">About</a> · <a href="${base}/methodology.html">How this works</a> · <a href="${base}/privacy.html">Privacy</a> · <a href="${base}/terms.html">Terms</a> · <a href="${base}/accessibility.html">Accessibility</a> · <a href="${base}/contact.html">Contact and corrections</a> · <a href="${base}/alignment.html">Early Warnings for All</a></nav>Data: <a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS (UCSB CHC)</a>, <a href="https://www.ncei.noaa.gov/products/global-precipitation-climatology-project">GPCP (NOAA)</a>, <a href="https://www.cpc.ncep.noaa.gov/">NOAA CPC</a>, <a href="https://open-meteo.com/">ECMWF SEAS5 via Open-Meteo (CC BY 4.0)</a>, <a href="https://www.geonames.org/">GeoNames (CC BY 4.0)</a>, <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</footer>
 </body></html>`;
 
 // --- landing ---
@@ -160,6 +160,30 @@ for (const cc of ccList) {
 // --- methodology ---
 const provTable = `<h2>Datasets behind every fact</h2><p>Generated from the provenance stored with each dataset at build time (${esc(buildDate)}).</p><div style="overflow-x:auto"><table><thead><tr><th>Layer</th><th>Dataset</th><th>Version / as of</th><th>Retrieved</th><th>Licence</th></tr></thead><tbody>${registry.map(r => `<tr><td>${esc(r.layer)}</td><td><a href="${r.url}" rel="noopener">${esc(r.name)}</a></td><td>${esc(r.version || "")}</td><td>${esc(r.retrieved_at || "")}</td><td>${esc(r.licence || "")}</td></tr>`).join("")}</tbody></table></div>`;
 W("methodology.html", shell({ title: "How this works — ENSO Ready", body: fs.readFileSync(path.join(ROOT, "docs/methodology.html"), "utf8").replace("</main>", provTable + "</main>") }));
+// --- governance pages from docs/pages/*.md (Annex E.B.2); minimal Markdown -> HTML, no dependencies ---
+const md = (src) => {
+  const inline = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>").replace(/`(.+?)`/g, "<code>$1</code>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, t, u) => `<a href="${u.replace(/&amp;/g, "&")}" rel="noopener">${t}</a>`);
+  const out = []; let list = null, para = [];
+  const flush = () => { if (para.length) { out.push(`<p>${inline(para.join(" "))}</p>`); para = []; } if (list) { out.push(`</${list}>`); list = null; } };
+  for (const raw of src.split("\n")) {
+    const line = raw.trimEnd();
+    const hm = line.match(/^(#{1,4})\s+(.*)$/);
+    if (hm) { flush(); out.push(`<h${hm[1].length}>${inline(hm[2])}</h${hm[1].length}>`); continue; }
+    const lm = line.match(/^\s*[-*]\s+(.*)$/), om = line.match(/^\s*\d+[.)]\s+(.*)$/);
+    if (lm || om) { if (para.length) { out.push(`<p>${inline(para.join(" "))}</p>`); para = []; } const tag = lm ? "ul" : "ol"; if (list !== tag) { if (list) out.push(`</${list}>`); out.push(`<${tag}>`); list = tag; } out.push(`<li>${inline((lm || om)[1])}</li>`); continue; }
+    if (!line.trim()) { flush(); continue; }
+    if (list) { out.push(`</${list}>`); list = null; }
+    para.push(line.trim());
+  }
+  flush(); return out.join("\n");
+};
+const pagesDir = path.join(ROOT, "docs/pages");
+const govPages = fs.existsSync(pagesDir) ? fs.readdirSync(pagesDir).filter(f => f.endsWith(".md")) : [];
+for (const f of govPages) {
+  const slug = f.replace(".md", ""); const src = fs.readFileSync(path.join(pagesDir, f), "utf8");
+  const title = (src.match(/^#\s+(.*)$/m) || [null, slug])[1];
+  W(`${slug}.html`, shell({ title: `${title} — ENSO Ready`, body: `<main class="doc">${md(src.replace(/^#\s+.*$/m, "# " + title))}</main>` }));
+}
 W(".nojekyll", "");
 W("robots.txt", "User-agent: *\nAllow: /\n");
 console.log(`built: ${nCells} cell files, ${nPages} city pages, ${ccList.length} country pages`);
