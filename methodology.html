@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-base=".">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How this works — ENSO Ready</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="./style.css">
+<meta name="color-scheme" content="light">
+</head>
+<body>
+<header class="top"><a class="brand" href="./">🌦️ ENSO Ready</a><a href="./methodology.html">How this works</a></header>
+<main>
+<h1>How this works</h1>
+<p>ENSO Ready turns public climate data into a plain-language seasonal outlook for any place on Earth. It is independent and open source. It is not a warning service.</p>
+<h2>Where the facts come from</h2>
+<ul>
+<li><strong>Current El Niño / La Niña status</strong>: NOAA Climate Prediction Center, <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml">ENSO Diagnostic Discussion</a>, checked monthly.</li>
+<li><strong>Which past events were strong</strong>: NOAA's <a href="https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt">Oceanic Niño Index</a>. An event is five or more overlapping seasons at or beyond ±0.5 °C; strong means a peak of ±1.5 °C or more.</li>
+<li><strong>What rain did here in past events</strong>: on land between 50°N and 50°S, <a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS v2.0</a> (UC Santa Barbara Climate Hazards Center), a satellite-plus-rain-gauge record since 1981, averaged to a 2° grid by the <a href="https://iridl.ldeo.columbia.edu/">IRI Data Library</a>. Everywhere else, <a href="https://www.ncei.noaa.gov/products/global-precipitation-climatology-project">GPCP v2.3</a> (NOAA) since 1979. Both are compared with a 1991–2020 normal. For each cell and each three-month season we store the average percentage change across strong events, the share of events that were wetter than normal, the spread between events, and the number of events. Fewer than three events means no local average is shown.</li>
+<li><strong>This season's model forecast</strong>: the ECMWF SEAS5 seasonal forecast, monthly rainfall anomaly for your point, served by <a href="https://open-meteo.com/">Open-Meteo</a> (CC BY 4.0) and fetched by your browser only when you open a briefing. When it agrees with the known pattern confidence goes up one step; when it disagrees, down one step. If it cannot be loaded the briefing still works from the pattern and the past events.</li>
+<li><strong>Land and country for each cell</strong>: <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain). Coastal towns are matched to the nearest land cell so they never inherit ocean rainfall statistics.</li>
+<li><strong>The known regional pattern</strong>: a reviewed table of 44 regions summarising the established El Niño and La Niña impacts described by NOAA, IRI (Columbia University), the Australian Bureau of Meteorology and WMO, each with a confidence rating.</li>
+<li><strong>Official warning sources</strong>: national meteorological services, via the <a href="https://wmo.int/about-wmo/members">WMO Members directory</a>.</li>
+<li><strong>Place search</strong>: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0).</li>
+</ul>
+<h2>How a briefing is built</h2>
+<ol>
+<li>Your place is matched to its 2° grid cell (nearest land cell for coastal places), to the regional pattern it falls in, and to any country-specific notes such as the local name of the season.</li>
+<li>The pattern gives the expected rain and temperature signal, its season, and its hazards.</li>
+<li>The local rain record for that season is checked against the pattern. If they agree, confidence goes up; if not, the briefing says so.</li>
+<li>This season's model forecast, when available, moves confidence up or down one step.</li>
+<li>Confidence is expressed in three words only: <em>likely</em>, <em>leaning that way</em>, or <em>uncertain</em>.</li>
+<li>Preparation steps are picked from a reviewed checklist by hazard and by what you do for a living.</li>
+</ol>
+<p>Every sentence is a fixed template filled with numbers from the steps above. No text is generated freely by an AI model, so every fact can be traced to its source.</p>
+<h2>What this cannot tell you</h2>
+<ul>
+<li>It cannot say what will happen on a particular day. Only your national weather service issues warnings.</li>
+<li>Seasonal signals are tendencies. Even in a strong El Niño some places behave differently, and the briefing shows when past events disagreed.</li>
+<li>Grid cells are about 220 km wide. Mountains, coasts and cities vary within a cell.</li>
+<li>We do not use EM-DAT disaster records: their licence does not allow redistribution. Historical impact notes cite public sources only.</li>
+</ul>
+<h2>Privacy</h2>
+<p>No accounts, no cookies, no analytics. Your place and choices are stored only on your device.</p>
+<h2>Corrections</h2>
+<p>Found an error or a bad translation? <a href="https://github.com/amberbellou/enso-ready-global/issues">Open an issue</a>.</p>
+</main>
+
+<footer>Data updated 2026-09-07 · Independent, open-source, no ads, no tracking. Not an official warning service. <a href="https://github.com/amberbellou/enso-ready-global">Source code</a><br>Data: <a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS (UCSB CHC)</a>, <a href="https://www.ncei.noaa.gov/products/global-precipitation-climatology-project">GPCP (NOAA)</a>, <a href="https://www.cpc.ncep.noaa.gov/">NOAA CPC</a>, <a href="https://open-meteo.com/">ECMWF SEAS5 via Open-Meteo (CC BY 4.0)</a>, <a href="https://www.geonames.org/">GeoNames (CC BY 4.0)</a>, <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</footer>
+</body></html>

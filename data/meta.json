@@ -1,0 +1,51 @@
+{
+ "built_at": "2026-09-07T12:35:00.298Z",
+ "status": {
+  "issued": "13 August 2026",
+  "fetched_at": "2026-09-07T11:19:29.453Z",
+  "update_interval_days": 31,
+  "stale_after": "2026-09-27T00:00:00.000Z"
+ },
+ "composites": {
+  "schema": 2,
+  "baseline": [
+   1991,
+   2020
+  ],
+  "events": {
+   "El Niño": [
+    "1982-83",
+    "1991-92",
+    "1997-98",
+    "2009-10",
+    "2015-16",
+    "2023-24"
+   ],
+   "La Niña": [
+    "1988-89",
+    "1999-00",
+    "2007-08",
+    "2010-11"
+   ]
+  },
+  "rebuild_interval_days": 365
+ },
+ "sources": {
+  "chirps": {
+   "label": "CHIRPS v2.0 monthly (UCSB Climate Hazards Center), 2° box average via IRI Data Library",
+   "url": "https://www.chc.ucsb.edu/data/chirps"
+  },
+  "gpcp": {
+   "label": "GPCP v2.3 monthly (NOAA NCEI), interpolated to 2°",
+   "url": "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project"
+  },
+  "events": {
+   "label": "NOAA CPC Oceanic Niño Index",
+   "url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt"
+  },
+  "land": {
+   "label": "Natural Earth 50m admin-0 (public domain)",
+   "url": "https://www.naturalearthdata.com/"
+  }
+ }
+}
