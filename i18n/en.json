@@ -143,6 +143,486 @@
   "forecast_none": "",
   "forecast_partial": "(Forecast covers {n} of {of} months.)",
   "history_few": "Too few past events have data here to give a local average.",
-  "local_seasons": {},
-  "pct_above_cap": "more than {n}% above normal"
+  "local_seasons": {
+    "spring and summer": "spring and summer",
+    "winter and spring": "winter and spring",
+    "the build-up and wet season": "the build-up and wet season",
+    "the monsoon": "the monsoon",
+    "the summer rains": "the summer rains",
+    "the Nordeste rainy season": "the Nordeste rainy season",
+    "the Amazon dry season": "the Amazon dry season",
+    "the plum rains and summer flood season": "the plum rains and summer flood season",
+    "the dry season": "the dry season",
+    "the coastal rainy season": "the coastal rainy season",
+    "the Belg/Deyr rains": "the Belg/Deyr rains",
+    "the Kiremt rains": "the Kiremt rains",
+    "the wet season": "the wet season",
+    "the rainy season and canícula": "the rainy season and canícula",
+    "musim kemarau": "musim kemarau",
+    "the southwest monsoon": "the southwest monsoon",
+    "the northeast monsoon": "the northeast monsoon",
+    "the winter rains": "the winter rains",
+    "the short rains": "the short rains",
+    "the Maha season rains": "the Maha season rains",
+    "the rainy season": "the rainy season",
+    "winter": "winter",
+    "the highland rains": "the highland rains",
+    "the Deyr rains": "the Deyr rains",
+    "the Vuli rains": "the Vuli rains",
+    "the second rains": "the second rains",
+    "spring": "spring"
+  },
+  "pct_above_cap": "more than {n}% above normal",
+  "steps": {
+    "flood-docs": {
+      "text": "Put ID cards, land papers and phone numbers in a sealed plastic bag.",
+      "why": "Papers are the hardest thing to replace after a flood."
+    },
+    "flood-route": {
+      "text": "Agree with your household on a high place to go and a way to get there.",
+      "why": "Deciding in the dark, in the rain, is when people get hurt."
+    },
+    "flood-water": {
+      "text": "Store clean drinking water in closed containers, enough for three days.",
+      "why": "Floods pollute wells and taps first."
+    },
+    "flood-drains": {
+      "text": "Clear drains, gutters and channels near your home now.",
+      "why": "Blocked drains turn heavy rain into a flood in your yard."
+    },
+    "flood-raise": {
+      "text": "Move food, seeds, fertiliser and valuables off the floor.",
+      "why": "Even shallow water ruins stored food and seed."
+    },
+    "flood-animals": {
+      "text": "Plan where animals can go on higher ground.",
+      "why": "Livestock losses are often the biggest cost of a flood."
+    },
+    "flood-warnings": {
+      "text": "Find out how your local warnings are given: radio, SMS, loudspeaker or a neighbour.",
+      "why": "The official warning is the signal to act."
+    },
+    "flood-medical": {
+      "text": "Keep a week of any daily medicines in the emergency bag.",
+      "why": "Clinics may be cut off for days."
+    },
+    "river-level": {
+      "text": "Learn where the river reached in the last big flood and stay above that line.",
+      "why": "Past high-water marks are the best local guide."
+    },
+    "flash-avoid": {
+      "text": "Never cross a flooded road or dry riverbed during heavy rain.",
+      "why": "Most flash-flood deaths happen in vehicles and river crossings."
+    },
+    "slide-signs": {
+      "text": "Watch for new cracks, tilting trees or springs on slopes above your home.",
+      "why": "Slopes give warning signs before they fail."
+    },
+    "slide-move": {
+      "text": "If you live below a steep slope, arrange a safer place to sleep during heavy rain.",
+      "why": "Landslides mostly strike at night after days of rain."
+    },
+    "drought-store": {
+      "text": "Fix leaks and add water storage: tanks, drums, or a covered pit.",
+      "why": "Every litre saved now is a litre you do not have to carry later."
+    },
+    "drought-seed": {
+      "text": "Ask your extension officer about early-maturing or drought-tolerant seed.",
+      "why": "Short-season crops can finish before the rains stop."
+    },
+    "drought-plant": {
+      "text": "Plant staggered: some early, some at normal time, not all at once.",
+      "why": "Spreads the risk of a false start to the rains."
+    },
+    "drought-fodder": {
+      "text": "Cut and store extra fodder; consider selling weak animals early.",
+      "why": "Prices fall once everyone sells at the same time."
+    },
+    "drought-food": {
+      "text": "Buy staple food a little at a time now while prices are normal.",
+      "why": "Food prices rise fastest when harvests fail."
+    },
+    "drought-share": {
+      "text": "Agree with neighbours how a shared well or tank will be rationed.",
+      "why": "Agreed rules prevent conflict when water gets short."
+    },
+    "droughtne-store": {
+      "text": "Store water and plan irrigation if you are in the north or east.",
+      "why": "El Niño summers are often dry there."
+    },
+    "water-reuse": {
+      "text": "Reuse washing water for gardens and toilets.",
+      "why": "Cuts household water use by a third."
+    },
+    "water-schedule": {
+      "text": "Learn your city's water rationing schedule and fill containers on supply days.",
+      "why": "Cities ration during dry seasons; knowing the day avoids empty taps."
+    },
+    "fire-clear": {
+      "text": "Clear dry grass and brush at least 10 metres around buildings.",
+      "why": "A cleared strip stops most grass fires reaching a house."
+    },
+    "fire-noburn": {
+      "text": "Do not burn fields or rubbish on hot, windy days.",
+      "why": "Most large fires start as a controlled burn that escaped."
+    },
+    "bush-plan": {
+      "text": "Make a leave-early plan and follow your fire service's danger ratings.",
+      "why": "Leaving late is the most dangerous choice in a bushfire."
+    },
+    "wild-plan": {
+      "text": "Prepare an evacuation bag and know two ways out of your area.",
+      "why": "Wildfires can close the main road within minutes."
+    },
+    "haze-mask": {
+      "text": "Keep masks for smoke days and a room that can be closed off.",
+      "why": "Smoke haze harms children and the elderly most."
+    },
+    "heat-hours": {
+      "text": "Move hard work to early morning and late afternoon.",
+      "why": "Heat illness peaks in the middle of the day."
+    },
+    "heat-check": {
+      "text": "Check daily on elderly neighbours and people living alone.",
+      "why": "Most heat deaths happen quietly at home."
+    },
+    "heat-water": {
+      "text": "Drink water often, before you feel thirsty.",
+      "why": "Thirst comes late when the body is already short of water."
+    },
+    "disease-water": {
+      "text": "Boil or treat drinking water when floods reach wells or pipes.",
+      "why": "Cholera and diarrhoea spread through flood water."
+    },
+    "disease-mosquito": {
+      "text": "Empty standing water around the home every few days and use nets.",
+      "why": "Mosquito diseases rise after heavy rain."
+    },
+    "cholera-ors": {
+      "text": "Keep oral rehydration salts at home and know the nearest clinic.",
+      "why": "Fast rehydration saves lives in cholera outbreaks."
+    },
+    "rvf-animals": {
+      "text": "Report sudden animal deaths or abortions to a vet, and avoid handling sick animals.",
+      "why": "Rift Valley fever spreads to people from sick livestock after floods."
+    },
+    "crop-mulch": {
+      "text": "Mulch fields to hold soil moisture.",
+      "why": "Mulch can keep soil moist for an extra week or two."
+    },
+    "cropfail-diversify": {
+      "text": "Plant a mix of crops, including some that need less water.",
+      "why": "One failed crop hurts less when others survive."
+    },
+    "cropfail-insurance": {
+      "text": "Ask about crop insurance or a farmer group support scheme before planting.",
+      "why": "Most schemes close their sign-up before the season starts."
+    },
+    "food-network": {
+      "text": "Find out which local groups give food or cash support and how to register.",
+      "why": "Registering early avoids queues when help arrives."
+    },
+    "hurr-kit": {
+      "text": "Prepare a hurricane kit: water, food, torch, radio, medicines, documents.",
+      "why": "Shops and power may be out for days after a storm."
+    },
+    "hurr-shelter": {
+      "text": "Know your nearest shelter and how you will get there.",
+      "why": "Shelters fill fast once a warning is issued."
+    },
+    "typh-kit": {
+      "text": "Prepare a typhoon kit: water, food, torch, radio, medicines, documents.",
+      "why": "Shops and power may be out for days after a storm."
+    },
+    "typh-boats": {
+      "text": "Fishers: agree a safe harbour plan and follow no-sail warnings.",
+      "why": "Most typhoon deaths at sea are boats caught out."
+    },
+    "cyc-kit": {
+      "text": "Prepare a cyclone kit: water, food, torch, radio, medicines, documents.",
+      "why": "Shops and power may be out for days after a storm."
+    },
+    "cyc-roof": {
+      "text": "Tie down or repair loose roofing before the season.",
+      "why": "Loose roof sheets are the main cause of cyclone damage and injury."
+    },
+    "cycmoz-plan": {
+      "text": "Know your evacuation route and shelter before the cyclone season.",
+      "why": "Cyclones in the Mozambique Channel bring floods far inland."
+    },
+    "cycshift-plan": {
+      "text": "Prepare for cyclones even if your island is rarely hit.",
+      "why": "During El Niño, cyclones form and travel farther east than usual."
+    },
+    "storm-trees": {
+      "text": "Trim weak branches and secure loose items outdoors.",
+      "why": "Falling branches cause most storm damage to homes."
+    },
+    "seas-move": {
+      "text": "Move valuables and sleeping areas away from the shoreline during king tides.",
+      "why": "Sea level is higher than normal on Pacific atolls during El Niño."
+    },
+    "salt-store": {
+      "text": "Store fresh water before the dry season; test wells for salt.",
+      "why": "Low river flow lets sea water push into wells and canals."
+    },
+    "frost-cover": {
+      "text": "Cover seedlings at night and keep seed for replanting.",
+      "why": "Highland frost during dry spells can kill a whole crop overnight."
+    },
+    "snow-water": {
+      "text": "Expect lower rivers next summer; plan irrigation and water use early.",
+      "why": "Less winter snow means less water later in the year."
+    },
+    "snow-kit": {
+      "text": "Keep extra food, heating fuel and medicines in case roads close.",
+      "why": "Heavy snow can cut off towns for days."
+    },
+    "cold-heat": {
+      "text": "Check heating, insulation and warm clothing before winter.",
+      "why": "Cold snaps hit older people and babies hardest."
+    },
+    "spring-melt": {
+      "text": "Expect higher rivers in spring when heavy snow melts.",
+      "why": "A snowy winter often means spring floods."
+    },
+    "mild-pests": {
+      "text": "Watch for more pests and mould; a mild winter kills fewer of them.",
+      "why": "Cold normally keeps pests and disease in check."
+    },
+    "cool-crop": {
+      "text": "Choose crop varieties that ripen in a cooler, wetter summer.",
+      "why": "Cool summers delay ripening and increase crop disease."
+    },
+    "always-official": {
+      "text": "Follow your national weather service for warnings; this briefing is a seasonal outlook, not a warning.",
+      "why": "Only official services issue alerts for specific days and places."
+    },
+    "always-share": {
+      "text": "Tell one neighbour what this season may bring.",
+      "why": "Communities that talk about risk early prepare better."
+    }
+  },
+  "regions": {
+    "peru-ecuador-coast": {
+      "name": "Coastal Peru and Ecuador",
+      "el_nino_note": "Warm coastal water brings heavy rain to a normally dry coast. 1982-83, 1997-98 and 2017 brought severe floods.",
+      "la_nina_note": "Cooler sea and drier coast."
+    },
+    "northern-south-america": {
+      "name": "Northern South America and the Amazon",
+      "el_nino_note": "Weaker rains and heat raise fire and river-low-water risk across the Orinoco and Amazon basins.",
+      "la_nina_note": "Heavier rains, especially in Colombia and Venezuela."
+    },
+    "northeast-brazil": {
+      "name": "Northeast Brazil (Nordeste)",
+      "el_nino_note": "The main rainy season often fails or comes late in strong El Niño years.",
+      "la_nina_note": "Rainy season tends to be stronger."
+    },
+    "southeast-south-america": {
+      "name": "Southeastern South America",
+      "el_nino_note": "Southern Brazil, Uruguay, northeastern Argentina and Paraguay usually get heavy spring and summer rain and river floods.",
+      "la_nina_note": "Drier spring and summer; crop stress is common."
+    },
+    "central-chile": {
+      "name": "Central Chile",
+      "el_nino_note": "Winter storms tend to be wetter.",
+      "la_nina_note": "Winter rains tend to be weak."
+    },
+    "altiplano": {
+      "name": "Andean highlands (Altiplano)",
+      "el_nino_note": "Summer rains tend to be weaker on the high plateau; the coast below can be wet at the same time.",
+      "la_nina_note": "Signal is weak and varies."
+    },
+    "central-america-dry-corridor": {
+      "name": "Central America and southern Mexico",
+      "el_nino_note": "Rainy season starts late and the mid-summer dry spell (canícula) is longer, especially in the Dry Corridor.",
+      "la_nina_note": "More rain and a more active Atlantic hurricane season."
+    },
+    "caribbean": {
+      "name": "Caribbean islands",
+      "el_nino_note": "Drier wet season and usually fewer Atlantic hurricanes.",
+      "la_nina_note": "More active Atlantic hurricane season."
+    },
+    "southern-us-north-mexico": {
+      "name": "Southern United States and northern Mexico",
+      "el_nino_note": "A stronger jet stream steers more winter storms across California, the Southwest, Texas, the Gulf coast and the Southeast.",
+      "la_nina_note": "Winter tends to be dry and warm across the southern states."
+    },
+    "us-pacific-northwest": {
+      "name": "Pacific Northwest and western Canada",
+      "el_nino_note": "Milder, drier winters and less mountain snow.",
+      "la_nina_note": "Cooler, wetter winters with more snow."
+    },
+    "northern-us-southern-canada": {
+      "name": "Northern United States and southern Canada",
+      "el_nino_note": "Winters tend to be milder than usual across the northern Plains, Midwest and Great Lakes.",
+      "la_nina_note": "Colder, snowier winters in the northern tier and Ohio Valley."
+    },
+    "alaska": {
+      "name": "Alaska",
+      "el_nino_note": "Winters are usually much warmer than normal.",
+      "la_nina_note": "Colder winters."
+    },
+    "hawaii": {
+      "name": "Hawaii",
+      "el_nino_note": "Wet season is often weak; drought risk rises in late winter and spring.",
+      "la_nina_note": "Wetter winters."
+    },
+    "india-monsoon": {
+      "name": "India, Pakistan, Nepal and Bangladesh (summer monsoon)",
+      "el_nino_note": "The summer monsoon tends to be weaker and patchier. Not every El Niño brings drought, but the risk is clearly higher.",
+      "la_nina_note": "Monsoon tends to be stronger with more floods."
+    },
+    "sri-lanka-south-india": {
+      "name": "Sri Lanka and southern India (northeast monsoon)",
+      "el_nino_note": "The October-December rains tend to be heavier.",
+      "la_nina_note": "Weak signal."
+    },
+    "maritime-continent": {
+      "name": "Indonesia, Malaysia, Singapore, Brunei and Timor-Leste",
+      "el_nino_note": "The dry season is longer and harsher and the rainy season starts late. Forest and peat fires and smoke haze were severe in 1997 and 2015.",
+      "la_nina_note": "Wetter dry season and heavier rainy season."
+    },
+    "philippines": {
+      "name": "Philippines",
+      "el_nino_note": "Rain falls below normal from late in the year through the following dry season. Typhoons tend to form farther east and can be stronger.",
+      "la_nina_note": "Wetter, with more typhoons crossing the islands."
+    },
+    "mainland-southeast-asia": {
+      "name": "Vietnam, Thailand, Cambodia, Laos and Myanmar",
+      "el_nino_note": "Hotter, drier dry season; late monsoon onset; low Mekong flows and salt intrusion in the delta.",
+      "la_nina_note": "Wetter monsoon and more floods."
+    },
+    "southern-china": {
+      "name": "Southern China and the Yangtze basin",
+      "el_nino_note": "Wetter winter and spring, and the summer after a strong El Niño often brings Yangtze flooding (1998, 2016).",
+      "la_nina_note": "Colder, drier winters; signal is variable."
+    },
+    "northern-china-korea-japan": {
+      "name": "Northern China, Korea and Japan",
+      "el_nino_note": "Winters lean mild; summer signal is weak and mixed.",
+      "la_nina_note": "Winters lean cold."
+    },
+    "png-melanesia": {
+      "name": "Papua New Guinea, Solomon Islands and Vanuatu",
+      "el_nino_note": "Long dry spells; highland frost and crop loss in PNG in 1997 and 2015.",
+      "la_nina_note": "Wetter, with cyclones more likely to the west."
+    },
+    "central-pacific-islands": {
+      "name": "Kiribati, Tuvalu, Nauru and the Marshall Islands",
+      "el_nino_note": "Rain moves toward the central Pacific; equatorial atolls become much wetter, with higher sea levels in some areas.",
+      "la_nina_note": "Severe drought on equatorial atolls."
+    },
+    "southwest-pacific-islands": {
+      "name": "Fiji, Tonga, Samoa, Cook Islands and New Caledonia",
+      "el_nino_note": "The main rain band shifts northeast, so Fiji, Tonga and New Caledonia tend to be drier. Cyclones can reach farther east than usual.",
+      "la_nina_note": "Wetter wet season."
+    },
+    "eastern-australia": {
+      "name": "Eastern and northern Australia",
+      "el_nino_note": "Winter and spring rain is usually well below normal, with more heatwaves and bushfire risk; the northern wet season starts later.",
+      "la_nina_note": "Wetter, with more floods and more tropical cyclones."
+    },
+    "southwest-australia": {
+      "name": "Southwestern and southern Australia",
+      "el_nino_note": "Signal is weaker than in the east.",
+      "la_nina_note": "Weak signal."
+    },
+    "new-zealand": {
+      "name": "New Zealand",
+      "el_nino_note": "Stronger westerly winds: drier in the northeast, wetter in the southwest, cooler overall.",
+      "la_nina_note": "More northeasterly winds bring rain to the north and east."
+    },
+    "east-africa-short-rains": {
+      "name": "Kenya, Somalia, southern Ethiopia, Uganda and northern Tanzania",
+      "el_nino_note": "The October-December short rains are usually heavy, with flooding along rivers and in low areas. 1997 and 2023 saw severe floods.",
+      "la_nina_note": "Short rains fail more often; repeated La Niña years led to the 2020-23 Horn of Africa drought."
+    },
+    "ethiopia-sudan-summer": {
+      "name": "Ethiopian highlands, Eritrea and Sudan (summer rains)",
+      "el_nino_note": "The main kiremt rains tend to be weaker; 2015 brought a severe drought in Ethiopia.",
+      "la_nina_note": "Weak tendency toward wetter summers."
+    },
+    "southern-africa": {
+      "name": "Southern Africa",
+      "el_nino_note": "Summer rains are usually below normal with hot spells; maize harvests failed widely in 1992, 2016 and 2024.",
+      "la_nina_note": "Wetter summers with more floods."
+    },
+    "madagascar": {
+      "name": "Madagascar",
+      "el_nino_note": "The south and west tend to be drier; cyclone activity shifts.",
+      "la_nina_note": "Weak tendency toward wetter."
+    },
+    "sahel": {
+      "name": "The Sahel and northern Nigeria",
+      "el_nino_note": "Tendency toward a weaker rainy season, but Atlantic and Indian Ocean temperatures matter more here.",
+      "la_nina_note": "Weak tendency toward wetter."
+    },
+    "gulf-of-guinea": {
+      "name": "West African coast (Gulf of Guinea)",
+      "el_nino_note": "No reliable rainfall signal; slightly warmer.",
+      "la_nina_note": "No reliable signal."
+    },
+    "central-africa": {
+      "name": "Central Africa (Congo basin)",
+      "el_nino_note": "Weak rainfall signal; warmer than normal is common.",
+      "la_nina_note": "No reliable signal."
+    },
+    "southwest-asia": {
+      "name": "Iran, Iraq, Afghanistan, northern Pakistan and the Arabian Peninsula",
+      "el_nino_note": "Winter and spring rains tend to be heavier, sometimes causing flash floods in dry areas.",
+      "la_nina_note": "Winter rains and snow tend to be weak; drought risk rises."
+    },
+    "central-asia": {
+      "name": "Central Asia",
+      "el_nino_note": "Weak tendency toward wetter winters.",
+      "la_nina_note": "Weak tendency toward drier winters."
+    },
+    "north-africa-mediterranean": {
+      "name": "North Africa and the Mediterranean",
+      "el_nino_note": "ENSO has little consistent effect here. Local forecasts matter more.",
+      "la_nina_note": "No reliable signal."
+    },
+    "europe": {
+      "name": "Europe",
+      "el_nino_note": "Any effect is weak and inconsistent. Use your national forecast.",
+      "la_nina_note": "Weak, inconsistent effect."
+    },
+    "russia-siberia": {
+      "name": "Russia and Siberia",
+      "el_nino_note": "No reliable signal.",
+      "la_nina_note": "No reliable signal."
+    },
+    "canada-arctic": {
+      "name": "Northern Canada and Greenland",
+      "el_nino_note": "Western and central Canada usually have milder winters.",
+      "la_nina_note": "Colder winters in western Canada."
+    },
+    "southeast-brazil": {
+      "name": "Southeastern Brazil (São Paulo, Rio, Minas Gerais)",
+      "el_nino_note": "Sits between the wet south and the dry north; rain signal is mixed, heat is more likely.",
+      "la_nina_note": "Mixed signal."
+    },
+    "mexico-north-us-southwest": {
+      "name": "US Southwest and northwestern Mexico",
+      "el_nino_note": "Wetter winters across Arizona, New Mexico, Texas and northern Mexico.",
+      "la_nina_note": "Dry, warm winters; drought risk rises."
+    },
+    "south-atlantic-uruguay": {
+      "name": "Uruguay and the Pampas",
+      "el_nino_note": "Spring rains are usually heavy.",
+      "la_nina_note": "Drought risk is high; 2022-23 was severe."
+    },
+    "tanzania-south-mozambique-north": {
+      "name": "Southern Tanzania and northern Mozambique",
+      "el_nino_note": "On the border between wetter East Africa and drier Southern Africa; local outlooks matter.",
+      "la_nina_note": "Mixed signal."
+    },
+    "japan": {
+      "name": "Japan",
+      "el_nino_note": "Mild winters and cool, wet summers are somewhat more common.",
+      "la_nina_note": "Cold winters and hot summers are somewhat more common."
+    }
+  }
 }

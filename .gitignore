@@ -4,3 +4,4 @@ data/raw/
 site/
 .DS_Store
 reference/
+.env

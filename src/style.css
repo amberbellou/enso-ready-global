@@ -48,3 +48,5 @@ footer{max-width:var(--maxw);margin:2rem auto;padding:1rem;color:var(--muted);fo
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .countries{columns:2;column-gap:1rem}.countries li{break-inside:avoid}
 pre.script{white-space:pre-wrap;font-family:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:.8rem}
+
+select.lang{min-height:44px;font-size:1rem;padding:.4rem .6rem;border:2px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--fg)}

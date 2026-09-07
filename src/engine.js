@@ -202,8 +202,9 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
       blocks.push({ type: "forecast", key: "forecast", text: fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctText }) + " " + (S["forecast_" + facts.forecast_agreement] || ""),
                     partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
     }
-    blocks.push({ type: "para", key: "expect", text: fill(S.expect, { phase: phaseName, region: facts.region.name, rain: rainText, temp: S["temp_" + facts.signal.temp.replace(/[^a-z]/g, "_")] || facts.signal.temp }) });
-    blocks.push({ type: "para", key: "note", text: facts.signal.note, source: facts.signal.sources[0] });
+    const R = (S.regions || {})[facts.region.id] || {};
+    blocks.push({ type: "para", key: "expect", text: fill(S.expect, { phase: phaseName, region: R.name || facts.region.name, rain: rainText, temp: S["temp_" + facts.signal.temp.replace(/[^a-z]/g, "_")] || facts.signal.temp }) });
+    blocks.push({ type: "para", key: "note", text: (ph === "el_nino" ? R.el_nino_note : R.la_nina_note) || facts.signal.note, source: facts.signal.sources[0] });
     blocks.push({ type: "para", key: "confidence", text: fill(S["agreement_" + facts.agreement] || S.agreement_none, { conf: S["conf_" + facts.confidence] }) });
     if (facts.history && !facts.history.too_few) {
       const h = facts.history; const recent = h.recent.map(r => `${r.label}: ${pctPhrase(S, r.pct)}`).join("; ");

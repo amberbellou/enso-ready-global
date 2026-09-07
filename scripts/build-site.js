@@ -30,7 +30,10 @@ fs.copyFileSync(path.join(ROOT, "src/engine.js"), path.join(SITE, "engine.js"));
 fs.copyFileSync(path.join(ROOT, "src/app.js"), path.join(SITE, "app.js"));
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(SITE, "style.css"));
 fs.mkdirSync(path.join(SITE, "i18n"), { recursive: true });
-for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) fs.copyFileSync(path.join(ROOT, "i18n", f), path.join(SITE, "i18n", f));
+const langIndex = [];
+for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) { if (!f.endsWith(".json") || f.startsWith(".")) continue; fs.copyFileSync(path.join(ROOT, "i18n", f), path.join(SITE, "i18n", f)); const L = J("i18n/" + f); langIndex.push({ code: f.replace(".json", ""), name: L._name || f, dir: L._dir || "ltr", status: L._status || "machine" }); }
+langIndex.sort((a, b) => (a.code === "en" ? -1 : b.code === "en" ? 1 : a.name.localeCompare(b.name)));
+W("i18n/index.json", JSON.stringify(langIndex));
 W("data/status.json", JSON.stringify(status));
 W("data/grid.json", JSON.stringify(composites.grid));
 W("data/teleconnections.json", JSON.stringify(tele));

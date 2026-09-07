@@ -11,6 +11,25 @@ function norm(s) { return s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCas
 function ui(k, vars = {}) { const t = (state.strings.ui || {})[k] || k; return t.replace(/\{(\w+)\}/g, (_, n) => vars[n] ?? ""); }
 function h(tag, attrs = {}, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "onclick") e.addEventListener("click", v); else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; }
 
+// --- language (template-first i18n; machine-translated languages carry a banner, Annex C.2.2) ---
+async function setLang(lang) {
+  state.lang = lang; LS.set("lang", lang);
+  state.strings = await getJSON(`i18n/${lang}.json`);
+  document.documentElement.lang = lang; document.documentElement.dir = state.strings._dir || "ltr";
+  render();
+}
+function langPicker() {
+  const idx = state.data.langs || [];
+  const sel = h("select", { "aria-label": "Language", class: "lang" });
+  for (const l of idx) { const o = h("option", { value: l.code }, l.name); if (l.code === state.lang) o.selected = true; sel.append(o); }
+  sel.addEventListener("change", () => setLang(sel.value));
+  return sel;
+}
+function mtBanner() {
+  if (!state.strings || state.strings._status !== "machine") return null;
+  return h("p", { class: "mt" }, h("a", { href: `https://github.com/amberbellou/enso-ready-global/issues/new?title=${encodeURIComponent("Translation fix (" + state.lang + ")")}`, rel: "noopener" }, ui("mt_banner")));
+}
+
 // --- settings (Annex B.4) ---
 function applySettings() {
   const s = LS.get("settings", {});
@@ -56,7 +75,7 @@ function homeScreen() {
   let timer;
   input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => search(input.value, list), 150); });
   const geo = h("button", { class: "btn secondary block", onclick: () => navigator.geolocation?.getCurrentPosition(p => choosePlace({ name: null, lat: p.coords.latitude, lon: p.coords.longitude, cc: null }), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
-  return h("main", {}, h("h1", {}, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo), settingsPanel(),
+  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", {}, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo), settingsPanel(),
     h("p", { class: "muted" }, h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
 }
 async function search(q, list) {
@@ -96,7 +115,8 @@ function renderBlocks(blocks, facts, p, extra) {
   const head = blocks.find(b => b.type === "headline");
   const cls = /more rain|wetter|flood/i.test(head.text) ? "wet" : /less rain|drier|drought/i.test(head.text) ? "dry" : "";
   const main = h("main", {});
-  main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${facts.region.name}` : ""));
+  const banner = mtBanner(); if (banner) main.append(banner);
+  main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name}` : ""));
   main.append(h("h1", { class: "headline " + cls }, head.text));
   const paras = blocks.filter(b => b.type === "para");
   const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral");
@@ -160,8 +180,12 @@ async function render() {
 }
 (async function init() {
   applySettings();
-  state.lang = document.documentElement.lang || "en";
+  try { state.data.langs = await getJSON("i18n/index.json"); } catch { state.data.langs = [{ code: "en", name: "English" }]; }
+  const params0 = new URLSearchParams(location.search);
+  const wanted = params0.get("lang") || LS.get("lang") || (navigator.language || "en").slice(0, 2);
+  state.lang = state.data.langs.some(l => l.code === wanted) ? wanted : "en";
   state.strings = await getJSON(`i18n/${state.lang}.json`);
+  document.documentElement.lang = state.lang; document.documentElement.dir = state.strings._dir || "ltr";
   try { state.data.status = await getJSON("data/status.json"); } catch { state.data.status = null; }
   const params = new URLSearchParams(location.search);
   if (params.get("lat") && params.get("lon")) choosePlace({ name: params.get("name"), cc: params.get("cc"), lat: +params.get("lat"), lon: +params.get("lon") });
