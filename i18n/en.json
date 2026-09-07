@@ -147,7 +147,7 @@
   "forecast_disagree": "That does not agree with the usual pattern, so confidence is lower.",
   "forecast_weak": "That is close to normal, so the pattern may be weaker this time.",
   "forecast_none": "",
-  "forecast_partial": "Seasonal forecasts have been only partly reliable here, so weigh this forecast together with what past events did.",
+  "forecast_partial": "(Forecast covers {n} of {of} months.)",
   "history_few": "Too few past events have data here to give a local average.",
   "local_seasons": {
     "spring and summer": "spring and summer",
@@ -657,5 +657,6 @@
     "history": "History",
     "events": "Past events",
     "conditions": "Now"
-  }
+  },
+  "forecast_skill_partial": "Seasonal forecasts have been only partly reliable here, so weigh this forecast together with what past events did."
 }

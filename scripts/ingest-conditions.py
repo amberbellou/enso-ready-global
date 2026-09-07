@@ -102,10 +102,12 @@ def usdm():
             for gi in tree.query(pt):
                 if prep[gi].contains(pt): best = cats[gi] if best is None else max(best, cats[gi])
             if best is not None: cells[cid(la, lo)] = best
-    date = None
-    for f in feats:
-        date = f.get("properties", {}).get("map_date") or f.get("properties", {}).get("DATE") or date
-    return {"categories": cells, "map_date": str(date) if date else None,
+    # the feed carries no date; USDM maps are valid on Tuesdays and released Thursdays, so the current map's date is the latest Tuesday
+    today = datetime.date.today(); date = today - datetime.timedelta(days=(today.weekday() - 1) % 7)
+    if today.weekday() in (2,):   # Wednesday: Thursday release not out yet, still previous Tuesday's map
+        date = date - datetime.timedelta(days=7)
+    date = date.isoformat()
+    return {"categories": cells, "map_date": date,
             "provenance": {"name": "U.S. Drought Monitor (NDMC, USDA, NOAA)", "version": str(date) if date else None, "retrieved_at": datetime.date.today().isoformat(),
                            "url": "https://droughtmonitor.unl.edu/", "licence": "Public domain; cite as 'The U.S. Drought Monitor is jointly produced by NDMC, USDA and NOAA'."}}
 
