@@ -1,0 +1,10 @@
+{
+ "season_names": {
+  "maritime-continent": "musim kemarau"
+ },
+ "hazards_add": {
+  "el_nino": [
+   "HZ"
+  ]
+ }
+}

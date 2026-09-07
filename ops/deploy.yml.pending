@@ -19,22 +19,27 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: "22" }
       - name: Refresh ENSO status (dead-man's switch keeps last-good on failure)
+        timeout-minutes: 5
         run: |
-          node scripts/ingest-enso-status.js || echo "::warning::status ingest failed; serving last-good enso_status.json"
+          node scripts/ingest-enso-status.js > /tmp/status.log 2>&1 || { cat /tmp/status.log; echo "::warning::status ingest failed; serving last-good enso_status.json"; }
       - name: Run tests
+        timeout-minutes: 5
         run: node --test tests/
       - name: Fetch GeoNames and build gazetteer
+        timeout-minutes: 10
         run: |
           mkdir -p data/raw
           bash scripts/fetch-geonames.sh
           python3 scripts/build_gazetteer.py
       - name: Build site
-        run: node scripts/build-site.js
+        timeout-minutes: 15
+        run: node scripts/build-site.js > /tmp/build.log 2>&1 || { cat /tmp/build.log; exit 1; }
       - name: Commit refreshed status (traceability)
         if: github.event_name != 'push'
         run: |

@@ -27,6 +27,24 @@ function settingsPanel() {
       h("button", { class: "btn secondary", "aria-pressed": String(!!s.easy), onclick: () => set("easy", !s.easy) }, ui("easy_read"))));
 }
 
+// --- live seasonal forecast: ECMWF SEAS5 monthly anomaly via Open-Meteo (CC BY 4.0). Per-user IP, no key. ---
+async function fetchForecast(lat, lon) {
+  const key = `fc:${lat.toFixed(2)},${lon.toFixed(2)}`;
+  const cached = LS.get(key); if (cached && Date.now() - cached.t < 24 * 3600 * 1000) return cached.v;
+  try {
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 7000);
+    const r = await fetch(`https://seasonal-api.open-meteo.com/v1/seasonal?latitude=${lat}&longitude=${lon}&monthly=precipitation_anomaly,precipitation_mean&models=ecmwf_seas5`, { signal: ctl.signal });
+    clearTimeout(timer); if (!r.ok) return null;
+    const d = await r.json(); const m = d.monthly || {};
+    if (!Array.isArray(m.time) || !Array.isArray(m.precipitation_anomaly)) return null;
+    const months = m.time.map((t, i) => ({ ym: t.slice(0, 7), anomaly: m.precipitation_anomaly[i], mean: m.precipitation_mean[i] }))
+      .filter(x => Number.isFinite(x.anomaly) && Number.isFinite(x.mean) && Math.abs(x.anomaly) < 5000);
+    if (!months.length) return null;
+    const v = { months, source: "ECMWF SEAS5 seasonal forecast via Open-Meteo (CC BY 4.0)", source_url: "https://open-meteo.com/", issued: m.time[0] };
+    LS.set(key, { t: Date.now(), v }); return v;
+  } catch { return null; }
+}
+
 // --- screens ---
 function statusBanner() {
   const st = state.data.status; if (!st) return null;
@@ -65,8 +83,11 @@ async function briefingScreen() {
   const tele = state.data.tele ||= await getJSON("data/teleconnections.json");
   const checklists = state.data.checklists ||= await getJSON("data/prep_checklists.json");
   const met = state.data.met ||= await getJSON("data/met_services.json");
-  const composites = { grid, cells: cell ? { [cellId]: cell.cell } : {}, events: cell ? cell.events : { "El Niño": [], "La Niña": [] }, source: cell?.source, source_url: cell?.source_url };
-  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, livelihood: state.livelihood });
+  let country = null; if (p.cc) { try { country = state.data["country:" + p.cc] ||= await getJSON(`data/countries/${p.cc}.json`); } catch { country = null; } }
+  const forecast = await fetchForecast(p.lat, p.lon);
+  const composites = { grid, cells: cell ? { [cellId]: cell.cell } : {}, events: cell ? cell.events : { "El Niño": [], "La Niña": [] }, sources: cell ? cell.sources : {} };
+  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, country, forecast, livelihood: state.livelihood });
+  state.forecastFailed = !forecast;
   const blocks = renderBriefing(facts, S, { placeName: p.name });
   LS.set("last", { place: p, blocks, date: new Date().toISOString(), radio: renderRadio(facts, S, p.name), sms: renderSMS(facts, S, p.name) });
   return renderBlocks(blocks, facts, p, { radio: renderRadio(facts, S, p.name), sms: renderSMS(facts, S, p.name) });
@@ -78,9 +99,13 @@ function renderBlocks(blocks, facts, p, extra) {
   main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${facts.region.name}` : ""));
   main.append(h("h1", { class: "headline " + cls }, head.text));
   const paras = blocks.filter(b => b.type === "para");
-  if (paras[0]) main.append(h("p", {}, paras[0].text));
+  const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral");
+  for (const b of lead) main.append(h("p", {}, b.text));
+  const fc = blocks.find(b => b.type === "forecast");
+  if (fc) main.append(h("p", {}, "📈 ", fc.text, fc.partial ? " " + fc.partial : "", " ", h("a", { class: "src", href: fc.source.url, rel: "noopener" }, "[" + fc.source.label + "]")));
+  else if (state.forecastFailed && facts.region) main.append(h("p", { class: "muted" }, ui("forecast_unavailable")));
   const more = h("details", {}, h("summary", {}, ui("tell_more")));
-  for (const b of paras.slice(1)) more.append(h("p", {}, b.text, b.source ? [" ", h("a", { class: "src", href: b.source.url, rel: "noopener" }, "[" + b.source.id + "]")] : null));
+  for (const b of paras.filter(b => !lead.includes(b))) more.append(h("p", {}, b.text, b.source ? [" ", h("a", { class: "src", href: b.source.url, rel: "noopener" }, "[" + b.source.id + "]")] : null));
   const hist = blocks.find(b => b.type === "history");
   if (hist) more.append(h("p", {}, hist.text), h("p", {}, hist.recent, " ", h("a", { class: "src", href: hist.source.url, rel: "noopener" }, "[" + hist.source.label + "]")));
   const st = blocks.find(b => b.type === "status");
@@ -92,6 +117,8 @@ function renderBlocks(blocks, facts, p, extra) {
   const tools = h("details", {}, h("summary", {}, "📻 " + ui("radio_script") + " / " + ui("sms_text")));
   tools.append(h("pre", { class: "script" }, extra.radio), h("pre", { class: "script" }, extra.sms));
   main.append(tools);
+  const src = blocks.find(b => b.type === "sources");
+  if (src) { const sp = h("p", { class: "src" }, src.title + ": "); src.items.forEach((it, i) => { if (i) sp.append(" · "); sp.append(h("a", { href: it.url, rel: "noopener" }, it.label)); }); main.append(sp); }
   if ("speechSynthesis" in window) main.append(h("button", { class: "btn secondary", onclick: () => { const u = new SpeechSynthesisUtterance(extra.radio); u.lang = state.lang; speechSynthesis.cancel(); speechSynthesis.speak(u); } }, "🔊 " + ui("read_aloud")));
   main.append(settingsPanel());
   return main;

@@ -1,130 +1,708 @@
 {
-  "_about": "Preparation steps keyed by hazard, with optional livelihood-specific steps. Each step: id, icon, text (one sentence, plain), why (one sentence), minutes (rough time), for (list of livelihoods or 'all'). The briefing engine picks steps for the hazards in the user's region and their livelihood, orders them, and shows one at a time.",
-  "hazards": {
-    "flood": [
-      {"id":"flood-docs","icon":"📄","text":"Put ID cards, land papers and phone numbers in a sealed plastic bag.","why":"Papers are the hardest thing to replace after a flood.","minutes":15,"for":["all"]},
-      {"id":"flood-route","icon":"🚶","text":"Agree with your household on a high place to go and a way to get there.","why":"Deciding in the dark, in the rain, is when people get hurt.","minutes":20,"for":["all"]},
-      {"id":"flood-water","icon":"💧","text":"Store clean drinking water in closed containers, enough for three days.","why":"Floods pollute wells and taps first.","minutes":30,"for":["all"]},
-      {"id":"flood-drains","icon":"🧹","text":"Clear drains, gutters and channels near your home now.","why":"Blocked drains turn heavy rain into a flood in your yard.","minutes":60,"for":["all"]},
-      {"id":"flood-raise","icon":"📦","text":"Move food, seeds, fertiliser and valuables off the floor.","why":"Even shallow water ruins stored food and seed.","minutes":45,"for":["farmer","all"]},
-      {"id":"flood-animals","icon":"🐄","text":"Plan where animals can go on higher ground.","why":"Livestock losses are often the biggest cost of a flood.","minutes":30,"for":["farmer"]},
-      {"id":"flood-warnings","icon":"📻","text":"Find out how your local warnings are given: radio, SMS, loudspeaker or a neighbour.","why":"The official warning is the signal to act.","minutes":10,"for":["all"]},
-      {"id":"flood-medical","icon":"💊","text":"Keep a week of any daily medicines in the emergency bag.","why":"Clinics may be cut off for days.","minutes":10,"for":["all"]}
-    ],
-    "river flood": [
-      {"id":"river-level","icon":"🌊","text":"Learn where the river reached in the last big flood and stay above that line.","why":"Past high-water marks are the best local guide.","minutes":20,"for":["all"]}
-    ],
-    "flash flood": [
-      {"id":"flash-avoid","icon":"⚠️","text":"Never cross a flooded road or dry riverbed during heavy rain.","why":"Most flash-flood deaths happen in vehicles and river crossings.","minutes":5,"for":["all"]}
-    ],
-    "landslide": [
-      {"id":"slide-signs","icon":"👀","text":"Watch for new cracks, tilting trees or springs on slopes above your home.","why":"Slopes give warning signs before they fail.","minutes":10,"for":["all"]},
-      {"id":"slide-move","icon":"🏠","text":"If you live below a steep slope, arrange a safer place to sleep during heavy rain.","why":"Landslides mostly strike at night after days of rain.","minutes":20,"for":["all"]}
-    ],
-    "drought": [
-      {"id":"drought-store","icon":"💧","text":"Fix leaks and add water storage: tanks, drums, or a covered pit.","why":"Every litre saved now is a litre you do not have to carry later.","minutes":120,"for":["all"]},
-      {"id":"drought-seed","icon":"🌱","text":"Ask your extension officer about early-maturing or drought-tolerant seed.","why":"Short-season crops can finish before the rains stop.","minutes":60,"for":["farmer"]},
-      {"id":"drought-plant","icon":"📅","text":"Plant staggered: some early, some at normal time, not all at once.","why":"Spreads the risk of a false start to the rains.","minutes":30,"for":["farmer"]},
-      {"id":"drought-fodder","icon":"🌾","text":"Cut and store extra fodder; consider selling weak animals early.","why":"Prices fall once everyone sells at the same time.","minutes":180,"for":["farmer"]},
-      {"id":"drought-food","icon":"🍚","text":"Buy staple food a little at a time now while prices are normal.","why":"Food prices rise fastest when harvests fail.","minutes":30,"for":["all"]},
-      {"id":"drought-share","icon":"👥","text":"Agree with neighbours how a shared well or tank will be rationed.","why":"Agreed rules prevent conflict when water gets short.","minutes":45,"for":["all"]}
-    ],
-    "water shortage": [
-      {"id":"water-reuse","icon":"🚿","text":"Reuse washing water for gardens and toilets.","why":"Cuts household water use by a third.","minutes":10,"for":["urban","all"]},
-      {"id":"water-schedule","icon":"🗓️","text":"Learn your city's water rationing schedule and fill containers on supply days.","why":"Cities ration during dry seasons; knowing the day avoids empty taps.","minutes":10,"for":["urban"]}
-    ],
-    "fire": [
-      {"id":"fire-clear","icon":"🔥","text":"Clear dry grass and brush at least 10 metres around buildings.","why":"A cleared strip stops most grass fires reaching a house.","minutes":120,"for":["all"]},
-      {"id":"fire-noburn","icon":"🚫","text":"Do not burn fields or rubbish on hot, windy days.","why":"Most large fires start as a controlled burn that escaped.","minutes":5,"for":["farmer","all"]}
-    ],
-    "bushfire": [
-      {"id":"bush-plan","icon":"🔥","text":"Make a leave-early plan and follow your fire service's danger ratings.","why":"Leaving late is the most dangerous choice in a bushfire.","minutes":30,"for":["all"]}
-    ],
-    "wildfire": [
-      {"id":"wild-plan","icon":"🔥","text":"Prepare an evacuation bag and know two ways out of your area.","why":"Wildfires can close the main road within minutes.","minutes":30,"for":["all"]}
-    ],
-    "haze": [
-      {"id":"haze-mask","icon":"😷","text":"Keep masks for smoke days and a room that can be closed off.","why":"Smoke haze harms children and the elderly most.","minutes":15,"for":["all"]}
-    ],
-    "heat": [
-      {"id":"heat-hours","icon":"🌡️","text":"Move hard work to early morning and late afternoon.","why":"Heat illness peaks in the middle of the day.","minutes":5,"for":["all"]},
-      {"id":"heat-check","icon":"👵","text":"Check daily on elderly neighbours and people living alone.","why":"Most heat deaths happen quietly at home.","minutes":10,"for":["all"]},
-      {"id":"heat-water","icon":"💧","text":"Drink water often, before you feel thirsty.","why":"Thirst comes late when the body is already short of water.","minutes":1,"for":["all"]}
-    ],
-    "disease": [
-      {"id":"disease-water","icon":"🧪","text":"Boil or treat drinking water when floods reach wells or pipes.","why":"Cholera and diarrhoea spread through flood water.","minutes":10,"for":["all"]},
-      {"id":"disease-mosquito","icon":"🦟","text":"Empty standing water around the home every few days and use nets.","why":"Mosquito diseases rise after heavy rain.","minutes":15,"for":["all"]}
-    ],
-    "cholera": [
-      {"id":"cholera-ors","icon":"💊","text":"Keep oral rehydration salts at home and know the nearest clinic.","why":"Fast rehydration saves lives in cholera outbreaks.","minutes":10,"for":["all"]}
-    ],
-    "Rift Valley fever": [
-      {"id":"rvf-animals","icon":"🐐","text":"Report sudden animal deaths or abortions to a vet, and avoid handling sick animals.","why":"Rift Valley fever spreads to people from sick livestock after floods.","minutes":5,"for":["farmer"]}
-    ],
-    "crop stress": [
-      {"id":"crop-mulch","icon":"🌿","text":"Mulch fields to hold soil moisture.","why":"Mulch can keep soil moist for an extra week or two.","minutes":180,"for":["farmer"]}
-    ],
-    "crop failure": [
-      {"id":"cropfail-diversify","icon":"🥬","text":"Plant a mix of crops, including some that need less water.","why":"One failed crop hurts less when others survive.","minutes":60,"for":["farmer"]},
-      {"id":"cropfail-insurance","icon":"📝","text":"Ask about crop insurance or a farmer group support scheme before planting.","why":"Most schemes close their sign-up before the season starts.","minutes":30,"for":["farmer"]}
-    ],
-    "food insecurity": [
-      {"id":"food-network","icon":"🤝","text":"Find out which local groups give food or cash support and how to register.","why":"Registering early avoids queues when help arrives.","minutes":30,"for":["all"]}
-    ],
-    "hurricane": [
-      {"id":"hurr-kit","icon":"🎒","text":"Prepare a hurricane kit: water, food, torch, radio, medicines, documents.","why":"Shops and power may be out for days after a storm.","minutes":60,"for":["all"]},
-      {"id":"hurr-shelter","icon":"🏠","text":"Know your nearest shelter and how you will get there.","why":"Shelters fill fast once a warning is issued.","minutes":15,"for":["all"]}
-    ],
-    "typhoon": [
-      {"id":"typh-kit","icon":"🎒","text":"Prepare a typhoon kit: water, food, torch, radio, medicines, documents.","why":"Shops and power may be out for days after a storm.","minutes":60,"for":["all"]},
-      {"id":"typh-boats","icon":"⛵","text":"Fishers: agree a safe harbour plan and follow no-sail warnings.","why":"Most typhoon deaths at sea are boats caught out.","minutes":20,"for":["coastal"]}
-    ],
-    "cyclone": [
-      {"id":"cyc-kit","icon":"🎒","text":"Prepare a cyclone kit: water, food, torch, radio, medicines, documents.","why":"Shops and power may be out for days after a storm.","minutes":60,"for":["all"]},
-      {"id":"cyc-roof","icon":"🔨","text":"Tie down or repair loose roofing before the season.","why":"Loose roof sheets are the main cause of cyclone damage and injury.","minutes":120,"for":["all"]}
-    ],
-    "cyclone (tracks shift east)": [
-      {"id":"cycshift-plan","icon":"🌀","text":"Prepare for cyclones even if your island is rarely hit.","why":"During El Niño, cyclones form and travel farther east than usual.","minutes":30,"for":["all"]}
-    ],
-    "cyclone (Mozambique channel)": [
-      {"id":"cycmoz-plan","icon":"🌀","text":"Know your evacuation route and shelter before the cyclone season.","why":"Cyclones in the Mozambique Channel bring floods far inland.","minutes":30,"for":["all"]}
-    ],
-    "storm": [
-      {"id":"storm-trees","icon":"🌳","text":"Trim weak branches and secure loose items outdoors.","why":"Falling branches cause most storm damage to homes.","minutes":60,"for":["all"]}
-    ],
-    "high seas": [
-      {"id":"seas-move","icon":"🌊","text":"Move valuables and sleeping areas away from the shoreline during king tides.","why":"Sea level is higher than normal on Pacific atolls during El Niño.","minutes":30,"for":["coastal","all"]}
-    ],
-    "salt intrusion": [
-      {"id":"salt-store","icon":"🧂","text":"Store fresh water before the dry season; test wells for salt.","why":"Low river flow lets sea water push into wells and canals.","minutes":60,"for":["farmer","all"]}
-    ],
-    "frost (highlands)": [
-      {"id":"frost-cover","icon":"🥶","text":"Cover seedlings at night and keep seed for replanting.","why":"Highland frost during dry spells can kill a whole crop overnight.","minutes":30,"for":["farmer"]}
-    ],
-    "low snowpack": [
-      {"id":"snow-water","icon":"🏔️","text":"Expect lower rivers next summer; plan irrigation and water use early.","why":"Less winter snow means less water later in the year.","minutes":15,"for":["farmer","urban"]}
-    ],
-    "heavy snow": [
-      {"id":"snow-kit","icon":"❄️","text":"Keep extra food, heating fuel and medicines in case roads close.","why":"Heavy snow can cut off towns for days.","minutes":30,"for":["all"]}
-    ],
-    "cold": [
-      {"id":"cold-heat","icon":"🧣","text":"Check heating, insulation and warm clothing before winter.","why":"Cold snaps hit older people and babies hardest.","minutes":30,"for":["all"]}
-    ],
-    "spring flood": [
-      {"id":"spring-melt","icon":"🌊","text":"Expect higher rivers in spring when heavy snow melts.","why":"A snowy winter often means spring floods.","minutes":10,"for":["all"]}
-    ],
-    "mild winter": [
-      {"id":"mild-pests","icon":"🐛","text":"Watch for more pests and mould; a mild winter kills fewer of them.","why":"Cold normally keeps pests and disease in check.","minutes":10,"for":["farmer","all"]}
-    ],
-    "cool summer": [
-      {"id":"cool-crop","icon":"🌾","text":"Choose crop varieties that ripen in a cooler, wetter summer.","why":"Cool summers delay ripening and increase crop disease.","minutes":30,"for":["farmer"]}
-    ],
-    "drought (northeast)": [
-      {"id":"droughtne-store","icon":"💧","text":"Store water and plan irrigation if you are in the north or east.","why":"El Niño summers are often dry there.","minutes":60,"for":["all"]}
+ "_about": "Preparation steps keyed by hazard CODE (language-independent; labels live in i18n/<lang>.json under 'hazards'). Each step: id, icon, text, why, minutes, for (livelihoods or 'all'). Step text is English source; translations are keyed by step id in i18n.",
+ "hazards": {
+  "FL": [
+   {
+    "id": "flood-docs",
+    "icon": "📄",
+    "text": "Put ID cards, land papers and phone numbers in a sealed plastic bag.",
+    "why": "Papers are the hardest thing to replace after a flood.",
+    "minutes": 15,
+    "for": [
+     "all"
     ]
-  },
-  "always": [
-    {"id":"always-official","icon":"📢","text":"Follow your national weather service for warnings; this briefing is a seasonal outlook, not a warning.","why":"Only official services issue alerts for specific days and places.","minutes":5,"for":["all"]},
-    {"id":"always-share","icon":"🗣️","text":"Tell one neighbour what this season may bring.","why":"Communities that talk about risk early prepare better.","minutes":5,"for":["all"]}
+   },
+   {
+    "id": "flood-route",
+    "icon": "🚶",
+    "text": "Agree with your household on a high place to go and a way to get there.",
+    "why": "Deciding in the dark, in the rain, is when people get hurt.",
+    "minutes": 20,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "flood-water",
+    "icon": "💧",
+    "text": "Store clean drinking water in closed containers, enough for three days.",
+    "why": "Floods pollute wells and taps first.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "flood-drains",
+    "icon": "🧹",
+    "text": "Clear drains, gutters and channels near your home now.",
+    "why": "Blocked drains turn heavy rain into a flood in your yard.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "flood-raise",
+    "icon": "📦",
+    "text": "Move food, seeds, fertiliser and valuables off the floor.",
+    "why": "Even shallow water ruins stored food and seed.",
+    "minutes": 45,
+    "for": [
+     "farmer",
+     "all"
+    ]
+   },
+   {
+    "id": "flood-animals",
+    "icon": "🐄",
+    "text": "Plan where animals can go on higher ground.",
+    "why": "Livestock losses are often the biggest cost of a flood.",
+    "minutes": 30,
+    "for": [
+     "farmer"
+    ]
+   },
+   {
+    "id": "flood-warnings",
+    "icon": "📻",
+    "text": "Find out how your local warnings are given: radio, SMS, loudspeaker or a neighbour.",
+    "why": "The official warning is the signal to act.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "flood-medical",
+    "icon": "💊",
+    "text": "Keep a week of any daily medicines in the emergency bag.",
+    "why": "Clinics may be cut off for days.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "FLR": [
+   {
+    "id": "river-level",
+    "icon": "🌊",
+    "text": "Learn where the river reached in the last big flood and stay above that line.",
+    "why": "Past high-water marks are the best local guide.",
+    "minutes": 20,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "FF": [
+   {
+    "id": "flash-avoid",
+    "icon": "⚠️",
+    "text": "Never cross a flooded road or dry riverbed during heavy rain.",
+    "why": "Most flash-flood deaths happen in vehicles and river crossings.",
+    "minutes": 5,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "LS": [
+   {
+    "id": "slide-signs",
+    "icon": "👀",
+    "text": "Watch for new cracks, tilting trees or springs on slopes above your home.",
+    "why": "Slopes give warning signs before they fail.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "slide-move",
+    "icon": "🏠",
+    "text": "If you live below a steep slope, arrange a safer place to sleep during heavy rain.",
+    "why": "Landslides mostly strike at night after days of rain.",
+    "minutes": 20,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "DR": [
+   {
+    "id": "drought-store",
+    "icon": "💧",
+    "text": "Fix leaks and add water storage: tanks, drums, or a covered pit.",
+    "why": "Every litre saved now is a litre you do not have to carry later.",
+    "minutes": 120,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "drought-seed",
+    "icon": "🌱",
+    "text": "Ask your extension officer about early-maturing or drought-tolerant seed.",
+    "why": "Short-season crops can finish before the rains stop.",
+    "minutes": 60,
+    "for": [
+     "farmer"
+    ]
+   },
+   {
+    "id": "drought-plant",
+    "icon": "📅",
+    "text": "Plant staggered: some early, some at normal time, not all at once.",
+    "why": "Spreads the risk of a false start to the rains.",
+    "minutes": 30,
+    "for": [
+     "farmer"
+    ]
+   },
+   {
+    "id": "drought-fodder",
+    "icon": "🌾",
+    "text": "Cut and store extra fodder; consider selling weak animals early.",
+    "why": "Prices fall once everyone sells at the same time.",
+    "minutes": 180,
+    "for": [
+     "farmer"
+    ]
+   },
+   {
+    "id": "drought-food",
+    "icon": "🍚",
+    "text": "Buy staple food a little at a time now while prices are normal.",
+    "why": "Food prices rise fastest when harvests fail.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "drought-share",
+    "icon": "👥",
+    "text": "Agree with neighbours how a shared well or tank will be rationed.",
+    "why": "Agreed rules prevent conflict when water gets short.",
+    "minutes": 45,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "droughtne-store",
+    "icon": "💧",
+    "text": "Store water and plan irrigation if you are in the north or east.",
+    "why": "El Niño summers are often dry there.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "WS": [
+   {
+    "id": "water-reuse",
+    "icon": "🚿",
+    "text": "Reuse washing water for gardens and toilets.",
+    "why": "Cuts household water use by a third.",
+    "minutes": 10,
+    "for": [
+     "urban",
+     "all"
+    ]
+   },
+   {
+    "id": "water-schedule",
+    "icon": "🗓️",
+    "text": "Learn your city's water rationing schedule and fill containers on supply days.",
+    "why": "Cities ration during dry seasons; knowing the day avoids empty taps.",
+    "minutes": 10,
+    "for": [
+     "urban"
+    ]
+   }
+  ],
+  "WF": [
+   {
+    "id": "fire-clear",
+    "icon": "🔥",
+    "text": "Clear dry grass and brush at least 10 metres around buildings.",
+    "why": "A cleared strip stops most grass fires reaching a house.",
+    "minutes": 120,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "fire-noburn",
+    "icon": "🚫",
+    "text": "Do not burn fields or rubbish on hot, windy days.",
+    "why": "Most large fires start as a controlled burn that escaped.",
+    "minutes": 5,
+    "for": [
+     "farmer",
+     "all"
+    ]
+   },
+   {
+    "id": "bush-plan",
+    "icon": "🔥",
+    "text": "Make a leave-early plan and follow your fire service's danger ratings.",
+    "why": "Leaving late is the most dangerous choice in a bushfire.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "wild-plan",
+    "icon": "🔥",
+    "text": "Prepare an evacuation bag and know two ways out of your area.",
+    "why": "Wildfires can close the main road within minutes.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "HZ": [
+   {
+    "id": "haze-mask",
+    "icon": "😷",
+    "text": "Keep masks for smoke days and a room that can be closed off.",
+    "why": "Smoke haze harms children and the elderly most.",
+    "minutes": 15,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "HT": [
+   {
+    "id": "heat-hours",
+    "icon": "🌡️",
+    "text": "Move hard work to early morning and late afternoon.",
+    "why": "Heat illness peaks in the middle of the day.",
+    "minutes": 5,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "heat-check",
+    "icon": "👵",
+    "text": "Check daily on elderly neighbours and people living alone.",
+    "why": "Most heat deaths happen quietly at home.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "heat-water",
+    "icon": "💧",
+    "text": "Drink water often, before you feel thirsty.",
+    "why": "Thirst comes late when the body is already short of water.",
+    "minutes": 1,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "EP": [
+   {
+    "id": "disease-water",
+    "icon": "🧪",
+    "text": "Boil or treat drinking water when floods reach wells or pipes.",
+    "why": "Cholera and diarrhoea spread through flood water.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "disease-mosquito",
+    "icon": "🦟",
+    "text": "Empty standing water around the home every few days and use nets.",
+    "why": "Mosquito diseases rise after heavy rain.",
+    "minutes": 15,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "CH": [
+   {
+    "id": "cholera-ors",
+    "icon": "💊",
+    "text": "Keep oral rehydration salts at home and know the nearest clinic.",
+    "why": "Fast rehydration saves lives in cholera outbreaks.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "RVF": [
+   {
+    "id": "rvf-animals",
+    "icon": "🐐",
+    "text": "Report sudden animal deaths or abortions to a vet, and avoid handling sick animals.",
+    "why": "Rift Valley fever spreads to people from sick livestock after floods.",
+    "minutes": 5,
+    "for": [
+     "farmer"
+    ]
+   }
+  ],
+  "CS": [
+   {
+    "id": "crop-mulch",
+    "icon": "🌿",
+    "text": "Mulch fields to hold soil moisture.",
+    "why": "Mulch can keep soil moist for an extra week or two.",
+    "minutes": 180,
+    "for": [
+     "farmer"
+    ]
+   }
+  ],
+  "CF": [
+   {
+    "id": "cropfail-diversify",
+    "icon": "🥬",
+    "text": "Plant a mix of crops, including some that need less water.",
+    "why": "One failed crop hurts less when others survive.",
+    "minutes": 60,
+    "for": [
+     "farmer"
+    ]
+   },
+   {
+    "id": "cropfail-insurance",
+    "icon": "📝",
+    "text": "Ask about crop insurance or a farmer group support scheme before planting.",
+    "why": "Most schemes close their sign-up before the season starts.",
+    "minutes": 30,
+    "for": [
+     "farmer"
+    ]
+   }
+  ],
+  "FI": [
+   {
+    "id": "food-network",
+    "icon": "🤝",
+    "text": "Find out which local groups give food or cash support and how to register.",
+    "why": "Registering early avoids queues when help arrives.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "TC": [
+   {
+    "id": "hurr-kit",
+    "icon": "🎒",
+    "text": "Prepare a hurricane kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "hurr-shelter",
+    "icon": "🏠",
+    "text": "Know your nearest shelter and how you will get there.",
+    "why": "Shelters fill fast once a warning is issued.",
+    "minutes": 15,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "typh-kit",
+    "icon": "🎒",
+    "text": "Prepare a typhoon kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "typh-boats",
+    "icon": "⛵",
+    "text": "Fishers: agree a safe harbour plan and follow no-sail warnings.",
+    "why": "Most typhoon deaths at sea are boats caught out.",
+    "minutes": 20,
+    "for": [
+     "coastal"
+    ]
+   },
+   {
+    "id": "cyc-kit",
+    "icon": "🎒",
+    "text": "Prepare a cyclone kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "cyc-roof",
+    "icon": "🔨",
+    "text": "Tie down or repair loose roofing before the season.",
+    "why": "Loose roof sheets are the main cause of cyclone damage and injury.",
+    "minutes": 120,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "cycmoz-plan",
+    "icon": "🌀",
+    "text": "Know your evacuation route and shelter before the cyclone season.",
+    "why": "Cyclones in the Mozambique Channel bring floods far inland.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "TCE": [
+   {
+    "id": "cycshift-plan",
+    "icon": "🌀",
+    "text": "Prepare for cyclones even if your island is rarely hit.",
+    "why": "During El Niño, cyclones form and travel farther east than usual.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "hurr-kit",
+    "icon": "🎒",
+    "text": "Prepare a hurricane kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "hurr-shelter",
+    "icon": "🏠",
+    "text": "Know your nearest shelter and how you will get there.",
+    "why": "Shelters fill fast once a warning is issued.",
+    "minutes": 15,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "typh-kit",
+    "icon": "🎒",
+    "text": "Prepare a typhoon kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "typh-boats",
+    "icon": "⛵",
+    "text": "Fishers: agree a safe harbour plan and follow no-sail warnings.",
+    "why": "Most typhoon deaths at sea are boats caught out.",
+    "minutes": 20,
+    "for": [
+     "coastal"
+    ]
+   },
+   {
+    "id": "cyc-kit",
+    "icon": "🎒",
+    "text": "Prepare a cyclone kit: water, food, torch, radio, medicines, documents.",
+    "why": "Shops and power may be out for days after a storm.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "cyc-roof",
+    "icon": "🔨",
+    "text": "Tie down or repair loose roofing before the season.",
+    "why": "Loose roof sheets are the main cause of cyclone damage and injury.",
+    "minutes": 120,
+    "for": [
+     "all"
+    ]
+   },
+   {
+    "id": "cycmoz-plan",
+    "icon": "🌀",
+    "text": "Know your evacuation route and shelter before the cyclone season.",
+    "why": "Cyclones in the Mozambique Channel bring floods far inland.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "ST": [
+   {
+    "id": "storm-trees",
+    "icon": "🌳",
+    "text": "Trim weak branches and secure loose items outdoors.",
+    "why": "Falling branches cause most storm damage to homes.",
+    "minutes": 60,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "HS": [
+   {
+    "id": "seas-move",
+    "icon": "🌊",
+    "text": "Move valuables and sleeping areas away from the shoreline during king tides.",
+    "why": "Sea level is higher than normal on Pacific atolls during El Niño.",
+    "minutes": 30,
+    "for": [
+     "coastal",
+     "all"
+    ]
+   }
+  ],
+  "SI": [
+   {
+    "id": "salt-store",
+    "icon": "🧂",
+    "text": "Store fresh water before the dry season; test wells for salt.",
+    "why": "Low river flow lets sea water push into wells and canals.",
+    "minutes": 60,
+    "for": [
+     "farmer",
+     "all"
+    ]
+   }
+  ],
+  "FR": [
+   {
+    "id": "frost-cover",
+    "icon": "🥶",
+    "text": "Cover seedlings at night and keep seed for replanting.",
+    "why": "Highland frost during dry spells can kill a whole crop overnight.",
+    "minutes": 30,
+    "for": [
+     "farmer"
+    ]
+   }
+  ],
+  "SN": [
+   {
+    "id": "snow-water",
+    "icon": "🏔️",
+    "text": "Expect lower rivers next summer; plan irrigation and water use early.",
+    "why": "Less winter snow means less water later in the year.",
+    "minutes": 15,
+    "for": [
+     "farmer",
+     "urban"
+    ]
+   }
+  ],
+  "HSN": [
+   {
+    "id": "snow-kit",
+    "icon": "❄️",
+    "text": "Keep extra food, heating fuel and medicines in case roads close.",
+    "why": "Heavy snow can cut off towns for days.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "CD": [
+   {
+    "id": "cold-heat",
+    "icon": "🧣",
+    "text": "Check heating, insulation and warm clothing before winter.",
+    "why": "Cold snaps hit older people and babies hardest.",
+    "minutes": 30,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "FLS": [
+   {
+    "id": "spring-melt",
+    "icon": "🌊",
+    "text": "Expect higher rivers in spring when heavy snow melts.",
+    "why": "A snowy winter often means spring floods.",
+    "minutes": 10,
+    "for": [
+     "all"
+    ]
+   }
+  ],
+  "MW": [
+   {
+    "id": "mild-pests",
+    "icon": "🐛",
+    "text": "Watch for more pests and mould; a mild winter kills fewer of them.",
+    "why": "Cold normally keeps pests and disease in check.",
+    "minutes": 10,
+    "for": [
+     "farmer",
+     "all"
+    ]
+   }
+  ],
+  "CU": [
+   {
+    "id": "cool-crop",
+    "icon": "🌾",
+    "text": "Choose crop varieties that ripen in a cooler, wetter summer.",
+    "why": "Cool summers delay ripening and increase crop disease.",
+    "minutes": 30,
+    "for": [
+     "farmer"
+    ]
+   }
   ]
+ },
+ "always": [
+  {
+   "id": "always-official",
+   "icon": "📢",
+   "text": "Follow your national weather service for warnings; this briefing is a seasonal outlook, not a warning.",
+   "why": "Only official services issue alerts for specific days and places.",
+   "minutes": 5,
+   "for": [
+    "all"
+   ]
+  },
+  {
+   "id": "always-share",
+   "icon": "🗣️",
+   "text": "Tell one neighbour what this season may bring.",
+   "why": "Communities that talk about risk early prepare better.",
+   "minutes": 5,
+   "for": [
+    "all"
+   ]
+  }
+ ]
 }

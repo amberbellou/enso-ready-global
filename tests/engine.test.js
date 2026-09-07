@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { buildFacts, renderBriefing, renderRadio, renderSMS, parseSeason, seasonIndexFor, seasonTiming, cellIdFor } from "../src/engine.js";
+import { buildFacts, renderBriefing, renderRadio, renderSMS, parseSeason, seasonIndexFor, seasonTiming, cellIdFor, forecastPct, seasonYearMonths } from "../src/engine.js";
 
 const J = (p) => JSON.parse(fs.readFileSync(new URL("../" + p, import.meta.url), "utf8"));
 const composites = J("data/derived/composites.json");
@@ -22,8 +22,20 @@ test("season parsing", () => {
   assert.equal(seasonTiming([6, 7, 8], now).state, "passed");
 });
 test("cell ids are stable and on-grid", () => {
-  assert.equal(cellIdFor(-1.3, 36.8, composites.grid), "-01.25_+036.25");
+  assert.equal(cellIdFor(-1.3, 36.8, composites.grid), "-001.0_+0037.0");
   assert.ok(composites.cells[cellIdFor(34.05, -118.24, composites.grid)]);
+  // a point whose nearest cell is ocean, with land within 2 cells, snaps to a land cell
+  const g = composites.grid; const W = g.lons.length; let found = 0;
+  for (let i = 10; i < g.lats.length - 10 && found < 5; i++) for (let j = 2; j < W - 2 && found < 5; j++) {
+    if (g.land[i * W + j] === "1") continue;
+    const nearLand = [-1, 0, 1].some(di => [-1, 0, 1].some(dj => g.land[(i + di) * W + j + dj] === "1"));
+    if (!nearLand) continue;
+    const snapped = cellIdFor(g.lats[i], g.lons[j], g);
+    assert.equal(composites.cells[snapped].on_land, true, `snap from ocean ${g.lats[i]},${g.lons[j]}`);
+    assert.notEqual(snapped, cellIdFor(g.lats[i], g.lons[j], g, { preferLand: false }));
+    found++;
+  }
+  assert.ok(found >= 5);
 });
 test("Nairobi farmer: wetter short rains, farmer steps, Kenya met service", () => {
   const f = facts(-1.29, 36.82, "KE", "farmer");
@@ -46,6 +58,32 @@ test("Jakarta: drier, high confidence", () => {
 test("Piura coast beats generic South America box", () => {
   const f = facts(-5.19, -80.63, "PE");
   assert.equal(f.region.id, "peru-ecuador-coast");
+});
+test("forecast blending: agreeing forecast raises confidence, disagreeing lowers it", () => {
+  const months = [{ ym: "2026-10", anomaly: 40, mean: 140 }, { ym: "2026-11", anomaly: 50, mean: 170 }, { ym: "2026-12", anomaly: 20, mean: 80 }];
+  const r = forecastPct(months, ["2026-10", "2026-11", "2026-12"]);
+  assert.equal(r.pct, Math.round(100 * 110 / 280));
+  assert.deepEqual(seasonYearMonths([10, 11, 12], { startYear: 2026, endYear: 2026 }), ["2026-10", "2026-11", "2026-12"]);
+  const base = facts(-1.29, 36.82, "KE");
+  const up = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, forecast: { months, source: "test", source_url: "x" } });
+  assert.ok(up.forecast && up.forecast.pct > 0); assert.equal(up.forecast_agreement, "agree");
+  const down = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, forecast: { months: months.map(m => ({ ...m, anomaly: -m.anomaly })), source: "test", source_url: "x" } });
+  assert.equal(down.forecast_agreement, "disagree");
+  const order = ["uncertain", "leaning", "likely"];
+  assert.ok(order.indexOf(down.confidence) <= order.indexOf(base.confidence));
+  const b = renderBriefing(up, strings, { placeName: "Nairobi" });
+  assert.ok(b.some(x => x.type === "forecast" && /above normal/.test(x.text)));
+});
+test("country override adds local season name and extra hazard", () => {
+  const country = J("data/curated/countries/KE.json");
+  const f = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, country, now, livelihood: "farmer" });
+  assert.equal(f.signal.local_season, "the short rains");
+  assert.ok(f.signal.hazards.includes("RVF"));
+  assert.match(renderBriefing(f, strings, { placeName: "Nairobi" })[0].text, /the short rains/);
+});
+test("too few events yields no local average, never a fake number", () => {
+  const f = facts(80, 0, "GL"); // high Arctic cell
+  if (f.history) assert.ok(f.history.too_few || f.history.n_events >= 3);
 });
 test("Unlisted country falls back to WMO directory", () => {
   const f = facts(50.85, 4.35, "BE");

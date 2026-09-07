@@ -1,0 +1,10 @@
+{
+ "season_names": {
+  "east-africa-short-rains": "the short rains"
+ },
+ "hazards_add": {
+  "el_nino": [
+   "RVF"
+  ]
+ }
+}

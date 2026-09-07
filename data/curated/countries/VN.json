@@ -1,0 +1,10 @@
+{
+ "season_names": {
+  "mainland-southeast-asia": "the dry season"
+ },
+ "hazards_add": {
+  "el_nino": [
+   "SI"
+  ]
+ }
+}

@@ -11,7 +11,8 @@ import { buildFacts, renderBriefing, renderRadio, renderSMS, cellIdFor } from ".
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = path.join(ROOT, "site");
 const J = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), "utf8"));
-const W = (p, s) => { const f = path.join(SITE, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, s); };
+// atomic write: temp file then rename, so a failed build never leaves a half-written file (Open-Meteo idea)
+const W = (p, s) => { const f = path.join(SITE, p); fs.mkdirSync(path.dirname(f), { recursive: true }); const t = f + ".tmp"; fs.writeFileSync(t, s); fs.renameSync(t, f); };
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 const composites = J("data/derived/composites.json");
@@ -36,11 +37,28 @@ W("data/teleconnections.json", JSON.stringify(tele));
 W("data/prep_checklists.json", JSON.stringify(checklists));
 W("data/met_services.json", JSON.stringify(met));
 W("data/oni.json", JSON.stringify({ source: oni.source, source_url: oni.source_url, latest_season: oni.latest_season, latest_oni: oni.latest_oni, events: oni.events }));
+const countryDir = path.join(ROOT, "data/curated/countries");
+const countryOverrides = {};
+for (const f of fs.existsSync(countryDir) ? fs.readdirSync(countryDir) : []) { const cc = f.replace(".json", ""); countryOverrides[cc] = J("data/curated/countries/" + f); W(`data/countries/${cc}.json`, JSON.stringify(countryOverrides[cc])); }
 let nCells = 0;
+const cellMeta = { schema: composites.schema, units: composites.units, baseline: [composites.baseline_start, composites.baseline_end], min_events: composites.min_events };
+// only cells that can be requested: land, or ocean within 2 cells of land (engine snaps coasts to land)
+const G = composites.grid, GW = G.lons.length;
+const nearLand = (i, j) => { for (let di = -2; di <= 2; di++) for (let dj = -2; dj <= 2; dj++) { const ii = i + di, jj = (j + dj + GW) % GW; if (ii >= 0 && ii < G.lats.length && G.land[ii * GW + jj] === "1") return true; } return false; };
 for (const [id, cell] of Object.entries(composites.cells)) {
-  W(`data/cells/${id}.json`, JSON.stringify({ cell, events: composites.events, source: composites.source, source_url: composites.source_url }));
+  const i = G.lats.indexOf(parseFloat(id.split("_")[0])), j = G.lons.indexOf(parseFloat(id.split("_")[1]));
+  if (!cell.on_land && !nearLand(i, j)) continue;
+  W(`data/cells/${id}.json`, JSON.stringify({ ...cellMeta, cell, events: composites.events, sources: composites.sources }));
   nCells++;
 }
+// freshness metadata (dead-man's switch made visible)
+const statusIssued = new Date(Date.parse(status.issued + " UTC") || Date.now());
+W("data/meta.json", JSON.stringify({
+  built_at: new Date().toISOString(),
+  status: { issued: status.issued, fetched_at: status.fetched_at, update_interval_days: 31, stale_after: new Date(statusIssued.getTime() + 45 * 86400000).toISOString() },
+  composites: { schema: composites.schema, baseline: [composites.baseline_start, composites.baseline_end], events: composites.events, rebuild_interval_days: 365 },
+  sources: composites.sources,
+}, null, 1));
 
 // --- page shell ---
 const shell = ({ title, body, base = ".", lang = "en", dir = "ltr", desc = "" }) => `<!doctype html>
@@ -56,7 +74,7 @@ const shell = ({ title, body, base = ".", lang = "en", dir = "ltr", desc = "" })
 <body>
 <header class="top"><a class="brand" href="${base}/">🌦️ ENSO Ready</a><a href="${base}/methodology.html">${esc(strings.ui.methodology)}</a></header>
 ${body}
-<footer>${esc(strings.ui.updated.replace("{date}", buildDate))} · Independent, open-source, no ads, no tracking. Not an official warning service. <a href="https://github.com/amberbellou/enso-ready-global">Source code</a></footer>
+<footer>${esc(strings.ui.updated.replace("{date}", buildDate))} · Independent, open-source, no ads, no tracking. Not an official warning service. <a href="https://github.com/amberbellou/enso-ready-global">Source code</a><br>Data: <a href="https://www.chc.ucsb.edu/data/chirps">CHIRPS (UCSB CHC)</a>, <a href="https://www.ncei.noaa.gov/products/global-precipitation-climatology-project">GPCP (NOAA)</a>, <a href="https://www.cpc.ncep.noaa.gov/">NOAA CPC</a>, <a href="https://open-meteo.com/">ECMWF SEAS5 via Open-Meteo (CC BY 4.0)</a>, <a href="https://www.geonames.org/">GeoNames (CC BY 4.0)</a>, <a href="https://www.naturalearthdata.com/">Natural Earth</a>.</footer>
 </body></html>`;
 
 // --- landing ---
@@ -74,10 +92,11 @@ const byCountry = {};
 let nPages = 0;
 for (const p of cities) {
   const [id, name, , , lat, lon, , , cc] = p; const pop = +p[14];
-  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, livelihood: "all" });
+  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, livelihood: "all" });
   const blocks = renderBriefing(facts, strings, { placeName: name });
   const head = blocks.find(b => b.type === "headline").text;
   const paras = blocks.filter(b => b.type === "para");
+  const srcs = blocks.find(b => b.type === "sources");
   const hist = blocks.find(b => b.type === "history");
   const st = blocks.find(b => b.type === "status");
   const steps = blocks.find(b => b.type === "steps");
@@ -89,8 +108,10 @@ for (const p of cities) {
 ${paras.map(b => `<p>${esc(b.text)}${b.source ? ` <a class="src" href="${b.source.url}" rel="noopener">[${b.source.id}]</a>` : ""}</p>`).join("\n")}
 ${hist ? `<p>${esc(hist.text)}</p><p>${esc(hist.recent)} <a class="src" href="${hist.source.url}" rel="noopener">[${esc(hist.source.label)}]</a></p>` : ""}
 <p class="muted">${esc(st.text)} <a class="src" href="${st.source.url}" rel="noopener">[NOAA CPC]</a></p>
+<p class="muted">📈 ${esc(strings.ui.forecast_unavailable.split(".")[0])}: open the interactive version below for this season's ECMWF model forecast.</p>
 <section class="card"><h2>${esc(steps.title)}</h2><ol>${steps.steps.map(s => `<li><span aria-hidden="true">${s.icon}</span> ${esc(s.text)} <span class="muted">(${esc(strings.ui.minutes.replace("{n}", s.minutes))})</span><details><summary>${esc(strings.ui.why_matters)}</summary><p>${esc(s.why)}</p></details></li>`).join("")}</ol></section>
 <div class="banner">📢 ${esc(defer.text)} <a href="${defer.url}" rel="noopener">${esc(defer.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></div>
+<p class="src">${esc(srcs.title)}: ${srcs.items.map(it => `<a href="${it.url}" rel="noopener">${esc(it.label)}</a>`).join(" · ")}</p>
 <details><summary>📻 ${esc(strings.ui.radio_script)} / ${esc(strings.ui.sms_text)}</summary><pre class="script">${esc(renderRadio(facts, strings, name))}</pre><pre class="script">${esc(renderSMS(facts, strings, name))}</pre></details>
 <p><a class="btn" href="../?lat=${lat}&lon=${lon}&cc=${cc}&name=${encodeURIComponent(name)}">${esc(strings.ui.see_briefing)} (interactive)</a></p>
 </main>`;
