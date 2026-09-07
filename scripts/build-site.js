@@ -28,6 +28,7 @@ const buildDate = new Date().toISOString().slice(0, 10);
 // --- static assets & data ---
 fs.copyFileSync(path.join(ROOT, "src/engine.js"), path.join(SITE, "engine.js"));
 fs.copyFileSync(path.join(ROOT, "src/app.js"), path.join(SITE, "app.js"));
+fs.copyFileSync(path.join(ROOT, "src/search.js"), path.join(SITE, "search.js"));
 fs.copyFileSync(path.join(ROOT, "src/style.css"), path.join(SITE, "style.css"));
 fs.mkdirSync(path.join(SITE, "i18n"), { recursive: true });
 const langIndex = [];

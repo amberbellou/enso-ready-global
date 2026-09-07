@@ -79,8 +79,10 @@ def main(langs):
         todo = needs(lang)
         # arrays (months) are translated as a joined string then split back
         arrays = {k: v for k, v in flat(en).items() if isinstance(v, list)}
+        lf = ROOT / f"i18n/{lang}.json"
+        meta = json.loads(lf.read_text()).get("_meta", {}) if lf.exists() else {}
         for k, v in arrays.items():
-            if k in todo or not (ROOT / f"i18n/{lang}.json").exists(): todo[k] = " | ".join(v)
+            if k not in meta: todo[k] = " | ".join(v)
         todo = {k: v for k, v in todo.items() if isinstance(v, str)}
         if not todo: print(f"{lang}: up to date"); continue
         est_in = len(json.dumps(todo)) / 3.5 + 400; est_out = est_in * 1.3

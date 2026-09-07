@@ -34,7 +34,8 @@ No free-form AI text ships in a briefing. Templates live in `i18n/<lang>.json`; 
 | Copernicus C3S seasonal (CDS) | v2 official multi-system forecast (needs a CDS account) | `scripts/ingest-c3s.py` |
 | Natural Earth admin-0 (public domain) | land mask, ISO numeric country id per cell | `scripts/composites.py` |
 | NOAA / IRI / BoM / WMO impact literature | curated teleconnection table | `data/curated/teleconnections.json` |
-| GeoNames (CC BY 4.0) | place search | `scripts/build_gazetteer.py` |
+| GeoNames full dump + alternate names in 36 languages (CC BY 4.0) | village-level, any-script place search; "near X" fallback | `scripts/build_gazetteer.py`, `src/search.js` |
+| OpenStreetMap tiles (ODbL) | map picker, loaded only when tapped | `src/app.js` |
 | WMO Members directory | national met services | `data/curated/met_services.json` |
 
 ## Repo layout
@@ -68,6 +69,17 @@ Rebuilding the composites (yearly, or when a new strong event ends) needs `data/
 ```bash
 .venv/bin/python scripts/oni_events.py && .venv/bin/python scripts/composites.py
 ```
+
+## Location system (Annex D, static edition)
+
+Coordinates are truth; names are a courtesy. Every branch ends in a briefing:
+named place → nearest known place ("near Wau") → GPS or map pin → 2° grid cell.
+
+- ~4.7 M populated places from the full GeoNames dump, with alternate names in the 36 launch languages, so a village can be typed in Amharic, Burmese or Arabic script.
+- Results read "Village — District — Province — Country" from GeoNames' own admin tables.
+- Search is client-side over small static shards (2–4 character prefix, script-aware), with typo tolerance inside the shard. No search server, no geocoding API, no logging of what people search.
+- `tests/gazetteer.test.js` runs the Annex D.7 acceptance set: 50 villages, 10 scripts, 20 typos, ambiguity, nowhere.
+- Deferred: OSM place enrichment and OCHA COD-AB boundary alignment (quarterly offline job).
 
 ## Safety rules
 

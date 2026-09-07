@@ -100,7 +100,10 @@
     "share": "Share this briefing",
     "no_js": "Search needs JavaScript. Without it, pick your country below.",
     "forecast_unavailable": "Seasonal model forecast not available right now (offline or busy). The outlook above uses the known pattern and past events.",
-    "data_note": "Data: {list}."
+    "data_note": "Data: {list}.",
+    "near": "near {name}",
+    "pick_map": "Pick on a map",
+    "map_hint": "Tap your location on the map. Zoom in for villages."
   },
   "timing_coming_one": "That season starts next month ({season}).",
   "hazards": {

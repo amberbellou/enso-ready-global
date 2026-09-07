@@ -31,8 +31,14 @@ jobs:
       - name: Run tests
         timeout-minutes: 5
         run: node --test "tests/*.test.js"
-      - name: Fetch GeoNames and build gazetteer
-        timeout-minutes: 10
+      - name: Cache GeoNames dumps (refreshed monthly)
+        uses: actions/cache@v4
+        with:
+          path: data/raw/geonames
+          key: geonames-${{ github.run_id }}
+          restore-keys: geonames-
+      - name: Fetch GeoNames and build gazetteer (Annex D)
+        timeout-minutes: 40
         run: |
           mkdir -p data/raw
           bash scripts/fetch-geonames.sh

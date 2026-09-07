@@ -1,0 +1,2233 @@
+{
+  "_lang": "es",
+  "_name": "Español",
+  "_dir": "ltr",
+  "_status": "machine",
+  "all_year": "todo el año",
+  "this_area": "esta zona",
+  "el_nino": "El Niño",
+  "la_nina": "La Niña",
+  "neutral": "condiciones neutrales",
+  "rain_much_wetter": "mucha más lluvia de lo normal",
+  "rain_wetter": "más lluvia de lo normal",
+  "rain_drier": "menos lluvia de lo normal",
+  "rain_much_drier": "mucha menos lluvia de lo normal",
+  "rain_near_normal": "lluvia cerca de lo normal",
+  "rain_mixed": "una señal de lluvia mixta",
+  "rain_drier__north_and_east_": "menos lluvia de lo normal en el norte y el este",
+  "rain_wetter__north_and_east_": "más lluvia de lo normal en el norte y el este",
+  "rain_drier__south_and_west_": "menos lluvia de lo normal en el sur y el oeste",
+  "temp_warmer": "más calor de lo normal",
+  "temp_cooler": "más frío de lo normal",
+  "temp_near_normal": "temperaturas cerca de lo normal",
+  "temp_warmer__winter___cooler__summer_": "un invierno más templado y un verano más fresco",
+  "temp_cooler__winter___warmer__summer_": "un invierno más frío y un verano más caluroso",
+  "conf_likely": "probable",
+  "conf_leaning": "algo probable",
+  "conf_uncertain": "incierto",
+  "headline": "{name}: en {season}, {rain}. Esto es {conf}.",
+  "headline_neutral": "{name}: ahora no hay El Niño ni La Niña.",
+  "neutral_explain": "La lluvia de la temporada aquí dependerá de otros factores. Vuelva a mirar cada mes; esta página se actualiza cuando cambian las condiciones.",
+  "timing_now": "Esa temporada está ocurriendo ahora ({season}).",
+  "timing_coming": "Esa temporada empieza en unos {n} meses ({season}).",
+  "timing_passed": "Esa temporada ya pasó para este evento. La siguiente es {season}; para entonces el evento puede haberse debilitado.",
+  "expect": "Durante {phase}, en {region} suele haber {rain} y {temp}.",
+  "agreement_agree": "El registro local de lluvia coincide con el patrón conocido, así que esta perspectiva es {conf}.",
+  "agreement_disagree": "El registro local de lluvia no coincide claramente con el patrón conocido, así que tome esto como {conf}.",
+  "agreement_weak": "Los eventos pasados aquí fueron mezclados, así que tome esto como {conf}.",
+  "agreement_none": "No hay un registro local de lluvia confiable para esta temporada, así que tome esto como {conf}.",
+  "history": "En los últimos {n} eventos fuertes de {phase}, la lluvia de {season} aquí fue en promedio {pct}. Llovió más de lo normal en {wet}% de ellos.",
+  "history_recent": "Eventos más recientes: {recent}.",
+  "pct_above": "{n}% por encima de lo normal",
+  "pct_below": "{n}% por debajo de lo normal",
+  "near_normal": "cerca de lo normal",
+  "no_data": "sin datos",
+  "status_line": "Estado global: {status} (publicado el {issued}).",
+  "steps_title": "Qué hacer ahora",
+  "defer": "Para los avisos de alerta, siga a {service}. Este informe es una perspectiva de temporada, no una alerta.",
+  "ui": {
+    "app_name": "Listos para el ENSO",
+    "tagline": "Lo que este El Niño significa para usted y qué hacer al respecto.",
+    "search_label": "¿Dónde vive?",
+    "search_placeholder": "Escriba un pueblo o una ciudad",
+    "use_location": "Usar mi ubicación",
+    "see_briefing": "Ver mi informe",
+    "livelihood_q": "¿Qué lo describe mejor?",
+    "livelihood_farmer": "Cultivo la tierra o cuido animales",
+    "livelihood_coastal": "Vivo cerca de la costa o de un río",
+    "livelihood_urban": "Vivo en un pueblo o una ciudad",
+    "livelihood_all": "Muéstreme todo",
+    "tell_more": "Cuénteme más",
+    "show_less": "Mostrar menos",
+    "step_of": "Paso {i} de {n}",
+    "why_matters": "Por qué esto importa",
+    "done": "Listo",
+    "next_step": "Siguiente paso",
+    "show_all_steps": "Mostrar todos los pasos",
+    "minutes": "unos {n} minutos",
+    "what_now": "¿Qué debo hacer ahora?",
+    "read_aloud": "Leer en voz alta",
+    "radio_script": "Guion de radio de 30 segundos",
+    "sms_text": "Versión para SMS",
+    "sources": "Fuentes",
+    "updated": "Datos actualizados: {date}",
+    "offline_note": "No tienes conexión. Se muestra tu último informe del {date}.",
+    "mt_banner": "Traducción automática. Toca para sugerir una corrección.",
+    "settings": "Ajustes",
+    "text_size": "Tamaño del texto",
+    "high_contrast": "Alto contraste",
+    "reduce_motion": "Reducir el movimiento",
+    "easy_read": "Lectura fácil",
+    "methodology": "Cómo funciona esto",
+    "back": "Atrás",
+    "change_place": "Cambiar de lugar",
+    "no_results": "No hay coincidencias. Prueba con un pueblo más grande que esté cerca.",
+    "region_label": "Región",
+    "share": "Compartir este informe",
+    "no_js": "La búsqueda necesita JavaScript. Sin él, elige tu país aquí abajo.",
+    "forecast_unavailable": "El pronóstico del modelo estacional no está disponible ahora (sin conexión o el servicio está ocupado). El panorama de arriba usa el patrón conocido y los eventos pasados.",
+    "data_note": "Datos: {list}.",
+    "near": "cerca de {name}",
+    "pick_map": "Elegir en un mapa",
+    "map_hint": "Toque su ubicación en el mapa. Acerque el mapa para ver los pueblos."
+  },
+  "timing_coming_one": "Esa temporada empieza el mes que viene ({season}).",
+  "hazards": {
+    "FL": "inundaciones",
+    "FLR": "desbordes de ríos",
+    "FF": "inundaciones repentinas",
+    "LS": "deslizamientos de tierra",
+    "DR": "sequía",
+    "WS": "falta de agua",
+    "WF": "incendios",
+    "HZ": "humo en el aire",
+    "HT": "calor extremo",
+    "EP": "brotes de enfermedades",
+    "CH": "cólera",
+    "RVF": "fiebre del Valle del Rift",
+    "CS": "cultivos afectados",
+    "CF": "pérdida de cosechas",
+    "FI": "falta de alimentos",
+    "TC": "tormentas tropicales",
+    "TCE": "tormentas tropicales que llegan más al este",
+    "ST": "tormentas",
+    "HS": "olas altas en el mar",
+    "SI": "agua salada en los pozos",
+    "FR": "heladas en zonas altas",
+    "SN": "poca nieve acumulada",
+    "HSN": "nevadas fuertes",
+    "CD": "días muy fríos",
+    "FLS": "inundaciones de primavera",
+    "MW": "un invierno templado",
+    "CU": "un verano fresco"
+  },
+  "season_with_local": "{season} ({local})",
+  "risks": "Riesgos principales: {list}.",
+  "list_sep": ", ",
+  "list_last": " y ",
+  "forecast": "El último pronóstico del modelo estacional para {season} dice {pct}.",
+  "forecast_agree": "Eso coincide con el patrón habitual.",
+  "forecast_disagree": "Eso no coincide con el patrón habitual, así que la confianza es menor.",
+  "forecast_weak": "Eso está cerca de lo normal, así que el patrón puede ser más débil esta vez.",
+  "forecast_none": "",
+  "forecast_partial": "(El pronóstico cubre {n} de {of} meses.)",
+  "history_few": "Hay muy pocos eventos pasados con datos aquí para dar un promedio local.",
+  "local_seasons": {
+    "spring and summer": "primavera y verano",
+    "winter and spring": "invierno y primavera",
+    "the build-up and wet season": "la temporada previa a las lluvias y la temporada húmeda",
+    "the monsoon": "el monzón",
+    "the summer rains": "las lluvias de verano",
+    "the Nordeste rainy season": "la temporada de lluvias del Nordeste",
+    "the Amazon dry season": "la temporada seca de la Amazonía",
+    "the plum rains and summer flood season": "las lluvias de las ciruelas y la temporada de crecidas de verano",
+    "the dry season": "la temporada seca",
+    "the coastal rainy season": "la temporada de lluvias de la costa",
+    "the Belg/Deyr rains": "las lluvias Belg/Deyr",
+    "the Kiremt rains": "las lluvias Kiremt",
+    "the wet season": "la temporada húmeda",
+    "the rainy season and canícula": "la temporada de lluvias y la canícula",
+    "musim kemarau": "musim kemarau",
+    "the southwest monsoon": "el monzón del suroeste",
+    "the northeast monsoon": "el monzón del noreste",
+    "the winter rains": "las lluvias de invierno",
+    "the short rains": "las lluvias cortas",
+    "the Maha season rains": "las lluvias de la temporada Maha",
+    "the rainy season": "la temporada de lluvias",
+    "winter": "invierno",
+    "the highland rains": "las lluvias de las tierras altas",
+    "the Deyr rains": "las lluvias Deyr",
+    "the Vuli rains": "las lluvias Vuli",
+    "the second rains": "las segundas lluvias",
+    "spring": "primavera"
+  },
+  "pct_above_cap": "más de {n}% por encima de lo normal",
+  "steps": {
+    "flood-docs": {
+      "text": "Guarde los documentos de identidad, los papeles de la tierra y los números de teléfono en una bolsa de plástico cerrada.",
+      "why": "Los papeles son lo más difícil de reponer después de una inundación."
+    },
+    "flood-route": {
+      "text": "Acuerde con su familia un lugar alto adonde ir y un camino para llegar.",
+      "why": "La gente se lastima cuando tiene que decidir de noche y bajo la lluvia."
+    },
+    "flood-water": {
+      "text": "Guarde agua limpia para beber en recipientes cerrados, suficiente para tres días.",
+      "why": "Las inundaciones contaminan primero los pozos y los grifos."
+    },
+    "flood-drains": {
+      "text": "Limpie ahora los desagües, las canaletas y los canales cerca de su casa.",
+      "why": "Los desagües tapados convierten la lluvia fuerte en una inundación en su patio."
+    },
+    "flood-raise": {
+      "text": "Suba del suelo la comida, las semillas, el fertilizante y las cosas de valor.",
+      "why": "Incluso el agua poco profunda arruina la comida y las semillas guardadas."
+    },
+    "flood-animals": {
+      "text": "Planee a dónde pueden ir los animales en terreno más alto.",
+      "why": "La pérdida de animales suele ser el costo más grande de una inundación."
+    },
+    "flood-warnings": {
+      "text": "Averigüe cómo se dan los avisos en su zona: radio, SMS, altavoz o un vecino.",
+      "why": "El aviso oficial es la señal para actuar."
+    },
+    "flood-medical": {
+      "text": "Guarde en la bolsa de emergencia una semana de las medicinas que toma cada día.",
+      "why": "Las clínicas pueden quedar incomunicadas por varios días."
+    },
+    "river-level": {
+      "text": "Averigüe hasta dónde llegó el río en la última inundación grande y quédese por encima de esa línea.",
+      "why": "Las marcas que dejó el agua en el pasado son la mejor guía local."
+    },
+    "flash-avoid": {
+      "text": "Nunca cruce una calle inundada ni el cauce seco de un río cuando llueva fuerte.",
+      "why": "La mayoría de las muertes por crecidas repentinas ocurren en vehículos y al cruzar ríos."
+    },
+    "slide-signs": {
+      "text": "Fíjese si aparecen grietas nuevas, árboles inclinados o manantiales en las laderas arriba de su casa.",
+      "why": "Las laderas dan señales de aviso antes de derrumbarse."
+    },
+    "slide-move": {
+      "text": "Si vive debajo de una ladera empinada, busque un lugar más seguro para dormir cuando llueva fuerte.",
+      "why": "Los derrumbes ocurren casi siempre de noche, después de varios días de lluvia."
+    },
+    "drought-store": {
+      "text": "Repare las fugas y agregue lugares para guardar agua: tanques, tambores o un pozo tapado.",
+      "why": "Cada litro que guarde ahora es un litro que no tendrá que cargar después."
+    },
+    "drought-seed": {
+      "text": "Pregunte al técnico agrícola por semillas de ciclo corto o resistentes a la sequía.",
+      "why": "Los cultivos de ciclo corto pueden terminar antes de que paren las lluvias."
+    },
+    "drought-plant": {
+      "text": "Siembre por partes: algo temprano, algo en la fecha normal, no todo a la vez.",
+      "why": "Así reparte el riesgo si las lluvias empiezan y luego se detienen."
+    },
+    "drought-fodder": {
+      "text": "Corte y guarde forraje de más; piense en vender temprano los animales débiles.",
+      "why": "Los precios bajan cuando todos venden al mismo tiempo."
+    },
+    "drought-food": {
+      "text": "Compre alimentos básicos poco a poco ahora, mientras los precios son normales.",
+      "why": "Los precios de los alimentos suben más rápido cuando se pierden las cosechas."
+    },
+    "drought-share": {
+      "text": "Acuerde con los vecinos cómo se va a repartir el agua de un pozo o tanque compartido.",
+      "why": "Las reglas acordadas evitan peleas cuando falta el agua."
+    },
+    "droughtne-store": {
+      "text": "Guarde agua y planifique el riego si vive en el norte o en el este.",
+      "why": "Allí los veranos de El Niño suelen ser secos."
+    },
+    "water-reuse": {
+      "text": "Vuelva a usar el agua de lavar en el huerto y en el baño.",
+      "why": "Reduce en un tercio el uso de agua en la casa."
+    },
+    "water-schedule": {
+      "text": "Conozca el horario de racionamiento de agua de su ciudad y llene recipientes los días de suministro.",
+      "why": "Las ciudades racionan el agua en las temporadas secas; saber el día evita quedarse sin agua en el grifo."
+    },
+    "fire-clear": {
+      "text": "Limpie el pasto seco y los arbustos al menos 10 metros alrededor de los edificios.",
+      "why": "Una franja limpia detiene casi todos los incendios de pasto antes de llegar a la casa."
+    },
+    "fire-noburn": {
+      "text": "No queme campos ni basura en días calurosos y con viento.",
+      "why": "La mayoría de los incendios grandes empiezan con una quema controlada que se escapó."
+    },
+    "bush-plan": {
+      "text": "Haga un plan para salir temprano y siga los niveles de peligro del servicio de bomberos.",
+      "why": "Salir tarde es la opción más peligrosa en un incendio de matorral."
+    },
+    "wild-plan": {
+      "text": "Prepare una mochila de evacuación y conozca dos salidas de su zona.",
+      "why": "Los incendios forestales pueden cerrar la carretera principal en pocos minutos."
+    },
+    "haze-mask": {
+      "text": "Tenga mascarillas para los días con humo y un cuarto que se pueda cerrar bien.",
+      "why": "El humo daña más a los niños y a las personas mayores."
+    },
+    "heat-hours": {
+      "text": "Haga el trabajo pesado temprano en la mañana y al final de la tarde.",
+      "why": "Las enfermedades por calor son más frecuentes al mediodía."
+    },
+    "heat-check": {
+      "text": "Visite cada día a los vecinos mayores y a las personas que viven solas.",
+      "why": "La mayoría de las muertes por calor ocurren en silencio en la casa."
+    },
+    "heat-water": {
+      "text": "Beba agua seguido, antes de sentir sed.",
+      "why": "La sed llega tarde, cuando al cuerpo ya le falta agua."
+    },
+    "disease-water": {
+      "text": "Hierva o trate el agua de beber cuando las inundaciones lleguen a los pozos o a las tuberías.",
+      "why": "El cólera y la diarrea se transmiten por el agua de las inundaciones."
+    },
+    "disease-mosquito": {
+      "text": "Vacíe el agua estancada alrededor de la casa cada pocos días y use mosquiteros.",
+      "why": "Las enfermedades que transmiten los mosquitos aumentan después de las lluvias fuertes."
+    },
+    "cholera-ors": {
+      "text": "Tenga sales de rehidratación oral en casa y sepa cuál es la clínica más cercana.",
+      "why": "Rehidratar rápido salva vidas en los brotes de cólera."
+    },
+    "rvf-animals": {
+      "text": "Avise al veterinario si hay muertes o abortos repentinos en los animales, y no toque animales enfermos.",
+      "why": "La fiebre del Valle del Rift pasa del ganado enfermo a las personas después de las inundaciones."
+    },
+    "crop-mulch": {
+      "text": "Cubra el suelo de los campos con paja u hojas para conservar la humedad.",
+      "why": "Esa cubierta puede mantener el suelo húmedo una o dos semanas más."
+    },
+    "cropfail-diversify": {
+      "text": "Siembre varios cultivos, incluidos algunos que necesitan menos agua.",
+      "why": "Perder un cultivo duele menos si los otros sobreviven."
+    },
+    "cropfail-insurance": {
+      "text": "Pregunte por un seguro de cultivos o por la ayuda de un grupo de agricultores antes de sembrar.",
+      "why": "Casi todos los programas cierran la inscripción antes de que empiece la temporada."
+    },
+    "food-network": {
+      "text": "Averigüe qué grupos locales dan comida o dinero de apoyo y cómo inscribirse.",
+      "why": "Inscribirse temprano evita las filas cuando llega la ayuda."
+    },
+    "hurr-kit": {
+      "text": "Prepare un kit para huracanes: agua, comida, linterna, radio, medicinas, documentos.",
+      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+    },
+    "hurr-shelter": {
+      "text": "Sepa cuál es el refugio más cercano y cómo va a llegar allí.",
+      "why": "Los refugios se llenan rápido en cuanto se da un aviso."
+    },
+    "typh-kit": {
+      "text": "Prepare un kit para tifones: agua, comida, linterna, radio, medicinas, documentos.",
+      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+    },
+    "typh-boats": {
+      "text": "Pescadores: acuerden un plan de puerto seguro y respeten los avisos de no salir al mar.",
+      "why": "La mayoría de las muertes por tifones en el mar son de barcos que quedaron atrapados afuera."
+    },
+    "cyc-kit": {
+      "text": "Prepare un kit para ciclones: agua, comida, linterna, radio, medicinas, documentos.",
+      "why": "Las tiendas y la luz pueden faltar varios días después de la tormenta."
+    },
+    "cyc-roof": {
+      "text": "Amarre o repare las partes flojas del techo antes de la temporada.",
+      "why": "Las láminas de techo flojas son la causa principal de daños y heridas en los ciclones."
+    },
+    "cycmoz-plan": {
+      "text": "Conozca su ruta de evacuación y su refugio antes de la temporada de ciclones.",
+      "why": "Los ciclones del Canal de Mozambique traen inundaciones muy lejos, tierra adentro."
+    },
+    "cycshift-plan": {
+      "text": "Prepárese para los ciclones aunque su isla casi nunca reciba uno.",
+      "why": "Durante El Niño, los ciclones se forman y avanzan más al este de lo normal."
+    },
+    "storm-trees": {
+      "text": "Corte las ramas débiles y asegure los objetos sueltos que están afuera.",
+      "why": "Las ramas que caen causan la mayor parte de los daños a las casas durante las tormentas."
+    },
+    "seas-move": {
+      "text": "Durante las mareas muy altas, aleje de la orilla sus cosas de valor y los lugares donde duermen.",
+      "why": "En los atolones del Pacífico, el nivel del mar es más alto de lo normal durante El Niño."
+    },
+    "salt-store": {
+      "text": "Guarde agua dulce antes de la temporada seca. Revise si el agua de los pozos tiene sal.",
+      "why": "Cuando los ríos llevan poca agua, el agua del mar entra en los pozos y los canales."
+    },
+    "frost-cover": {
+      "text": "Cubra las plantitas de noche y guarde semillas para volver a sembrar.",
+      "why": "En las zonas altas, la helada durante los periodos secos puede matar toda la cosecha en una noche."
+    },
+    "snow-water": {
+      "text": "Espere ríos con menos agua el próximo verano. Planifique el riego y el uso del agua con tiempo.",
+      "why": "Menos nieve en invierno significa menos agua más adelante en el año."
+    },
+    "snow-kit": {
+      "text": "Tenga comida, combustible para calentar y medicinas de más, en caso de que se cierren los caminos.",
+      "why": "La nieve fuerte puede dejar pueblos aislados durante varios días."
+    },
+    "cold-heat": {
+      "text": "Revise la calefacción, el aislamiento y la ropa de abrigo antes del invierno.",
+      "why": "El frío intenso afecta más a las personas mayores y a los bebés."
+    },
+    "spring-melt": {
+      "text": "Espere ríos más altos en primavera, cuando se derrita mucha nieve.",
+      "why": "Un invierno con mucha nieve suele traer inundaciones en primavera."
+    },
+    "mild-pests": {
+      "text": "Esté atento a más plagas y moho. Un invierno templado mata menos de ellos.",
+      "why": "Normalmente el frío mantiene controladas las plagas y las enfermedades."
+    },
+    "cool-crop": {
+      "text": "Elija variedades de cultivo que maduren en un verano más fresco y más lluvioso.",
+      "why": "Los veranos frescos retrasan la maduración y aumentan las enfermedades de los cultivos."
+    },
+    "always-official": {
+      "text": "Siga a su servicio meteorológico nacional para los avisos. Este informe es una perspectiva de temporada, no un aviso.",
+      "why": "Solo los servicios oficiales emiten alertas para días y lugares concretos."
+    },
+    "always-share": {
+      "text": "Cuente a un vecino lo que puede traer esta temporada.",
+      "why": "Las comunidades que hablan del riesgo con tiempo se preparan mejor."
+    }
+  },
+  "regions": {
+    "peru-ecuador-coast": {
+      "name": "Costa de Perú y Ecuador",
+      "el_nino_note": "El agua cálida de la costa trae lluvias fuertes a una costa que normalmente es seca. En 1982-83, 1997-98 y 2017 hubo inundaciones graves.",
+      "la_nina_note": "Mar más frío y costa más seca."
+    },
+    "northern-south-america": {
+      "name": "Norte de América del Sur y la Amazonía",
+      "el_nino_note": "Las lluvias más débiles y el calor aumentan el riesgo de incendios y de ríos con poca agua en las cuencas del Orinoco y del Amazonas.",
+      "la_nina_note": "Lluvias más fuertes, sobre todo en Colombia y Venezuela."
+    },
+    "northeast-brazil": {
+      "name": "Nordeste de Brasil (Nordeste)",
+      "el_nino_note": "En los años de El Niño fuerte, la temporada de lluvias principal muchas veces falla o llega tarde.",
+      "la_nina_note": "La temporada de lluvias suele ser más fuerte."
+    },
+    "southeast-south-america": {
+      "name": "Sureste de América del Sur",
+      "el_nino_note": "El sur de Brasil, Uruguay, el noreste de Argentina y Paraguay suelen tener lluvias fuertes en primavera y verano, e inundaciones de ríos.",
+      "la_nina_note": "Primavera y verano más secos. Es común que los cultivos sufran."
+    },
+    "central-chile": {
+      "name": "Chile central",
+      "el_nino_note": "Las tormentas de invierno suelen ser más lluviosas.",
+      "la_nina_note": "Las lluvias de invierno suelen ser débiles."
+    },
+    "altiplano": {
+      "name": "Zonas altas de los Andes (Altiplano)",
+      "el_nino_note": "Las lluvias de verano suelen ser más débiles en la meseta alta. Al mismo tiempo, la costa de abajo puede estar lluviosa.",
+      "la_nina_note": "La señal es débil y cambia mucho."
+    },
+    "central-america-dry-corridor": {
+      "name": "América Central y sur de México",
+      "el_nino_note": "La temporada de lluvias empieza tarde y el periodo seco de mediados de verano (canícula) es más largo, sobre todo en el Corredor Seco.",
+      "la_nina_note": "Más lluvia y una temporada de huracanes del Atlántico más activa."
+    },
+    "caribbean": {
+      "name": "Islas del Caribe",
+      "el_nino_note": "Temporada de lluvias más seca y, normalmente, menos huracanes en el Atlántico.",
+      "la_nina_note": "Temporada de huracanes del Atlántico más activa."
+    },
+    "southern-us-north-mexico": {
+      "name": "Sur de Estados Unidos y norte de México",
+      "el_nino_note": "Una corriente en chorro más fuerte lleva más tormentas de invierno a California, el Suroeste, Texas, la costa del Golfo y el Sureste.",
+      "la_nina_note": "El invierno suele ser seco y cálido en los estados del sur."
+    },
+    "us-pacific-northwest": {
+      "name": "Noroeste del Pacífico y oeste de Canadá",
+      "el_nino_note": "Inviernos más templados y más secos, con menos nieve en las montañas.",
+      "la_nina_note": "Inviernos más fríos y más lluviosos, con más nieve."
+    },
+    "northern-us-southern-canada": {
+      "name": "Norte de Estados Unidos y sur de Canadá",
+      "el_nino_note": "Los inviernos suelen ser más templados de lo normal en las Grandes Llanuras del norte, el Medio Oeste y los Grandes Lagos.",
+      "la_nina_note": "Inviernos más fríos y con más nieve en la franja norte y el valle de Ohio."
+    },
+    "alaska": {
+      "name": "Alaska",
+      "el_nino_note": "Los inviernos suelen ser mucho más cálidos de lo normal.",
+      "la_nina_note": "Inviernos más fríos."
+    },
+    "hawaii": {
+      "name": "Hawái",
+      "el_nino_note": "La temporada de lluvias suele ser débil. El riesgo de sequía sube a finales del invierno y en la primavera.",
+      "la_nina_note": "Inviernos con más lluvia."
+    },
+    "india-monsoon": {
+      "name": "India, Pakistán, Nepal y Bangladés (monzón de verano)",
+      "el_nino_note": "El monzón de verano suele ser más débil y más desigual. No todos los El Niño traen sequía, pero el riesgo es claramente mayor.",
+      "la_nina_note": "El monzón suele ser más fuerte y hay más inundaciones."
+    },
+    "sri-lanka-south-india": {
+      "name": "Sri Lanka y el sur de la India (monzón del noreste)",
+      "el_nino_note": "Las lluvias de oct. a dic. suelen ser más fuertes.",
+      "la_nina_note": "Señal débil."
+    },
+    "maritime-continent": {
+      "name": "Indonesia, Malasia, Singapur, Brunéi y Timor-Leste",
+      "el_nino_note": "La temporada seca es más larga y más dura, y la temporada de lluvias empieza tarde. En 1997 y 2015 hubo muchos incendios de bosque y de turba, y mucho humo.",
+      "la_nina_note": "Temporada seca con más lluvia y temporada de lluvias más fuerte."
+    },
+    "philippines": {
+      "name": "Filipinas",
+      "el_nino_note": "Llueve menos de lo normal desde el final del año hasta la temporada seca siguiente. Los tifones suelen formarse más al este y pueden ser más fuertes.",
+      "la_nina_note": "Más lluvia, con más tifones que cruzan las islas."
+    },
+    "mainland-southeast-asia": {
+      "name": "Vietnam, Tailandia, Camboya, Laos y Myanmar",
+      "el_nino_note": "Temporada seca más calurosa y con menos lluvia. El monzón empieza tarde. El río Mekong baja de caudal y entra agua salada en el delta.",
+      "la_nina_note": "Monzón con más lluvia y más inundaciones."
+    },
+    "southern-china": {
+      "name": "El sur de China y la cuenca del río Yangtsé",
+      "el_nino_note": "Invierno y primavera con más lluvia. El verano después de un El Niño fuerte suele traer inundaciones en el Yangtsé (1998, 2016).",
+      "la_nina_note": "Inviernos más fríos y con menos lluvia. La señal es variable."
+    },
+    "northern-china-korea-japan": {
+      "name": "El norte de China, Corea y Japón",
+      "el_nino_note": "Los inviernos tienden a ser templados. La señal del verano es débil y mezclada.",
+      "la_nina_note": "Los inviernos tienden a ser fríos."
+    },
+    "png-melanesia": {
+      "name": "Papúa Nueva Guinea, Islas Salomón y Vanuatu",
+      "el_nino_note": "Periodos secos largos. En 1997 y 2015 hubo heladas en las tierras altas de Papúa Nueva Guinea y se perdieron cultivos.",
+      "la_nina_note": "Más lluvia. Es más probable que haya ciclones hacia el oeste."
+    },
+    "central-pacific-islands": {
+      "name": "Kiribati, Tuvalu, Nauru e Islas Marshall",
+      "el_nino_note": "La lluvia se desplaza hacia el Pacífico central. Los atolones cerca del ecuador reciben mucha más lluvia. En algunas zonas el nivel del mar sube.",
+      "la_nina_note": "Sequía grave en los atolones cerca del ecuador."
+    },
+    "southwest-pacific-islands": {
+      "name": "Fiyi, Tonga, Samoa, Islas Cook y Nueva Caledonia",
+      "el_nino_note": "La banda principal de lluvia se mueve hacia el noreste. Por eso Fiyi, Tonga y Nueva Caledonia suelen tener menos lluvia. Los ciclones pueden llegar más al este de lo normal.",
+      "la_nina_note": "Temporada de lluvias con más lluvia."
+    },
+    "eastern-australia": {
+      "name": "El este y el norte de Australia",
+      "el_nino_note": "La lluvia de invierno y primavera suele estar muy por debajo de lo normal. Hay más olas de calor y más riesgo de incendios de matorral. En el norte, la temporada de lluvias empieza más tarde.",
+      "la_nina_note": "Más lluvia, con más inundaciones y más ciclones tropicales."
+    },
+    "southwest-australia": {
+      "name": "El suroeste y el sur de Australia",
+      "el_nino_note": "La señal es más débil que en el este.",
+      "la_nina_note": "Señal débil."
+    },
+    "new-zealand": {
+      "name": "Nueva Zelanda",
+      "el_nino_note": "Vientos del oeste más fuertes: menos lluvia en el noreste, más lluvia en el suroeste y temperaturas más frescas en general.",
+      "la_nina_note": "Hay más vientos del noreste, que traen lluvia al norte y al este."
+    },
+    "east-africa-short-rains": {
+      "name": "Kenia, Somalia, el sur de Etiopía, Uganda y el norte de Tanzania",
+      "el_nino_note": "Las lluvias cortas de oct. a dic. suelen ser fuertes. Hay inundaciones junto a los ríos y en las zonas bajas. En 1997 y 2023 hubo inundaciones graves.",
+      "la_nina_note": "Las lluvias cortas fallan con más frecuencia. Varios años seguidos de La Niña causaron la sequía del Cuerno de África de 2020 a 2023."
+    },
+    "ethiopia-sudan-summer": {
+      "name": "Tierras altas de Etiopía, Eritrea y Sudán (lluvias de verano)",
+      "el_nino_note": "Las lluvias principales, llamadas kiremt, suelen ser más débiles. En 2015 hubo una sequía grave en Etiopía.",
+      "la_nina_note": "Tendencia débil a veranos con más lluvia."
+    },
+    "southern-africa": {
+      "name": "El sur de África",
+      "el_nino_note": "Las lluvias de verano suelen estar por debajo de lo normal y hay periodos de calor. En 1992, 2016 y 2024 se perdieron muchas cosechas de maíz.",
+      "la_nina_note": "Veranos con más lluvia y más inundaciones."
+    },
+    "madagascar": {
+      "name": "Madagascar",
+      "el_nino_note": "El sur y el oeste suelen tener menos lluvia. La zona con ciclones cambia de lugar.",
+      "la_nina_note": "Tendencia débil a más lluvia."
+    },
+    "sahel": {
+      "name": "El Sahel y el norte de Nigeria",
+      "el_nino_note": "Tendencia a una temporada de lluvias más débil. Pero aquí importan más las temperaturas del océano Atlántico y del océano Índico.",
+      "la_nina_note": "Tendencia débil a más lluvia."
+    },
+    "gulf-of-guinea": {
+      "name": "Costa de África Occidental (golfo de Guinea)",
+      "el_nino_note": "No hay una señal confiable para la lluvia. Hace un poco más de calor.",
+      "la_nina_note": "No hay una señal confiable."
+    },
+    "central-africa": {
+      "name": "África Central (cuenca del Congo)",
+      "el_nino_note": "La señal de lluvia es débil; es común que haga más calor de lo normal.",
+      "la_nina_note": "No hay una señal confiable."
+    },
+    "southwest-asia": {
+      "name": "Irán, Irak, Afganistán, el norte de Pakistán y la Península Arábiga",
+      "el_nino_note": "Las lluvias de invierno y primavera suelen ser más fuertes. A veces causan inundaciones repentinas en zonas secas.",
+      "la_nina_note": "Las lluvias y la nieve de invierno suelen ser escasas; sube el riesgo de sequía."
+    },
+    "central-asia": {
+      "name": "Asia Central",
+      "el_nino_note": "Hay una tendencia débil a inviernos más lluviosos.",
+      "la_nina_note": "Hay una tendencia débil a inviernos más secos."
+    },
+    "north-africa-mediterranean": {
+      "name": "Norte de África y el Mediterráneo",
+      "el_nino_note": "El ENSO tiene poco efecto constante aquí. Los pronósticos locales importan más.",
+      "la_nina_note": "No hay una señal confiable."
+    },
+    "europe": {
+      "name": "Europa",
+      "el_nino_note": "Cualquier efecto es débil e irregular. Use el pronóstico de su país.",
+      "la_nina_note": "Efecto débil e irregular."
+    },
+    "russia-siberia": {
+      "name": "Rusia y Siberia",
+      "el_nino_note": "No hay una señal confiable.",
+      "la_nina_note": "No hay una señal confiable."
+    },
+    "canada-arctic": {
+      "name": "Norte de Canadá y Groenlandia",
+      "el_nino_note": "El oeste y el centro de Canadá suelen tener inviernos menos fríos.",
+      "la_nina_note": "Inviernos más fríos en el oeste de Canadá."
+    },
+    "southeast-brazil": {
+      "name": "Sudeste de Brasil (São Paulo, Río, Minas Gerais)",
+      "el_nino_note": "Está entre el sur lluvioso y el norte seco; la señal de lluvia es mixta y es más probable que haga calor.",
+      "la_nina_note": "Señal mixta."
+    },
+    "mexico-north-us-southwest": {
+      "name": "Suroeste de Estados Unidos y noroeste de México",
+      "el_nino_note": "Inviernos más lluviosos en Arizona, Nuevo México, Texas y el norte de México.",
+      "la_nina_note": "Inviernos secos y cálidos; sube el riesgo de sequía."
+    },
+    "south-atlantic-uruguay": {
+      "name": "Uruguay y la Pampa",
+      "el_nino_note": "Las lluvias de primavera suelen ser fuertes.",
+      "la_nina_note": "El riesgo de sequía es alto; la de 2022-23 fue grave."
+    },
+    "tanzania-south-mozambique-north": {
+      "name": "Sur de Tanzania y norte de Mozambique",
+      "el_nino_note": "Está en el límite entre África oriental, más lluviosa, y África austral, más seca; los pronósticos locales importan.",
+      "la_nina_note": "Señal mixta."
+    },
+    "japan": {
+      "name": "Japón",
+      "el_nino_note": "Los inviernos suaves y los veranos frescos y lluviosos son algo más comunes.",
+      "la_nina_note": "Los inviernos fríos y los veranos calurosos son algo más comunes."
+    }
+  },
+  "months": [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "sep",
+    "oct",
+    "nov",
+    "dic"
+  ],
+  "_meta": {
+    "all_year": {
+      "hash": "f1c9633186",
+      "mt": true
+    },
+    "this_area": {
+      "hash": "a8c1c36359",
+      "mt": true
+    },
+    "el_nino": {
+      "hash": "489d765bdc",
+      "mt": true
+    },
+    "la_nina": {
+      "hash": "8d0aa98ae7",
+      "mt": true
+    },
+    "neutral": {
+      "hash": "dd09ebb8c4",
+      "mt": true
+    },
+    "rain_much_wetter": {
+      "hash": "501440ed57",
+      "mt": true
+    },
+    "rain_wetter": {
+      "hash": "435a6edd44",
+      "mt": true
+    },
+    "rain_drier": {
+      "hash": "a4e4b62433",
+      "mt": true
+    },
+    "rain_much_drier": {
+      "hash": "d6900d2e5a",
+      "mt": true
+    },
+    "rain_near_normal": {
+      "hash": "7cec499708",
+      "mt": true
+    },
+    "rain_mixed": {
+      "hash": "5064569973",
+      "mt": true
+    },
+    "rain_drier__north_and_east_": {
+      "hash": "89fcba887d",
+      "mt": true
+    },
+    "rain_wetter__north_and_east_": {
+      "hash": "e9cde59c37",
+      "mt": true
+    },
+    "rain_drier__south_and_west_": {
+      "hash": "35a58f150c",
+      "mt": true
+    },
+    "temp_warmer": {
+      "hash": "9d982226b2",
+      "mt": true
+    },
+    "temp_cooler": {
+      "hash": "468cede68e",
+      "mt": true
+    },
+    "temp_near_normal": {
+      "hash": "6f1a5b8040",
+      "mt": true
+    },
+    "temp_warmer__winter___cooler__summer_": {
+      "hash": "adec56a0cf",
+      "mt": true
+    },
+    "temp_cooler__winter___warmer__summer_": {
+      "hash": "1c58e6ce6e",
+      "mt": true
+    },
+    "conf_likely": {
+      "hash": "3dd3164fb4",
+      "mt": true
+    },
+    "conf_leaning": {
+      "hash": "18768aae84",
+      "mt": true
+    },
+    "conf_uncertain": {
+      "hash": "6f1fa906d7",
+      "mt": true
+    },
+    "headline": {
+      "hash": "ab3ffc2e08",
+      "mt": true
+    },
+    "headline_neutral": {
+      "hash": "17b475da62",
+      "mt": true
+    },
+    "neutral_explain": {
+      "hash": "f65ee3e7a4",
+      "mt": true
+    },
+    "timing_now": {
+      "hash": "54b77bd18e",
+      "mt": true
+    },
+    "timing_coming": {
+      "hash": "c3ba1d5344",
+      "mt": true
+    },
+    "timing_passed": {
+      "hash": "e74967b04a",
+      "mt": true
+    },
+    "expect": {
+      "hash": "5d9e6827b7",
+      "mt": true
+    },
+    "agreement_agree": {
+      "hash": "5f821dcb30",
+      "mt": true
+    },
+    "agreement_disagree": {
+      "hash": "a7cf95531b",
+      "mt": true
+    },
+    "agreement_weak": {
+      "hash": "baac3207fd",
+      "mt": true
+    },
+    "agreement_none": {
+      "hash": "2fcd8339d1",
+      "mt": true
+    },
+    "history": {
+      "hash": "e43a8568a6",
+      "mt": true
+    },
+    "history_recent": {
+      "hash": "2a46b61e80",
+      "mt": true
+    },
+    "pct_above": {
+      "hash": "98540154fc",
+      "mt": true
+    },
+    "pct_below": {
+      "hash": "3ebaebc457",
+      "mt": true
+    },
+    "near_normal": {
+      "hash": "2658423dff",
+      "mt": true
+    },
+    "no_data": {
+      "hash": "4d968a30a0",
+      "mt": true
+    },
+    "status_line": {
+      "hash": "6422d75e27",
+      "mt": true
+    },
+    "steps_title": {
+      "hash": "ed355255c2",
+      "mt": true
+    },
+    "defer": {
+      "hash": "9efeddd2d1",
+      "mt": true
+    },
+    "ui.app_name": {
+      "hash": "e1f03bc41c",
+      "mt": true
+    },
+    "ui.tagline": {
+      "hash": "886c125193",
+      "mt": true
+    },
+    "ui.search_label": {
+      "hash": "210e7830b0",
+      "mt": true
+    },
+    "ui.search_placeholder": {
+      "hash": "131fcc93cf",
+      "mt": true
+    },
+    "ui.use_location": {
+      "hash": "0132375d9a",
+      "mt": true
+    },
+    "ui.see_briefing": {
+      "hash": "c4353228f3",
+      "mt": true
+    },
+    "ui.livelihood_q": {
+      "hash": "9d9412554a",
+      "mt": true
+    },
+    "ui.livelihood_farmer": {
+      "hash": "b644c74680",
+      "mt": true
+    },
+    "ui.livelihood_coastal": {
+      "hash": "64185ab657",
+      "mt": true
+    },
+    "ui.livelihood_urban": {
+      "hash": "569f2e8e61",
+      "mt": true
+    },
+    "ui.livelihood_all": {
+      "hash": "3befd91cbd",
+      "mt": true
+    },
+    "ui.tell_more": {
+      "hash": "fb7345b8f3",
+      "mt": true
+    },
+    "ui.show_less": {
+      "hash": "4c852b26d1",
+      "mt": true
+    },
+    "ui.step_of": {
+      "hash": "ebdba52ab7",
+      "mt": true
+    },
+    "ui.why_matters": {
+      "hash": "76ff2a4c8e",
+      "mt": true
+    },
+    "ui.done": {
+      "hash": "e9b450d14b",
+      "mt": true
+    },
+    "ui.next_step": {
+      "hash": "5500eef9fd",
+      "mt": true
+    },
+    "ui.show_all_steps": {
+      "hash": "ee928d9eb6",
+      "mt": true
+    },
+    "ui.minutes": {
+      "hash": "cfbf89eeb2",
+      "mt": true
+    },
+    "ui.what_now": {
+      "hash": "12c0d19bc2",
+      "mt": true
+    },
+    "ui.read_aloud": {
+      "hash": "562107b866",
+      "mt": true
+    },
+    "ui.radio_script": {
+      "hash": "ee0b56915e",
+      "mt": true
+    },
+    "ui.sms_text": {
+      "hash": "ffbcb26fe4",
+      "mt": true
+    },
+    "ui.sources": {
+      "hash": "2eb56be3c2",
+      "mt": true
+    },
+    "ui.updated": {
+      "hash": "23026832c1",
+      "mt": true
+    },
+    "ui.offline_note": {
+      "hash": "557e92a910",
+      "mt": true
+    },
+    "ui.mt_banner": {
+      "hash": "9cbbddfdac",
+      "mt": true
+    },
+    "ui.settings": {
+      "hash": "c7f73bb54d",
+      "mt": true
+    },
+    "ui.text_size": {
+      "hash": "3cc6e124a8",
+      "mt": true
+    },
+    "ui.high_contrast": {
+      "hash": "5add073ddb",
+      "mt": true
+    },
+    "ui.reduce_motion": {
+      "hash": "25a5aef562",
+      "mt": true
+    },
+    "ui.easy_read": {
+      "hash": "adc5145473",
+      "mt": true
+    },
+    "ui.methodology": {
+      "hash": "b895a8c34e",
+      "mt": true
+    },
+    "ui.back": {
+      "hash": "b52b36b726",
+      "mt": true
+    },
+    "ui.change_place": {
+      "hash": "29636d31c0",
+      "mt": true
+    },
+    "ui.no_results": {
+      "hash": "a98e70ae8d",
+      "mt": true
+    },
+    "ui.region_label": {
+      "hash": "0f21717994",
+      "mt": true
+    },
+    "ui.share": {
+      "hash": "adbd0519ed",
+      "mt": true
+    },
+    "ui.no_js": {
+      "hash": "ba8932754d",
+      "mt": true
+    },
+    "ui.forecast_unavailable": {
+      "hash": "05fdbc88ff",
+      "mt": true
+    },
+    "ui.data_note": {
+      "hash": "ce82b0a7f6",
+      "mt": true
+    },
+    "timing_coming_one": {
+      "hash": "3987c0293e",
+      "mt": true
+    },
+    "hazards.FL": {
+      "hash": "08e2a5ac9b",
+      "mt": true
+    },
+    "hazards.FLR": {
+      "hash": "13da0bac99",
+      "mt": true
+    },
+    "hazards.FF": {
+      "hash": "27a80c3b13",
+      "mt": true
+    },
+    "hazards.LS": {
+      "hash": "fca7721325",
+      "mt": true
+    },
+    "hazards.DR": {
+      "hash": "7d52e6d4b2",
+      "mt": true
+    },
+    "hazards.WS": {
+      "hash": "275738c454",
+      "mt": true
+    },
+    "hazards.WF": {
+      "hash": "13cee95aff",
+      "mt": true
+    },
+    "hazards.HZ": {
+      "hash": "8d63f933a3",
+      "mt": true
+    },
+    "hazards.HT": {
+      "hash": "b6ebd01078",
+      "mt": true
+    },
+    "hazards.EP": {
+      "hash": "5609575941",
+      "mt": true
+    },
+    "hazards.CH": {
+      "hash": "7167eb22b8",
+      "mt": true
+    },
+    "hazards.RVF": {
+      "hash": "18cf62a72a",
+      "mt": true
+    },
+    "hazards.CS": {
+      "hash": "caa64184c5",
+      "mt": true
+    },
+    "hazards.CF": {
+      "hash": "c0e789b765",
+      "mt": true
+    },
+    "hazards.FI": {
+      "hash": "765c343eed",
+      "mt": true
+    },
+    "hazards.TC": {
+      "hash": "cddc3765a5",
+      "mt": true
+    },
+    "hazards.TCE": {
+      "hash": "41bb8ad957",
+      "mt": true
+    },
+    "hazards.ST": {
+      "hash": "9f38cb5f09",
+      "mt": true
+    },
+    "hazards.HS": {
+      "hash": "636882e939",
+      "mt": true
+    },
+    "hazards.SI": {
+      "hash": "375c4c342e",
+      "mt": true
+    },
+    "hazards.FR": {
+      "hash": "b10a95c04c",
+      "mt": true
+    },
+    "hazards.SN": {
+      "hash": "3bbcded6ca",
+      "mt": true
+    },
+    "hazards.HSN": {
+      "hash": "58ab54ac97",
+      "mt": true
+    },
+    "hazards.CD": {
+      "hash": "45183e6cf4",
+      "mt": true
+    },
+    "hazards.FLS": {
+      "hash": "1c6c25ca85",
+      "mt": true
+    },
+    "hazards.MW": {
+      "hash": "7424878994",
+      "mt": true
+    },
+    "hazards.CU": {
+      "hash": "c713fa6f2e",
+      "mt": true
+    },
+    "season_with_local": {
+      "hash": "d0679d3a7f",
+      "mt": true
+    },
+    "risks": {
+      "hash": "76fe80aff4",
+      "mt": true
+    },
+    "list_sep": {
+      "hash": "d3bc9a378d",
+      "mt": true
+    },
+    "list_last": {
+      "hash": "4f413364b4",
+      "mt": true
+    },
+    "forecast": {
+      "hash": "1c18b13750",
+      "mt": true
+    },
+    "forecast_agree": {
+      "hash": "ec8fc2a412",
+      "mt": true
+    },
+    "forecast_disagree": {
+      "hash": "1c5e067fb8",
+      "mt": true
+    },
+    "forecast_weak": {
+      "hash": "39bc45b64c",
+      "mt": true
+    },
+    "forecast_none": {
+      "hash": "da39a3ee5e",
+      "mt": true
+    },
+    "forecast_partial": {
+      "hash": "7c90e5c66c",
+      "mt": true
+    },
+    "history_few": {
+      "hash": "d67d610a47",
+      "mt": true
+    },
+    "local_seasons.spring and summer": {
+      "hash": "2beab03ea3",
+      "mt": true
+    },
+    "local_seasons.winter and spring": {
+      "hash": "eb50ad4748",
+      "mt": true
+    },
+    "local_seasons.the build-up and wet season": {
+      "hash": "b7a7b1032c",
+      "mt": true
+    },
+    "local_seasons.the monsoon": {
+      "hash": "fee83dcde5",
+      "mt": true
+    },
+    "local_seasons.the summer rains": {
+      "hash": "a1e4b46bdb",
+      "mt": true
+    },
+    "local_seasons.the Nordeste rainy season": {
+      "hash": "1891a60a8a",
+      "mt": true
+    },
+    "local_seasons.the Amazon dry season": {
+      "hash": "4781ae8a2f",
+      "mt": true
+    },
+    "local_seasons.the plum rains and summer flood season": {
+      "hash": "8ff2b6e29d",
+      "mt": true
+    },
+    "local_seasons.the dry season": {
+      "hash": "849b3de3fe",
+      "mt": true
+    },
+    "local_seasons.the coastal rainy season": {
+      "hash": "30c0382e37",
+      "mt": true
+    },
+    "local_seasons.the Belg/Deyr rains": {
+      "hash": "9ed0b9f201",
+      "mt": true
+    },
+    "local_seasons.the Kiremt rains": {
+      "hash": "719879a9bd",
+      "mt": true
+    },
+    "local_seasons.the wet season": {
+      "hash": "2cbc9993bb",
+      "mt": true
+    },
+    "local_seasons.the rainy season and canícula": {
+      "hash": "bbb48b5ea2",
+      "mt": true
+    },
+    "local_seasons.musim kemarau": {
+      "hash": "c353def5c6",
+      "mt": true
+    },
+    "local_seasons.the southwest monsoon": {
+      "hash": "6792e2a7da",
+      "mt": true
+    },
+    "local_seasons.the northeast monsoon": {
+      "hash": "866fc440c2",
+      "mt": true
+    },
+    "local_seasons.the winter rains": {
+      "hash": "9add54eba6",
+      "mt": true
+    },
+    "local_seasons.the short rains": {
+      "hash": "9c705fd8db",
+      "mt": true
+    },
+    "local_seasons.the Maha season rains": {
+      "hash": "e403556e29",
+      "mt": true
+    },
+    "local_seasons.the rainy season": {
+      "hash": "be512abfaf",
+      "mt": true
+    },
+    "local_seasons.winter": {
+      "hash": "1ef41af417",
+      "mt": true
+    },
+    "local_seasons.the highland rains": {
+      "hash": "b1f029ffed",
+      "mt": true
+    },
+    "local_seasons.the Deyr rains": {
+      "hash": "162d7fd1a2",
+      "mt": true
+    },
+    "local_seasons.the Vuli rains": {
+      "hash": "9b6eb5305a",
+      "mt": true
+    },
+    "local_seasons.the second rains": {
+      "hash": "cd054135ef",
+      "mt": true
+    },
+    "local_seasons.spring": {
+      "hash": "248902131a",
+      "mt": true
+    },
+    "pct_above_cap": {
+      "hash": "4f496b388c",
+      "mt": true
+    },
+    "steps.flood-docs.text": {
+      "hash": "3d05d88de4",
+      "mt": true
+    },
+    "steps.flood-docs.why": {
+      "hash": "9fae9d8189",
+      "mt": true
+    },
+    "steps.flood-route.text": {
+      "hash": "861cd0bced",
+      "mt": true
+    },
+    "steps.flood-route.why": {
+      "hash": "f515ee449c",
+      "mt": true
+    },
+    "steps.flood-water.text": {
+      "hash": "5e44b323c5",
+      "mt": true
+    },
+    "steps.flood-water.why": {
+      "hash": "e5062c9725",
+      "mt": true
+    },
+    "steps.flood-drains.text": {
+      "hash": "48765a8083",
+      "mt": true
+    },
+    "steps.flood-drains.why": {
+      "hash": "241b2a8c70",
+      "mt": true
+    },
+    "steps.flood-raise.text": {
+      "hash": "87146063e5",
+      "mt": true
+    },
+    "steps.flood-raise.why": {
+      "hash": "913fcd317f",
+      "mt": true
+    },
+    "steps.flood-animals.text": {
+      "hash": "45f507f58d",
+      "mt": true
+    },
+    "steps.flood-animals.why": {
+      "hash": "9331e336cc",
+      "mt": true
+    },
+    "steps.flood-warnings.text": {
+      "hash": "f26a219703",
+      "mt": true
+    },
+    "steps.flood-warnings.why": {
+      "hash": "622aeeead3",
+      "mt": true
+    },
+    "steps.flood-medical.text": {
+      "hash": "8001d7920c",
+      "mt": true
+    },
+    "steps.flood-medical.why": {
+      "hash": "7f18944e34",
+      "mt": true
+    },
+    "steps.river-level.text": {
+      "hash": "194f95816b",
+      "mt": true
+    },
+    "steps.river-level.why": {
+      "hash": "9406a6f619",
+      "mt": true
+    },
+    "steps.flash-avoid.text": {
+      "hash": "57f000eda6",
+      "mt": true
+    },
+    "steps.flash-avoid.why": {
+      "hash": "28e06f1c05",
+      "mt": true
+    },
+    "steps.slide-signs.text": {
+      "hash": "856ed31ebf",
+      "mt": true
+    },
+    "steps.slide-signs.why": {
+      "hash": "81b0b74713",
+      "mt": true
+    },
+    "steps.slide-move.text": {
+      "hash": "12d6877a30",
+      "mt": true
+    },
+    "steps.slide-move.why": {
+      "hash": "b34f694eb6",
+      "mt": true
+    },
+    "steps.drought-store.text": {
+      "hash": "ea07622c67",
+      "mt": true
+    },
+    "steps.drought-store.why": {
+      "hash": "01317828a7",
+      "mt": true
+    },
+    "steps.drought-seed.text": {
+      "hash": "18d877ccc8",
+      "mt": true
+    },
+    "steps.drought-seed.why": {
+      "hash": "3ec630347c",
+      "mt": true
+    },
+    "steps.drought-plant.text": {
+      "hash": "a889a855a3",
+      "mt": true
+    },
+    "steps.drought-plant.why": {
+      "hash": "4e5b2fcc1a",
+      "mt": true
+    },
+    "steps.drought-fodder.text": {
+      "hash": "ae508d6715",
+      "mt": true
+    },
+    "steps.drought-fodder.why": {
+      "hash": "aec1da0550",
+      "mt": true
+    },
+    "steps.drought-food.text": {
+      "hash": "5b2b5ba084",
+      "mt": true
+    },
+    "steps.drought-food.why": {
+      "hash": "e618cd8be8",
+      "mt": true
+    },
+    "steps.drought-share.text": {
+      "hash": "265766e514",
+      "mt": true
+    },
+    "steps.drought-share.why": {
+      "hash": "4aa5331a90",
+      "mt": true
+    },
+    "steps.droughtne-store.text": {
+      "hash": "647befe8ee",
+      "mt": true
+    },
+    "steps.droughtne-store.why": {
+      "hash": "b8d5e1b0f3",
+      "mt": true
+    },
+    "steps.water-reuse.text": {
+      "hash": "827c80fea9",
+      "mt": true
+    },
+    "steps.water-reuse.why": {
+      "hash": "494e8755f5",
+      "mt": true
+    },
+    "steps.water-schedule.text": {
+      "hash": "d32ed44dad",
+      "mt": true
+    },
+    "steps.water-schedule.why": {
+      "hash": "2c974672ed",
+      "mt": true
+    },
+    "steps.fire-clear.text": {
+      "hash": "e6fa342e2a",
+      "mt": true
+    },
+    "steps.fire-clear.why": {
+      "hash": "3284656e83",
+      "mt": true
+    },
+    "steps.fire-noburn.text": {
+      "hash": "f016b71f78",
+      "mt": true
+    },
+    "steps.fire-noburn.why": {
+      "hash": "ca25c67f8c",
+      "mt": true
+    },
+    "steps.bush-plan.text": {
+      "hash": "ceadf009c7",
+      "mt": true
+    },
+    "steps.bush-plan.why": {
+      "hash": "3f5353f076",
+      "mt": true
+    },
+    "steps.wild-plan.text": {
+      "hash": "785681eb5f",
+      "mt": true
+    },
+    "steps.wild-plan.why": {
+      "hash": "4020d622e9",
+      "mt": true
+    },
+    "steps.haze-mask.text": {
+      "hash": "441c2e1017",
+      "mt": true
+    },
+    "steps.haze-mask.why": {
+      "hash": "7ef77435c7",
+      "mt": true
+    },
+    "steps.heat-hours.text": {
+      "hash": "df6f81e5c2",
+      "mt": true
+    },
+    "steps.heat-hours.why": {
+      "hash": "de5af42696",
+      "mt": true
+    },
+    "steps.heat-check.text": {
+      "hash": "b701a56f36",
+      "mt": true
+    },
+    "steps.heat-check.why": {
+      "hash": "f717f74862",
+      "mt": true
+    },
+    "steps.heat-water.text": {
+      "hash": "840fcd741d",
+      "mt": true
+    },
+    "steps.heat-water.why": {
+      "hash": "1d7c728adf",
+      "mt": true
+    },
+    "steps.disease-water.text": {
+      "hash": "cd9ed96a5d",
+      "mt": true
+    },
+    "steps.disease-water.why": {
+      "hash": "609e79a42d",
+      "mt": true
+    },
+    "steps.disease-mosquito.text": {
+      "hash": "d277705c95",
+      "mt": true
+    },
+    "steps.disease-mosquito.why": {
+      "hash": "64cc50098a",
+      "mt": true
+    },
+    "steps.cholera-ors.text": {
+      "hash": "0277acbef2",
+      "mt": true
+    },
+    "steps.cholera-ors.why": {
+      "hash": "07d8416a58",
+      "mt": true
+    },
+    "steps.rvf-animals.text": {
+      "hash": "953a8fe014",
+      "mt": true
+    },
+    "steps.rvf-animals.why": {
+      "hash": "35366a2fe8",
+      "mt": true
+    },
+    "steps.crop-mulch.text": {
+      "hash": "6a6e800208",
+      "mt": true
+    },
+    "steps.crop-mulch.why": {
+      "hash": "8668e30a49",
+      "mt": true
+    },
+    "steps.cropfail-diversify.text": {
+      "hash": "a31d242364",
+      "mt": true
+    },
+    "steps.cropfail-diversify.why": {
+      "hash": "5ee3096bd2",
+      "mt": true
+    },
+    "steps.cropfail-insurance.text": {
+      "hash": "6b0353d909",
+      "mt": true
+    },
+    "steps.cropfail-insurance.why": {
+      "hash": "b1716a98b9",
+      "mt": true
+    },
+    "steps.food-network.text": {
+      "hash": "1a210487d7",
+      "mt": true
+    },
+    "steps.food-network.why": {
+      "hash": "afeea7b9e6",
+      "mt": true
+    },
+    "steps.hurr-kit.text": {
+      "hash": "abb101e569",
+      "mt": true
+    },
+    "steps.hurr-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.hurr-shelter.text": {
+      "hash": "0080b18c75",
+      "mt": true
+    },
+    "steps.hurr-shelter.why": {
+      "hash": "8c25c7204e",
+      "mt": true
+    },
+    "steps.typh-kit.text": {
+      "hash": "e0d8db76d7",
+      "mt": true
+    },
+    "steps.typh-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.typh-boats.text": {
+      "hash": "1c150d1989",
+      "mt": true
+    },
+    "steps.typh-boats.why": {
+      "hash": "7685454866",
+      "mt": true
+    },
+    "steps.cyc-kit.text": {
+      "hash": "06cfb88fea",
+      "mt": true
+    },
+    "steps.cyc-kit.why": {
+      "hash": "32413be256",
+      "mt": true
+    },
+    "steps.cyc-roof.text": {
+      "hash": "843534fe8b",
+      "mt": true
+    },
+    "steps.cyc-roof.why": {
+      "hash": "1698e07fd3",
+      "mt": true
+    },
+    "steps.cycmoz-plan.text": {
+      "hash": "453be0b4c3",
+      "mt": true
+    },
+    "steps.cycmoz-plan.why": {
+      "hash": "8b54522f29",
+      "mt": true
+    },
+    "steps.cycshift-plan.text": {
+      "hash": "fa3a23ca92",
+      "mt": true
+    },
+    "steps.cycshift-plan.why": {
+      "hash": "14e389b1f4",
+      "mt": true
+    },
+    "steps.storm-trees.text": {
+      "hash": "a50a64282b",
+      "mt": true
+    },
+    "steps.storm-trees.why": {
+      "hash": "7f76a6e49b",
+      "mt": true
+    },
+    "steps.seas-move.text": {
+      "hash": "f9efa47d57",
+      "mt": true
+    },
+    "steps.seas-move.why": {
+      "hash": "16b8257dd2",
+      "mt": true
+    },
+    "steps.salt-store.text": {
+      "hash": "705f4bb501",
+      "mt": true
+    },
+    "steps.salt-store.why": {
+      "hash": "f474f7234a",
+      "mt": true
+    },
+    "steps.frost-cover.text": {
+      "hash": "fddb786ef9",
+      "mt": true
+    },
+    "steps.frost-cover.why": {
+      "hash": "a66dfb5b64",
+      "mt": true
+    },
+    "steps.snow-water.text": {
+      "hash": "239ff8da8f",
+      "mt": true
+    },
+    "steps.snow-water.why": {
+      "hash": "4052afb178",
+      "mt": true
+    },
+    "steps.snow-kit.text": {
+      "hash": "65b18bfdf2",
+      "mt": true
+    },
+    "steps.snow-kit.why": {
+      "hash": "9dfbd15d6e",
+      "mt": true
+    },
+    "steps.cold-heat.text": {
+      "hash": "06bebacb8c",
+      "mt": true
+    },
+    "steps.cold-heat.why": {
+      "hash": "ed28f5f75b",
+      "mt": true
+    },
+    "steps.spring-melt.text": {
+      "hash": "18dfb3fec4",
+      "mt": true
+    },
+    "steps.spring-melt.why": {
+      "hash": "3d6e5eac2c",
+      "mt": true
+    },
+    "steps.mild-pests.text": {
+      "hash": "f683aa8e7a",
+      "mt": true
+    },
+    "steps.mild-pests.why": {
+      "hash": "42fbbbc954",
+      "mt": true
+    },
+    "steps.cool-crop.text": {
+      "hash": "e5a2841e3a",
+      "mt": true
+    },
+    "steps.cool-crop.why": {
+      "hash": "c4a9f0876a",
+      "mt": true
+    },
+    "steps.always-official.text": {
+      "hash": "85bd687447",
+      "mt": true
+    },
+    "steps.always-official.why": {
+      "hash": "631bc4f8c3",
+      "mt": true
+    },
+    "steps.always-share.text": {
+      "hash": "c83543ac1d",
+      "mt": true
+    },
+    "steps.always-share.why": {
+      "hash": "4136cba5a9",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.name": {
+      "hash": "4bd8e5d024",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.el_nino_note": {
+      "hash": "c50a49a276",
+      "mt": true
+    },
+    "regions.peru-ecuador-coast.la_nina_note": {
+      "hash": "37d2bc4dc0",
+      "mt": true
+    },
+    "regions.northern-south-america.name": {
+      "hash": "6333997449",
+      "mt": true
+    },
+    "regions.northern-south-america.el_nino_note": {
+      "hash": "3a0e6957a2",
+      "mt": true
+    },
+    "regions.northern-south-america.la_nina_note": {
+      "hash": "d9a7fcb72e",
+      "mt": true
+    },
+    "regions.northeast-brazil.name": {
+      "hash": "f2a6cc9026",
+      "mt": true
+    },
+    "regions.northeast-brazil.el_nino_note": {
+      "hash": "f8f7bdee40",
+      "mt": true
+    },
+    "regions.northeast-brazil.la_nina_note": {
+      "hash": "bd8f72d8e9",
+      "mt": true
+    },
+    "regions.southeast-south-america.name": {
+      "hash": "cbd7b587f1",
+      "mt": true
+    },
+    "regions.southeast-south-america.el_nino_note": {
+      "hash": "0da09b128b",
+      "mt": true
+    },
+    "regions.southeast-south-america.la_nina_note": {
+      "hash": "4422f8cc1b",
+      "mt": true
+    },
+    "regions.central-chile.name": {
+      "hash": "25794eff22",
+      "mt": true
+    },
+    "regions.central-chile.el_nino_note": {
+      "hash": "05faac8e70",
+      "mt": true
+    },
+    "regions.central-chile.la_nina_note": {
+      "hash": "ed86c85956",
+      "mt": true
+    },
+    "regions.altiplano.name": {
+      "hash": "5bb47c010f",
+      "mt": true
+    },
+    "regions.altiplano.el_nino_note": {
+      "hash": "965e4efaec",
+      "mt": true
+    },
+    "regions.altiplano.la_nina_note": {
+      "hash": "a71addf244",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.name": {
+      "hash": "7381e00bbe",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.el_nino_note": {
+      "hash": "549733f1b0",
+      "mt": true
+    },
+    "regions.central-america-dry-corridor.la_nina_note": {
+      "hash": "7178467c40",
+      "mt": true
+    },
+    "regions.caribbean.name": {
+      "hash": "c6b0b3422f",
+      "mt": true
+    },
+    "regions.caribbean.el_nino_note": {
+      "hash": "d1bb4967b6",
+      "mt": true
+    },
+    "regions.caribbean.la_nina_note": {
+      "hash": "4841a41403",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.name": {
+      "hash": "b53b5d0b6d",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.el_nino_note": {
+      "hash": "fb9f274218",
+      "mt": true
+    },
+    "regions.southern-us-north-mexico.la_nina_note": {
+      "hash": "5709973657",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.name": {
+      "hash": "a7a6e7b2cc",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.el_nino_note": {
+      "hash": "2a8c5508d0",
+      "mt": true
+    },
+    "regions.us-pacific-northwest.la_nina_note": {
+      "hash": "16e4a82b1f",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.name": {
+      "hash": "27476331e0",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.el_nino_note": {
+      "hash": "d8bda1dbec",
+      "mt": true
+    },
+    "regions.northern-us-southern-canada.la_nina_note": {
+      "hash": "3354e1a47b",
+      "mt": true
+    },
+    "regions.alaska.name": {
+      "hash": "7288f7f860",
+      "mt": true
+    },
+    "regions.alaska.el_nino_note": {
+      "hash": "b6f41aabb5",
+      "mt": true
+    },
+    "regions.alaska.la_nina_note": {
+      "hash": "4cd5e58eee",
+      "mt": true
+    },
+    "regions.hawaii.name": {
+      "hash": "a1be950918",
+      "mt": true
+    },
+    "regions.hawaii.el_nino_note": {
+      "hash": "bc350f8d9d",
+      "mt": true
+    },
+    "regions.hawaii.la_nina_note": {
+      "hash": "1d84e19499",
+      "mt": true
+    },
+    "regions.india-monsoon.name": {
+      "hash": "b2afc38c08",
+      "mt": true
+    },
+    "regions.india-monsoon.el_nino_note": {
+      "hash": "403b5597d1",
+      "mt": true
+    },
+    "regions.india-monsoon.la_nina_note": {
+      "hash": "0a32e2bcee",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.name": {
+      "hash": "51fe1e478f",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.el_nino_note": {
+      "hash": "01960dff7f",
+      "mt": true
+    },
+    "regions.sri-lanka-south-india.la_nina_note": {
+      "hash": "f702ef58b1",
+      "mt": true
+    },
+    "regions.maritime-continent.name": {
+      "hash": "ca14e7da76",
+      "mt": true
+    },
+    "regions.maritime-continent.el_nino_note": {
+      "hash": "8d26f3fb46",
+      "mt": true
+    },
+    "regions.maritime-continent.la_nina_note": {
+      "hash": "911f9aec08",
+      "mt": true
+    },
+    "regions.philippines.name": {
+      "hash": "8067364d44",
+      "mt": true
+    },
+    "regions.philippines.el_nino_note": {
+      "hash": "ee1dc32389",
+      "mt": true
+    },
+    "regions.philippines.la_nina_note": {
+      "hash": "fc1111154b",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.name": {
+      "hash": "6a3956f353",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.el_nino_note": {
+      "hash": "4959fa9c1f",
+      "mt": true
+    },
+    "regions.mainland-southeast-asia.la_nina_note": {
+      "hash": "4fe7f9bda0",
+      "mt": true
+    },
+    "regions.southern-china.name": {
+      "hash": "03c3604f43",
+      "mt": true
+    },
+    "regions.southern-china.el_nino_note": {
+      "hash": "05e6c852d7",
+      "mt": true
+    },
+    "regions.southern-china.la_nina_note": {
+      "hash": "1f79a6bfb5",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.name": {
+      "hash": "ae5a1047e9",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.el_nino_note": {
+      "hash": "54499e2ceb",
+      "mt": true
+    },
+    "regions.northern-china-korea-japan.la_nina_note": {
+      "hash": "a0d1540b22",
+      "mt": true
+    },
+    "regions.png-melanesia.name": {
+      "hash": "b743088daf",
+      "mt": true
+    },
+    "regions.png-melanesia.el_nino_note": {
+      "hash": "3a8a4241a0",
+      "mt": true
+    },
+    "regions.png-melanesia.la_nina_note": {
+      "hash": "27814d6b01",
+      "mt": true
+    },
+    "regions.central-pacific-islands.name": {
+      "hash": "e5087944d4",
+      "mt": true
+    },
+    "regions.central-pacific-islands.el_nino_note": {
+      "hash": "900c08a2bc",
+      "mt": true
+    },
+    "regions.central-pacific-islands.la_nina_note": {
+      "hash": "7d172fd806",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.name": {
+      "hash": "f536239269",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.el_nino_note": {
+      "hash": "374944d38e",
+      "mt": true
+    },
+    "regions.southwest-pacific-islands.la_nina_note": {
+      "hash": "27884614f3",
+      "mt": true
+    },
+    "regions.eastern-australia.name": {
+      "hash": "a39e30eb85",
+      "mt": true
+    },
+    "regions.eastern-australia.el_nino_note": {
+      "hash": "3c82f83329",
+      "mt": true
+    },
+    "regions.eastern-australia.la_nina_note": {
+      "hash": "b756a0dc46",
+      "mt": true
+    },
+    "regions.southwest-australia.name": {
+      "hash": "8cac0639b4",
+      "mt": true
+    },
+    "regions.southwest-australia.el_nino_note": {
+      "hash": "b7e0636e8e",
+      "mt": true
+    },
+    "regions.southwest-australia.la_nina_note": {
+      "hash": "f702ef58b1",
+      "mt": true
+    },
+    "regions.new-zealand.name": {
+      "hash": "a2238e9190",
+      "mt": true
+    },
+    "regions.new-zealand.el_nino_note": {
+      "hash": "e8bb52268a",
+      "mt": true
+    },
+    "regions.new-zealand.la_nina_note": {
+      "hash": "49c4ddb4d3",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.name": {
+      "hash": "0161c8f37d",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.el_nino_note": {
+      "hash": "f826f8f4b4",
+      "mt": true
+    },
+    "regions.east-africa-short-rains.la_nina_note": {
+      "hash": "2318693352",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.name": {
+      "hash": "bfacb56113",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.el_nino_note": {
+      "hash": "29a194abff",
+      "mt": true
+    },
+    "regions.ethiopia-sudan-summer.la_nina_note": {
+      "hash": "0923c2cd67",
+      "mt": true
+    },
+    "regions.southern-africa.name": {
+      "hash": "c5801c4163",
+      "mt": true
+    },
+    "regions.southern-africa.el_nino_note": {
+      "hash": "90f4372ae3",
+      "mt": true
+    },
+    "regions.southern-africa.la_nina_note": {
+      "hash": "83252a4623",
+      "mt": true
+    },
+    "regions.madagascar.name": {
+      "hash": "f92bcb6a06",
+      "mt": true
+    },
+    "regions.madagascar.el_nino_note": {
+      "hash": "941bfb0cb0",
+      "mt": true
+    },
+    "regions.madagascar.la_nina_note": {
+      "hash": "6a51e6a858",
+      "mt": true
+    },
+    "regions.sahel.name": {
+      "hash": "fae9b49155",
+      "mt": true
+    },
+    "regions.sahel.el_nino_note": {
+      "hash": "ee2057ff78",
+      "mt": true
+    },
+    "regions.sahel.la_nina_note": {
+      "hash": "6a51e6a858",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.name": {
+      "hash": "1162994886",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.el_nino_note": {
+      "hash": "8546988879",
+      "mt": true
+    },
+    "regions.gulf-of-guinea.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.central-africa.name": {
+      "hash": "a5311b8b18",
+      "mt": true
+    },
+    "regions.central-africa.el_nino_note": {
+      "hash": "c0799e318b",
+      "mt": true
+    },
+    "regions.central-africa.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.southwest-asia.name": {
+      "hash": "75fcae0982",
+      "mt": true
+    },
+    "regions.southwest-asia.el_nino_note": {
+      "hash": "5eadcd5597",
+      "mt": true
+    },
+    "regions.southwest-asia.la_nina_note": {
+      "hash": "d9b952786b",
+      "mt": true
+    },
+    "regions.central-asia.name": {
+      "hash": "0da9e99790",
+      "mt": true
+    },
+    "regions.central-asia.el_nino_note": {
+      "hash": "74a493e1ed",
+      "mt": true
+    },
+    "regions.central-asia.la_nina_note": {
+      "hash": "0124095b6a",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.name": {
+      "hash": "542c282326",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.el_nino_note": {
+      "hash": "c0557c0759",
+      "mt": true
+    },
+    "regions.north-africa-mediterranean.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.europe.name": {
+      "hash": "576347ec82",
+      "mt": true
+    },
+    "regions.europe.el_nino_note": {
+      "hash": "5ece22c62c",
+      "mt": true
+    },
+    "regions.europe.la_nina_note": {
+      "hash": "88523cb182",
+      "mt": true
+    },
+    "regions.russia-siberia.name": {
+      "hash": "ba509ec436",
+      "mt": true
+    },
+    "regions.russia-siberia.el_nino_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.russia-siberia.la_nina_note": {
+      "hash": "29b5d1cd1b",
+      "mt": true
+    },
+    "regions.canada-arctic.name": {
+      "hash": "691e7991f2",
+      "mt": true
+    },
+    "regions.canada-arctic.el_nino_note": {
+      "hash": "704f5c7927",
+      "mt": true
+    },
+    "regions.canada-arctic.la_nina_note": {
+      "hash": "7029325cfd",
+      "mt": true
+    },
+    "regions.southeast-brazil.name": {
+      "hash": "7cb69c82aa",
+      "mt": true
+    },
+    "regions.southeast-brazil.el_nino_note": {
+      "hash": "79eee3ad53",
+      "mt": true
+    },
+    "regions.southeast-brazil.la_nina_note": {
+      "hash": "1bf11cef54",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.name": {
+      "hash": "e42637f1ea",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.el_nino_note": {
+      "hash": "acef481eae",
+      "mt": true
+    },
+    "regions.mexico-north-us-southwest.la_nina_note": {
+      "hash": "7f965fbd78",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.name": {
+      "hash": "b6be355f97",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.el_nino_note": {
+      "hash": "28194e1196",
+      "mt": true
+    },
+    "regions.south-atlantic-uruguay.la_nina_note": {
+      "hash": "3dc296ee41",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.name": {
+      "hash": "8e85650118",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.el_nino_note": {
+      "hash": "f29aee1eff",
+      "mt": true
+    },
+    "regions.tanzania-south-mozambique-north.la_nina_note": {
+      "hash": "1bf11cef54",
+      "mt": true
+    },
+    "regions.japan.name": {
+      "hash": "fcf29f6cad",
+      "mt": true
+    },
+    "regions.japan.el_nino_note": {
+      "hash": "d4e0ac6b10",
+      "mt": true
+    },
+    "regions.japan.la_nina_note": {
+      "hash": "7f59878da1",
+      "mt": true
+    },
+    "months": {
+      "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.near": {
+      "hash": "08543b8a6a",
+      "mt": true
+    },
+    "ui.pick_map": {
+      "hash": "e98e54ec60",
+      "mt": true
+    },
+    "ui.map_hint": {
+      "hash": "c3d9a75b3c",
+      "mt": true
+    }
+  }
+}

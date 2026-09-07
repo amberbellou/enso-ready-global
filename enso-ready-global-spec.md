@@ -360,3 +360,51 @@ Design target: usable by people with ADHD, dyslexia, autism, anxiety, intellectu
 - [ ] Annex B cognitive-UI bar passes with real testers
 - [ ] Total monthly cost ≤ $25 verified over one full update cycle
 - [ ] Repo public, methodology page live, correction channel working
+
+---
+
+## Annex D — Global location system (gazetteer, boundaries, search)
+
+**Goal:** any human on Earth can find their place — by typing, tapping, or texting — even misspelled, in their own language and script, down to village level, with a correct province/district label, and NO location ever returns "not found."
+
+### D.1 Design principle: coordinates are truth, names are a courtesy
+The briefing engine only truly needs a lat/lon → climate region mapping. Every name database on Earth has gaps, and the gaps cluster in exactly the remote regions this app serves most. Therefore: the gazetteer is a lookup layer on top of coordinates, never a gatekeeper. Ultimate fallback chain: named place → nearest known place ("near Wau, South Sudan") → map-pin/GPS → 2°×2° grid cell briefing. Every branch ends in a briefing.
+
+### D.2 Data sources (all open)
+| Layer | Source | License | Role |
+|---|---|---|---|
+| Place names (primary) | GeoNames full dump (allCountries + alternateNamesV2) | CC-BY 4.0 | ~12M places incl. villages, populations, admin codes, multilingual alternate names |
+| Place names (enrichment) | OpenStreetMap places extract (place=city/town/village/hamlet + name:* tags) | ODbL | Fills rural gaps (esp. Africa, Asia, Pacific); freshest local names |
+| Admin boundaries (primary) | OCHA COD-AB via HDX | Mostly CC-BY | The UN humanitarian system's own boundaries — aligns us with WFP/OCHA region naming |
+| Admin boundaries (fallback) | geoBoundaries (ADM0–ADM2+) | CC-BY 4.0 | Coverage where COD-AB is missing/stale |
+| Populated-place points (QA) | Natural Earth | Public domain | Sanity-check major cities |
+| NOT USED | GADM | Redistribution-restricted | Incompatible with our open-source release |
+
+### D.3 Build pipeline (one-time + quarterly refresh job build-gazetteer)
+1. Ingest GeoNames: feature classes P and A; retain geonameid, name, ascii name, lat/lon, country, admin1–admin4 codes, population, feature code.
+2. Ingest alternateNamesV2: all language-tagged names + transliterations; mark preferred and short flags.
+3. Ingest OSM places extract (Geofabrik); keep name + every name:xx tag + place rank.
+4. Merge & dedupe: match OSM↔GeoNames by name-similarity within 5 km; prefer GeoNames ID as canonical; unmatched OSM places get new internal IDs.
+5. Attach admin hierarchy: point-in-polygon against COD-AB (fallback geoBoundaries); store admin1/admin2 display names from the boundary files.
+6. Precompute per place: climate region/grid-cell ID, country met-service link, timezone.
+7. Emit artifacts: gazetteer table; search index; compact per-country JSON for client-side use.
+8. QA gates: row-count deltas vs last build ≤ ±10% per country (else alert, don't publish); spot-check list of 100 known villages across 20 countries must all resolve.
+
+### D.4 Search behavior
+Engine: self-hosted Photon or a Typesense/Meilisearch index over the merged gazetteer, chosen by benchmarking both against the same 200-query set. No paid geocoding APIs. Must handle typos/fuzzy match; any script; diacritics-insensitive; local endonyms; disambiguation by population + admin context. Result display always shows Village — District — Province — Country. GPS and a tap-a-map picker are equal first-class citizens (map lazy-loaded on demand). WhatsApp bot: same index via text, numbered-list disambiguation, accepts "village, country" and GPS pins.
+
+*Build note (7 Sep 2026): Annex C (static, no server, ≤ $25/month) overrides the server-side engine here. Implemented as script-aware sharded static JSON with in-shard fuzzy matching; same behaviour, zero servers.*
+
+### D.5 Sensitive-geography rules
+Disputed territories: follow UN cartographic practice — dual naming where contested, never assert sovereignty; replicate OCHA's boundary disclaimers on the methodology page. Country/admin names render in the UI language where translations exist, otherwise official local name. Never log or store searched locations tied to any identifier; analytics limited to aggregate country-level counts.
+
+### D.6 Storage & performance budget
+Full merged gazetteer ≈ 2–4 GB raw → filtered production index ≈ 300–800 MB. Search < 150 ms; autocomplete after 2 characters; works over 2G. Client bundle unaffected; no-JS fallback accepts a plain text form field.
+
+### D.7 Acceptance tests
+- [ ] 50-village world test (PNG highlands, Sahel, Amazon, Pacific atolls, Himalayan valleys) → correct place and district/province label
+- [ ] Script test: Arabic, Amharic, Burmese, Thai, Devanagari, Cyrillic, Chinese queries resolve
+- [ ] Typo test: 20 misspelled queries resolve to intended place in top 3
+- [ ] Ambiguity test: "San José", "Springfield", "Santa Cruz" produce clear disambiguation lists
+- [ ] Nowhere test: mid-ocean pin and unnamed-settlement pin both return a grid-cell briefing
+- [ ] Alignment test: admin names match OCHA COD-AB for 10 sampled countries

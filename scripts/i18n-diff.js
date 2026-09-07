@@ -28,7 +28,7 @@ if (mode !== "apply") {
   const tr = JSON.parse(fs.readFileSync(file, "utf8"));
   for (const [k, v] of Object.entries(tr)) { if (!(k in enF)) continue; curF[k] = v; meta[k] = { hash: H(enF[k]), mt: true }; }
   for (const k of Object.keys(curF)) if (!(k in enF)) { delete curF[k]; delete meta[k]; }
-  for (const [k, v] of Object.entries(enF)) if (typeof v !== "string") curF[k] = v; // arrays like months copied if untranslated? keep explicit
+  for (const [k, v] of Object.entries(enF)) if (typeof v !== "string" && !(k in curF)) curF[k] = v; // untranslated arrays fall back to English
   const out = { _lang: lang, _name: existing._name || lang, _dir: existing._dir || "ltr", _status: existing._status || "machine", ...unflat(curF), _meta: meta };
   fs.writeFileSync(target, JSON.stringify(out, null, 2));
   console.log(`wrote ${target}: ${Object.keys(tr).length} keys applied`);

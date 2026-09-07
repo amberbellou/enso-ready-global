@@ -1,5 +1,6 @@
 // ENSO Ready — client. One screen at a time. All state in localStorage. No tracking.
 import { buildFacts, renderBriefing, renderRadio, renderSMS, cellIdFor } from "./engine.js";
+import { norm, pickShard, rank, label, nearest, cellIdFor2deg } from "./search.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const state = { lang: "en", strings: null, place: null, livelihood: "all", stepIdx: 0, done: {}, screen: "home", data: {} };
@@ -7,7 +8,6 @@ const LS = { get(k, d) { try { return JSON.parse(localStorage.getItem("er:" + k)
 const BASE = document.documentElement.dataset.base || ".";
 
 async function getJSON(p) { const r = await fetch(`${BASE}/${p}`); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }
-function norm(s) { return s.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9 ]/g, "").trim(); }
 function ui(k, vars = {}) { const t = (state.strings.ui || {})[k] || k; return t.replace(/\{(\w+)\}/g, (_, n) => vars[n] ?? ""); }
 function h(tag, attrs = {}, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "onclick") e.addEventListener("click", v); else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; }
 
@@ -74,20 +74,44 @@ function homeScreen() {
   const list = h("ul", { class: "results", "aria-live": "polite" });
   let timer;
   input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => search(input.value, list), 150); });
-  const geo = h("button", { class: "btn secondary block", onclick: () => navigator.geolocation?.getCurrentPosition(p => choosePlace({ name: null, lat: p.coords.latitude, lon: p.coords.longitude, cc: null }), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
-  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", {}, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo), settingsPanel(),
+  const geo = h("button", { class: "btn secondary block", onclick: () => navigator.geolocation?.getCurrentPosition(p => chooseCoords(p.coords.latitude, p.coords.longitude), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
+  const mapBtn = h("button", { class: "btn secondary block", onclick: () => openMap().catch(() => alert(ui("no_results"))) }, "🗺️ " + ui("pick_map"));
+  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", {}, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo, mapBtn), settingsPanel(),
     h("p", { class: "muted" }, h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
 }
 async function search(q, list) {
   const n = norm(q); list.replaceChildren();
   if (n.length < 2) return;
-  const shard = /^[a-z0-9]{2}/.test(n) ? n.slice(0, 2) : "_";
-  let rows; try { rows = state.data["geo:" + shard] ||= await getJSON(`geo/${shard}.json`); } catch { rows = []; }
+  const idx = state.data.geoIndex ||= new Set(((await getJSON("geo/index.json").catch(() => ({ shards: [] }))).shards));
+  const shard = pickShard(n, idx);
+  let rows = []; if (shard) { try { rows = state.data["geo:" + shard] ||= await getJSON(`geo/${shard}.json`); } catch { rows = []; } }
   const countries = state.data.countries ||= await getJSON("geo/countries.json");
-  const hits = []; const seen = new Set();
-  for (const r of rows) { if (r[0].startsWith(n)) { const k = r[1] + r[2] + r[3]; if (!seen.has(k)) { seen.add(k); hits.push(r); } } if (hits.length >= 8) break; }
+  const hits = rank(n, rows, 8);
   if (!hits.length) { list.append(h("li", { class: "muted" }, ui("no_results"))); return; }
-  for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[3], lon: r[4] }) }, r[1], h("small", {}, (countries[r[2]] || {}).name || r[2]))));
+  for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[5], lon: r[6], admin1: r[3] }) }, r[1], h("small", {}, label(r, countries)))));
+}
+// GPS / map pin: name the point after the nearest known place ("near Wau"), else fall back to the grid cell.
+async function nameFromCoords(lat, lon) {
+  try {
+    const list = await getJSON(`geo/near/${cellIdFor2deg(lat, lon)}.json`);
+    const nr = nearest(lat, lon, list);
+    if (nr) return { name: ui("near", { name: nr.place[0] }), cc: nr.place[1] };
+  } catch {}
+  return { name: `${lat.toFixed(2)}, ${lon.toFixed(2)}`, cc: null };
+}
+async function chooseCoords(lat, lon) { const nm = await nameFromCoords(lat, lon); choosePlace({ name: nm.name, cc: nm.cc, lat, lon }); }
+// Map picker: Leaflet + OpenStreetMap tiles, loaded only when tapped (never in the first load).
+async function openMap() {
+  if (!window.L) {
+    await new Promise((res, rej) => { const l = document.createElement("link"); l.rel = "stylesheet"; l.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.append(l);
+      const sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; sc.onload = res; sc.onerror = rej; document.head.append(sc); });
+  }
+  const root = $("#app"); const box = h("main", {}, h("p", {}, ui("map_hint")), h("div", { id: "map", style: "height:60vh;border-radius:12px;border:1px solid var(--line)" }),
+    h("p", { class: "src" }, "© OpenStreetMap contributors"), h("button", { class: "btn secondary block", onclick: () => render() }, ui("back")));
+  root.replaceChildren(box);
+  const last = LS.get("place"); const map = L.map("map", { zoomAnimation: false, fadeAnimation: false, markerZoomAnimation: false }).setView(last ? [last.lat, last.lon] : [10, 20], last ? 6 : 2);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 12, attribution: "© OpenStreetMap contributors" }).addTo(map);
+  map.on("click", (e) => chooseCoords(e.latlng.lat, e.latlng.lng));
 }
 function choosePlace(p) { state.place = p; LS.set("place", p); state.screen = LS.get("livelihood") ? "briefing" : "who"; state.livelihood = LS.get("livelihood", "all"); render(); }
 function whoScreen() {
