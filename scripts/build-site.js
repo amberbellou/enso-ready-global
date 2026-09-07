@@ -102,7 +102,8 @@ ${hist ? `<p>${esc(hist.text)}</p><p>${esc(hist.recent)} <a class="src" href="${
 const ccList = Object.keys(byCountry).sort((a, b) => (countries[a]?.name || a).localeCompare(countries[b]?.name || b));
 W("countries/index.html", shell({ title: "Browse by country — ENSO Ready", base: "..", body: `<main><h1>Pick your country</h1><ul class="countries">${ccList.map(cc => `<li><a href="./${cc}.html">${esc(countries[cc]?.name || cc)}</a></li>`).join("")}</ul></main>` }));
 for (const cc of ccList) {
-  const list = byCountry[cc].sort((a, b) => b.pop - a.pop);
+  const seenNames = new Set();
+  const list = byCountry[cc].sort((a, b) => b.pop - a.pop).filter(c => !seenNames.has(c.name) && seenNames.add(c.name));
   const svc = met.services[cc] || met.fallback;
   W(`countries/${cc}.html`, shell({ title: `${countries[cc]?.name || cc} — ENSO Ready`, base: "..", body: `<main><p class="muted"><a href="./">← All countries</a></p><h1>${esc(countries[cc]?.name || cc)}</h1><p>Pick the nearest large town:</p><ul class="results">${list.map(c => `<li><a class="btn secondary block" href="../p/${c.id}.html">${esc(c.name)}</a></li>`).join("")}</ul><div class="banner">📢 Official warnings: <a href="${svc.url}" rel="noopener">${esc(svc.name)}</a></div></main>` }));
 }
