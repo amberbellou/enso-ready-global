@@ -89,7 +89,10 @@
     "data_note": "Data: {list}.",
     "near": "dekat {name}",
     "pick_map": "Pilih di peta",
-    "map_hint": "Ketuk lokasi Anda di peta. Perbesar peta untuk melihat desa."
+    "map_hint": "Ketuk lokasi Anda di peta. Perbesar peta untuk melihat desa.",
+    "skip": "Lewati ke isi utama",
+    "dyslexia": "Jarak tulisan yang ramah disleksia",
+    "steps_shortcut_hint": "Langsung menuju langkah pertama Anda."
   },
   "timing_coming_one": "Musim itu mulai bulan depan ({season}).",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

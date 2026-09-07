@@ -56,3 +56,6 @@ select.lang{min-height:44px;font-size:1rem;padding:.4rem .6rem;border:2px solid 
 .skip:focus{left:0}
 .whatnow{position:sticky;bottom:.5rem;z-index:5;margin-top:1rem}
 h1:focus{outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
+.chip{display:inline-block;font-size:.8rem;padding:.25rem .6rem;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--muted);text-decoration:none;min-height:0}
+table{border-collapse:collapse;font-size:.9rem}th,td{text-align:start;padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}

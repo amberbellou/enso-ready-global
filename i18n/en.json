@@ -147,7 +147,7 @@
   "forecast_disagree": "That does not agree with the usual pattern, so confidence is lower.",
   "forecast_weak": "That is close to normal, so the pattern may be weaker this time.",
   "forecast_none": "",
-  "forecast_partial": "(Forecast covers {n} of {of} months.)",
+  "forecast_partial": "Seasonal forecasts have been only partly reliable here, so weigh this forecast together with what past events did.",
   "history_few": "Too few past events have data here to give a local average.",
   "local_seasons": {
     "spring and summer": "spring and summer",
@@ -630,5 +630,32 @@
       "el_nino_note": "Mild winters and cool, wet summers are somewhat more common.",
       "la_nina_note": "Cold winters and hot summers are somewhat more common."
     }
+  },
+  "forecast_confident": "Seasonal forecasts have been reliable here in past years, so this forecast can be trusted.",
+  "forecast_unreliable": "Seasonal forecasts have not been reliable here in past years. Trust the pattern of past events more than this forecast.",
+  "forecast_unchecked": "Forecast reliability here has not been checked yet, so weigh this forecast together with what past events did.",
+  "disagreement_trust_forecast": "That is the opposite of the usual pattern. Forecasts here have been reliable, so trust the forecast this time.",
+  "disagreement_trust_history": "That is the opposite of the usual pattern. Forecasts here have not been reliable, so trust the pattern of past events.",
+  "disagreement_say_both": "That is the opposite of the usual pattern. Neither signal is strong enough to rely on alone, so prepare for both.",
+  "history_count": "In {k} of the last {n} strong {phase} events, {season} rain here was {dir} than normal.",
+  "history_mixed": "In the last {n} strong {phase} events, {season} rain here went both ways.",
+  "dir_heavier": "heavier",
+  "dir_lighter": "lighter",
+  "conditions_rain": "Over the last three months, rain here was {pct}.",
+  "conditions_usdm": "The US Drought Monitor currently shows {level} here.",
+  "usdm_levels": [
+    "abnormally dry conditions",
+    "moderate drought",
+    "severe drought",
+    "extreme drought",
+    "exceptional drought"
+  ],
+  "prov_chip": "{layer}: {source}, {as_of}",
+  "layers": {
+    "forecast": "Forecast",
+    "status": "Event status",
+    "history": "History",
+    "events": "Past events",
+    "conditions": "Now"
   }
 }

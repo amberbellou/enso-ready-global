@@ -89,6 +89,39 @@ test("too few events yields no local average, never a fake number", () => {
   const f = facts(80, 0, "GL"); // high Arctic cell
   if (f.history) assert.ok(f.history.too_few || f.history.n_events >= 3);
 });
+test("layer 2 skill bands: unknown skill never trusts the forecast over history; good skill does", () => {
+  const bands = J("data/curated/wording_bands.json");
+  const months = [{ ym: "2026-10", anomaly: -60, mean: 100 }, { ym: "2026-11", anomaly: -70, mean: 110 }, { ym: "2026-12", anomaly: -40, mean: 60 }]; // dry forecast vs wet pattern in Nairobi
+  const base = { lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, bands, forecast: { months, source: "t", source_url: "x" } };
+  const unknown = buildFacts({ ...base, skill: null });
+  assert.equal(unknown.skill_class, "unknown"); assert.equal(unknown.forecast.disagreement, "trust_history");
+  const good = buildFacts({ ...base, skill: { correlation: 0.7, roc: 0.8 } });
+  assert.equal(good.skill_class, "good"); assert.equal(good.forecast.disagreement, "trust_forecast");
+  const poor = buildFacts({ ...base, skill: { correlation: 0.1, roc: 0.5 } });
+  assert.equal(poor.skill_class, "poor");
+  const b = renderBriefing(good, strings, { placeName: "Nairobi" }).find(x => x.type === "forecast");
+  assert.match(b.text, /trust the forecast this time/);
+  assert.match(renderBriefing(unknown, strings, { placeName: "Nairobi" }).find(x => x.type === "forecast").text, /trust the pattern of past events/);
+});
+test("sample-size honesty: history sentence counts events", () => {
+  const bands = J("data/curated/wording_bands.json");
+  const f = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, bands });
+  assert.ok(f.consistency && f.consistency.n >= 3 && f.consistency.k <= f.consistency.n);
+  const hb = renderBriefing(f, strings, { placeName: "Nairobi" }).find(x => x.type === "history");
+  assert.match(hb.text, /In (\d+) of the last (\d+) strong El Niño events|went both ways/);
+});
+test("layer 4 conditions render only when data exists for the cell", () => {
+  const cellId = cellIdFor(-1.29, 36.82, composites.grid);
+  const conditions = { recent_rain: { months: ["2026-06", "2026-07", "2026-08"], pct_of_normal: { [cellId]: 62 }, provenance: { name: "CHIRPS", url: "u" } }, usdm: { categories: {}, provenance: { name: "USDM", url: "v" } } };
+  const withC = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, conditions, bands: J("data/curated/wording_bands.json") });
+  assert.equal(withC.conditions.recent_rain_pct, 62); assert.equal(withC.conditions.usdm, null);
+  const blk = renderBriefing(withC, strings, { placeName: "Nairobi" }).find(x => x.key === "conditions");
+  assert.match(blk.text, /38% below normal/); assert.doesNotMatch(blk.text, /Drought Monitor/);
+  const without = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, conditions: { recent_rain: { pct_of_normal: {} }, usdm: { categories: {} } } });
+  assert.equal(without.conditions, null);
+  assert.ok(!renderBriefing(without, strings, { placeName: "Nairobi" }).some(x => x.key === "conditions"));
+  assert.ok(withC.provenance.some(p => p.layer === "conditions") && withC.provenance.some(p => p.layer === "history" && p.as_of));
+});
 test("Unlisted country falls back to WMO directory", () => {
   const f = facts(50.85, 4.35, "BE");
   assert.match(f.met_service.url, /wmo\.int/);

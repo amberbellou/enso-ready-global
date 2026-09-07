@@ -1,0 +1,41 @@
+{
+  "_about": "Layer 2 honesty rules. Every forecast sentence is chosen from these bands by (skill class, probability of the favoured tercile). Skill classes come from data/derived/skill.json (hindcast verification per cell and season); 'unknown' means no verification data for that cell/season yet. Confidence words are the only three allowed: likely, leaning, uncertain. Wording keys map to i18n templates.",
+  "skill_classes": {
+    "good":    {"min_correlation": 0.5, "min_roc": 0.7, "label": "forecasts here have been reliable in past years"},
+    "fair":    {"min_correlation": 0.3, "min_roc": 0.6, "label": "forecasts here have been only partly reliable in past years"},
+    "poor":    {"min_correlation": -1.0, "min_roc": 0.0, "label": "forecasts here have not been reliable in past years"},
+    "unknown": {"label": "forecast reliability here has not been checked yet"}
+  },
+  "probability_bands": {
+    "strong": {"min_pct": 60},
+    "moderate": {"min_pct": 45},
+    "weak": {"min_pct": 0}
+  },
+  "rules": [
+    {"skill": "good",    "band": "strong",   "confidence": "likely",    "template": "forecast_confident",  "lean_on": "forecast"},
+    {"skill": "good",    "band": "moderate", "confidence": "leaning",   "template": "forecast_confident",  "lean_on": "forecast"},
+    {"skill": "good",    "band": "weak",     "confidence": "uncertain", "template": "forecast_weak",       "lean_on": "history"},
+    {"skill": "fair",    "band": "strong",   "confidence": "leaning",   "template": "forecast_partial",    "lean_on": "both"},
+    {"skill": "fair",    "band": "moderate", "confidence": "uncertain", "template": "forecast_partial",    "lean_on": "both"},
+    {"skill": "fair",    "band": "weak",     "confidence": "uncertain", "template": "forecast_weak",       "lean_on": "history"},
+    {"skill": "poor",    "band": "strong",   "confidence": "uncertain", "template": "forecast_unreliable", "lean_on": "history"},
+    {"skill": "poor",    "band": "moderate", "confidence": "uncertain", "template": "forecast_unreliable", "lean_on": "history"},
+    {"skill": "poor",    "band": "weak",     "confidence": "uncertain", "template": "forecast_unreliable", "lean_on": "history"},
+    {"skill": "unknown", "band": "strong",   "confidence": "leaning",   "template": "forecast_unchecked",  "lean_on": "both"},
+    {"skill": "unknown", "band": "moderate", "confidence": "uncertain", "template": "forecast_unchecked",  "lean_on": "both"},
+    {"skill": "unknown", "band": "weak",     "confidence": "uncertain", "template": "forecast_weak",       "lean_on": "history"}
+  ],
+  "disagreement": {
+    "_about": "When the live forecast and the historical pattern point opposite ways, the briefing states both and says which to trust.",
+    "trust_forecast_if_skill": ["good"],
+    "trust_history_if_skill": ["poor", "unknown"],
+    "say_both_if_skill": ["fair"]
+  },
+  "history_consistency": {
+    "_about": "Sample-size honesty: how the composite is phrased from n events and the share that went the same way.",
+    "min_events": 3,
+    "consistent_min_share": 0.75,
+    "mixed_max_share": 0.6
+  },
+  "freshness_days": {"status": 45, "forecast": 45, "conditions": 21, "composites": 400}
+}

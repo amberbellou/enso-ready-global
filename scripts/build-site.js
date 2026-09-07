@@ -22,6 +22,9 @@ const met = J("data/curated/met_services.json");
 const status = J("data/derived/enso_status.json");
 const oni = J("data/derived/oni.json");
 const strings = J("i18n/en.json");
+const bands = J("data/curated/wording_bands.json");
+const conditions = fs.existsSync(path.join(ROOT, "data/derived/conditions.json")) ? J("data/derived/conditions.json") : null;
+const skillData = fs.existsSync(path.join(ROOT, "data/derived/skill.json")) ? J("data/derived/skill.json") : null;
 const countries = fs.existsSync(path.join(ROOT, "geo-site/countries.json")) ? J("geo-site/countries.json") : J("site/geo/countries.json");
 const buildDate = new Date().toISOString().slice(0, 10);
 
@@ -38,6 +41,18 @@ for (const f of fs.readdirSync(path.join(ROOT, "i18n"))) { if (!f.endsWith(".jso
 langIndex.sort((a, b) => (a.code === "en" ? -1 : b.code === "en" ? 1 : a.name.localeCompare(b.name)));
 W("i18n/index.json", JSON.stringify(langIndex));
 W("data/status.json", JSON.stringify(status));
+W("data/wording_bands.json", JSON.stringify(bands));
+if (conditions) W("data/conditions.json", JSON.stringify(conditions));
+if (skillData) W("data/skill.json", JSON.stringify(skillData));
+// provenance registry: every dataset behind any fact, with version + retrieval date (drives /methodology and the chips)
+const registry = [];
+for (const [k, p] of Object.entries(composites.provenance || {})) if (p && typeof p === "object" && p.name) registry.push({ layer: "history", key: k, ...p });
+registry.push({ layer: "status", key: "cpc", name: status.source, version: status.issued, retrieved_at: status.fetched_at ? status.fetched_at.slice(0, 10) : null, url: status.source_url, licence: "US Government public domain" });
+if (conditions) { for (const [k, sec] of Object.entries(conditions)) if (sec && sec.provenance) registry.push({ layer: "conditions", key: k, ...sec.provenance }); }
+registry.push({ layer: "forecast", key: "seas5_openmeteo", name: "ECMWF SEAS5 seasonal forecast via Open-Meteo", version: "latest run, fetched per briefing", retrieved_at: null, url: "https://open-meteo.com/", licence: "CC BY 4.0 (Open-Meteo); ECMWF data" });
+registry.push({ layer: "places", key: "geonames", name: "GeoNames", version: "full dump", retrieved_at: buildDate, url: "https://www.geonames.org/", licence: "CC BY 4.0" });
+registry.push({ layer: "pattern", key: "teleconnections", name: "Curated teleconnection table (cited)", version: buildDate, retrieved_at: buildDate, url: "https://github.com/amberbellou/enso-ready-global/blob/main/data/curated/teleconnections.json", licence: "MIT (this project)" });
+W("data/provenance.json", JSON.stringify({ built_at: new Date().toISOString(), datasets: registry }, null, 1));
 W("data/grid.json", JSON.stringify(composites.grid));
 W("data/teleconnections.json", JSON.stringify(tele));
 W("data/prep_checklists.json", JSON.stringify(checklists));
@@ -92,6 +107,7 @@ W("index.html", shell({ title: "ENSO Ready — your El Niño briefing", desc: st
 </main></div>
 <script type="module" src="./app.js"></script>` }));
 
+const cellIdForPlace = (lat, lon) => cellIdFor(lat, lon, composites.grid);
 // --- pre-rendered city pages (English) ---
 // cities >= 100k: from the gazetteer build (data/derived/cities100k.json), else from the legacy cities15000 dump
 let cities;
@@ -100,7 +116,7 @@ else cities = fs.readFileSync(path.join(ROOT, "data/raw/cities15000.txt"), "utf8
 const byCountry = {};
 let nPages = 0;
 for (const [id, name, cc, lat, lon, pop] of cities) {
-  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, livelihood: "all" });
+  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, conditions, skill: skillData ? skillData.cells[cellIdForPlace(+lat, +lon)] : null, bands, livelihood: "all" });
   const blocks = renderBriefing(facts, strings, { placeName: name });
   const head = blocks.find(b => b.type === "headline").text;
   const paras = blocks.filter(b => b.type === "para");
@@ -120,6 +136,7 @@ ${hist ? `<p>${esc(hist.text)}</p><p>${esc(hist.recent)} <a class="src" href="${
 <section class="card"><h2>${esc(steps.title)}</h2><ol>${steps.steps.map(s => `<li><span aria-hidden="true">${s.icon}</span> ${esc(s.text)} <span class="muted">(${esc(strings.ui.minutes.replace("{n}", s.minutes))})</span><details><summary>${esc(strings.ui.why_matters)}</summary><p>${esc(s.why)}</p></details></li>`).join("")}</ol></section>
 <div class="banner">📢 ${esc(defer.text)} <a href="${defer.url}" rel="noopener">${esc(defer.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></div>
 <p class="src">${esc(srcs.title)}: ${srcs.items.map(it => `<a href="${it.url}" rel="noopener">${esc(it.label)}</a>`).join(" · ")}</p>
+${(() => { const pv = blocks.find(b => b.type === "provenance"); return pv ? `<p class="chips">${pv.items.map(it => `<a class="chip" href="${it.url}" rel="noopener">${esc(it.label)}</a>`).join(" ")}</p>` : ""; })()}
 <details><summary>📻 ${esc(strings.ui.radio_script)} / ${esc(strings.ui.sms_text)}</summary><pre class="script">${esc(renderRadio(facts, strings, name))}</pre><pre class="script">${esc(renderSMS(facts, strings, name))}</pre></details>
 <p><a class="btn" href="../?lat=${lat}&lon=${lon}&cc=${cc}&name=${encodeURIComponent(name)}">${esc(strings.ui.see_briefing)} (interactive)</a></p>
 </main>`;
@@ -137,7 +154,8 @@ for (const cc of ccList) {
   W(`countries/${cc}.html`, shell({ title: `${countries[cc]?.name || cc} — ENSO Ready`, base: "..", body: `<main><p class="muted"><a href="./">← All countries</a></p><h1>${esc(countries[cc]?.name || cc)}</h1><p>Pick the nearest large town:</p><ul class="results">${list.map(c => `<li><a class="btn secondary block" href="../p/${c.id}.html">${esc(c.name)}</a></li>`).join("")}</ul><div class="banner">📢 Official warnings: <a href="${svc.url}" rel="noopener">${esc(svc.name)}</a></div></main>` }));
 }
 // --- methodology ---
-W("methodology.html", shell({ title: "How this works — ENSO Ready", body: fs.readFileSync(path.join(ROOT, "docs/methodology.html"), "utf8") }));
+const provTable = `<h2>Datasets behind every fact</h2><p>Generated from the provenance stored with each dataset at build time (${esc(buildDate)}).</p><div style="overflow-x:auto"><table><thead><tr><th>Layer</th><th>Dataset</th><th>Version / as of</th><th>Retrieved</th><th>Licence</th></tr></thead><tbody>${registry.map(r => `<tr><td>${esc(r.layer)}</td><td><a href="${r.url}" rel="noopener">${esc(r.name)}</a></td><td>${esc(r.version || "")}</td><td>${esc(r.retrieved_at || "")}</td><td>${esc(r.licence || "")}</td></tr>`).join("")}</tbody></table></div>`;
+W("methodology.html", shell({ title: "How this works — ENSO Ready", body: fs.readFileSync(path.join(ROOT, "docs/methodology.html"), "utf8").replace("</main>", provTable + "</main>") }));
 W(".nojekyll", "");
 W("robots.txt", "User-agent: *\nAllow: /\n");
 console.log(`built: ${nCells} cell files, ${nPages} city pages, ${ccList.length} country pages`);

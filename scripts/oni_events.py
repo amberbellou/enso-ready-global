@@ -64,9 +64,11 @@ while i < len(rows):
     i = j
 
 OUT.parent.mkdir(parents=True, exist_ok=True)
+import datetime
 OUT.write_text(json.dumps({
     "source": "NOAA Climate Prediction Center, Oceanic Niño Index (ONI) v5",
     "source_url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
+    "provenance": {"name": "NOAA CPC Oceanic Niño Index v5", "version": f"{rows[-1]['season']} {rows[-1]['year']}", "retrieved_at": datetime.datetime.utcfromtimestamp(SRC.stat().st_mtime).strftime("%Y-%m-%d"), "url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt", "licence": "US Government public domain"},
     "latest_season": f"{rows[-1]['season']} {rows[-1]['year']}",
     "latest_oni": rows[-1]["oni"],
     "seasons": rows,

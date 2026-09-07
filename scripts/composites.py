@@ -15,7 +15,7 @@ Per cell, per phase (en/ln), per 3-month season:
   recent      per-event % anomaly for the three most recent strong events
 null (never 0) where a value is undefined. Sanity bounds are asserted before writing.
 """
-import json, glob, re, pathlib, os, tempfile
+import json, glob, re, pathlib, os, tempfile, datetime, sys
 import numpy as np, netCDF4
 from shapely.geometry import shape, Point
 from shapely.strtree import STRtree
@@ -50,6 +50,7 @@ def bilinear_to_grid(a, glats, glons):
 
 gpcp = {}
 files = sorted(glob.glob(str(ROOT / "data/raw/gpcp/gpcp_v02r03_monthly_d*.nc")))
+months_first = re.search(r"_d(\d{6})_", files[0]).group(1); months_last = re.search(r"_d(\d{6})_", files[-1]).group(1)
 for f in files:
     ym = re.search(r"_d(\d{4})(\d{2})_", f); y, m = int(ym.group(1)), int(ym.group(2))
     d = netCDF4.Dataset(f)
@@ -177,7 +178,8 @@ for i, la in enumerate(LATS):
                 else:
                     comp.append(None); frac.append(None); std.append(None)
                 recent.append([clean(x) for x in v[-3:]])
-            cell[key] = {"pct": comp, "wetter_frac": frac, "std": std, "n": n, "recent": recent}
+            events_pct = [[clean(x) for x in pct[src][t][k][:, i, j]] for k in range(12)]   # every strong event, per season
+            cell[key] = {"pct": comp, "wetter_frac": frac, "std": std, "n": n, "recent": recent, "events": events_pct}
         cells[cid(la, lo)] = cell
 
 # sanity bounds
@@ -188,7 +190,18 @@ for c in cells.values():
         for v in c[key]["wetter_frac"]:
             assert v is None or 0 <= v <= 100, v
 
-out = {"schema": 2, "units": {"pct": "% of 1991-2020 normal", "clim_mm_month": "mm/month", "std": "percentage points"},
+def prov(path, name, version, url, licence):
+    m = datetime.datetime.utcfromtimestamp(pathlib.Path(path).stat().st_mtime).strftime("%Y-%m-%d") if pathlib.Path(path).exists() else None
+    return {"name": name, "version": version, "retrieved_at": m, "url": url, "licence": licence}
+provenance = {
+    "chirps": prov(cp, "CHIRPS v2.0 monthly precipitation", f"v2.0, {min(chirps)[0]}-{max(chirps)[0]}" if chirps else "n/a", "https://www.chc.ucsb.edu/data/chirps", "Public domain (CHC/UCSB); IRI Data Library box average"),
+    "gpcp": prov(files[-1], "GPCP v2.3 monthly precipitation", f"v2.3, {months_first}-{months_last}", "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project", "US Government public domain"),
+    "oni": prov(ROOT / "data/raw/oni.ascii.txt", "NOAA CPC Oceanic Niño Index v5", oni.get("latest_season"), "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt", "US Government public domain"),
+    "land": prov(ROOT / "data/raw/ne_50m_admin_0_countries.geojson", "Natural Earth 50m admin-0", "5.x", "https://www.naturalearthdata.com/", "Public domain"),
+    "computed_at": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "method": "Per 2° cell and 3-month season: percent anomaly of the seasonal total vs the 1991-2020 climatology of the same source, for each strong/very strong ENSO event (ONI peak ≥ 1.5), anchored on the event's peak winter (Jul-Jun). Mean, share wetter, std and count across events; null below 3 events.",
+}
+out = {"schema": 3, "provenance": provenance, "units": {"pct": "% of 1991-2020 normal", "clim_mm_month": "mm/month", "std": "percentage points"},
        "baseline_start": BASE0, "baseline_end": BASE1, "anomaly_type": "percent", "min_events": MIN_EVENTS,
        "sources": {"chirps": {"label": "CHIRPS v2.0 monthly (UCSB Climate Hazards Center), 2° box average via IRI Data Library", "url": "https://www.chc.ucsb.edu/data/chirps"},
                    "gpcp": {"label": "GPCP v2.3 monthly (NOAA NCEI), interpolated to 2°", "url": "https://www.ncei.noaa.gov/products/global-precipitation-climatology-project"},
@@ -209,8 +222,24 @@ checks = [("Coastal Peru (Piura)", -5.2, -80.6, "en", "JFM", "wetter"), ("Kalima
           ("Southern Brazil (Porto Alegre)", -30.0, -51.2, "en", "OND", "wetter"), ("Queensland (Brisbane)", -27.5, 153.0, "en", "SON", "drier"),
           ("S. California (LA)", 34.0, -118.2, "en", "JFM", "wetter"), ("Kenya (Nairobi)", -1.3, 36.8, "ln", "OND", "drier"),
           ("Ethiopia (Addis)", 9.0, 38.7, "en", "JAS", "drier"), ("Philippines (Manila)", 14.6, 121.0, "en", "DJF", "drier")]
-print("\nValidation:")
+print("\nGround truth (composite direction):")
+failures = []
 for name, la, lo, key, s, expect in checks:
     c = cells[cell_id_for(la, lo)]; k = SEASONS.index(s); v = c[key]["pct"][k]
     ok = v is not None and ((v > 0) == (expect == "wetter"))
     print(f"  {'PASS' if ok else 'FAIL'} {name:30} {c['src']:6} {c['cc']} {key.upper()} {s}: {v:+.0f}% (wet in {c[key]['wetter_frac'][k]:.0f}%, sd {c[key]['std'][k]:.0f}, n={c[key]['n'][k]}) exp {expect}")
+    if not ok and expect in ("wetter", "drier") and name not in ("Ethiopia (Addis)",): failures.append(name)   # Addis JAS is a documented weak/mixed signal
+# documented individual events: 1997-98 and 2015-16 (spec §validation)
+print("Ground truth (named events):")
+en_labels = labels["El Niño"]
+for name, la, lo, s, expect, evs in [("Coastal Peru (Piura)", -5.2, -80.6, "JFM", "wetter", ["1997-98"]), ("Kalimantan", -1.0, 114.0, "SON", "drier", ["1997-98", "2015-16"]),
+                                       ("Kenya (Nairobi)", -1.3, 36.8, "OND", "wetter", ["1997-98"]), ("Sumatra (Palembang)", -3.0, 104.7, "SON", "drier", ["1997-98", "2015-16"])]:
+    c = cells[cell_id_for(la, lo)]; k = SEASONS.index(s)
+    for ev in evs:
+        v = c["en"]["events"][k][en_labels.index(ev)]
+        ok = v is not None and ((v > 0) == (expect == "wetter"))
+        print(f"  {'PASS' if ok else 'FAIL'} {name:30} {ev} {s}: {v:+.0f}% exp {expect}")
+        if not ok: failures.append(f"{name} {ev}")
+if failures:
+    print("GROUND TRUTH FAILED: " + "; ".join(failures) + " — refusing to publish composites", file=sys.stderr)
+    OUT.unlink(missing_ok=True); sys.exit(4)

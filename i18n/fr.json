@@ -89,7 +89,10 @@
     "data_note": "Données : {list}.",
     "near": "près de {name}",
     "pick_map": "Choisir sur une carte",
-    "map_hint": "Touchez votre position sur la carte. Zoomez pour voir les villages."
+    "map_hint": "Touchez votre position sur la carte. Zoomez pour voir les villages.",
+    "skip": "Aller au contenu principal",
+    "dyslexia": "Espacement adapté à la dyslexie",
+    "steps_shortcut_hint": "Vous amène à votre première étape."
   },
   "timing_coming_one": "Cette saison commence le mois prochain ({season}).",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "ui.map_hint": {
       "hash": "c3d9a75b3c",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

@@ -408,3 +408,36 @@ Full merged gazetteer ≈ 2–4 GB raw → filtered production index ≈ 300–8
 - [ ] Ambiguity test: "San José", "Springfield", "Santa Cruz" produce clear disambiguation lists
 - [ ] Nowhere test: mid-ocean pin and unnamed-settlement pin both return a grid-cell briefing
 - [ ] Alignment test: admin names match OCHA COD-AB for 10 sampled countries
+
+---
+
+## Annex E — Extended datasets and the UN-quality bar
+*Added 7 September 2026. Annexes B, C, D still override defaults. Do not refactor unrelated code.*
+
+### E.A Extended dataset integration (one dataset at a time, each fully validated before the next)
+
+**Tier 1 — static, high content value (build now)**
+1. FAO/GIEWS crop calendars: planting/harvest windows per crop per country. A farmer-context sentence renders only when (a) the user selected a farming livelihood or a rural place, and (b) the forecast/historical anomaly window overlaps a crop window — e.g. "The drier-than-normal period overlaps the main maize planting season (Oct–Dec)." Graceful omission everywhere else.
+2. IBTrACS cyclone history: per coastal region, cyclone frequency/intensity in strong El Niño vs neutral years. History sentence only for regions with meaningful cyclone climatology.
+3. WorldPop: population per region cell, stored internally (never shown as "X million at risk"), used to prioritise translation review and QA ordering.
+4. INFORM Risk Index: country vulnerability scores → internal prioritisation + one calm context line max.
+
+**Tier 2 — live layers (after Tier 1, each with full Annex C dead-man's-switch validation)**
+5. GloFAS river flood forecast signal per region (elevated / not elevated only).
+6. NASA FIRMS active-fire counts per region (7-day rolling).
+7. CAMS haze/smoke signal for Maritime Southeast Asia and Australia.
+8. CAP official-warning feeds: 5 pilot countries with reliable public CAP endpoints; rendered as "Your national weather service has issued warnings — view [link]" chips; registry file country → CAP feed URL → parser status.
+9. GDACS live alerts as linked reference chips.
+10. ReliefWeb API: latest situation-report link per country as a reference chip.
+
+Rules for all of Part A: every datum stored with source/version/timestamp provenance; every new sentence goes through the fixed-template system; live layers may only sharpen the calm action-first tone (elevated signal → one calm sentence + one action + official link; never sirens or red takeovers); each dataset gets validation bounds, a freshness threshold, fallback behaviour and a DATA_SOURCES.md entry; ground-truth checks where possible (IBTrACS composite must show the documented eastward typhoon-genesis shift in El Niño years).
+
+### E.B UN-quality bar
+1. Design system: tokenised (one type scale, one spacing scale, the Annex B calm palette) as the single source of styling; migrate ad-hoc styles; patterns adapted from the GOV.UK Design System (no copied assets); real empty/loading/error states for every screen; RTL and all launch scripts verified; print stylesheet for one-page regional briefings.
+2. Governance pages: /methodology (auto-generated from provenance metadata), /privacy, /terms with disclaimer, /accessibility, /contact with corrections form, /about. Plain language; reviewed by the builder.
+3. Editorial enforcement: STYLE.md (calm register, no exclamation marks, every fact sourced, probabilistic wording bands) plus CI checks: reading-level check on English templates, banned-word/punctuation lint, link checker for source URLs.
+4. DPG readiness: DPG-CHECKLIST.md mapping Digital Public Goods Alliance criteria to evidence in the repo; gaps flagged.
+5. Security basics: HTTPS-only, security.txt, dependency audit in CI, zero third-party trackers/fonts/CDNs that phone home.
+6. Alignment doc: /alignment mapping the app to UN Early Warnings for All pillars and Sendai Target G, for review.
+
+**Deliverables:** Tier 1 live in briefings with tests; Tier 2 scaffolded with GloFAS + CAP pilot working; design system migrated; governance pages drafted; CI editorial checks green; DATA_SOURCES.md, STYLE.md, DPG-CHECKLIST.md; GAPS.md listing decisions needed. Commit per dataset/feature. Farmer-context and cyclone-history sentence templates are approved by the builder before wiring.

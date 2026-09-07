@@ -1,6 +1,13 @@
 {
  "source": "NOAA Climate Prediction Center, Oceanic Ni\u00f1o Index (ONI) v5",
  "source_url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
+ "provenance": {
+  "name": "NOAA CPC Oceanic Ni\u00f1o Index v5",
+  "version": "JJA 2026",
+  "retrieved_at": "2026-09-07",
+  "url": "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt",
+  "licence": "US Government public domain"
+ },
  "latest_season": "JJA 2026",
  "latest_oni": 1.8,
  "seasons": [

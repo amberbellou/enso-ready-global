@@ -89,7 +89,10 @@
     "data_note": "তথ্য: {list}।",
     "near": "{name}-এর কাছে",
     "pick_map": "মানচিত্রে বেছে নিন",
-    "map_hint": "মানচিত্রে আপনার জায়গায় ট্যাপ করুন। গ্রাম দেখতে জুম করে বড় করুন।"
+    "map_hint": "মানচিত্রে আপনার জায়গায় ট্যাপ করুন। গ্রাম দেখতে জুম করে বড় করুন।",
+    "skip": "মূল অংশে যান",
+    "dyslexia": "ডিসলেক্সিয়ার জন্য সুবিধাজনক ফাঁক",
+    "steps_shortcut_hint": "আপনার প্রথম ধাপে নিয়ে যায়।"
   },
   "timing_coming_one": "সেই মৌসুম পরের মাসে শুরু হবে ({season})।",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

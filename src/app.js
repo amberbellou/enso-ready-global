@@ -139,8 +139,11 @@ async function briefingScreen() {
   const met = state.data.met ||= await getJSON("data/met_services.json");
   let country = null; if (p.cc) { try { country = state.data["country:" + p.cc] ||= await getJSON(`data/countries/${p.cc}.json`); } catch { country = null; } }
   const forecast = await fetchForecast(p.lat, p.lon);
+  const bands = state.data.bands ||= await getJSON("data/wording_bands.json").catch(() => null);
+  const conditions = state.data.conditions ||= await getJSON("data/conditions.json").catch(() => null);
+  const skillAll = state.data.skill ||= await getJSON("data/skill.json").catch(() => null);
   const composites = { grid, cells: cell ? { [cellId]: cell.cell } : {}, events: cell ? cell.events : { "El Niño": [], "La Niña": [] }, sources: cell ? cell.sources : {} };
-  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, country, forecast, livelihood: state.livelihood });
+  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, country, forecast, conditions, skill: skillAll && skillAll.cells ? skillAll.cells[cellId] : null, bands, livelihood: state.livelihood });
   state.forecastFailed = !forecast;
   const blocks = renderBriefing(facts, S, { placeName: p.name });
   LS.set("last", { place: p, blocks, date: new Date().toISOString(), radio: renderRadio(facts, S, p.name), sms: renderSMS(facts, S, p.name) });
@@ -175,6 +178,8 @@ function renderBlocks(blocks, facts, p, extra) {
   main.append(tools);
   const src = blocks.find(b => b.type === "sources");
   if (src) { const sp = h("p", { class: "src" }, src.title + ": "); src.items.forEach((it, i) => { if (i) sp.append(" · "); sp.append(h("a", { href: it.url, rel: "noopener" }, it.label)); }); main.append(sp); }
+  const pv = blocks.find(b => b.type === "provenance");
+  if (pv) { const row = h("p", { class: "chips" }); for (const it of pv.items) row.append(h("a", { class: "chip", href: it.url, rel: "noopener" }, it.label)); main.append(row); }
   if ("speechSynthesis" in window) main.append(h("button", { class: "btn secondary", onclick: () => { const u = new SpeechSynthesisUtterance(extra.radio); u.lang = state.lang; speechSynthesis.cancel(); speechSynthesis.speak(u); } }, "🔊 " + ui("read_aloud")));
   main.append(settingsPanel());
   return main;

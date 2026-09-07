@@ -89,7 +89,10 @@
     "data_note": "البيانات: {list}.",
     "near": "بالقرب من {name}",
     "pick_map": "اختر من الخريطة",
-    "map_hint": "انقر على موقعك في الخريطة. كبِّر الخريطة لرؤية القرى."
+    "map_hint": "انقر على موقعك في الخريطة. كبِّر الخريطة لرؤية القرى.",
+    "skip": "تخطَّ إلى المحتوى الرئيسي",
+    "dyslexia": "تباعد مناسب لعسر القراءة",
+    "steps_shortcut_hint": "ينقلك إلى خطوتك الأولى."
   },
   "timing_coming_one": "هذا الموسم يبدأ الشهر القادم ({season}).",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "ui.map_hint": {
       "hash": "c3d9a75b3c",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

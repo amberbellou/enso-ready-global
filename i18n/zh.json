@@ -89,7 +89,10 @@
     "data_note": "数据：{list}。",
     "near": "{name}附近",
     "pick_map": "在地图上选位置",
-    "map_hint": "在地图上点你所在的位置。放大地图可以看到村庄。"
+    "map_hint": "在地图上点你所在的位置。放大地图可以看到村庄。",
+    "skip": "跳到主要内容",
+    "dyslexia": "阅读障碍友好的字距",
+    "steps_shortcut_hint": "跳到你的第一步。"
   },
   "timing_coming_one": "那个季节下个月开始（{season}）。",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "ui.map_hint": {
       "hash": "c3d9a75b3c",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

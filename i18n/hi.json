@@ -89,7 +89,10 @@
     "data_note": "डेटा: {list}।",
     "near": "{name} के पास",
     "pick_map": "नक्शे पर चुनें",
-    "map_hint": "नक्शे पर अपनी जगह टैप करें। गाँव देखने के लिए ज़ूम करें।"
+    "map_hint": "नक्शे पर अपनी जगह टैप करें। गाँव देखने के लिए ज़ूम करें।",
+    "skip": "मुख्य सामग्री पर जाएँ",
+    "dyslexia": "डिस्लेक्सिया के लिए आसान अक्षर-दूरी",
+    "steps_shortcut_hint": "यह आपको आपके पहले कदम पर ले जाता है।"
   },
   "timing_coming_one": "वह मौसम अगले महीने शुरू होता है ({season})।",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }

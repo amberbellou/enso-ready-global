@@ -99,7 +99,31 @@ export function forecastPct(forecastMonths, wanted) {
 }
 
 // --- facts payload -----------------------------------------------------
-export function buildFacts({ lat, lon, cc, status, composites, tele, checklists, met, country = null, forecast = null, livelihood = "all", now = new Date() }) {
+// --- layer 2: skill band -> wording rule (data/curated/wording_bands.json) ---
+export function skillClass(skill, bands) {
+  if (!skill || skill.correlation === undefined || skill.correlation === null) return "unknown";
+  const sc = bands.skill_classes;
+  if (skill.correlation >= sc.good.min_correlation && (skill.roc === undefined || skill.roc >= sc.good.min_roc)) return "good";
+  if (skill.correlation >= sc.fair.min_correlation && (skill.roc === undefined || skill.roc >= sc.fair.min_roc)) return "fair";
+  return "poor";
+}
+export function probabilityBand(pct, bands) {
+  const pb = bands.probability_bands;
+  if (pct === null || pct === undefined) return null;
+  return pct >= pb.strong.min_pct ? "strong" : pct >= pb.moderate.min_pct ? "moderate" : "weak";
+}
+export function wordingRule(skill, band, bands) { return bands.rules.find(r => r.skill === skill && r.band === band) || null; }
+// sample-size honesty: "in k of the last n strong El Niños"
+export function consistency(h, bands) {
+  if (!h || h.too_few) return null;
+  const n = h.n_events, share = h.wetter_frac / 100;
+  const sameDir = h.composite_pct >= 0 ? share : 1 - share;
+  const k = Math.round(sameDir * n);
+  const hc = bands.history_consistency;
+  return { k, n, direction: h.composite_pct >= 0 ? "wetter" : "drier", cls: sameDir >= hc.consistent_min_share ? "consistent" : sameDir <= hc.mixed_max_share ? "mixed" : "leaning" };
+}
+
+export function buildFacts({ lat, lon, cc, status, composites, tele, checklists, met, country = null, forecast = null, conditions = null, skill = null, bands = null, livelihood = "all", now = new Date() }) {
   const cellId = cellIdFor(lat, lon, composites.grid);
   const cell = composites.cells[cellId];
   const regions = regionsFor(lat, lon, tele);
@@ -126,11 +150,34 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
     if (forecast && forecast.months) {
       const wanted = seasonYearMonths(months, timing);
       const r = forecastPct(forecast.months, wanted);
-      if (r) { fc = { ...r, season_months: wanted, source: forecast.source, source_url: forecast.source_url, issued: forecast.issued }; fcAgreement = agreementOf(r.pct, s, null); }
+      if (r) { fc = { ...r, season_months: wanted, source: forecast.source, source_url: forecast.source_url, issued: forecast.issued, probability_pct: forecast.probability_pct ?? null }; fcAgreement = agreementOf(r.pct, s, null); }
     }
   }
   let confidence = sig ? confidenceWord(sig.confidence, agreement) : "uncertain";
-  if (fc) { if (fcAgreement === "disagree") confidence = STEP_DOWN[confidence]; else if (fcAgreement === "agree" && agreement !== "disagree") confidence = STEP_UP[confidence]; }
+  // layer 2: skill-aware forecast wording. Without a skill file every cell is "unknown": the forecast is shown but never trusted over history.
+  let fcRule = null, skillCls = null;
+  if (fc && bands) {
+    skillCls = skillClass(skill, bands);
+    const band = probabilityBand(fc.probability_pct !== null ? fc.probability_pct : (Math.abs(fc.pct) >= 25 ? 60 : Math.abs(fc.pct) >= 10 ? 45 : 0), bands);
+    fcRule = wordingRule(skillCls, band, bands);
+    if (fcRule) {
+      if (fcAgreement === "disagree") {
+        const d = bands.disagreement;
+        fc.disagreement = d.trust_forecast_if_skill.includes(skillCls) ? "trust_forecast" : d.trust_history_if_skill.includes(skillCls) ? "trust_history" : "say_both";
+        confidence = fc.disagreement === "trust_forecast" ? fcRule.confidence : STEP_DOWN[confidence];
+      } else if (fcAgreement === "agree" && agreement !== "disagree") {
+        confidence = fcRule.lean_on === "history" ? confidence : (skillCls === "good" ? STEP_UP[confidence] : confidence);
+      } else if (fcRule.lean_on === "forecast" && agreement === "none") confidence = fcRule.confidence;
+    }
+  } else if (fc) { if (fcAgreement === "disagree") confidence = STEP_DOWN[confidence]; else if (fcAgreement === "agree" && agreement !== "disagree") confidence = STEP_UP[confidence]; }
+  // layer 4: current conditions for this cell (weekly)
+  let cond = null;
+  if (conditions) {
+    const rr = conditions.recent_rain && conditions.recent_rain.pct_of_normal ? conditions.recent_rain.pct_of_normal[cellId] : undefined;
+    const dm = conditions.usdm && conditions.usdm.categories ? conditions.usdm.categories[cellId] : undefined;
+    if (rr !== undefined || dm !== undefined) cond = { recent_rain_pct: rr ?? null, recent_months: conditions.recent_rain ? conditions.recent_rain.months : null, usdm: dm ?? null,
+      sources: [conditions.recent_rain && rr !== undefined ? conditions.recent_rain.provenance : null, conditions.usdm && dm !== undefined ? conditions.usdm.provenance : null].filter(Boolean) };
+  }
 
   // hazards: region defaults + country additions
   let hazards = sig ? [...sig.hazards] : [];
@@ -148,6 +195,15 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
   sources.push({ id: "cpc", label: status.source, url: status.source_url });
   if (sig) for (const k of region.sources || []) sources.push({ id: k, label: (tele._source_labels || {})[k] || k, url: tele._sources[k] });
   if (fc) sources.push({ id: "forecast", label: fc.source, url: fc.source_url });
+  if (cond) for (const p of cond.sources) sources.push({ id: "conditions", label: p.name, url: p.url });
+  // provenance chips: layer -> source, as-of date, url (spec: every fact traceable to dataset, version, retrieval date)
+  const P = composites.provenance || {};
+  const provenance = [];
+  if (fc) provenance.push({ layer: "forecast", source: fc.source, as_of: fc.issued, url: fc.source_url, skill: skillCls });
+  provenance.push({ layer: "status", source: status.source, as_of: status.issued, url: status.source_url });
+  if (history && P[history.src]) provenance.push({ layer: "history", source: P[history.src].name, as_of: P[history.src].version, retrieved: P[history.src].retrieved_at, url: P[history.src].url });
+  if (P.oni) provenance.push({ layer: "events", source: P.oni.name, as_of: P.oni.version, url: P.oni.url });
+  if (cond) for (const p of cond.sources) provenance.push({ layer: "conditions", source: p.name, as_of: p.version, retrieved: p.retrieved_at, url: p.url });
   return {
     generated_at: now.toISOString(),
     place: { lat, lon, cc, cell_id: cellId, on_land: cell ? cell.on_land : null },
@@ -156,7 +212,8 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
     region: region ? { id: region.id, name: region.name, confidence: sig ? sig.confidence : null } : null,
     signal: sig ? { rain: sig.rain, temp: sig.temp, season: sig.season, local_season: localSeason, months, timing, hazards, note: sig.note,
                     sources: (region.sources || []).map(k => ({ id: k, url: tele._sources[k] })) } : null,
-    agreement, confidence, history, forecast: fc, forecast_agreement: fcAgreement,
+    agreement, confidence, history, consistency: bands ? consistency(history, bands) : null, forecast: fc, forecast_rule: fcRule, skill_class: skillCls, conditions: cond,
+    forecast_agreement: fcAgreement, provenance,
     steps: steps.slice(0, 10), met_service: service, other_regions: regions.slice(1, 3).map(r => r.name), sources,
   };
 }
@@ -199,8 +256,17 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
     if (facts.forecast) {
       const f = facts.forecast;
       const pctText = f.capped ? fill(S.pct_above_cap, { n: 300 }) : pctPhrase(S, f.pct);
-      blocks.push({ type: "forecast", key: "forecast", text: fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctText }) + " " + (S["forecast_" + facts.forecast_agreement] || ""),
-                    partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
+      let text = fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctText });
+      if (f.disagreement) text += " " + (S["disagreement_" + f.disagreement] || "");
+      else text += " " + (S["forecast_" + facts.forecast_agreement] || "");
+      if (facts.forecast_rule && S[facts.forecast_rule.template]) text += " " + S[facts.forecast_rule.template];
+      blocks.push({ type: "forecast", key: "forecast", text, partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
+    }
+    if (facts.conditions) {
+      const c = facts.conditions; const parts = [];
+      if (c.recent_rain_pct !== null) parts.push(fill(S.conditions_rain, { pct: pctPhrase(S, c.recent_rain_pct - 100) }));
+      if (c.usdm !== null && S.usdm_levels) parts.push(fill(S.conditions_usdm, { level: S.usdm_levels[c.usdm] }));
+      if (parts.length) blocks.push({ type: "para", key: "conditions", text: parts.join(" "), source: c.sources[0] ? { id: "conditions", url: c.sources[0].url } : null });
     }
     const R = (S.regions || {})[facts.region.id] || {};
     blocks.push({ type: "para", key: "expect", text: fill(S.expect, { phase: phaseName, region: R.name || facts.region.name, rain: rainText, temp: S["temp_" + facts.signal.temp.replace(/[^a-z]/g, "_")] || facts.signal.temp }) });
@@ -208,7 +274,9 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
     blocks.push({ type: "para", key: "confidence", text: fill(S["agreement_" + facts.agreement] || S.agreement_none, { conf: S["conf_" + facts.confidence] }) });
     if (facts.history && !facts.history.too_few) {
       const h = facts.history; const recent = h.recent.map(r => `${r.label}: ${pctPhrase(S, r.pct)}`).join("; ");
-      blocks.push({ type: "history", key: "history", text: fill(S.history, { season: seasonLabel(S, facts.signal.months), n: h.n_events, phase: phaseName, pct: pctPhrase(S, h.composite_pct), wet: Math.round(h.wetter_frac) }),
+      const cs = facts.consistency;
+      const lead = cs && S.history_count ? fill(cs.cls === "mixed" ? S.history_mixed : S.history_count, { k: cs.k, n: cs.n, phase: phaseName, season: seasonLabel(S, facts.signal.months), dir: cs.direction === "wetter" ? S.dir_heavier : S.dir_lighter }) + " " : "";
+      blocks.push({ type: "history", key: "history", text: lead + fill(S.history, { season: seasonLabel(S, facts.signal.months), n: h.n_events, phase: phaseName, pct: pctPhrase(S, h.composite_pct), wet: Math.round(h.wetter_frac) }),
                     recent: fill(S.history_recent, { recent }), source: { id: h.src, url: h.source.url, label: h.source.label } });
     } else if (facts.history && facts.history.too_few) blocks.push({ type: "para", key: "history", text: S.history_few });
   }
@@ -216,6 +284,7 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
   blocks.push({ type: "steps", key: "steps", title: S.steps_title, steps: facts.steps.map(st => ({ id: st.id, icon: st.icon, text: (S.steps && S.steps[st.id]) ? S.steps[st.id].text : st.text, why: (S.steps && S.steps[st.id]) ? S.steps[st.id].why : st.why, minutes: st.minutes })) });
   blocks.push({ type: "defer", key: "defer", text: fill(S.defer, { service: facts.met_service.name }), url: facts.met_service.url });
   blocks.push({ type: "sources", key: "sources", title: S.ui ? S.ui.sources : "Sources", items: facts.sources });
+  if (facts.provenance && facts.provenance.length) blocks.push({ type: "provenance", key: "provenance", items: facts.provenance.map(p => ({ ...p, label: fill(S.prov_chip || "{layer}: {source}, {as_of}", { layer: (S.layers || {})[p.layer] || p.layer, source: p.source, as_of: p.as_of || "" }) })) });
   return blocks;
 }
 export function renderRadio(facts, strings, placeName) {

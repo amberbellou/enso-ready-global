@@ -89,7 +89,10 @@
     "data_note": "Dados: {list}.",
     "near": "perto de {name}",
     "pick_map": "Escolher no mapa",
-    "map_hint": "Toque no seu local no mapa. Amplie para ver vilarejos."
+    "map_hint": "Toque no seu local no mapa. Amplie para ver vilarejos.",
+    "skip": "Ir direto para o conteúdo principal",
+    "dyslexia": "Espaçamento fácil para dislexia",
+    "steps_shortcut_hint": "Vai para o seu primeiro passo."
   },
   "timing_coming_one": "Essa estação começa no mês que vem ({season}).",
   "hazards": {
@@ -2227,6 +2230,18 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.skip": {
+      "hash": "be504f616f",
+      "mt": true
+    },
+    "ui.dyslexia": {
+      "hash": "753cbf0bb7",
+      "mt": true
+    },
+    "ui.steps_shortcut_hint": {
+      "hash": "d53b486c42",
       "mt": true
     }
   }
