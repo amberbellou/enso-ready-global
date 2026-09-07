@@ -8,6 +8,6 @@
   "scripts": {
     "build": "node scripts/build-site.js",
     "ingest:status": "node scripts/ingest-enso-status.js",
-    "test": "node --test tests/"
+    "test": "node --test \"tests/*.test.js\""
   }
 }

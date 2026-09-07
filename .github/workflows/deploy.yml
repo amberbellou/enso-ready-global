@@ -30,7 +30,7 @@ jobs:
           node scripts/ingest-enso-status.js > /tmp/status.log 2>&1 || { cat /tmp/status.log; echo "::warning::status ingest failed; serving last-good enso_status.json"; }
       - name: Run tests
         timeout-minutes: 5
-        run: node --test tests/
+        run: node --test "tests/*.test.js"
       - name: Fetch GeoNames and build gazetteer
         timeout-minutes: 10
         run: |
