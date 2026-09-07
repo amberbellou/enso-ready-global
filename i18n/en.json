@@ -143,5 +143,6 @@
   "forecast_none": "",
   "forecast_partial": "(Forecast covers {n} of {of} months.)",
   "history_few": "Too few past events have data here to give a local average.",
-  "local_seasons": {}
+  "local_seasons": {},
+  "pct_above_cap": "more than {n}% above normal"
 }

@@ -63,6 +63,10 @@ test("forecast blending: agreeing forecast raises confidence, disagreeing lowers
   const months = [{ ym: "2026-10", anomaly: 40, mean: 140 }, { ym: "2026-11", anomaly: 50, mean: 170 }, { ym: "2026-12", anomaly: 20, mean: 80 }];
   const r = forecastPct(months, ["2026-10", "2026-11", "2026-12"]);
   assert.equal(r.pct, Math.round(100 * 110 / 280));
+  const desert = forecastPct([{ ym: "2026-10", anomaly: 60, mean: 66 }], ["2026-10"]);
+  assert.equal(desert, null); // normal 6 mm: no percentage
+  const huge = forecastPct([{ ym: "2026-10", anomaly: 200, mean: 220 }], ["2026-10"]);
+  assert.equal(huge.pct, 300); assert.equal(huge.capped, true);
   assert.deepEqual(seasonYearMonths([10, 11, 12], { startYear: 2026, endYear: 2026 }), ["2026-10", "2026-11", "2026-12"]);
   const base = facts(-1.29, 36.82, "KE");
   const up = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, forecast: { months, source: "test", source_url: "x" } });

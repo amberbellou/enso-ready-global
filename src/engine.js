@@ -93,8 +93,9 @@ export function forecastPct(forecastMonths, wanted) {
   if (!rows.length) return null;
   const anom = rows.reduce((s, r) => s + r.anomaly, 0), mean = rows.reduce((s, r) => s + r.mean, 0);
   const normal = mean - anom;
-  if (normal < 5) return null;
-  return { pct: Math.round(100 * anom / normal), n_months: rows.length, of_months: wanted.length };
+  if (normal < 10) return null;               // no meaningful percentage on a near-zero normal
+  const raw = Math.round(100 * anom / normal);
+  return { pct: Math.max(-100, Math.min(300, raw)), capped: raw > 300, n_months: rows.length, of_months: wanted.length, normal_mm: Math.round(normal), anomaly_mm: Math.round(anom) };
 }
 
 // --- facts payload -----------------------------------------------------
@@ -197,7 +198,8 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
     else if (tm.state === "passed") blocks.push({ type: "para", key: "timing", text: fill(S.timing_passed, { season: Tplain }) });
     if (facts.forecast) {
       const f = facts.forecast;
-      blocks.push({ type: "forecast", key: "forecast", text: fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctPhrase(S, f.pct) }) + " " + (S["forecast_" + facts.forecast_agreement] || ""),
+      const pctText = f.capped ? fill(S.pct_above_cap, { n: 300 }) : pctPhrase(S, f.pct);
+      blocks.push({ type: "forecast", key: "forecast", text: fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctText }) + " " + (S["forecast_" + facts.forecast_agreement] || ""),
                     partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
     }
     blocks.push({ type: "para", key: "expect", text: fill(S.expect, { phase: phaseName, region: facts.region.name, rain: rainText, temp: S["temp_" + facts.signal.temp.replace(/[^a-z]/g, "_")] || facts.signal.temp }) });
