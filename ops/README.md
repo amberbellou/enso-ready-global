@@ -1,6 +1,6 @@
 # Ops
 
-`deploy.yml.pending` is the GitHub Actions workflow (monthly ENSO status refresh + build + Pages deploy).
+The GitHub Actions workflow lives in `.github/workflows/deploy.yml` (monthly ENSO status refresh + build + Pages deploy).
 It could not be pushed because the local `gh` token lacks the `workflow` scope. To enable it once:
 
 ```bash
