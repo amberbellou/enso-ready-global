@@ -38,10 +38,18 @@ export function editDistance(a, b, max = 2) {
   }
   return prev[b.length];
 }
+// Expand a compact shard {p:{id:[name,cc,a1,a2,lat,lon,pop]}, k:[[key,id]]} into entry rows; plain arrays pass through.
+export function expand(shard) {
+  if (Array.isArray(shard)) return shard;
+  const out = [];
+  for (const [k, id] of shard.k || []) { const p = shard.p[id]; if (p) out.push([k, p[0], p[1], p[2], p[3], p[4], p[5], p[6], id]); }
+  return out;
+}
 // Rank entries for a normalized query. Exact prefix first, then fuzzy prefix (distance ≤ 1, or 2 for long queries), then population.
 export function rank(q, rows, limit = 8) {
   const maxD = q.length >= 7 ? 2 : q.length >= 4 ? 1 : 0;
   const scored = new Map();
+  rows = expand(rows);
   for (const r of rows) {
     const k = r[0]; let score = null;
     if (k.startsWith(q)) score = 0;
@@ -57,6 +65,8 @@ export function rank(q, rows, limit = 8) {
   for (const x of ranked) { const cc = x.r[2]; if ((perCc[cc] || 0) >= 3) continue; perCc[cc] = (perCc[cc] || 0) + 1; out.push(x.r); if (out.length >= limit) break; }
   return out;
 }
+// Shard for the "major places" fuzzy index: first character (Latin) or first code point (other scripts).
+export function topShard(q) { return /^[a-z0-9]/.test(q) ? q[0] : shardKey(q, 2); }
 export function label(r, countries) {
   const parts = [r[4], r[3], (countries && countries[r[2]] && countries[r[2]].name) || r[2]].filter(Boolean);
   return [...new Set(parts)].join(" — ");

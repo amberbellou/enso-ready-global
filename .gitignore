@@ -6,3 +6,4 @@ site/
 reference/
 .env
 data/derived/gazetteer.sqlite
+geo-site/

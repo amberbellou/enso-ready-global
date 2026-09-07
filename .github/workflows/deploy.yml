@@ -31,18 +31,19 @@ jobs:
       - name: Run tests
         timeout-minutes: 5
         run: node --test "tests/*.test.js"
-      - name: Cache GeoNames dumps (refreshed monthly)
-        uses: actions/cache@v4
-        with:
-          path: data/raw/geonames
-          key: geonames-${{ github.run_id }}
-          restore-keys: geonames-
-      - name: Fetch GeoNames and build gazetteer (Annex D)
-        timeout-minutes: 40
+      - name: Country list for the no-JS pages (GeoNames countryInfo, CC BY 4.0)
+        timeout-minutes: 5
         run: |
-          mkdir -p data/raw
-          bash scripts/fetch-geonames.sh
-          python3 scripts/build_gazetteer.py
+          mkdir -p data/raw site/geo
+          curl -sSf -o data/raw/countryInfo.txt https://download.geonames.org/export/dump/countryInfo.txt
+          python3 - <<'PY'
+          import json
+          c = {}
+          for line in open("data/raw/countryInfo.txt", encoding="utf-8"):
+              if line.startswith("#") or not line.strip(): continue
+              p = line.split("\t"); c[p[0]] = {"name": p[4], "continent": p[8], "languages": p[15], "capital": p[5]}
+          json.dump(c, open("site/geo/countries.json", "w"), ensure_ascii=False)
+          PY
       - name: Build site
         timeout-minutes: 15
         run: node scripts/build-site.js > /tmp/build.log 2>&1 || { cat /tmp/build.log; exit 1; }

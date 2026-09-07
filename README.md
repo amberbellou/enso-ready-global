@@ -77,7 +77,8 @@ named place → nearest known place ("near Wau") → GPS or map pin → 2° grid
 
 - ~4.7 M populated places from the full GeoNames dump, with alternate names in the 36 launch languages, so a village can be typed in Amharic, Burmese or Arabic script.
 - Results read "Village — District — Province — Country" from GeoNames' own admin tables.
-- Search is client-side over small static shards (2–4 character prefix, script-aware), with typo tolerance inside the shard. No search server, no geocoding API, no logging of what people search.
+- Search is client-side over small static shards (2–9 character prefix, script-aware) plus a small "major places" index that is always fuzzy-checked, so typos in big names resolve. No search server, no geocoding API, no logging of what people search.
+- The index (~850 MB) is hosted on its own Pages site, https://amberbellou.github.io/enso-ready-geo/, refreshed quarterly with `scripts/build_gazetteer.py` then `ops/deploy-geo.sh`. The monthly site build never touches it.
 - `tests/gazetteer.test.js` runs the Annex D.7 acceptance set: 50 villages, 10 scripts, 20 typos, ambiguity, nowhere.
 - Deferred: OSM place enrichment and OCHA COD-AB boundary alignment (quarterly offline job).
 

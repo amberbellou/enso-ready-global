@@ -4,16 +4,18 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { norm, pickShard, rank, nearest, cellIdFor2deg } from "../src/search.js";
+import { norm, pickShard, rank, nearest, cellIdFor2deg, expand, topShard } from "../src/search.js";
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
-const GEO = path.join(ROOT, "site/geo");
+const GEO = path.join(ROOT, "geo-site");
 const built = fs.existsSync(path.join(GEO, "index.json"));
 const idx = built ? new Set(JSON.parse(fs.readFileSync(path.join(GEO, "index.json"), "utf8")).shards) : new Set();
 const cache = {};
 function search(q, limit = 8) {
-  const n = norm(q); const sh = pickShard(n, idx); if (!sh) return [];
-  const rows = cache[sh] ||= JSON.parse(fs.readFileSync(path.join(GEO, sh + ".json"), "utf8"));
-  return rank(n, rows, limit);
+  const n = norm(q); const sh = pickShard(n, idx); if (!sh) return rank(n, fs.existsSync(path.join(GEO, "top", topShard(n) + ".json")) ? JSON.parse(fs.readFileSync(path.join(GEO, "top", topShard(n) + ".json"), "utf8")) : [], limit);
+  const rows = cache[sh] ||= expand(JSON.parse(fs.readFileSync(path.join(GEO, sh + ".json"), "utf8")));
+  const tf = path.join(GEO, "top", topShard(n) + ".json");
+  const major = fs.existsSync(tf) ? (cache["top:" + tf] ||= JSON.parse(fs.readFileSync(tf, "utf8"))) : [];
+  return rank(n, [...rows, ...major], limit);
 }
 const top = (q) => search(q, 3).map(r => `${r[1]} (${r[2]})`);
 // [query, expected country, expected admin1 substring or null]

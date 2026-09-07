@@ -22,7 +22,7 @@ const met = J("data/curated/met_services.json");
 const status = J("data/derived/enso_status.json");
 const oni = J("data/derived/oni.json");
 const strings = J("i18n/en.json");
-const countries = J("site/geo/countries.json");
+const countries = fs.existsSync(path.join(ROOT, "geo-site/countries.json")) ? J("geo-site/countries.json") : J("site/geo/countries.json");
 const buildDate = new Date().toISOString().slice(0, 10);
 
 // --- static assets & data ---
@@ -91,11 +91,13 @@ W("index.html", shell({ title: "ENSO Ready — your El Niño briefing", desc: st
 <script type="module" src="./app.js"></script>` }));
 
 // --- pre-rendered city pages (English) ---
-const cities = fs.readFileSync(path.join(ROOT, "data/raw/cities15000.txt"), "utf8").split("\n").map(l => l.split("\t")).filter(p => p.length > 14 && +p[14] >= 100000);
+// cities >= 100k: from the gazetteer build (data/derived/cities100k.json), else from the legacy cities15000 dump
+let cities;
+if (fs.existsSync(path.join(ROOT, "data/derived/cities100k.json"))) cities = J("data/derived/cities100k.json");
+else cities = fs.readFileSync(path.join(ROOT, "data/raw/cities15000.txt"), "utf8").split("\n").map(l => l.split("\t")).filter(p => p.length > 14 && +p[14] >= 100000).map(p => [p[0], p[1], p[8], p[4], p[5], +p[14]]);
 const byCountry = {};
 let nPages = 0;
-for (const p of cities) {
-  const [id, name, , , lat, lon, , , cc] = p; const pop = +p[14];
+for (const [id, name, cc, lat, lon, pop] of cities) {
   const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, livelihood: "all" });
   const blocks = renderBriefing(facts, strings, { placeName: name });
   const head = blocks.find(b => b.type === "headline").text;

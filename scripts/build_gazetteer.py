@@ -2,7 +2,7 @@
 
 Inputs (data/raw/geonames/): allCountries.txt, alternateNamesV2.txt, admin1CodesASCII.txt, admin2Codes.txt,
                              countryInfo.txt (data/raw/), featureCodes_en.txt
-Outputs (site/geo/):
+Outputs (geo-site/, deployed to https://amberbellou.github.io/enso-ready-geo/ by ops/deploy-geo.sh):
   <shard>.json       search shards. Entry: [key, name, cc, admin1, admin2, lat, lon, pop, id]
                      shard = first 2-4 chars of the normalized key (Latin) or "u<hex>" of the first code point (other scripts).
                      Big shards split to longer prefixes; index.json lists every shard key so the client picks the longest match.
@@ -16,12 +16,12 @@ QA gate: refuses to publish if the place count drops more than 10% versus the pr
 import json, pathlib, re, sqlite3, sys, unicodedata, os, shutil, datetime
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/raw/geonames"
-OUT = ROOT / "site/geo"
+OUT = ROOT / "geo-site"   # deployed separately (quarterly) to the enso-ready-geo Pages site
 LANGS = {"en","es","fr","ar","zh","ru","pt","id","hi","bn","sw","vi","tl","am","my","th","ur","ne","si","ta","km","lo","ja","ko","fa","so","ti","mg","ht","tpi","ha","bm","wo","sm","to","fj","bi","abbr"}
 KEEP_FC = {"PPL","PPLA","PPLA2","PPLA3","PPLA4","PPLA5","PPLC","PPLCH","PPLF","PPLG","PPLL","PPLR","PPLS","STLMT"}
-KEEP_ADM = {"ADM1","ADM2","ADM3"}   # admin areas are searchable too (district names), Annex D.3 step 1
+KEEP_ADM = {"ADM1","ADM2"}   # admin areas are searchable too (district names), Annex D.3 step 1
 MAX_SHARD = 12000        # entries per shard before splitting to a longer prefix
-MAX_DEPTH = 6
+MAX_DEPTH = 9
 ALT_MAX = 20             # alternate names kept per place (40 for places over 50k people)
 NEAR_N = 30              # places kept per grid cell
 
@@ -118,19 +118,36 @@ def main():
     tmp = OUT.parent / "geo.tmp"; shutil.rmtree(tmp, ignore_errors=True); tmp.mkdir(parents=True)
     shards = []
     def write_shard(name, rows):
+        # compact format: places once by id, keys as [key, id]; alternate names cost only a key
         rows.sort(key=lambda r: -r[7])
-        (tmp / f"{name}.json").write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
+        places = {}; keys = []
+        for r in rows:
+            pid = str(r[8])
+            if pid not in places: places[pid] = [r[1], r[2], r[3], r[4], r[5], r[6], r[7]]
+            keys.append([r[0], r[8]])
+        (tmp / f"{name}.json").write_text(json.dumps({"p": places, "k": keys}, ensure_ascii=False, separators=(",", ":")))
         shards.append(name)
     q = """SELECT key.k, p.name, p.cc, p.a1, p.a2, p.lat, p.lon, p.pop, p.id FROM key JOIN place p ON p.id = key.id WHERE key.shard = ?"""
     def split(name, rows, depth):
         if len(rows) <= MAX_SHARD or depth > MAX_DEPTH: write_shard(name, rows); return
         groups = {}
         for r in rows: groups.setdefault(shard_key(r[0], depth) or name, []).append(r)
-        if len(groups) == 1: write_shard(name, rows); return
+        if len(groups) == 1:           # every key shares this prefix (e.g. Thai "บ้าน…"): go deeper under the same name
+            split(list(groups)[0], rows, depth + 1); return
         for g, rs in groups.items(): split(g, rs, depth + 1)
     for (sh,) in db.execute("SELECT DISTINCT shard FROM key WHERE shard IS NOT NULL ORDER BY shard"):
         rows = [[r[0], r[1], r[2], r[3], r[4], round(r[5], 3), round(r[6], 3), r[7], r[8]] for r in db.execute(q, (sh,))]
         split(sh, rows, 3)
+    # --- major places (pop >= 100k) by first character: always fuzzy-checked, so typos in big names resolve ---
+    (tmp / "top").mkdir()
+    top = {}
+    for gid, name, ascii_, cc, a1, a2, lat, lon, pop in db.execute("SELECT id, name, ascii, cc, a1, a2, lat, lon, pop FROM place WHERE pop >= 100000"):
+        for k in {norm(name), norm(ascii_)}:
+            if len(k) < 2: continue
+            top.setdefault(shard_key(k, 1) if re.match(r"[a-z0-9]", k) else shard_key(k, 2), []).append([k, name, cc, a1, a2, round(lat, 3), round(lon, 3), pop, gid])
+    for ch, rows in top.items():
+        rows.sort(key=lambda r: -r[7])
+        (tmp / "top" / f"{ch}.json").write_text(json.dumps(rows, ensure_ascii=False, separators=(",", ":")))
     # --- nearest places per cell ---
     near = {}
     for name, cc, a1, lat, lon, pop in db.execute("SELECT name, cc, a1, lat, lon, pop FROM place ORDER BY pop DESC"):
@@ -141,6 +158,10 @@ def main():
     (tmp / "countries.json").write_text(json.dumps(countries, ensure_ascii=False, separators=(",", ":")))
     (tmp / "index.json").write_text(json.dumps({"shards": sorted(shards), "count": n, "built": datetime.date.today().isoformat(), "max_shard": MAX_SHARD,
         "sources": ["GeoNames (CC BY 4.0) allCountries + alternateNamesV2 + admin codes"]}))
+    # cities >= 100k for pre-rendered pages (replaces the old cities15000 dependency in build-site.js)
+    big = [[gid, name, cc, round(lat, 4), round(lon, 4), pop] for gid, name, cc, lat, lon, pop in
+           db.execute("SELECT id, name, cc, lat, lon, pop FROM place WHERE pop >= 100000 AND fc LIKE 'PPL%' ORDER BY pop DESC")]
+    (ROOT / "data/derived/cities100k.json").write_text(json.dumps(big, ensure_ascii=False, separators=(",", ":")))
     shutil.rmtree(OUT, ignore_errors=True); os.rename(tmp, OUT)
     sizes = sorted((f.stat().st_size for f in OUT.glob("*.json")), reverse=True)
     total = sum(f.stat().st_size for f in OUT.rglob("*.json"))

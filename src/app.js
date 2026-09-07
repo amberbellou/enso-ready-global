@@ -1,13 +1,15 @@
 // ENSO Ready — client. One screen at a time. All state in localStorage. No tracking.
 import { buildFacts, renderBriefing, renderRadio, renderSMS, cellIdFor } from "./engine.js";
-import { norm, pickShard, rank, label, nearest, cellIdFor2deg } from "./search.js";
+import { norm, pickShard, rank, label, nearest, cellIdFor2deg, expand, topShard } from "./search.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const state = { lang: "en", strings: null, place: null, livelihood: "all", stepIdx: 0, done: {}, screen: "home", data: {} };
 const LS = { get(k, d) { try { return JSON.parse(localStorage.getItem("er:" + k)) ?? d; } catch { return d; } }, set(k, v) { try { localStorage.setItem("er:" + k, JSON.stringify(v)); } catch {} } };
 const BASE = document.documentElement.dataset.base || ".";
+// The gazetteer (~850 MB of static shards) lives on its own Pages site, refreshed quarterly (Annex D).
+const GEO = document.documentElement.dataset.geo || "https://amberbellou.github.io/enso-ready-geo";
 
-async function getJSON(p) { const r = await fetch(`${BASE}/${p}`); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }
+async function getJSON(p) { const base = p.startsWith("geo/") ? GEO + "/" + p.slice(4) : `${BASE}/${p}`; const r = await fetch(p.startsWith("geo/") ? base : base); if (!r.ok) throw new Error(p + " " + r.status); return r.json(); }
 function ui(k, vars = {}) { const t = (state.strings.ui || {})[k] || k; return t.replace(/\{(\w+)\}/g, (_, n) => vars[n] ?? ""); }
 function h(tag, attrs = {}, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "onclick") e.addEventListener("click", v); else if (k === "html") e.innerHTML = v; else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null) e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; }
 
@@ -85,8 +87,9 @@ async function search(q, list) {
   const idx = state.data.geoIndex ||= new Set(((await getJSON("geo/index.json").catch(() => ({ shards: [] }))).shards));
   const shard = pickShard(n, idx);
   let rows = []; if (shard) { try { rows = state.data["geo:" + shard] ||= await getJSON(`geo/${shard}.json`); } catch { rows = []; } }
+  let major = []; try { major = state.data["top:" + topShard(n)] ||= await getJSON(`geo/top/${topShard(n)}.json`); } catch { major = []; }
   const countries = state.data.countries ||= await getJSON("geo/countries.json");
-  const hits = rank(n, rows, 8);
+  const hits = rank(n, [...expand(rows), ...major], 8);
   if (!hits.length) { list.append(h("li", { class: "muted" }, ui("no_results"))); return; }
   for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[5], lon: r[6], admin1: r[3] }) }, r[1], h("small", {}, label(r, countries)))));
 }
