@@ -7,3 +7,5 @@ reference/
 .env
 data/derived/gazetteer.sqlite
 geo-site/
+.env*
+!.env.example
