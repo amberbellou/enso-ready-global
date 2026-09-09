@@ -25,6 +25,8 @@ const strings = J("i18n/en.json");
 const bands = J("data/curated/wording_bands.json");
 const conditions = fs.existsSync(path.join(ROOT, "data/derived/conditions.json")) ? J("data/derived/conditions.json") : null;
 const skillData = fs.existsSync(path.join(ROOT, "data/derived/skill.json")) ? J("data/derived/skill.json") : null;
+const cropCals = fs.existsSync(path.join(ROOT, "data/derived/crop_calendars.json")) ? J("data/derived/crop_calendars.json") : null;
+const cyclones = fs.existsSync(path.join(ROOT, "data/derived/cyclones.json")) ? J("data/derived/cyclones.json") : null;
 const countries = fs.existsSync(path.join(ROOT, "geo-site/countries.json")) ? J("geo-site/countries.json") : J("site/geo/countries.json");
 const buildDate = new Date().toISOString().slice(0, 10);
 
@@ -48,11 +50,17 @@ W("data/status.json", JSON.stringify(status));
 W("data/wording_bands.json", JSON.stringify(bands));
 if (conditions) W("data/conditions.json", JSON.stringify(conditions));
 if (skillData) W("data/skill.json", JSON.stringify(skillData));
+if (cropCals) for (const [cc, c] of Object.entries(cropCals.countries)) W(`data/crops/${cc}.json`, JSON.stringify({ ...c, provenance: cropCals.provenance }));
+if (cyclones) W("data/cyclones.json", JSON.stringify(cyclones));
 // provenance registry: every dataset behind any fact, with version + retrieval date (drives /methodology and the chips)
 const registry = [];
 for (const [k, p] of Object.entries(composites.provenance || {})) if (p && typeof p === "object" && p.name) registry.push({ layer: "history", key: k, ...p });
 registry.push({ layer: "status", key: "cpc", name: status.source, version: status.issued, retrieved_at: status.fetched_at ? status.fetched_at.slice(0, 10) : null, url: status.source_url, licence: "US Government public domain" });
 if (conditions) { for (const [k, sec] of Object.entries(conditions)) if (sec && sec.provenance) registry.push({ layer: "conditions", key: k, ...sec.provenance }); }
+if (cropCals) registry.push({ layer: "crops", key: "fao", ...cropCals.provenance });
+if (cyclones) registry.push({ layer: "cyclones", key: "ibtracs", ...cyclones.provenance });
+if (fs.existsSync(path.join(ROOT, "data/derived/population.json"))) registry.push({ layer: "internal", key: "worldpop", ...J("data/derived/population.json").provenance });
+if (fs.existsSync(path.join(ROOT, "data/derived/inform.json"))) registry.push({ layer: "internal", key: "inform", ...J("data/derived/inform.json").provenance });
 registry.push({ layer: "forecast", key: "seas5_openmeteo", name: "ECMWF SEAS5 seasonal forecast via Open-Meteo", version: "latest run, fetched per briefing", retrieved_at: null, url: "https://open-meteo.com/", licence: "CC BY 4.0 (Open-Meteo); ECMWF data" });
 registry.push({ layer: "places", key: "geonames", name: "GeoNames", version: "full dump", retrieved_at: buildDate, url: "https://www.geonames.org/", licence: "CC BY 4.0" });
 registry.push({ layer: "pattern", key: "teleconnections", name: "Curated teleconnection table (cited)", version: buildDate, retrieved_at: buildDate, url: "https://github.com/amberbellou/enso-ready-global/blob/main/data/curated/teleconnections.json", licence: "MIT (this project)" });
@@ -120,7 +128,7 @@ else cities = fs.readFileSync(path.join(ROOT, "data/raw/cities15000.txt"), "utf8
 const byCountry = {};
 let nPages = 0;
 for (const [id, name, cc, lat, lon, pop] of cities) {
-  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, conditions, skill: skillData ? skillData.cells[cellIdForPlace(+lat, +lon)] : null, bands, livelihood: "all" });
+  const facts = buildFacts({ lat: +lat, lon: +lon, cc, status, composites, tele, checklists, met, country: countryOverrides[cc] || null, conditions, skill: skillData ? skillData.cells[cellIdForPlace(+lat, +lon)] : null, bands, cyclones, cropCal: cropCals && cropCals.countries[cc] ? { ...cropCals.countries[cc], provenance: cropCals.provenance } : null, livelihood: "all" });
   const blocks = renderBriefing(facts, strings, { placeName: name });
   const head = blocks.find(b => b.type === "headline").text;
   const paras = blocks.filter(b => b.type === "para");

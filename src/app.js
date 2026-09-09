@@ -99,7 +99,7 @@ async function search(q, list) {
   const countries = state.data.countries ||= await getJSON("geo/countries.json");
   const hits = rank(n, [...expand(rows), ...major], 8);
   if (!hits.length) { list.append(h("li", { class: "muted" }, ui("no_results"))); return; }
-  for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[5], lon: r[6], admin1: r[3] }) }, r[1], h("small", {}, label(r, countries)))));
+  for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[5], lon: r[6], admin1: r[3], pop: r[7] }) }, r[1], h("small", {}, label(r, countries)))));
 }
 // GPS / map pin: name the point after the nearest known place ("near Wau"), else fall back to the grid cell.
 async function nameFromCoords(lat, lon) {
@@ -142,8 +142,11 @@ async function briefingScreen() {
   const bands = state.data.bands ||= await getJSON("data/wording_bands.json").catch(() => null);
   const conditions = state.data.conditions ||= await getJSON("data/conditions.json").catch(() => null);
   const skillAll = state.data.skill ||= await getJSON("data/skill.json").catch(() => null);
+  const cyclones = state.data.cyclones ||= await getJSON("data/cyclones.json").catch(() => null);
+  let cropCal = null; if (p.cc) { try { cropCal = state.data["crops:" + p.cc] ||= await getJSON(`data/crops/${p.cc}.json`); } catch { cropCal = null; } }
+  const rural = Number.isFinite(p.pop) && p.pop > 0 && p.pop < 20000;
   const composites = { grid, cells: cell ? { [cellId]: cell.cell } : {}, events: cell ? cell.events : { "El Niño": [], "La Niña": [] }, sources: cell ? cell.sources : {} };
-  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, country, forecast, conditions, skill: skillAll && skillAll.cells ? skillAll.cells[cellId] : null, bands, livelihood: state.livelihood });
+  const facts = buildFacts({ lat: p.lat, lon: p.lon, cc: p.cc, status: state.data.status, composites, tele, checklists, met, country, forecast, conditions, skill: skillAll && skillAll.cells ? skillAll.cells[cellId] : null, bands, cyclones, cropCal, rural, livelihood: state.livelihood });
   state.forecastFailed = !forecast;
   const blocks = renderBriefing(facts, S, { placeName: p.name });
   LS.set("last", { place: p, blocks, date: new Date().toISOString(), radio: renderRadio(facts, S, p.name), sms: renderSMS(facts, S, p.name) });
@@ -157,7 +160,7 @@ function renderBlocks(blocks, facts, p, extra) {
   main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name}` : ""));
   main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, head.text));
   const paras = blocks.filter(b => b.type === "para");
-  const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral");
+  const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral" || b.key === "farmer");
   if (lead.length) main.append(para(lead.map(b => b.text).join(" ")));   // one chunk: risks + timing
   const fc = blocks.find(b => b.type === "forecast");
   if (fc) main.append(para("📈 " + fc.text + (fc.partial ? " " + fc.partial : ""), " ", h("a", { class: "src", href: fc.source.url, rel: "noopener" }, "[" + fc.source.label + "]")));

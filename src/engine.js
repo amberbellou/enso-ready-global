@@ -123,7 +123,35 @@ export function consistency(h, bands) {
   return { k, n, direction: h.composite_pct >= 0 ? "wetter" : "drier", cls: sameDir >= hc.consistent_min_share ? "consistent" : sameDir <= hc.mixed_max_share ? "mixed" : "leaning" };
 }
 
-export function buildFacts({ lat, lon, cc, status, composites, tele, checklists, met, country = null, forecast = null, conditions = null, skill = null, bands = null, livelihood = "all", now = new Date() }) {
+// --- Tier 1: farmer context (FAO crop calendars) and cyclone history (IBTrACS) ---
+const STAPLE_ORDER = ["maize", "rice", "wheat", "sorghum", "millet", "beans", "cassava", "potato", "groundnut", "soybean"];
+function circularRun(months, anchor) { // contiguous run (wrapping Dec->Jan) of month numbers that contains anchor
+  const set = new Set(months); if (!set.has(anchor)) return null;
+  let a = anchor, b = anchor;
+  while (set.has(((a - 2 + 12) % 12) + 1) && b - a < 11) a = ((a - 2 + 12) % 12) + 1;
+  while (set.has((b % 12) + 1) && ((b % 12) + 1) !== a) b = (b % 12) + 1;
+  const out = []; let m = a; for (let i = 0; i < 12; i++) { out.push(m); if (m === b) break; m = (m % 12) + 1; }
+  return out;
+}
+export function farmerContext(cropCal, seasonMonths, rainSignValue) {
+  if (!cropCal || !cropCal.crops || !seasonMonths.length || !rainSignValue) return null;
+  const entries = Object.entries(cropCal.crops);
+  const ranked = [...entries].sort((x, y) => { const ax = STAPLE_ORDER.indexOf(x[1].staple), ay = STAPLE_ORDER.indexOf(y[1].staple); return (ax < 0 ? 99 : ax) - (ay < 0 ? 99 : ay) || (y[1].zones || 0) - (x[1].zones || 0); });
+  for (const stage of ["sowing", "harvest"]) for (const [name, c] of ranked) {
+    if (c.all_year) continue;
+    const overlap = (c[stage] || []).find(m => seasonMonths.includes(m));
+    if (overlap === undefined) continue;
+    return { crop: c.staple || name.toLowerCase(), stage: stage === "sowing" ? "planting" : "harvest", window: circularRun(c[stage], overlap), direction: rainSignValue > 0 ? "wetter" : "drier" };
+  }
+  return null;
+}
+export function cycloneHistory(cell, lat, lon, meta) {
+  if (!cell || !cell.neutral || cell.neutral[0] < 0.33) return null;   // meaningful climatology only
+  const wnp = lon >= 100 && lon <= 180 && lat >= 0 && lat <= 35;
+  return { en_rate: cell.el_nino[0], neutral_rate: cell.neutral[0], en_years: meta.enso_years.el_nino, neutral_years: meta.enso_years.neutral, wnp, period: meta.period || "1980-2025" };
+}
+
+export function buildFacts({ lat, lon, cc, status, composites, tele, checklists, met, country = null, forecast = null, conditions = null, skill = null, bands = null, cropCal = null, cyclones = null, livelihood = "all", rural = false, now = new Date() }) {
   const cellId = cellIdFor(lat, lon, composites.grid);
   const cell = composites.cells[cellId];
   const regions = regionsFor(lat, lon, tele);
@@ -188,6 +216,8 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
   pick(checklists.always);
 
   const service = (met.services && met.services[cc]) || met.fallback;
+  const farmer = (livelihood === "farmer" || rural) && sig ? farmerContext(cropCal, months, rainSign(sig.rain)) : null;
+  const cyc = cyclones && cyclones.cells ? cycloneHistory(cyclones.cells[cellId], lat, lon, cyclones) : null;
   const localSeason = country && country.season_names && region ? country.season_names[region.id] || null : null;
   const sources = [];
   if (history) sources.push({ id: history.src, ...history.source });
@@ -204,6 +234,8 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
   if (history && P[history.src]) provenance.push({ layer: "history", source: P[history.src].name, as_of: P[history.src].version, retrieved: P[history.src].retrieved_at, url: P[history.src].url });
   if (P.oni) provenance.push({ layer: "events", source: P.oni.name, as_of: P.oni.version, url: P.oni.url });
   if (cond) for (const p of cond.sources) provenance.push({ layer: "conditions", source: p.name, as_of: p.version, retrieved: p.retrieved_at, url: p.url });
+  if (farmer && cropCal && cropCal.provenance) provenance.push({ layer: "crops", source: cropCal.provenance.name, as_of: cropCal.provenance.version, url: cropCal.provenance.url });
+  if (cyc && cyclones.provenance) provenance.push({ layer: "cyclones", source: cyclones.provenance.name, as_of: cyclones.provenance.version, url: cyclones.provenance.url });
   return {
     generated_at: now.toISOString(),
     place: { lat, lon, cc, cell_id: cellId, on_land: cell ? cell.on_land : null },
@@ -213,7 +245,7 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
     signal: sig ? { rain: sig.rain, temp: sig.temp, season: sig.season, local_season: localSeason, months, timing, hazards, note: sig.note,
                     sources: (region.sources || []).map(k => ({ id: k, url: tele._sources[k] })) } : null,
     agreement, confidence, history, consistency: bands ? consistency(history, bands) : null, forecast: fc, forecast_rule: fcRule, skill_class: skillCls, conditions: cond,
-    forecast_agreement: fcAgreement, provenance,
+    forecast_agreement: fcAgreement, provenance, farmer, cyclones: cyc,
     steps: steps.slice(0, 10), met_service: service, other_regions: regions.slice(1, 3).map(r => r.name), sources,
   };
 }
@@ -261,6 +293,16 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
       else text += " " + (S["forecast_" + facts.forecast_agreement] || "");
       if (facts.forecast_rule && S[facts.forecast_rule.template]) text += " " + S[facts.forecast_rule.template];
       blocks.push({ type: "forecast", key: "forecast", text, partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
+    }
+    if (facts.farmer && S.farmer_planting) {
+      const f = facts.farmer; const win = seasonLabel(S, f.window);
+      blocks.push({ type: "para", key: "farmer", text: fill(f.stage === "planting" ? S.farmer_planting : S.farmer_harvest, { dir: f.direction === "wetter" ? S.dir_wetter : S.dir_drier, season: seasonLabel(S, facts.signal.months), crop: (S.crops || {})[f.crop] || f.crop, window: win }) });
+    }
+    if (facts.cyclones && S.cyclone_history) {
+      const c = facts.cyclones;
+      let text = fill(S.cyclone_history, { n_en: c.en_rate.toFixed(1), n_neutral: c.neutral_rate.toFixed(1), years: c.period });
+      if (c.wnp && S.cyclone_wnp) text += " " + S.cyclone_wnp;
+      blocks.push({ type: "para", key: "cyclones", text });
     }
     if (facts.conditions) {
       const c = facts.conditions; const parts = [];

@@ -122,6 +122,20 @@ test("layer 4 conditions render only when data exists for the cell", () => {
   assert.ok(!renderBriefing(without, strings, { placeName: "Nairobi" }).some(x => x.key === "conditions"));
   assert.ok(withC.provenance.some(p => p.layer === "conditions") && withC.provenance.some(p => p.layer === "history" && p.as_of));
 });
+test("Tier 1: farmer sentence only for farmers/rural with a crop overlap; cyclone sentence only with real climatology", () => {
+  const bands = J("data/curated/wording_bands.json");
+  const cc = J("data/derived/crop_calendars.json"); const cy = J("data/derived/cyclones.json");
+  const ke = cc.countries.KE ? { ...cc.countries.KE, provenance: cc.provenance } : null;
+  const base = { lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, bands, cropCal: ke, cyclones: cy };
+  const urban = buildFacts({ ...base, livelihood: "urban" }); assert.equal(urban.farmer, null);
+  const farmer = buildFacts({ ...base, livelihood: "farmer" });
+  if (ke) { assert.ok(farmer.farmer && farmer.farmer.window.length >= 1); const blk = renderBriefing(farmer, strings, { placeName: "Nairobi" }).find(b => b.key === "farmer"); assert.match(blk.text, /overlaps the main .* (planting time|harvest) here/); }
+  assert.equal(farmer.cyclones, null, "Nairobi has no cyclone climatology");
+  const manila = buildFacts({ ...base, lat: 14.6, lon: 121.0, cc: "PH", cropCal: null });
+  assert.ok(manila.cyclones && manila.cyclones.wnp);
+  const mb = renderBriefing(manila, strings, { placeName: "Manila" }).find(b => b.key === "cyclones");
+  assert.match(mb.text, /tropical storms a year passed near here/); assert.match(mb.text, /farther east/);
+});
 test("Unlisted country falls back to WMO directory", () => {
   const f = facts(50.85, 4.35, "BE");
   assert.match(f.met_service.url, /wmo\.int/);

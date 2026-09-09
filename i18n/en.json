@@ -660,7 +660,28 @@
     "status": "Event status",
     "history": "History",
     "events": "Past events",
-    "conditions": "Now"
+    "conditions": "Now",
+    "crops": "Crop calendar",
+    "cyclones": "Cyclones"
   },
-  "forecast_skill_partial": "Seasonal forecasts have been only partly reliable here, so weigh this forecast together with what past events did."
+  "forecast_skill_partial": "Seasonal forecasts have been only partly reliable here, so weigh this forecast together with what past events did.",
+  "dir_wetter": "wetter",
+  "dir_drier": "drier",
+  "farmer_planting": "The {dir}-than-normal season ({season}) overlaps the main {crop} planting time here ({window}).",
+  "farmer_harvest": "The {dir}-than-normal season ({season}) overlaps the main {crop} harvest here ({window}).",
+  "cyclone_history": "In strong El Niño years, about {n_en} tropical storms a year passed near here, compared with {n_neutral} in neutral years ({years}).",
+  "cyclone_wnp": "In El Niño years, typhoons in the western Pacific tend to form farther east and can be stronger.",
+  "crops": {
+    "maize": "maize",
+    "rice": "rice",
+    "wheat": "wheat",
+    "sorghum": "sorghum",
+    "millet": "millet",
+    "beans": "beans",
+    "cassava": "cassava",
+    "potato": "potato",
+    "groundnut": "groundnut",
+    "soybean": "soybean",
+    "barley": "barley"
+  }
 }
