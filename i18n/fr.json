@@ -92,7 +92,11 @@
     "map_hint": "Touchez votre position sur la carte. Zoomez pour voir les villages.",
     "skip": "Aller au contenu principal",
     "dyslexia": "Espacement adapté à la dyslexie",
-    "steps_shortcut_hint": "Vous amène à votre première étape."
+    "steps_shortcut_hint": "Vous amène à votre première étape.",
+    "loading": "Chargement de votre bulletin…",
+    "error_title": "Nous n'avons pas pu charger votre bulletin.",
+    "error_body": "Vérifiez votre connexion et réessayez. Votre dernier bulletin, si vous en aviez un, reste enregistré sur ce téléphone.",
+    "retry": "Réessayer"
   },
   "timing_coming_one": "Cette saison commence le mois prochain ({season}).",
   "hazards": {
@@ -632,12 +636,54 @@
     "déc."
   ],
   "usdm_levels": [
-    "abnormally dry conditions",
-    "moderate drought",
-    "severe drought",
-    "extreme drought",
-    "exceptional drought"
+    "conditions anormalement sèches",
+    "sécheresse modérée",
+    "sécheresse sévère",
+    "sécheresse extrême",
+    "sécheresse exceptionnelle"
   ],
+  "forecast_confident": "Les prévisions saisonnières ont été fiables ici les années passées. On peut donc faire confiance à cette prévision.",
+  "forecast_unreliable": "Les prévisions saisonnières n'ont pas été fiables ici les années passées. Fiez-vous plus à ce qui s'est passé lors des épisodes passés qu'à cette prévision.",
+  "forecast_unchecked": "La fiabilité des prévisions ici n'a pas encore été vérifiée. Tenez compte de cette prévision et aussi de ce qui s'est passé lors des épisodes passés.",
+  "disagreement_trust_forecast": "C'est le contraire de ce qui arrive d'habitude. Les prévisions ici ont été fiables. Faites donc confiance à la prévision cette fois.",
+  "disagreement_trust_history": "C'est le contraire de ce qui arrive d'habitude. Les prévisions ici n'ont pas été fiables. Fiez-vous donc à ce qui s'est passé lors des épisodes passés.",
+  "disagreement_say_both": "C'est le contraire de ce qui arrive d'habitude. Aucun des deux signaux n'est assez sûr pour être suivi seul. Préparez-vous aux deux cas.",
+  "history_count": "Lors de {k} des {n} derniers épisodes {phase} forts, la pluie de {season} ici a été {dir} que la normale.",
+  "history_mixed": "Lors des {n} derniers épisodes {phase} forts, la pluie de {season} ici a varié dans les deux sens.",
+  "dir_heavier": "plus forte",
+  "dir_lighter": "plus faible",
+  "conditions_rain": "Ces trois derniers mois, la pluie ici a été {pct}.",
+  "conditions_usdm": "Le US Drought Monitor montre actuellement {level} ici.",
+  "prov_chip": "{layer} : {source}, {as_of}",
+  "layers": {
+    "forecast": "Prévision",
+    "status": "État de l'épisode",
+    "history": "Historique",
+    "events": "Épisodes passés",
+    "conditions": "Maintenant",
+    "crops": "Calendrier des cultures",
+    "cyclones": "Cyclones"
+  },
+  "forecast_skill_partial": "Les prévisions saisonnières n'ont été qu'en partie fiables ici. Tenez compte de cette prévision et aussi de ce qui s'est passé lors des épisodes passés.",
+  "dir_wetter": "plus humide",
+  "dir_drier": "plus sèche",
+  "farmer_planting": "La saison {dir} que la normale ({season}) tombe pendant la principale période de semis de {crop} ici ({window}).",
+  "farmer_harvest": "La saison {dir} que la normale ({season}) tombe pendant la principale récolte de {crop} ici ({window}).",
+  "cyclone_history": "Lors des années de fort El Niño, environ {n_en} tempêtes tropicales par an sont passées près d'ici, contre {n_neutral} lors des années neutres ({years}).",
+  "cyclone_wnp": "Lors des années El Niño, les typhons du Pacifique ouest se forment souvent plus à l'est et peuvent être plus forts.",
+  "crops": {
+    "maize": "maïs",
+    "rice": "riz",
+    "wheat": "blé",
+    "sorghum": "sorgho",
+    "millet": "mil",
+    "beans": "haricots",
+    "cassava": "manioc",
+    "potato": "pomme de terre",
+    "groundnut": "arachide",
+    "soybean": "soja",
+    "barley": "orge"
+  },
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2249,6 +2295,178 @@
     },
     "ui.steps_shortcut_hint": {
       "hash": "d53b486c42",
+      "mt": true
+    },
+    "ui.loading": {
+      "hash": "566725121d",
+      "mt": true
+    },
+    "ui.error_title": {
+      "hash": "b710d65459",
+      "mt": true
+    },
+    "ui.error_body": {
+      "hash": "ce713328e0",
+      "mt": true
+    },
+    "ui.retry": {
+      "hash": "042c862e44",
+      "mt": true
+    },
+    "forecast_confident": {
+      "hash": "9818d0678c",
+      "mt": true
+    },
+    "forecast_unreliable": {
+      "hash": "eb959a7dd6",
+      "mt": true
+    },
+    "forecast_unchecked": {
+      "hash": "984f46d7f6",
+      "mt": true
+    },
+    "disagreement_trust_forecast": {
+      "hash": "16a2d5bd31",
+      "mt": true
+    },
+    "disagreement_trust_history": {
+      "hash": "b2589d62f2",
+      "mt": true
+    },
+    "disagreement_say_both": {
+      "hash": "48bb424816",
+      "mt": true
+    },
+    "history_count": {
+      "hash": "3f0c7d8372",
+      "mt": true
+    },
+    "history_mixed": {
+      "hash": "cda208d82e",
+      "mt": true
+    },
+    "dir_heavier": {
+      "hash": "794772fb87",
+      "mt": true
+    },
+    "dir_lighter": {
+      "hash": "106fffc7be",
+      "mt": true
+    },
+    "conditions_rain": {
+      "hash": "be765c9b56",
+      "mt": true
+    },
+    "conditions_usdm": {
+      "hash": "152f987489",
+      "mt": true
+    },
+    "prov_chip": {
+      "hash": "d5bc2fd7b7",
+      "mt": true
+    },
+    "layers.forecast": {
+      "hash": "528bc4bc38",
+      "mt": true
+    },
+    "layers.status": {
+      "hash": "ff9610222c",
+      "mt": true
+    },
+    "layers.history": {
+      "hash": "90ccd64974",
+      "mt": true
+    },
+    "layers.events": {
+      "hash": "7684b09448",
+      "mt": true
+    },
+    "layers.conditions": {
+      "hash": "e3b8204056",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "forecast_skill_partial": {
+      "hash": "589accde20",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
+      "mt": true
+    },
+    "usdm_levels": {
+      "hash": "0702fca5e6",
       "mt": true
     }
   }

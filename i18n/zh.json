@@ -92,7 +92,11 @@
     "map_hint": "在地图上点你所在的位置。放大地图可以看到村庄。",
     "skip": "跳到主要内容",
     "dyslexia": "阅读障碍友好的字距",
-    "steps_shortcut_hint": "跳到你的第一步。"
+    "steps_shortcut_hint": "跳到你的第一步。",
+    "loading": "正在获取你的简报…",
+    "error_title": "我们无法加载你的简报。",
+    "error_body": "请检查网络连接，然后再试一次。如果你之前有简报，它会保存在这部手机上。",
+    "retry": "再试一次"
   },
   "timing_coming_one": "那个季节下个月开始（{season}）。",
   "hazards": {
@@ -630,6 +634,55 @@
     "10月",
     "11月",
     "12月"
+  ],
+  "forecast_confident": "过去几年，这里的季节预报一直比较准，所以可以相信这次预报。",
+  "forecast_unreliable": "过去几年，这里的季节预报并不准。比起这次预报，更应该参考以往事件出现的情况。",
+  "forecast_unchecked": "这里的预报准不准还没有检验过，所以请把这次预报和以往事件出现的情况放在一起考虑。",
+  "disagreement_trust_forecast": "这和以往通常的情况相反。这里的预报一直比较准，所以这次请相信预报。",
+  "disagreement_trust_history": "这和以往通常的情况相反。这里的预报一直不准，所以请相信以往事件出现的情况。",
+  "disagreement_say_both": "这和以往通常的情况相反。两个信号都不够强，不能只靠其中一个，所以两种情况都要做准备。",
+  "history_count": "有 {k} 次（在最近 {n} 次强{phase}事件中），这里{season}的雨量比平常{dir}。",
+  "history_mixed": "在最近 {n} 次强{phase}事件中，这里{season}的雨量有时多、有时少。",
+  "dir_heavier": "多",
+  "dir_lighter": "少",
+  "conditions_rain": "过去三个月，这里的雨量{pct}。",
+  "conditions_usdm": "美国干旱监测目前显示，这里是{level}。",
+  "prov_chip": "{layer}：{source}，{as_of}",
+  "layers": {
+    "forecast": "预报",
+    "status": "事件状态",
+    "history": "历史情况",
+    "events": "以往事件",
+    "conditions": "现在",
+    "crops": "农事日历",
+    "cyclones": "热带气旋"
+  },
+  "forecast_skill_partial": "这里的季节预报只有一部分是准的，所以请把这次预报和以往事件出现的情况放在一起考虑。",
+  "dir_wetter": "雨多",
+  "dir_drier": "雨少",
+  "farmer_planting": "比平常{dir}的这个季节（{season}），和这里{crop}的主要播种时间（{window}）重合。",
+  "farmer_harvest": "比平常{dir}的这个季节（{season}），和这里{crop}的主要收获时间（{window}）重合。",
+  "cyclone_history": "在强 El Niño 年份，这里附近每年大约有 {n_en} 个热带风暴经过；在中性年份大约是 {n_neutral} 个（{years}）。",
+  "cyclone_wnp": "在 El Niño 年份，西太平洋的台风往往在更偏东的地方生成，强度也可能更强。",
+  "crops": {
+    "maize": "玉米",
+    "rice": "水稻",
+    "wheat": "小麦",
+    "sorghum": "高粱",
+    "millet": "小米",
+    "beans": "豆子",
+    "cassava": "木薯",
+    "potato": "马铃薯",
+    "groundnut": "花生",
+    "soybean": "大豆",
+    "barley": "大麦"
+  },
+  "usdm_levels": [
+    "异常干燥",
+    "中度干旱",
+    "严重干旱",
+    "极度干旱",
+    "特大干旱"
   ],
   "_meta": {
     "all_year": {
@@ -2242,6 +2295,178 @@
     },
     "ui.steps_shortcut_hint": {
       "hash": "d53b486c42",
+      "mt": true
+    },
+    "ui.loading": {
+      "hash": "566725121d",
+      "mt": true
+    },
+    "ui.error_title": {
+      "hash": "b710d65459",
+      "mt": true
+    },
+    "ui.error_body": {
+      "hash": "ce713328e0",
+      "mt": true
+    },
+    "ui.retry": {
+      "hash": "042c862e44",
+      "mt": true
+    },
+    "forecast_confident": {
+      "hash": "9818d0678c",
+      "mt": true
+    },
+    "forecast_unreliable": {
+      "hash": "eb959a7dd6",
+      "mt": true
+    },
+    "forecast_unchecked": {
+      "hash": "984f46d7f6",
+      "mt": true
+    },
+    "disagreement_trust_forecast": {
+      "hash": "16a2d5bd31",
+      "mt": true
+    },
+    "disagreement_trust_history": {
+      "hash": "b2589d62f2",
+      "mt": true
+    },
+    "disagreement_say_both": {
+      "hash": "48bb424816",
+      "mt": true
+    },
+    "history_count": {
+      "hash": "3f0c7d8372",
+      "mt": true
+    },
+    "history_mixed": {
+      "hash": "cda208d82e",
+      "mt": true
+    },
+    "dir_heavier": {
+      "hash": "794772fb87",
+      "mt": true
+    },
+    "dir_lighter": {
+      "hash": "106fffc7be",
+      "mt": true
+    },
+    "conditions_rain": {
+      "hash": "be765c9b56",
+      "mt": true
+    },
+    "conditions_usdm": {
+      "hash": "152f987489",
+      "mt": true
+    },
+    "prov_chip": {
+      "hash": "d5bc2fd7b7",
+      "mt": true
+    },
+    "layers.forecast": {
+      "hash": "528bc4bc38",
+      "mt": true
+    },
+    "layers.status": {
+      "hash": "ff9610222c",
+      "mt": true
+    },
+    "layers.history": {
+      "hash": "90ccd64974",
+      "mt": true
+    },
+    "layers.events": {
+      "hash": "7684b09448",
+      "mt": true
+    },
+    "layers.conditions": {
+      "hash": "e3b8204056",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "forecast_skill_partial": {
+      "hash": "589accde20",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
+      "mt": true
+    },
+    "usdm_levels": {
+      "hash": "0702fca5e6",
       "mt": true
     }
   }

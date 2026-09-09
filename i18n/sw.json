@@ -92,7 +92,11 @@
     "map_hint": "Gusa mahali ulipo kwenye ramani. Kuza ili kuona vijiji.",
     "skip": "Rukia hadi maudhui makuu",
     "dyslexia": "Nafasi zinazorahisisha kusoma",
-    "steps_shortcut_hint": "Inakupeleka kwenye hatua yako ya kwanza."
+    "steps_shortcut_hint": "Inakupeleka kwenye hatua yako ya kwanza.",
+    "loading": "Tunaleta muhtasari wako…",
+    "error_title": "Hatukuweza kuleta muhtasari wako.",
+    "error_body": "Angalia mtandao wako, kisha jaribu tena. Muhtasari wako wa mwisho, kama ulikuwa nao, umehifadhiwa kwenye simu hii.",
+    "retry": "Jaribu tena"
   },
   "timing_coming_one": "Msimu huo unaanza mwezi ujao ({season}).",
   "hazards": {
@@ -632,12 +636,54 @@
     "Des"
   ],
   "usdm_levels": [
-    "abnormally dry conditions",
-    "moderate drought",
-    "severe drought",
-    "extreme drought",
-    "exceptional drought"
+    "ukavu usio wa kawaida",
+    "ukame wa wastani",
+    "ukame mkali",
+    "ukame mkali zaidi",
+    "ukame wa kipekee"
   ],
+  "forecast_confident": "Utabiri wa msimu umekuwa wa kuaminika hapa miaka iliyopita. Kwa hiyo utabiri huu unaweza kuaminiwa.",
+  "forecast_unreliable": "Utabiri wa msimu haukuwa wa kuaminika hapa miaka iliyopita. Amini mtindo wa matukio ya zamani kuliko utabiri huu.",
+  "forecast_unchecked": "Uaminifu wa utabiri hapa haujaangaliwa bado. Kwa hiyo pima utabiri huu pamoja na yaliyotokea katika matukio ya zamani.",
+  "disagreement_trust_forecast": "Hiyo ni kinyume cha mtindo wa kawaida. Utabiri hapa umekuwa wa kuaminika, kwa hiyo amini utabiri mara hii.",
+  "disagreement_trust_history": "Hiyo ni kinyume cha mtindo wa kawaida. Utabiri hapa haukuwa wa kuaminika, kwa hiyo amini mtindo wa matukio ya zamani.",
+  "disagreement_say_both": "Hiyo ni kinyume cha mtindo wa kawaida. Hakuna ishara yenye nguvu ya kutosha kutegemewa peke yake, kwa hiyo jiandae kwa hali zote mbili.",
+  "history_count": "Katika matukio {k} ya {n} ya mwisho ya {phase} yenye nguvu, mvua ya {season} hapa ilikuwa {dir} kuliko kawaida.",
+  "history_mixed": "Katika matukio {n} ya mwisho ya {phase} yenye nguvu, mvua ya {season} hapa ilikuwa nyingi mara nyingine na kidogo mara nyingine.",
+  "dir_heavier": "nyingi",
+  "dir_lighter": "kidogo",
+  "conditions_rain": "Katika miezi mitatu iliyopita, mvua hapa ilikuwa {pct}.",
+  "conditions_usdm": "Kwa sasa, US Drought Monitor inaonyesha {level} hapa.",
+  "prov_chip": "{layer}: {source}, {as_of}",
+  "layers": {
+    "forecast": "Utabiri",
+    "status": "Hali ya tukio",
+    "history": "Historia",
+    "events": "Matukio ya zamani",
+    "conditions": "Sasa",
+    "crops": "Kalenda ya mazao",
+    "cyclones": "Vimbunga"
+  },
+  "forecast_skill_partial": "Utabiri wa msimu umekuwa wa kuaminika kwa kiasi tu hapa. Kwa hiyo pima utabiri huu pamoja na yaliyotokea katika matukio ya zamani.",
+  "dir_wetter": "mvua nyingi",
+  "dir_drier": "mvua kidogo",
+  "farmer_planting": "Msimu wa {dir} kuliko kawaida ({season}) unaingiliana na wakati mkuu wa kupanda {crop} hapa ({window}).",
+  "farmer_harvest": "Msimu wa {dir} kuliko kawaida ({season}) unaingiliana na wakati mkuu wa kuvuna {crop} hapa ({window}).",
+  "cyclone_history": "Katika miaka ya El Niño yenye nguvu, dhoruba za tropiki wapatao {n_en} kwa mwaka zilipita karibu na hapa, kulinganisha na {n_neutral} katika miaka ya kawaida ({years}).",
+  "cyclone_wnp": "Katika miaka ya El Niño, vimbunga vya Pasifiki ya magharibi huwa vinatokea mashariki zaidi na vinaweza kuwa na nguvu zaidi.",
+  "crops": {
+    "maize": "mahindi",
+    "rice": "mpunga",
+    "wheat": "ngano",
+    "sorghum": "mtama",
+    "millet": "uwele",
+    "beans": "maharagwe",
+    "cassava": "muhogo",
+    "potato": "viazi",
+    "groundnut": "karanga",
+    "soybean": "soya",
+    "barley": "shayiri"
+  },
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2249,6 +2295,178 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.loading": {
+      "hash": "566725121d",
+      "mt": true
+    },
+    "ui.error_title": {
+      "hash": "b710d65459",
+      "mt": true
+    },
+    "ui.error_body": {
+      "hash": "ce713328e0",
+      "mt": true
+    },
+    "ui.retry": {
+      "hash": "042c862e44",
+      "mt": true
+    },
+    "forecast_confident": {
+      "hash": "9818d0678c",
+      "mt": true
+    },
+    "forecast_unreliable": {
+      "hash": "eb959a7dd6",
+      "mt": true
+    },
+    "forecast_unchecked": {
+      "hash": "984f46d7f6",
+      "mt": true
+    },
+    "disagreement_trust_forecast": {
+      "hash": "16a2d5bd31",
+      "mt": true
+    },
+    "disagreement_trust_history": {
+      "hash": "b2589d62f2",
+      "mt": true
+    },
+    "disagreement_say_both": {
+      "hash": "48bb424816",
+      "mt": true
+    },
+    "history_count": {
+      "hash": "3f0c7d8372",
+      "mt": true
+    },
+    "history_mixed": {
+      "hash": "cda208d82e",
+      "mt": true
+    },
+    "dir_heavier": {
+      "hash": "794772fb87",
+      "mt": true
+    },
+    "dir_lighter": {
+      "hash": "106fffc7be",
+      "mt": true
+    },
+    "conditions_rain": {
+      "hash": "be765c9b56",
+      "mt": true
+    },
+    "conditions_usdm": {
+      "hash": "152f987489",
+      "mt": true
+    },
+    "prov_chip": {
+      "hash": "d5bc2fd7b7",
+      "mt": true
+    },
+    "layers.forecast": {
+      "hash": "528bc4bc38",
+      "mt": true
+    },
+    "layers.status": {
+      "hash": "ff9610222c",
+      "mt": true
+    },
+    "layers.history": {
+      "hash": "90ccd64974",
+      "mt": true
+    },
+    "layers.events": {
+      "hash": "7684b09448",
+      "mt": true
+    },
+    "layers.conditions": {
+      "hash": "e3b8204056",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "forecast_skill_partial": {
+      "hash": "589accde20",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
+      "mt": true
+    },
+    "usdm_levels": {
+      "hash": "0702fca5e6",
       "mt": true
     }
   }

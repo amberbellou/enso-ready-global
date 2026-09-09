@@ -639,7 +639,9 @@
     "status": "ဖြစ်ပေါ်မှု အခြေအနေ",
     "history": "မှတ်တမ်း",
     "events": "အတိတ်က ဖြစ်ရပ်များ",
-    "conditions": "ယခု"
+    "conditions": "ယခု",
+    "crops": "သီးနှံ ပြက္ခဒိန်",
+    "cyclones": "ဆိုင်ကလုန်းမုန်တိုင်းများ"
   },
   "forecast_skill_partial": "ဒီနေရာအတွက် ရာသီအလိုက် ခန့်မှန်းချက်များသည် တစ်စိတ်တစ်ပိုင်းသာ အားထားလို့ရခဲ့သည်။ ဒါကြောင့် ဒီခန့်မှန်းချက်ကို အတိတ်က ဖြစ်ရပ်များ၏ အခြေအနေနှင့် တွဲဖက်၍ စဉ်းစားပါ။",
   "months": [
@@ -663,6 +665,25 @@
     "အလွန်ပြင်းထန် မိုးခေါင်မှု",
     "အထူးပြင်းထန် မိုးခေါင်မှု"
   ],
+  "dir_wetter": "ပိုစိုစွတ်သော",
+  "dir_drier": "ပိုခြောက်သွေ့သော",
+  "farmer_planting": "ပုံမှန်ထက် {dir} ရာသီ ({season}) သည် ဒီနေရာ၏ အဓိက {crop} စိုက်ချိန် ({window}) နှင့် တိုက်ဆိုင်နေပါသည်။",
+  "farmer_harvest": "ပုံမှန်ထက် {dir} ရာသီ ({season}) သည် ဒီနေရာ၏ အဓိက {crop} ရိတ်သိမ်းချိန် ({window}) နှင့် တိုက်ဆိုင်နေပါသည်။",
+  "cyclone_history": "အားကောင်းသော El Niño နှစ်များတွင် တစ်နှစ်လျှင် အပူပိုင်းမုန်တိုင်း {n_en} လုံးခန့် ဒီနေရာအနီးကို ဖြတ်သွားခဲ့ပါသည်။ ပုံမှန်နှစ်များတွင် {n_neutral} လုံး ဖြစ်ပါသည် ({years})။",
+  "cyclone_wnp": "El Niño နှစ်များတွင် အနောက်ပစိဖိတ်ရှိ တိုင်ဖွန်းမုန်တိုင်းများသည် ပိုအရှေ့ဘက်တွင် ဖြစ်ပေါ်လေ့ရှိပြီး ပိုအားကောင်းနိုင်ပါသည်။",
+  "crops": {
+    "maize": "ပြောင်း",
+    "rice": "စပါး",
+    "wheat": "ဂျုံ",
+    "sorghum": "စပါးလင်",
+    "millet": "ဆပ်စပါး",
+    "beans": "ပဲ",
+    "cassava": "ပိန်းဥ",
+    "potato": "အာလူး",
+    "groundnut": "မြေပဲ",
+    "soybean": "ပဲပိစပ်",
+    "barley": "မုယော"
+  },
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2370,6 +2391,82 @@
     },
     "usdm_levels": {
       "hash": "0702fca5e6",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
       "mt": true
     }
   }

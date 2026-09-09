@@ -92,7 +92,11 @@
     "map_hint": "Ketuk lokasi Anda di peta. Perbesar peta untuk melihat desa.",
     "skip": "Lewati ke isi utama",
     "dyslexia": "Jarak tulisan yang ramah disleksia",
-    "steps_shortcut_hint": "Langsung menuju langkah pertama Anda."
+    "steps_shortcut_hint": "Langsung menuju langkah pertama Anda.",
+    "loading": "Sedang mengambil ringkasan Anda…",
+    "error_title": "Kami tidak bisa memuat ringkasan Anda.",
+    "error_body": "Periksa koneksi Anda, lalu coba lagi. Ringkasan terakhir Anda, jika ada, tersimpan di ponsel ini.",
+    "retry": "Coba lagi"
   },
   "timing_coming_one": "Musim itu mulai bulan depan ({season}).",
   "hazards": {
@@ -632,12 +636,54 @@
     "Des"
   ],
   "usdm_levels": [
-    "abnormally dry conditions",
-    "moderate drought",
-    "severe drought",
-    "extreme drought",
-    "exceptional drought"
+    "kondisi lebih kering dari biasanya",
+    "kekeringan sedang",
+    "kekeringan parah",
+    "kekeringan ekstrem",
+    "kekeringan luar biasa"
   ],
+  "forecast_confident": "Prakiraan musim di sini sudah terbukti tepat pada tahun-tahun lalu, jadi prakiraan ini bisa dipercaya.",
+  "forecast_unreliable": "Prakiraan musim di sini kurang tepat pada tahun-tahun lalu. Lebih percayai pola kejadian masa lalu daripada prakiraan ini.",
+  "forecast_unchecked": "Ketepatan prakiraan di sini belum diperiksa, jadi timbang prakiraan ini bersama dengan apa yang terjadi pada kejadian masa lalu.",
+  "disagreement_trust_forecast": "Itu kebalikan dari pola yang biasa. Prakiraan di sini sudah terbukti tepat, jadi percayai prakiraan kali ini.",
+  "disagreement_trust_history": "Itu kebalikan dari pola yang biasa. Prakiraan di sini kurang tepat, jadi percayai pola kejadian masa lalu.",
+  "disagreement_say_both": "Itu kebalikan dari pola yang biasa. Tidak ada tanda yang cukup kuat untuk dipakai sendiri, jadi bersiaplah untuk keduanya.",
+  "history_count": "Pada {k} dari {n} kejadian {phase} kuat terakhir, hujan {season} di sini {dir} daripada biasanya.",
+  "history_mixed": "Pada {n} kejadian {phase} kuat terakhir, hujan {season} di sini pernah lebih banyak dan pernah lebih sedikit.",
+  "dir_heavier": "lebih deras",
+  "dir_lighter": "lebih sedikit",
+  "conditions_rain": "Selama tiga bulan terakhir, hujan di sini {pct}.",
+  "conditions_usdm": "US Drought Monitor saat ini menunjukkan {level} di sini.",
+  "prov_chip": "{layer}: {source}, {as_of}",
+  "layers": {
+    "forecast": "Prakiraan",
+    "status": "Status kejadian",
+    "history": "Riwayat",
+    "events": "Kejadian masa lalu",
+    "conditions": "Sekarang",
+    "crops": "Kalender tanam",
+    "cyclones": "Siklon"
+  },
+  "forecast_skill_partial": "Prakiraan musim di sini hanya sebagian tepat, jadi timbang prakiraan ini bersama dengan apa yang terjadi pada kejadian masa lalu.",
+  "dir_wetter": "lebih basah",
+  "dir_drier": "lebih kering",
+  "farmer_planting": "Musim yang {dir} daripada biasanya ({season}) bertepatan dengan waktu tanam utama {crop} di sini ({window}).",
+  "farmer_harvest": "Musim yang {dir} daripada biasanya ({season}) bertepatan dengan waktu panen utama {crop} di sini ({window}).",
+  "cyclone_history": "Pada tahun-tahun El Niño kuat, sekitar {n_en} badai tropis per tahun lewat di dekat sini, dibandingkan {n_neutral} pada tahun netral ({years}).",
+  "cyclone_wnp": "Pada tahun El Niño, topan di Pasifik barat cenderung terbentuk lebih ke timur dan bisa lebih kuat.",
+  "crops": {
+    "maize": "jagung",
+    "rice": "padi",
+    "wheat": "gandum",
+    "sorghum": "sorgum",
+    "millet": "milet",
+    "beans": "kacang",
+    "cassava": "singkong",
+    "potato": "kentang",
+    "groundnut": "kacang tanah",
+    "soybean": "kedelai",
+    "barley": "jelai"
+  },
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2249,6 +2295,178 @@
     },
     "ui.steps_shortcut_hint": {
       "hash": "d53b486c42",
+      "mt": true
+    },
+    "ui.loading": {
+      "hash": "566725121d",
+      "mt": true
+    },
+    "ui.error_title": {
+      "hash": "b710d65459",
+      "mt": true
+    },
+    "ui.error_body": {
+      "hash": "ce713328e0",
+      "mt": true
+    },
+    "ui.retry": {
+      "hash": "042c862e44",
+      "mt": true
+    },
+    "forecast_confident": {
+      "hash": "9818d0678c",
+      "mt": true
+    },
+    "forecast_unreliable": {
+      "hash": "eb959a7dd6",
+      "mt": true
+    },
+    "forecast_unchecked": {
+      "hash": "984f46d7f6",
+      "mt": true
+    },
+    "disagreement_trust_forecast": {
+      "hash": "16a2d5bd31",
+      "mt": true
+    },
+    "disagreement_trust_history": {
+      "hash": "b2589d62f2",
+      "mt": true
+    },
+    "disagreement_say_both": {
+      "hash": "48bb424816",
+      "mt": true
+    },
+    "history_count": {
+      "hash": "3f0c7d8372",
+      "mt": true
+    },
+    "history_mixed": {
+      "hash": "cda208d82e",
+      "mt": true
+    },
+    "dir_heavier": {
+      "hash": "794772fb87",
+      "mt": true
+    },
+    "dir_lighter": {
+      "hash": "106fffc7be",
+      "mt": true
+    },
+    "conditions_rain": {
+      "hash": "be765c9b56",
+      "mt": true
+    },
+    "conditions_usdm": {
+      "hash": "152f987489",
+      "mt": true
+    },
+    "prov_chip": {
+      "hash": "d5bc2fd7b7",
+      "mt": true
+    },
+    "layers.forecast": {
+      "hash": "528bc4bc38",
+      "mt": true
+    },
+    "layers.status": {
+      "hash": "ff9610222c",
+      "mt": true
+    },
+    "layers.history": {
+      "hash": "90ccd64974",
+      "mt": true
+    },
+    "layers.events": {
+      "hash": "7684b09448",
+      "mt": true
+    },
+    "layers.conditions": {
+      "hash": "e3b8204056",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "forecast_skill_partial": {
+      "hash": "589accde20",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
+      "mt": true
+    },
+    "usdm_levels": {
+      "hash": "0702fca5e6",
       "mt": true
     }
   }

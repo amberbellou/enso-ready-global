@@ -92,7 +92,11 @@
     "map_hint": "በካርታው ላይ ያሉበትን ቦታ ይንኩ። መንደሮችን ለማየት አጉሉ።",
     "skip": "ወደ ዋናው ይዘት ዝለል",
     "dyslexia": "ለንባብ ችግር የሚስማማ ክፍተት",
-    "steps_shortcut_hint": "ወደ መጀመሪያው ደረጃዎ ይወስዳል።"
+    "steps_shortcut_hint": "ወደ መጀመሪያው ደረጃዎ ይወስዳል።",
+    "loading": "መረጃዎን በማምጣት ላይ…",
+    "error_title": "መረጃዎን ማምጣት አልቻልንም።",
+    "error_body": "ግንኙነትዎን ያረጋግጡ እና እንደገና ይሞክሩ። ከዚህ በፊት መረጃ ካገኙ፣ የመጨረሻው መረጃ በዚህ ስልክ ውስጥ ተቀምጧል።",
+    "retry": "እንደገና ይሞክሩ"
   },
   "timing_coming_one": "ያ ወቅት በሚቀጥለው ወር ይጀምራል ({season})።",
   "hazards": {
@@ -632,12 +636,54 @@
     "ዲሴ"
   ],
   "usdm_levels": [
-    "abnormally dry conditions",
-    "moderate drought",
-    "severe drought",
-    "extreme drought",
-    "exceptional drought"
+    "ከመደበኛው በላይ ደረቅ ሁኔታ",
+    "መካከለኛ ድርቅ",
+    "ከባድ ድርቅ",
+    "በጣም ከባድ ድርቅ",
+    "እጅግ በጣም ከባድ ድርቅ"
   ],
+  "forecast_confident": "የወቅት ትንበያዎች በዚህ አካባቢ ባለፉት ዓመታት ትክክል ሆነው ተገኝተዋል። ስለዚህ በዚህ ትንበያ መተማመን ይቻላል።",
+  "forecast_unreliable": "የወቅት ትንበያዎች በዚህ አካባቢ ባለፉት ዓመታት ትክክል አልነበሩም። ከዚህ ትንበያ ይልቅ ያለፉት ክስተቶች ያሳዩትን አካሄድ ይበልጥ ይመኑ።",
+  "forecast_unchecked": "በዚህ አካባቢ የትንበያዎች ትክክለኛነት እስካሁን አልተመረመረም። ስለዚህ ይህን ትንበያ ካለፉት ክስተቶች አካሄድ ጋር አጣምረው ያስቡ።",
+  "disagreement_trust_forecast": "ይህ ከተለመደው አካሄድ ተቃራኒ ነው። በዚህ አካባቢ ትንበያዎች ትክክል ሆነው ተገኝተዋል። ስለዚህ በዚህ ጊዜ ትንበያውን ይመኑ።",
+  "disagreement_trust_history": "ይህ ከተለመደው አካሄድ ተቃራኒ ነው። በዚህ አካባቢ ትንበያዎች ትክክል አልነበሩም። ስለዚህ ያለፉት ክስተቶች አካሄድ ይመኑ።",
+  "disagreement_say_both": "ይህ ከተለመደው አካሄድ ተቃራኒ ነው። ሁለቱም ምልክቶች ብቻቸውን ለመመካት የሚያበቁ አይደሉም። ስለዚህ ለሁለቱም ይዘጋጁ።",
+  "history_count": "ካለፉት {n} ኃይለኛ {phase} ክስተቶች መካከል በ{k} ጊዜ በዚህ አካባቢ የ{season} ዝናብ ከመደበኛው {dir} ነበር።",
+  "history_mixed": "ካለፉት {n} ኃይለኛ {phase} ክስተቶች ወቅት በዚህ አካባቢ የ{season} ዝናብ አንዳንድ ጊዜ ጨምሯል፣ አንዳንድ ጊዜ ቀንሷል።",
+  "dir_heavier": "የበዛ",
+  "dir_lighter": "ያነሰ",
+  "conditions_rain": "ባለፉት ሦስት ወራት በዚህ አካባቢ የነበረው ዝናብ {pct} ነው።",
+  "conditions_usdm": "የአሜሪካ የድርቅ መከታተያ (US Drought Monitor) አሁን በዚህ አካባቢ {level} እንዳለ ያሳያል።",
+  "prov_chip": "{layer}: {source}, {as_of}",
+  "layers": {
+    "forecast": "ትንበያ",
+    "status": "የክስተት ሁኔታ",
+    "history": "ታሪክ",
+    "events": "ያለፉ ክስተቶች",
+    "conditions": "አሁን",
+    "crops": "የሰብል የጊዜ ሰንጠረዥ",
+    "cyclones": "አውሎ ነፋሶች"
+  },
+  "forecast_skill_partial": "የወቅት ትንበያዎች በዚህ አካባቢ በተወሰነ መጠን ብቻ ትክክል ሆነው ተገኝተዋል። ስለዚህ ይህን ትንበያ ካለፉት ክስተቶች አካሄድ ጋር አጣምረው ያስቡ።",
+  "dir_wetter": "እርጥብ",
+  "dir_drier": "ደረቅ",
+  "farmer_planting": "ከመደበኛው {dir} የሆነው ወቅት ({season}) በዚህ አካባቢ ካለው ዋና የ{crop} ተከላ ጊዜ ({window}) ጋር ይገጣጠማል።",
+  "farmer_harvest": "ከመደበኛው {dir} የሆነው ወቅት ({season}) በዚህ አካባቢ ካለው ዋና የ{crop} ምርት መሰብሰብ ጊዜ ({window}) ጋር ይገጣጠማል።",
+  "cyclone_history": "ኃይለኛ ኤልኒኖ በነበረባቸው ዓመታት በዓመት በግምት {n_en} ሞቃታማ ማዕበሎች በዚህ አካባቢ አልፈዋል፤ መደበኛ (ኒውትራል) ዓመታት ላይ ግን {n_neutral} ነበሩ ({years})።",
+  "cyclone_wnp": "ኤልኒኖ በሚኖርባቸው ዓመታት በምዕራብ ፓስፊክ የሚፈጠሩ ታይፎኖች ወደ ምስራቅ ራቅ ብለው የመፈጠር ዝንባሌ አላቸው፤ ይበልጥ ኃይለኛ ሊሆኑም ይችላሉ።",
+  "crops": {
+    "maize": "በቆሎ",
+    "rice": "ሩዝ",
+    "wheat": "ስንዴ",
+    "sorghum": "ማሽላ",
+    "millet": "ዳጉሳ",
+    "beans": "ባቄላ",
+    "cassava": "ካሳቫ",
+    "potato": "ድንች",
+    "groundnut": "ኦቾሎኒ",
+    "soybean": "አኩሪ አተር",
+    "barley": "ገብስ"
+  },
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2249,6 +2295,178 @@
     },
     "months": {
       "hash": "5c7855da89",
+      "mt": true
+    },
+    "ui.loading": {
+      "hash": "566725121d",
+      "mt": true
+    },
+    "ui.error_title": {
+      "hash": "b710d65459",
+      "mt": true
+    },
+    "ui.error_body": {
+      "hash": "ce713328e0",
+      "mt": true
+    },
+    "ui.retry": {
+      "hash": "042c862e44",
+      "mt": true
+    },
+    "forecast_confident": {
+      "hash": "9818d0678c",
+      "mt": true
+    },
+    "forecast_unreliable": {
+      "hash": "eb959a7dd6",
+      "mt": true
+    },
+    "forecast_unchecked": {
+      "hash": "984f46d7f6",
+      "mt": true
+    },
+    "disagreement_trust_forecast": {
+      "hash": "16a2d5bd31",
+      "mt": true
+    },
+    "disagreement_trust_history": {
+      "hash": "b2589d62f2",
+      "mt": true
+    },
+    "disagreement_say_both": {
+      "hash": "48bb424816",
+      "mt": true
+    },
+    "history_count": {
+      "hash": "3f0c7d8372",
+      "mt": true
+    },
+    "history_mixed": {
+      "hash": "cda208d82e",
+      "mt": true
+    },
+    "dir_heavier": {
+      "hash": "794772fb87",
+      "mt": true
+    },
+    "dir_lighter": {
+      "hash": "106fffc7be",
+      "mt": true
+    },
+    "conditions_rain": {
+      "hash": "be765c9b56",
+      "mt": true
+    },
+    "conditions_usdm": {
+      "hash": "152f987489",
+      "mt": true
+    },
+    "prov_chip": {
+      "hash": "d5bc2fd7b7",
+      "mt": true
+    },
+    "layers.forecast": {
+      "hash": "528bc4bc38",
+      "mt": true
+    },
+    "layers.status": {
+      "hash": "ff9610222c",
+      "mt": true
+    },
+    "layers.history": {
+      "hash": "90ccd64974",
+      "mt": true
+    },
+    "layers.events": {
+      "hash": "7684b09448",
+      "mt": true
+    },
+    "layers.conditions": {
+      "hash": "e3b8204056",
+      "mt": true
+    },
+    "layers.crops": {
+      "hash": "33a8e2a497",
+      "mt": true
+    },
+    "layers.cyclones": {
+      "hash": "81debcaa66",
+      "mt": true
+    },
+    "forecast_skill_partial": {
+      "hash": "589accde20",
+      "mt": true
+    },
+    "dir_wetter": {
+      "hash": "0f67890823",
+      "mt": true
+    },
+    "dir_drier": {
+      "hash": "0c77c49eb8",
+      "mt": true
+    },
+    "farmer_planting": {
+      "hash": "7ec140aebd",
+      "mt": true
+    },
+    "farmer_harvest": {
+      "hash": "9a27a4ca9f",
+      "mt": true
+    },
+    "cyclone_history": {
+      "hash": "d2d901afa0",
+      "mt": true
+    },
+    "cyclone_wnp": {
+      "hash": "cbe18d8c1e",
+      "mt": true
+    },
+    "crops.maize": {
+      "hash": "1f58b452d2",
+      "mt": true
+    },
+    "crops.rice": {
+      "hash": "6939278d66",
+      "mt": true
+    },
+    "crops.wheat": {
+      "hash": "7f572f2b5a",
+      "mt": true
+    },
+    "crops.sorghum": {
+      "hash": "585d3b2461",
+      "mt": true
+    },
+    "crops.millet": {
+      "hash": "7275cffbbc",
+      "mt": true
+    },
+    "crops.beans": {
+      "hash": "3cf7c8d099",
+      "mt": true
+    },
+    "crops.cassava": {
+      "hash": "ecc1be7b75",
+      "mt": true
+    },
+    "crops.potato": {
+      "hash": "3e2e95f5ad",
+      "mt": true
+    },
+    "crops.groundnut": {
+      "hash": "44ecffd970",
+      "mt": true
+    },
+    "crops.soybean": {
+      "hash": "26953772b5",
+      "mt": true
+    },
+    "crops.barley": {
+      "hash": "f2c9bd9fdb",
+      "mt": true
+    },
+    "usdm_levels": {
+      "hash": "0702fca5e6",
       "mt": true
     }
   }
