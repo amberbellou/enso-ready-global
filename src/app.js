@@ -41,10 +41,13 @@ function applySettings() {
   const root = document.documentElement;
   root.dataset.size = s.size || "normal"; root.dataset.contrast = s.contrast || "normal"; root.dataset.easy = s.easy ? "1" : "0"; root.dataset.dys = s.dys ? "1" : "0"; root.dataset.motion = s.motion === false ? "0" : "1";
 }
-function settingsPanel() {
+function settingsScreen() {
+  return h("main", {}, h("h1", { id: "main", tabindex: "-1" }, "⚙️ " + ui("settings")), h("p", { class: "muted" }, ui("settings_intro")), settingsPanel(true), h("button", { class: "btn block", onclick: () => { state.screen = state.place ? "briefing" : "home"; render(); } }, "← " + ui("back")));
+}
+function settingsPanel(open = false) {
   const s = LS.get("settings", {});
   const set = (k, v) => { s[k] = v; LS.set("settings", s); applySettings(); render(); };
-  return h("details", { class: "card" }, h("summary", {}, "⚙️ " + ui("settings")),
+  return h(open ? "div" : "details", { class: "card" }, open ? null : h("summary", {}, "⚙️ " + ui("settings")),
     h("label", {}, ui("text_size")), h("div", { class: "row" }, ["normal", "large", "xlarge"].map(v => h("button", { class: "btn secondary", "aria-pressed": String((s.size || "normal") === v), onclick: () => set("size", v) }, v === "normal" ? "A" : v === "large" ? "A+" : "A++"))),
     h("div", { class: "row" },
       h("button", { class: "btn secondary", "aria-pressed": String(s.contrast === "high"), onclick: () => set("contrast", s.contrast === "high" ? "normal" : "high") }, ui("high_contrast")),
@@ -84,10 +87,12 @@ function homeScreen() {
   const list = h("ul", { class: "results", "aria-live": "polite" });
   let timer;
   input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(() => search(input.value, list), 150); });
-  const geo = h("button", { class: "btn secondary block", onclick: () => navigator.geolocation?.getCurrentPosition(p => chooseCoords(p.coords.latitude, p.coords.longitude), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
-  const mapBtn = h("button", { class: "btn secondary block", onclick: () => openMap().catch(() => alert(ui("no_results"))) }, "🗺️ " + ui("pick_map"));
-  return h("main", {}, h("div", { class: "row" }, langPicker()), mtBanner(), h("h1", { id: "main", tabindex: "-1" }, ui("tagline")), statusBanner(), h("div", { class: "card" }, h("label", { for: "q" }, ui("search_label")), input, list, geo, mapBtn), settingsPanel(),
-    h("p", { class: "muted" }, h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
+  const geo = h("button", { class: "btn block", onclick: () => navigator.geolocation?.getCurrentPosition(p => chooseCoords(p.coords.latitude, p.coords.longitude), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
+  const mapLink = h("a", { href: "#", class: "textlink", onclick: (e) => { e.preventDefault(); openMap().catch(() => alert(ui("no_results"))); } }, "🗺️ " + ui("pick_map"));
+  const examples = h("p", { class: "muted examples" }, ui("try_examples", { examples: "" }), ...["Nairobi", "Piura", "Manila"].flatMap((x, i) => [i ? ", " : "", h("a", { href: "#", onclick: (e) => { e.preventDefault(); input.value = x; search(x, list); input.focus(); } }, x)]));
+  return h("main", { class: "home" }, h("div", { class: "topbar" }, h("span", { class: "muted" }, ui("tagline")), langPicker()), mtBanner(),
+    h("h1", { id: "main", tabindex: "-1" }, ui("search_label")), input, examples, list, geo, h("p", {}, mapLink),
+    h("p", { class: "muted links" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "settings"; render(); } }, "⚙️ " + ui("settings")), " · ", h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
 }
 async function search(q, list) {
   const n = norm(q); list.replaceChildren();
@@ -99,7 +104,11 @@ async function search(q, list) {
   const countries = state.data.countries ||= await getJSON("geo/countries.json");
   const hits = rank(n, [...expand(rows), ...major], 8);
   if (!hits.length) { list.append(h("li", { class: "muted" }, ui("no_results"))); return; }
-  for (const r of hits) list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: r[1], cc: r[2], lat: r[5], lon: r[6], admin1: r[3], pop: r[7] }) }, r[1], h("small", {}, label(r, countries)))));
+  for (const r of hits) {
+    const nm = r[1]; const pre = nm.toLowerCase().startsWith(q.toLowerCase()) ? q.length : 0;
+    const cname = (countries[r[2]] || {}).name || r[2]; const sub = [r[4], r[3]].filter(Boolean).filter((x, i, a) => a.indexOf(x) === i).join(" — ");
+    list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: nm, cc: r[2], lat: r[5], lon: r[6], admin1: r[3], pop: r[7] }) }, h("strong", {}, nm.slice(0, pre)), nm.slice(pre), h("span", { class: "chip cc" }, cname), sub ? h("small", {}, sub) : null)));
+  }
 }
 // GPS / map pin: name the point after the nearest known place ("near Wau"), else fall back to the grid cell.
 async function nameFromCoords(lat, lon) {
@@ -158,7 +167,10 @@ function renderBlocks(blocks, facts, p, extra) {
   const main = h("main", {});
   const banner = mtBanner(); if (banner) main.append(banner);
   main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name}` : ""));
-  main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, head.text));
+  const nm = p.name || ""; const stripped = nm && head.text.startsWith(nm) ? head.text.slice(nm.length).replace(/^[:：]\s*/, "") : head.text;
+  const st0 = state.data.status; if (st0) main.append(h("p", { class: "muted small" }, st0.status, " · ", st0.issued));
+  if (nm) main.append(h("p", { class: "place" }, "📍 " + nm));
+  main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, stripped.charAt(0).toUpperCase() + stripped.slice(1)));
   const paras = blocks.filter(b => b.type === "para");
   const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral" || b.key === "farmer");
   if (lead.length) main.append(para(lead.map(b => b.text).join(" ")));   // one chunk: risks + timing
@@ -184,7 +196,7 @@ function renderBlocks(blocks, facts, p, extra) {
   const pv = blocks.find(b => b.type === "provenance");
   if (pv) { const row = h("p", { class: "chips" }); for (const it of pv.items) row.append(h("a", { class: "chip", href: it.url, rel: "noopener" }, it.label)); main.append(row); }
   if ("speechSynthesis" in window) main.append(h("button", { class: "btn secondary", onclick: () => { const u = new SpeechSynthesisUtterance(extra.radio); u.lang = state.lang; speechSynthesis.cancel(); speechSynthesis.speak(u); } }, "🔊 " + ui("read_aloud")));
-  main.append(settingsPanel());
+  main.append(h("p", { class: "muted links" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "settings"; render(); } }, "⚙️ " + ui("settings"))));
   return main;
 }
 function stepsWidget(block) {
@@ -216,6 +228,7 @@ async function render() {
   try {
     if (state.screen === "home") root.replaceChildren(homeScreen());
     else if (state.screen === "who") root.replaceChildren(whoScreen());
+    else if (state.screen === "settings") root.replaceChildren(settingsScreen());
     else root.replaceChildren(await briefingScreen());
   } catch (e) {
     const last = LS.get("last");

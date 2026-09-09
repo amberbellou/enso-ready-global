@@ -61,3 +61,8 @@ h1:focus{outline:none}
 table{border-collapse:collapse;font-size:.9rem}th,td{text-align:start;padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
 @media print{header.top,.btn,.whatnow,details:not([open])>*:not(summary),select.lang,.mt,.skip,footer a[href*="github"]{display:none!important}body{background:#fff;color:#000;font-size:11pt}main{max-width:none;padding:0}h1.headline{border:0;padding:0}details>summary{display:none}details{display:block}details>*{display:block}.step{page-break-inside:avoid;border:1px solid #000}.chips .chip{border:1px solid #000;color:#000}a{color:#000;text-decoration:none}a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}}
 .doc h1{font-size:1.6rem}.doc h2{margin-top:1.5rem}.doc li{margin:.3rem 0}footer nav{margin-top:.5rem}
+.home h1{font-size:1.6rem;margin:.5rem 0 .75rem}.topbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.9rem}
+.examples a{margin-inline-start:.15rem}.textlink{font-weight:600}.links{margin-top:1.5rem}
+ul.results li button strong{font-weight:800}ul.results .chip.cc{margin-inline-start:.5rem;font-size:.75rem;vertical-align:middle}
+p.place{margin:.25rem 0 0;font-weight:600;color:var(--muted)}p.small{font-size:.85rem;margin:0}
+h1.headline{font-size:1.6rem;margin-top:.25rem}

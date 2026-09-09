@@ -279,7 +279,7 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
     if (facts.signal.local_season) T = fill(S.season_with_local, { season: T, local: (S.local_seasons || {})[facts.signal.local_season] || facts.signal.local_season });
     const rainText = S["rain_" + facts.signal.rain.replace(/[^a-z]/g, "_")] || facts.signal.rain;
     blocks.push({ type: "headline", text: fill(S.headline, { name, rain: rainText, season: T, conf: S["conf_" + facts.confidence] }) });
-    const hz = facts.signal.hazards.map(h => (S.hazards || {})[h] || h).filter(Boolean);
+    const hz = facts.signal.hazards.map(h => ((S.hazard_icons || {})[h] ? (S.hazard_icons[h] + " ") : "") + ((S.hazards || {})[h] || h)).filter(Boolean);
     if (hz.length) blocks.push({ type: "para", key: "risks", text: fill(S.risks, { list: listJoin(S, hz.slice(0, 4)) }) });
     const tm = facts.signal.timing;
     if (tm.state === "now") blocks.push({ type: "para", key: "timing", text: fill(S.timing_now, { season: Tplain }) });

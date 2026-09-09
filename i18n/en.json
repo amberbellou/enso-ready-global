@@ -110,7 +110,10 @@
     "loading": "Getting your briefing…",
     "error_title": "We could not load your briefing.",
     "error_body": "Check your connection and try again. Your last briefing, if you had one, is kept on this phone.",
-    "retry": "Try again"
+    "retry": "Try again",
+    "try_examples": "Try: {examples}",
+    "language": "Language",
+    "settings_intro": "Changes apply straight away and are saved on this phone."
   },
   "timing_coming_one": "That season starts next month ({season}).",
   "hazards": {
@@ -683,5 +686,34 @@
     "groundnut": "groundnut",
     "soybean": "soybean",
     "barley": "barley"
+  },
+  "hazard_icons": {
+    "FL": "🌊",
+    "FLR": "🌊",
+    "FF": "⚠️",
+    "LS": "⛰️",
+    "DR": "🌵",
+    "WS": "💧",
+    "WF": "🔥",
+    "HZ": "😷",
+    "HT": "🌡️",
+    "EP": "🦟",
+    "CH": "🧪",
+    "RVF": "🐐",
+    "CS": "🌾",
+    "CF": "🌾",
+    "FI": "🍚",
+    "TC": "🌀",
+    "TCE": "🌀",
+    "ST": "🌩️",
+    "HS": "🌊",
+    "SI": "🧂",
+    "FR": "🥶",
+    "SN": "🏔️",
+    "HSN": "❄️",
+    "CD": "🧣",
+    "FLS": "🌊",
+    "MW": "🐛",
+    "CU": "🌾"
   }
 }
