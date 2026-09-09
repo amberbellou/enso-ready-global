@@ -58,8 +58,10 @@ The site asks for no personal details from anyone, of any age.
 
 If the way the app handles data changes, this page will change with it. The date of the last change is shown below. The full history is in the public code repository.
 
-Last updated: 7 September 2026
+Last updated: 9 September 2026
 
 ## Questions
 
-ENSO Ready is built and run by one person. For questions about privacy, [open an issue on GitHub](https://github.com/amberbellou/enso-ready-global/issues). You can also email [email alias to be added by the owner].
+ENSO Ready is built and run by one person. For questions about privacy, [open an issue on GitHub](https://github.com/amberbellou/enso-ready-global/issues). You can also email amberbellou@gse.harvard.edu.
+
+If you write to that address, your message and your email address reach a personal mailbox, the way any email does. It is used to answer you and nothing else: not added to a list, not shared, not used to identify you on the site. The site itself still receives nothing from you. If you would rather not use email, a GitHub issue works and does not need your name.

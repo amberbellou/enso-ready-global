@@ -49,4 +49,4 @@ Target G concerns the availability of, and access to, multi-hazard early warning
 - Code, data pipeline and tests: the repository.
 - Method and sources: the methodology page.
 - Known gaps: `GAPS.md` in the repository.
-- Corrections and questions: GitHub issues, or [email alias to be added by the owner].
+- Corrections and questions: GitHub issues, or amberbellou@gse.harvard.edu.

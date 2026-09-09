@@ -1,6 +1,6 @@
 # Terms and disclaimer
 
-This page says what ENSO Ready Global is, what it is not, and what you agree to when you use it. It is written in plain words. Last updated: [date].
+This page says what ENSO Ready Global is, what it is not, and what you agree to when you use it. It is written in plain words. Last updated: 9 September 2026.
 
 ## What this service is
 
@@ -44,12 +44,12 @@ Each dataset keeps its own licence. The code licence does not cover the data.
 
 - NOAA Climate Prediction Center ENSO status and ONI: US government work, public domain.
 - GPCP v2.3 (NOAA NCEI): US government work, public domain.
-- CHIRPS v2.0 (UC Santa Barbara Climate Hazards Center): [licence to confirm].
+- CHIRPS v2.0 (UC Santa Barbara Climate Hazards Center): public domain.
 - ECMWF SEAS5 forecast via Open-Meteo: CC BY 4.0. Attribution: Open-Meteo.
 - Natural Earth: public domain.
 - GeoNames place names: CC BY 4.0.
 - OpenStreetMap map tiles: ODbL. Loaded only if you tap the map.
-- US Drought Monitor: [licence to confirm].
+- US Drought Monitor: public domain; cite the National Drought Mitigation Center, USDA and NOAA jointly.
 - Copernicus C3S seasonal forecasts: planned, not yet used. Its licence will be listed here when it is.
 
 If you reuse our derived data files, keep these attributions.
@@ -62,7 +62,7 @@ Your place and settings stay in your browser. They are not sent to us. See the [
 
 If you find a wrong number, a broken link or a bad translation, open an issue on GitHub: https://github.com/amberbellou/enso-ready-global/issues
 
-You can also email [email alias to be added].
+You can also email amberbellou@gse.harvard.edu.
 
 This site is run by one person. Replies may take a few days.
 
@@ -70,4 +70,4 @@ This site is run by one person. Replies may take a few days.
 
 These terms may change. The date at the top shows the current version. Older versions are in the repository history.
 
-These terms are governed by the laws of [jurisdiction].
+These terms are governed by the laws of the Commonwealth of Massachusetts, United States.

@@ -58,4 +58,4 @@ Some languages were translated by a machine and have not yet been checked by a n
 
 [Open an issue on GitHub](https://github.com/amberbellou/enso-ready-global/issues). You do not need to give your name.
 
-[Email alias to be added by the owner.]
+Or email amberbellou@gse.harvard.edu.

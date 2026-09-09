@@ -1,14 +1,16 @@
 # GAPS — decisions needed from the owner (UN-quality bar)
 
-Updated 7 September 2026. Items are ordered by how much they block release. Each is a decision only you can make; everything else in Annex E is either done or in progress without you.
+Updated 9 September 2026. Items are ordered by how much they block release. Each is a decision only you can make; everything else in Annex E is either done or in progress without you.
 
 ## Blocking
 
-1. **API key exposure (act today).** Two stray files created by mis-pasted terminal commands were committed in `96ad212` with API keys in their *file names*, one of them the key currently in `.env`. The files are deleted and the history rewritten and force-pushed, but GitHub may keep the old commit reachable by hash for a while. Revoke the current key at console.anthropic.com, create a new one, save it with the terminal command in the chat, and optionally ask GitHub Support to purge the dangling commit.
+1. ~~**API key exposure.**~~ **Resolved (9 September 2026).** The key was revoked and re-issued, the files deleted and the history rewritten. Verified on 9 September: `96ad212` is no longer a valid object, and a scan of every blob in the full history finds no key-shaped string outside placeholders and this write-up. See `docs/INCIDENTS.md`.
 2. **Copernicus CDS account.** Layers 1 (official multi-system forecast) and 2 (forecast skill) cannot run without it. Create an ECMWF/CDS account, accept the licence on the seasonal datasets, and save the token in `.env` as `CDSAPI_URL=https://cds.climate.copernicus.eu/api` and `CDSAPI_KEY=…` (never commit). Until then the forecast sentence uses ECMWF SEAS5 via Open-Meteo and every cell is skill "unknown", so forecasts never override history.
-3. **Contact email alias.** Six pages carry the placeholder `[email alias to be added by the owner]`. Provide one, or decide to route everything through GitHub issues only.
-4. **Jurisdiction for /terms and /privacy.** Choose the governing law (usually your country of residence) or delete the sentence.
-5. **Teleconnection table review.** `docs/TELECONNECTIONS_REVIEW.md`: 37 of 44 rows have researcher-fetched citations; 7 rows have none yet (Uruguay/Pampas, US Southwest, Europe, Japan, southern Tanzania, North Africa, southeast Brazil); none has passed the second-agent re-check because the subagent budget ran out. Suggested confidence and wording changes are listed per row. Decide row by row; rows without citations should drop to "low" or be removed before release.
+3. ~~**Contact email alias.**~~ **Resolved (9 September 2026).** All six pages now carry `amberbellou@gse.harvard.edu`, and the privacy page discloses what happens to mail sent there. Note this is an institutional address: it stops working on leaving HGSE, so revisit before then.
+4. ~~**Jurisdiction for /terms and /privacy.**~~ **Resolved (9 September 2026).** Terms are governed by the laws of the Commonwealth of Massachusetts, United States.
+5. **Teleconnection table review.** `docs/TELECONNECTIONS_REVIEW.md`: 37 of 44 rows have researcher-fetched `citations`; 7 do not (Uruguay/Pampas, US Southwest, Europe, Japan, southern Tanzania, North Africa, southeast Brazil); none has passed the second-agent re-check because the subagent budget ran out. Suggested confidence and wording changes are listed per row.
+
+   Note that missing `citations` is not the same as unsourced: all 7 carry a `sources` entry (NOAA CPC and/or IRI impacts maps), which is the canonical reference for ENSO teleconnections. Five are already `low` confidence. The two at `high` — US Southwest / northern Mexico, and Uruguay/Pampas — assert among the best-established teleconnections in the literature, so downgrading them mechanically would make the app *less* accurate, not more. What they need is the citation pass, not a lower confidence. Decide row by row; do not apply a blanket rule.
 
 ## Needed before public launch
 

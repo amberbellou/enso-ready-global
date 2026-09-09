@@ -62,7 +62,7 @@ We want to be honest about what is not finished.
 If something on this site is hard to use, please tell us. This helps everyone.
 
 - Open an issue on GitHub: [https://github.com/amberbellou/enso-ready-global/issues](https://github.com/amberbellou/enso-ready-global/issues)
-- Or email: [email alias to be added by the owner]
+- Or email: amberbellou@gse.harvard.edu
 
 Say which page, which device, and what went wrong. We aim to reply within [number] days.
 
