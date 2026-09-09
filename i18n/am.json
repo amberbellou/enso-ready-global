@@ -38,8 +38,6 @@
   "agreement_none": "ለዚህ ወቅት አስተማማኝ የአካባቢ የዝናብ መዝገብ የለም፤ ስለዚህ ይህን እንደ {conf} ይያዙት።",
   "history": "ባለፉት {n} ጠንካራ የ{phase} ክስተቶች እዚህ የ{season} ዝናብ በአማካይ {pct} ነበር። ከእነዚህ ውስጥ በ{wet}% ከመደበኛው የበዛ ነበር።",
   "history_recent": "የቅርብ ጊዜ ክስተቶች፡ {recent}።",
-  "pct_above": "ከመደበኛው በ{n}% በላይ",
-  "pct_below": "ከመደበኛው በ{n}% በታች",
   "near_normal": "ከመደበኛው ጋር የቀረበ",
   "no_data": "መረጃ የለም",
   "status_line": "ዓለም አቀፍ ሁኔታ፡ {status} (የወጣበት ቀን {issued})።",
@@ -132,7 +130,6 @@
   "risks": "ዋና አደጋዎች፦ {list}።",
   "list_sep": "፣ ",
   "list_last": " እና ",
-  "forecast": "ለ{season} የወጣው አዲሱ የወቅት ትንበያ እንዲህ ይላል፦ {pct}።",
   "forecast_agree": "ይህ ከተለመደው ሁኔታ ጋር ይስማማል።",
   "forecast_disagree": "ይህ ከተለመደው ሁኔታ ጋር አይስማማም፤ ስለዚህ እርግጠኝነቱ አነስተኛ ነው።",
   "forecast_weak": "ይህ ከመደበኛው ጋር ተቀራራቢ ነው፤ ስለዚህ በዚህ ጊዜ ሁኔታው ደካማ ሊሆን ይችላል።",
@@ -168,7 +165,6 @@
     "the second rains": "የሁለተኛው ዝናብ ወቅት",
     "spring": "ጸደይ"
   },
-  "pct_above_cap": "ከመደበኛው ከ{n}% በላይ ከፍ ያለ",
   "steps": {
     "flood-docs": {
       "text": "መታወቂያ፣ የመሬት ወረቀትና የስልክ ቁጥሮችን በሚዘጋ የላስቲክ ከረጢት ውስጥ አድርጉ።",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1169,10 +1157,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1303,10 +1287,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

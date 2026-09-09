@@ -263,7 +263,7 @@ function seasonLabel(S, months, years) {
 function pctPhrase(S, pct) {
   if (pct === null || pct === undefined) return S.no_data;
   const a = Math.abs(Math.round(pct)); if (a < 5) return S.near_normal;
-  return fill(pct > 0 ? S.pct_above : S.pct_below, { n: a });
+  return fill(pct > 0 ? S.pct_more_rain : S.pct_less_rain, { n: a });
 }
 function listJoin(S, items) { return items.length <= 1 ? items.join("") : items.slice(0, -1).join(S.list_sep || ", ") + (S.list_last || " and ") + items[items.length - 1]; }
 
@@ -287,8 +287,8 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
     else if (tm.state === "passed") blocks.push({ type: "para", key: "timing", text: fill(S.timing_passed, { season: Tplain }) });
     if (facts.forecast) {
       const f = facts.forecast;
-      const pctText = f.capped ? fill(S.pct_above_cap, { n: 300 }) : pctPhrase(S, f.pct);
-      let text = fill(S.forecast, { season: seasonLabel(S, facts.signal.months), pct: pctText });
+      const pctText = f.capped ? fill(S.pct_more_rain_cap, { n: 300 }) : pctPhrase(S, f.pct);
+      let text = fill(S.forecast_says, { season: seasonLabel(S, facts.signal.months), pct: pctText });
       if (f.disagreement) text += " " + (S["disagreement_" + f.disagreement] || "");
       else text += " " + (S["forecast_" + facts.forecast_agreement] || "");
       if (facts.forecast_rule && S[facts.forecast_rule.template]) text += " " + S[facts.forecast_rule.template];

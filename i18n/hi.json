@@ -38,8 +38,6 @@
   "agreement_none": "इस मौसम के लिए यहाँ बारिश का भरोसेमंद रिकॉर्ड नहीं है। इसलिए मानकर चलें कि {conf}।",
   "history": "पिछली {n} तेज़ {phase} घटनाओं में यहाँ {season} की बारिश औसतन {pct} रही। इनमें से {wet}% में बारिश सामान्य से ज़्यादा हुई।",
   "history_recent": "सबसे हाल की घटनाएँ: {recent}।",
-  "pct_above": "सामान्य से {n}% ज़्यादा",
-  "pct_below": "सामान्य से {n}% कम",
   "near_normal": "सामान्य के आसपास",
   "no_data": "कोई आँकड़ा नहीं",
   "status_line": "दुनिया भर का हाल: {status} (जारी: {issued})।",
@@ -132,7 +130,6 @@
   "risks": "मुख्य ख़तरे: {list}।",
   "list_sep": ", ",
   "list_last": " और ",
-  "forecast": "{season} के लिए ताज़ा मौसमी मॉडल पूर्वानुमान बताता है: {pct}।",
   "forecast_agree": "यह सामान्य पैटर्न से मेल खाता है।",
   "forecast_disagree": "यह सामान्य पैटर्न से मेल नहीं खाता, इसलिए भरोसा कम है।",
   "forecast_weak": "यह सामान्य के करीब है, इसलिए इस बार पैटर्न कमज़ोर हो सकता है।",
@@ -168,7 +165,6 @@
     "the second rains": "दूसरी बारिश",
     "spring": "वसंत"
   },
-  "pct_above_cap": "सामान्य से {n}% से ज़्यादा ऊपर",
   "steps": {
     "flood-docs": {
       "text": "पहचान पत्र, ज़मीन के कागज़ और फ़ोन नंबर एक बंद प्लास्टिक की थैली में रखें।",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1157,10 +1145,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1291,10 +1275,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

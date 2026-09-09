@@ -38,8 +38,6 @@
   "agreement_none": "এই মৌসুমের জন্য এখানে নির্ভরযোগ্য বৃষ্টির পুরোনো হিসাব নেই। তাই এটিকে এভাবে ধরুন: {conf}।",
   "history": "শেষ {n}টি শক্তিশালী {phase} ঘটনায় এখানে {season} মৌসুমের বৃষ্টি ছিল গড়ে {pct}। এর মধ্যে {wet}% ক্ষেত্রে বৃষ্টি স্বাভাবিকের চেয়ে বেশি ছিল।",
   "history_recent": "সবচেয়ে সাম্প্রতিক ঘটনাগুলো: {recent}।",
-  "pct_above": "স্বাভাবিকের চেয়ে {n}% বেশি",
-  "pct_below": "স্বাভাবিকের চেয়ে {n}% কম",
   "near_normal": "প্রায় স্বাভাবিক",
   "no_data": "তথ্য নেই",
   "status_line": "বিশ্ব পরিস্থিতি: {status} ({issued} তারিখে জানানো)।",
@@ -132,7 +130,6 @@
   "risks": "প্রধান ঝুঁকি: {list}।",
   "list_sep": ", ",
   "list_last": " ও ",
-  "forecast": "{season}-এর জন্য সর্বশেষ মৌসুমি মডেলের পূর্বাভাস বলছে {pct}।",
   "forecast_agree": "এটি সাধারণ ধরনের সঙ্গে মিলে যায়।",
   "forecast_disagree": "এটা চেনা ধরনের সঙ্গে মিলছে না, তাই ভরসা কম।",
   "forecast_weak": "এটা স্বাভাবিকের কাছাকাছি, তাই এবার ধরনটা দুর্বল হতে পারে।",
@@ -168,7 +165,6 @@
     "the second rains": "দ্বিতীয় বৃষ্টির মরসুম",
     "spring": "বসন্ত"
   },
-  "pct_above_cap": "স্বাভাবিকের চেয়ে {n}% এর বেশি",
   "steps": {
     "flood-docs": {
       "text": "পরিচয়পত্র, জমির কাগজ আর ফোন নম্বর একটি বন্ধ প্লাস্টিকের ব্যাগে রাখুন।",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1157,10 +1145,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1291,10 +1275,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

@@ -45,6 +45,13 @@ export function expand(shard) {
   for (const [k, id] of shard.k || []) { const p = shard.p[id]; if (p) out.push([k, p[0], p[1], p[2], p[3], p[4], p[5], p[6], id]); }
   return out;
 }
+// Identity of a real-world place, independent of which gazetteer row describes it. GeoNames often holds
+// several ids for one city (e.g. Nairobi 184745 and the "Nairobi area" polygon 184742); showing both as
+// two identical rows makes the user choose between things that are the same place.
+export function placeKey(r) {
+  const round = (v) => (Math.round(Number(v) * 4) / 4).toFixed(2);   // ~28 km grid: same city, different centroid
+  return [norm(r[1]), r[2] || "", norm(r[3] || ""), round(r[5]), round(r[6])].join("|");
+}
 // Rank entries for a normalized query. Exact prefix first, then fuzzy prefix (distance ≤ 1, or 2 for long queries), then population.
 export function rank(q, rows, limit = 8) {
   const maxD = q.length >= 7 ? 2 : q.length >= 4 ? 1 : 0;
@@ -53,16 +60,36 @@ export function rank(q, rows, limit = 8) {
   for (const r of rows) {
     const k = r[0]; let score = null;
     if (k.startsWith(q)) score = 0;
-    else if (maxD && Math.abs(k.length - q.length) <= maxD + 3) { const d = editDistance(q, k.slice(0, q.length), maxD); if (d <= maxD) score = d; }
+    else if (maxD && Math.abs(k.length - q.length) <= maxD + 3) {
+      // k.slice(0, q.length) only truncates when the key is at least as long as the query. For a shorter key
+      // the comparison is a whole-string distance, where deletions alone can bridge a real difference:
+      // "nairo" (an alternate name of Gastello, Russia) would otherwise surface on a search for "nairobi".
+      const eff = k.length < q.length ? Math.min(maxD, 1) : maxD;
+      if (eff) { const d = editDistance(q, k.slice(0, q.length), eff); if (d <= eff) score = d; }
+    }
     if (score === null) continue;
     const prevBest = scored.get(r[8]);
     if (!prevBest || score < prevBest.score) scored.set(r[8], { score, r });
   }
   // population-weighted: an exact big city beats a tiny exact match, a big city with one typo still shows near the top;
-  // at most 3 results per country so ambiguous names ("Santa Cruz") show several countries
-  const ranked = [...scored.values()].map(x => ({ r: x.r, w: x.score * 2.5 - Math.log10((x.r[7] || 0) + 1) - (x.r[3] ? 0 : 0.3) })).sort((a, b) => a.w - b.w);
-  const out = [], perCc = {};
-  for (const x of ranked) { const cc = x.r[2]; if ((perCc[cc] || 0) >= 3) continue; perCc[cc] = (perCc[cc] || 0) + 1; out.push(x.r); if (out.length >= limit) break; }
+  // at most 3 results per country so ambiguous names ("Santa Cruz") show several countries.
+  // The gazetteer also holds ADM1/ADM2 areas, whose population is the whole district and so outranks the city
+  // inside it: a search for "Piura" led with "Departamento de Piura", "Jakarta" with "Daerah Khusus Ibukota
+  // Jakarta". Someone typing a town name means the town, so a row whose NAME is exactly the query outranks a
+  // longer administrative name regardless of population; key length breaks the remaining ties toward the
+  // plainest entry ("nairobi" over "nairobi area").
+  const ranked = [...scored.values()].map(x => ({
+    r: x.r,
+    w: x.score * 2.5 - Math.log10((x.r[7] || 0) + 1) - (x.r[3] ? 0 : 0.3)
+       - (norm(x.r[1]) === q ? 1.2 : 0) + Math.min(x.r[0].length - q.length, 8) * 0.02,
+  })).sort((a, b) => a.w - b.w);
+  const out = [], perCc = {}, seen = new Set();
+  for (const x of ranked) {
+    const pk = placeKey(x.r); if (seen.has(pk)) continue;           // keep only the best-ranked row per real place
+    const cc = x.r[2]; if ((perCc[cc] || 0) >= 3) continue;
+    seen.add(pk); perCc[cc] = (perCc[cc] || 0) + 1;
+    out.push(x.r); if (out.length >= limit) break;
+  }
   return out;
 }
 // Shard for the "major places" fuzzy index: first character (Latin) or first code point (other scripts).

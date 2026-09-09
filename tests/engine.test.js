@@ -76,7 +76,7 @@ test("forecast blending: agreeing forecast raises confidence, disagreeing lowers
   const order = ["uncertain", "leaning", "likely"];
   assert.ok(order.indexOf(down.confidence) <= order.indexOf(base.confidence));
   const b = renderBriefing(up, strings, { placeName: "Nairobi" });
-  assert.ok(b.some(x => x.type === "forecast" && /above normal/.test(x.text)));
+  assert.ok(b.some(x => x.type === "forecast" && /more rain than usual/.test(x.text)));
 });
 test("country override adds local season name and extra hazard", () => {
   const country = J("data/curated/countries/KE.json");
@@ -116,7 +116,7 @@ test("layer 4 conditions render only when data exists for the cell", () => {
   const withC = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, conditions, bands: J("data/curated/wording_bands.json") });
   assert.equal(withC.conditions.recent_rain_pct, 62); assert.equal(withC.conditions.usdm, null);
   const blk = renderBriefing(withC, strings, { placeName: "Nairobi" }).find(x => x.key === "conditions");
-  assert.match(blk.text, /38% below normal/); assert.doesNotMatch(blk.text, /Drought Monitor/);
+  assert.match(blk.text, /38% less rain than usual/); assert.doesNotMatch(blk.text, /Drought Monitor/);
   const without = buildFacts({ lat: -1.29, lon: 36.82, cc: "KE", status, composites, tele, checklists, met, now, conditions: { recent_rain: { pct_of_normal: {} }, usdm: { categories: {} } } });
   assert.equal(without.conditions, null);
   assert.ok(!renderBriefing(without, strings, { placeName: "Nairobi" }).some(x => x.key === "conditions"));

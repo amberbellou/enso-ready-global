@@ -90,9 +90,10 @@ function homeScreen() {
   const geo = h("button", { class: "btn block", onclick: () => navigator.geolocation?.getCurrentPosition(p => chooseCoords(p.coords.latitude, p.coords.longitude), () => alert(ui("no_results"))) }, "📍 " + ui("use_location"));
   const mapLink = h("a", { href: "#", class: "textlink", onclick: (e) => { e.preventDefault(); openMap().catch(() => alert(ui("no_results"))); } }, "🗺️ " + ui("pick_map"));
   const examples = h("p", { class: "muted examples" }, ui("try_examples", { examples: "" }), ...["Nairobi", "Piura", "Manila"].flatMap((x, i) => [i ? ", " : "", h("a", { href: "#", onclick: (e) => { e.preventDefault(); input.value = x; search(x, list); input.focus(); } }, x)]));
-  return h("main", { class: "home" }, h("div", { class: "topbar" }, h("span", { class: "muted" }, ui("tagline")), langPicker()), mtBanner(),
+  return h("main", { class: "home" },
+    h("p", { class: "tagline" }, ui("tagline")), mtBanner(),
     h("h1", { id: "main", tabindex: "-1" }, ui("search_label")), input, examples, list, geo, h("p", {}, mapLink),
-    h("p", { class: "muted links" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "settings"; render(); } }, "⚙️ " + ui("settings")), " · ", h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, "Browse by country")));
+    h("p", { class: "muted links" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "settings"; render(); } }, "⚙️ " + ui("settings")), " · ", h("a", { href: `${BASE}/methodology.html` }, ui("methodology")), " · ", h("a", { href: `${BASE}/countries/` }, ui("browse_countries"))));
 }
 async function search(q, list) {
   const n = norm(q); list.replaceChildren();
@@ -107,7 +108,7 @@ async function search(q, list) {
   for (const r of hits) {
     const nm = r[1]; const pre = nm.toLowerCase().startsWith(q.toLowerCase()) ? q.length : 0;
     const cname = (countries[r[2]] || {}).name || r[2]; const sub = [r[4], r[3]].filter(Boolean).filter((x, i, a) => a.indexOf(x) === i).join(" — ");
-    list.append(h("li", {}, h("button", { onclick: () => choosePlace({ name: nm, cc: r[2], lat: r[5], lon: r[6], admin1: r[3], pop: r[7] }) }, h("strong", {}, nm.slice(0, pre)), nm.slice(pre), h("span", { class: "chip cc" }, cname), sub ? h("small", {}, sub) : null)));
+    list.append(h("li", {}, h("button", { "aria-label": [nm, cname, sub].filter(Boolean).join(", "), onclick: () => choosePlace({ name: nm, cc: r[2], lat: r[5], lon: r[6], admin1: r[3], pop: r[7] }) }, h("strong", {}, nm.slice(0, pre)), nm.slice(pre), h("span", { class: "chip cc" }, cname), sub ? h("small", {}, sub) : null)));
   }
 }
 // GPS / map pin: name the point after the nearest known place ("near Wau"), else fall back to the grid cell.
@@ -163,17 +164,29 @@ async function briefingScreen() {
 }
 function renderBlocks(blocks, facts, p, extra) {
   const head = blocks.find(b => b.type === "headline");
-  const cls = /more rain|wetter|flood/i.test(head.text) ? "wet" : /less rain|drier|drought/i.test(head.text) ? "dry" : "";
+  // The blue/amber bar beside the headline is the fastest wet-or-dry cue on the page, so it must not depend on
+  // the reader's language. It was matched against the rendered English headline, which meant no bar at all in
+  // the other 15 languages. facts.signal.rain is a code ("much_wetter", "drier__south_and_west_"), not prose.
+  const rainCode = facts.signal ? String(facts.signal.rain) : "";
+  const wet = /wetter/.test(rainCode), dry = /drier/.test(rainCode);
+  const cls = wet && !dry ? "wet" : dry && !wet ? "dry" : "";
   const main = h("main", {});
   const banner = mtBanner(); if (banner) main.append(banner);
-  main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place")), facts.region ? ` · ${ui("region_label")}: ${((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name}` : ""));
+  // The reader came for one answer, so nothing outranks it. "← Change place" and the place name stay above
+  // (they say where this is about); the multi-country region list and the NOAA advisory line move below the
+  // headline, where they are context rather than three lines to wade through first.
+  main.append(h("p", { class: "muted" }, h("a", { href: "#", onclick: (e) => { e.preventDefault(); state.screen = "home"; render(); } }, "← " + ui("change_place"))));
   const nm = p.name || ""; const stripped = nm && head.text.startsWith(nm) ? head.text.slice(nm.length).replace(/^[:：]\s*/, "") : head.text;
-  const st0 = state.data.status; if (st0) main.append(h("p", { class: "muted small" }, st0.status, " · ", st0.issued));
   if (nm) main.append(h("p", { class: "place" }, "📍 " + nm));
   main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, stripped.charAt(0).toUpperCase() + stripped.slice(1)));
   const paras = blocks.filter(b => b.type === "para");
-  const lead = paras.filter(b => b.key === "risks" || b.key === "timing" || b.key === "neutral" || b.key === "farmer");
-  if (lead.length) main.append(para(lead.map(b => b.text).join(" ")));   // one chunk: risks + timing
+  const LEAD_ICON = { risks: "⚠️", timing: "📅", neutral: "🌤️", farmer: "🌱" };
+  const lead = paras.filter(b => LEAD_ICON[b.key] !== undefined);
+  for (const b of lead) main.append(h("p", { class: "lead" }, h("span", { class: "leadicon", "aria-hidden": "true" }, LEAD_ICON[b.key]), h("span", {}, b.text)));
+  const st0 = state.data.status;
+  const regionName = facts.region ? (((state.strings.regions || {})[facts.region.id] || {}).name || facts.region.name) : null;
+  if (st0 || regionName) main.append(h("p", { class: "muted small context" },
+    st0 ? `${st0.status} · ${st0.issued}` : "", st0 && regionName ? " · " : "", regionName ? `${ui("region_label")}: ${regionName}` : ""));
   const fc = blocks.find(b => b.type === "forecast");
   if (fc) main.append(para("📈 " + fc.text + (fc.partial ? " " + fc.partial : ""), " ", h("a", { class: "src", href: fc.source.url, rel: "noopener" }, "[" + fc.source.label + "]")));
   else if (state.forecastFailed && facts.region) main.append(h("p", { class: "muted" }, ui("forecast_unavailable")));
@@ -224,6 +237,11 @@ function stepsWidget(block) {
 async function render() {
   const root = $("#app");
   if (!$("#skip")) { const sk = h("a", { id: "skip", class: "skip", href: "#main" }, ui("skip")); document.body.prepend(sk); }
+  else $("#skip").textContent = ui("skip");
+  const bar = document.querySelector("header.top");
+  if (bar && !bar.querySelector("select.lang")) bar.append(langPicker());
+  const picker = bar && bar.querySelector("select.lang");
+  if (picker && picker.value !== state.lang) picker.value = state.lang;
   if (state.screen === "briefing") root.replaceChildren(h("main", { "aria-busy": "true" }, h("p", { class: "muted", role: "status" }, ui("loading"))));
   try {
     if (state.screen === "home") root.replaceChildren(homeScreen());

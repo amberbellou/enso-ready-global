@@ -52,8 +52,8 @@
   "agreement_none": "There is no reliable local rain record for this season, so treat this as {conf}.",
   "history": "In the last {n} strong {phase} events, {season} rain here averaged {pct}. It was wetter than normal in {wet}% of them.",
   "history_recent": "Most recent events: {recent}.",
-  "pct_above": "{n}% above normal",
-  "pct_below": "{n}% below normal",
+  "pct_more_rain": "about {n}% more rain than usual",
+  "pct_less_rain": "about {n}% less rain than usual",
   "near_normal": "close to normal",
   "no_data": "no data",
   "status_line": "Global status: {status} (issued {issued}).",
@@ -93,6 +93,7 @@
     "reduce_motion": "Reduce motion",
     "easy_read": "Easy Read",
     "methodology": "How this works",
+    "browse_countries": "Browse by country",
     "back": "Back",
     "change_place": "Change place",
     "no_results": "No match. Try a bigger town nearby.",
@@ -149,7 +150,7 @@
   "risks": "Main risks: {list}.",
   "list_sep": ", ",
   "list_last": " and ",
-  "forecast": "The latest seasonal model forecast for {season} says {pct}.",
+  "forecast_says": "The latest computer forecast for {season} expects {pct}.",
   "forecast_agree": "That agrees with the usual pattern.",
   "forecast_disagree": "That does not agree with the usual pattern, so confidence is lower.",
   "forecast_weak": "That is close to normal, so the pattern may be weaker this time.",
@@ -185,7 +186,7 @@
     "the second rains": "the second rains",
     "spring": "spring"
   },
-  "pct_above_cap": "more than {n}% above normal",
+  "pct_more_rain_cap": "over {n}% more rain than usual",
   "steps": {
     "flood-docs": {
       "text": "Put ID cards, land papers and phone numbers in a sealed plastic bag.",

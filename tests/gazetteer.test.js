@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { norm, pickShard, rank, nearest, cellIdFor2deg, expand, topShard } from "../src/search.js";
+import { norm, pickShard, rank, nearest, cellIdFor2deg, expand, topShard, placeKey } from "../src/search.js";
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const GEO = path.join(ROOT, "geo-site");
 const built = fs.existsSync(path.join(GEO, "index.json"));
@@ -62,4 +62,31 @@ test("nowhere test: mid-ocean and remote pins still resolve to a cell, and 'near
   assert.ok(fs.existsSync(f), "near-cell file for South Sudan");
   const nr = nearest(7.7, 28.0, JSON.parse(fs.readFileSync(f, "utf8")));
   assert.ok(nr && nr.place[1] === "SS", "nearest place is in South Sudan");
+});
+test("no duplicate places: one row per real-world place", { skip: !built }, () => {
+  // GeoNames carries several ids for one city (Nairobi 184745 and the "Nairobi area" polygon 184742), which
+  // used to render as two identical rows the user had to choose between.
+  for (const q of ["Nairobi", "Jakarta", "Manila", "Lima", "Bangkok"]) {
+    const seen = new Map();
+    for (const r of search(q, 8)) {
+      const k = placeKey(r);
+      assert.ok(!seen.has(k), `${q}: "${r[1]}, ${r[2]}" (id ${r[8]}) duplicates id ${seen.get(k)}`);
+      seen.set(k, r[8]);
+    }
+  }
+});
+test("a town name leads with the town, not the district that contains it", { skip: !built }, () => {
+  // ADM1/ADM2 rows carry the whole district's population, which outranked the city inside them: "Piura"
+  // led with "Departamento de Piura", "Jakarta" with "Daerah Khusus Ibukota Jakarta".
+  for (const [q, cc] of [["Piura", "PE"], ["Jakarta", "ID"], ["Lima", "PE"], ["Nairobi", "KE"]]) {
+    const first = search(q, 1)[0];
+    assert.ok(first, `${q}: no hits`);
+    assert.equal(norm(first[1]), norm(q), `${q}: led with "${first[1]}" (${first[2]})`);
+    assert.equal(first[2], cc, `${q}: led with country ${first[2]}`);
+  }
+});
+test("a short alternate name does not match a longer query", { skip: !built }, () => {
+  // "nairo" is an alternate name of Gastello, Russia. Deletions alone must not bridge "nairobi" -> "nairo".
+  assert.ok(!search("Nairobi", 8).some(r => r[2] === "RU"), "Gastello (RU) surfaced on a search for Nairobi");
+  assert.ok(search("Nairo", 8).some(r => r[2] === "RU"), "Gastello should still match its own alternate name");
 });

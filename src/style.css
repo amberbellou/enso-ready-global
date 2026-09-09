@@ -52,8 +52,11 @@ footer{max-width:var(--maxw);margin:2rem auto;padding:1rem;color:var(--muted);fo
 pre.script{white-space:pre-wrap;font-family:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:.8rem}
 
 select.lang{min-height:44px;font-size:1rem;padding:.4rem .6rem;border:2px solid var(--line);border-radius:var(--radius);background:var(--card);color:var(--fg)}
-.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-fg);padding:.6rem 1rem;border-radius:0 0 var(--radius) 0;z-index:10}
-.skip:focus{left:0}
+/* Hide the skip link ABOVE the page, not 999px to its left. A negative `left` extends the scrollable area,
+   which an LTR viewport hides but an RTL one opens onto: Arabic, Urdu and Persian loaded to 999px of blank
+   space with the whole app off-screen to the side. Vertical displacement overflows in neither direction. */
+.skip{position:absolute;inset-inline-start:0;top:0;transform:translateY(-200%);background:var(--accent);color:var(--accent-fg);padding:.6rem 1rem;border-radius:0 0 var(--radius) 0;z-index:10}
+.skip:focus{transform:none}
 .whatnow{position:sticky;bottom:.5rem;z-index:5;margin-top:1rem}
 h1:focus{outline:none}
 .chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
@@ -61,7 +64,21 @@ h1:focus{outline:none}
 table{border-collapse:collapse;font-size:.9rem}th,td{text-align:start;padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
 @media print{header.top,.btn,.whatnow,details:not([open])>*:not(summary),select.lang,.mt,.skip,footer a[href*="github"]{display:none!important}body{background:#fff;color:#000;font-size:11pt}main{max-width:none;padding:0}h1.headline{border:0;padding:0}details>summary{display:none}details{display:block}details>*{display:block}.step{page-break-inside:avoid;border:1px solid #000}.chips .chip{border:1px solid #000;color:#000}a{color:#000;text-decoration:none}a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}}
 .doc h1{font-size:1.6rem}.doc h2{margin-top:1.5rem}.doc li{margin:.3rem 0}footer nav{margin-top:.5rem}
-.home h1{font-size:1.6rem;margin:.5rem 0 .75rem}.topbar{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.9rem}
+/* Home is one question. The language picker gets its own row (it used to share a flex row with the tagline,
+   which squeezed the tagline into a four-line column on a 375px screen); the question is the loudest thing. */
+header.top{flex-wrap:wrap}
+header.top select.lang{margin-inline-start:auto}
+.home .tagline{color:var(--muted);font-size:.95rem;margin:.25rem 0 1.25rem;max-width:34ch}
+.home h1{font-size:1.9rem;line-height:1.25;margin:0 0 .75rem}
+.home input[type=search]{min-height:56px;font-size:1.1rem}
+.home .btn.block{min-height:56px;font-size:1.05rem;margin-top:.75rem}
+
+/* Briefing: one fact per line, each with a fixed-width icon gutter, so the eye can skip to the row it wants
+   instead of parsing one dense paragraph of risks + timing + planting. */
+.lead{display:flex;gap:.6rem;align-items:flex-start;margin:.6rem 0}
+.lead .leadicon{flex:0 0 1.6rem;font-size:1.2rem;line-height:1.5}
+[data-easy="1"] .lead .leadicon{font-size:1.6rem}
+[dir=rtl] .lead{flex-direction:row}
 .examples a{margin-inline-start:.15rem}.textlink{font-weight:600}.links{margin-top:1.5rem}
 ul.results li button strong{font-weight:800}ul.results .chip.cc{margin-inline-start:.5rem;font-size:.75rem;vertical-align:middle}
 p.place{margin:.25rem 0 0;font-weight:600;color:var(--muted)}p.small{font-size:.85rem;margin:0}

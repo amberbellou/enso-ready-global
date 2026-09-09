@@ -38,8 +38,6 @@
   "agreement_none": "No hay un registro local de lluvia confiable para esta temporada, así que tome esto como {conf}.",
   "history": "En los últimos {n} eventos fuertes de {phase}, la lluvia de {season} aquí fue en promedio {pct}. Llovió más de lo normal en {wet}% de ellos.",
   "history_recent": "Eventos más recientes: {recent}.",
-  "pct_above": "{n}% por encima de lo normal",
-  "pct_below": "{n}% por debajo de lo normal",
   "near_normal": "cerca de lo normal",
   "no_data": "sin datos",
   "status_line": "Estado global: {status} (publicado el {issued}).",
@@ -132,7 +130,6 @@
   "risks": "Riesgos principales: {list}.",
   "list_sep": ", ",
   "list_last": " y ",
-  "forecast": "El último pronóstico del modelo estacional para {season} dice {pct}.",
   "forecast_agree": "Eso coincide con el patrón habitual.",
   "forecast_disagree": "Eso no coincide con el patrón habitual, así que la confianza es menor.",
   "forecast_weak": "Eso está cerca de lo normal, así que el patrón puede ser más débil esta vez.",
@@ -168,7 +165,6 @@
     "the second rains": "las segundas lluvias",
     "spring": "primavera"
   },
-  "pct_above_cap": "más de {n}% por encima de lo normal",
   "steps": {
     "flood-docs": {
       "text": "Guarde los documentos de identidad, los papeles de la tierra y los números de teléfono en una bolsa de plástico cerrada.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1145,10 +1133,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1279,10 +1263,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

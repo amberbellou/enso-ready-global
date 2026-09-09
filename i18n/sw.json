@@ -38,8 +38,6 @@
   "agreement_none": "Hakuna rekodi ya kuaminika ya mvua ya hapa kwa msimu huu, kwa hiyo chukulia kuwa taarifa hii {conf}.",
   "history": "Katika matukio {n} makubwa ya {phase} yaliyopita, mvua ya {season} hapa kwa wastani ilikuwa {pct}. Mvua ilikuwa nyingi kuliko kawaida katika {wet}% ya matukio hayo.",
   "history_recent": "Matukio ya karibuni zaidi: {recent}.",
-  "pct_above": "{n}% juu ya kawaida",
-  "pct_below": "{n}% chini ya kawaida",
   "near_normal": "karibu na kawaida",
   "no_data": "hakuna takwimu",
   "status_line": "Hali ya dunia: {status} (imetolewa {issued}).",
@@ -132,7 +130,6 @@
   "risks": "Hatari kuu: {list}.",
   "list_sep": ", ",
   "list_last": " na ",
-  "forecast": "Utabiri wa msimu wa hivi punde kwa {season} unaonyesha mvua ya {pct}.",
   "forecast_agree": "Hii inalingana na mtindo wa kawaida.",
   "forecast_disagree": "Hii hailingani na mtindo wa kawaida, kwa hiyo uhakika ni mdogo zaidi.",
   "forecast_weak": "Hii ni karibu na hali ya kawaida, kwa hiyo mtindo huu unaweza kuwa hafifu mara hii.",
@@ -168,7 +165,6 @@
     "the second rains": "mvua za pili",
     "spring": "majira ya kuchipua"
   },
-  "pct_above_cap": "zaidi ya {n}% juu ya kawaida",
   "steps": {
     "flood-docs": {
       "text": "Weka vitambulisho, hati za ardhi na namba za simu katika mfuko wa plastiki uliofungwa vizuri.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1169,10 +1157,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1303,10 +1287,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

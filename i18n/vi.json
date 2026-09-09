@@ -38,8 +38,6 @@
   "agreement_none": "Không có số liệu mưa đáng tin cậy tại địa phương cho mùa này, nên hãy xem đây là điều {conf}.",
   "history": "Trong {n} đợt {phase} mạnh gần đây nhất, lượng mưa {season} ở đây trung bình {pct}. Mưa nhiều hơn bình thường trong {wet}% số đợt đó.",
   "history_recent": "Các đợt gần đây nhất: {recent}.",
-  "pct_above": "cao hơn bình thường {n}%",
-  "pct_below": "thấp hơn bình thường {n}%",
   "near_normal": "gần như bình thường",
   "no_data": "không có dữ liệu",
   "status_line": "Tình hình toàn cầu: {status} (công bố {issued}).",
@@ -132,7 +130,6 @@
   "risks": "Rủi ro chính: {list}.",
   "list_sep": ", ",
   "list_last": " và ",
-  "forecast": "Dự báo mới nhất của mô hình theo mùa cho {season} cho biết {pct}.",
   "forecast_agree": "Điều này phù hợp với quy luật thường thấy.",
   "forecast_disagree": "Điều này không phù hợp với quy luật thường thấy, nên độ tin cậy thấp hơn.",
   "forecast_weak": "Mức này gần với bình thường, nên lần này quy luật có thể yếu hơn.",
@@ -168,7 +165,6 @@
     "the second rains": "mùa mưa thứ hai",
     "spring": "mùa xuân"
   },
-  "pct_above_cap": "cao hơn mức bình thường hơn {n}%",
   "steps": {
     "flood-docs": {
       "text": "Cho giấy tờ tùy thân, giấy tờ đất và số điện thoại vào một túi ni lông buộc kín.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1169,10 +1157,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1303,10 +1287,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

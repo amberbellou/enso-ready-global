@@ -38,8 +38,6 @@
   "agreement_none": "Walang maaasahang tala ng ulan dito para sa panahong ito, kaya ituring itong {conf}.",
   "history": "Sa huling {n} malakas na pangyayari ng {phase}, ang karaniwang ulan dito tuwing {season} ay {pct}. Mas maulan kaysa karaniwan sa {wet}% ng mga ito.",
   "history_recent": "Mga pinakahuling pangyayari: {recent}.",
-  "pct_above": "{n}% mas mataas sa karaniwan",
-  "pct_below": "{n}% mas mababa sa karaniwan",
   "near_normal": "malapit sa karaniwan",
   "no_data": "walang datos",
   "status_line": "Pandaigdigang kalagayan: {status} (inilabas {issued}).",
@@ -132,7 +130,6 @@
   "risks": "Mga pangunahing panganib: {list}.",
   "list_sep": ", ",
   "list_last": " at ",
-  "forecast": "Ang pinakabagong pagtataya ng seasonal model para sa {season} ay nagsasabing {pct}.",
   "forecast_agree": "Tugma ito sa kadalasang nangyayari.",
   "forecast_disagree": "Hindi ito tugma sa kadalasang nangyayari, kaya mas mababa ang tiwala sa pagtataya.",
   "forecast_weak": "Malapit ito sa normal, kaya maaaring mas mahina ang mangyayari ngayon.",
@@ -168,7 +165,6 @@
     "the second rains": "ang ikalawang mga ulan",
     "spring": "tagsibol"
   },
-  "pct_above_cap": "mahigit {n}% na mas mataas sa normal",
   "steps": {
     "flood-docs": {
       "text": "Ilagay ang mga ID, papeles ng lupa at mga numero ng telepono sa selyadong plastik na supot.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1169,10 +1157,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1303,10 +1287,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

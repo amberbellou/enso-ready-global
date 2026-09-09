@@ -38,8 +38,6 @@
   "agreement_none": "Il n'y a pas de relevé de pluie fiable ici pour cette saison. Considérez donc ce qui est prévu comme {conf}.",
   "history": "Lors des {n} derniers épisodes forts ({phase}), la pluie de {season} ici était en moyenne {pct}. Elle a été plus abondante que la normale dans {wet} % des cas.",
   "history_recent": "Épisodes les plus récents : {recent}.",
-  "pct_above": "{n} % au-dessus de la normale",
-  "pct_below": "{n} % sous la normale",
   "near_normal": "proche de la normale",
   "no_data": "pas de données",
   "status_line": "Situation mondiale : {status} (bulletin publié le {issued}).",
@@ -132,7 +130,6 @@
   "risks": "Principaux risques : {list}.",
   "list_sep": ", ",
   "list_last": " et ",
-  "forecast": "La dernière prévision du modèle saisonnier pour {season} indique {pct}.",
   "forecast_agree": "Cela correspond au schéma habituel.",
   "forecast_disagree": "Cela ne correspond pas au schéma habituel, donc la confiance est plus faible.",
   "forecast_weak": "C'est proche de la normale, donc le schéma pourrait être plus faible cette fois.",
@@ -168,7 +165,6 @@
     "the second rains": "la deuxième saison des pluies",
     "spring": "le printemps"
   },
-  "pct_above_cap": "plus de {n} % au-dessus de la normale",
   "steps": {
     "flood-docs": {
       "text": "Mettez les cartes d'identité, les papiers du terrain et les numéros de téléphone dans un sac plastique bien fermé.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1145,10 +1133,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1279,10 +1263,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

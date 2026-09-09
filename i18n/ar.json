@@ -38,8 +38,6 @@
   "agreement_none": "لا يوجد سجل أمطار محلي موثوق لهذا الموسم، لذلك اعتبر مستوى الثقة: {conf}.",
   "history": "في آخر {n} حالات قوية من {phase}، كان متوسط أمطار {season} هنا {pct}. وكانت الأمطار أكثر من المعتاد في {wet}% منها.",
   "history_recent": "أحدث الحالات: {recent}.",
-  "pct_above": "{n}% أعلى من المعتاد",
-  "pct_below": "{n}% أقل من المعتاد",
   "near_normal": "قريب من المعتاد",
   "no_data": "لا توجد بيانات",
   "status_line": "الحالة العالمية: {status} (صادرة في {issued}).",
@@ -132,7 +130,6 @@
   "risks": "أهم المخاطر: {list}.",
   "list_sep": "، ",
   "list_last": " و",
-  "forecast": "أحدث توقعات النموذج الموسمي لـ{season} تقول {pct}.",
   "forecast_agree": "هذا يتفق مع النمط المعتاد.",
   "forecast_disagree": "هذا لا يتفق مع النمط المعتاد، لذلك الثقة أقل.",
   "forecast_weak": "هذا قريب من المعتاد، لذلك قد يكون النمط أضعف هذه المرة.",
@@ -168,7 +165,6 @@
     "the second rains": "الأمطار الثانية",
     "spring": "الربيع"
   },
-  "pct_above_cap": "أكثر من {n}% فوق المعتاد",
   "steps": {
     "flood-docs": {
       "text": "ضع بطاقات الهوية وأوراق الأرض وأرقام الهاتف في كيس بلاستيكي محكم الإغلاق.",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1145,10 +1133,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1279,10 +1263,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

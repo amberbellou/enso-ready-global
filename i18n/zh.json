@@ -38,8 +38,6 @@
   "agreement_none": "这个季节没有可靠的本地降雨记录，所以请按{conf}来看待。",
   "history": "在最近{n}次强{phase}事件中，这里{season}的雨量平均为{pct}。其中{wet}%的事件雨水比正常多。",
   "history_recent": "最近的事件：{recent}。",
-  "pct_above": "比正常多{n}%",
-  "pct_below": "比正常少{n}%",
   "near_normal": "接近正常",
   "no_data": "没有数据",
   "status_line": "全球状态：{status}（发布于{issued}）。",
@@ -132,7 +130,6 @@
   "risks": "主要风险：{list}。",
   "list_sep": "、",
   "list_last": "和",
-  "forecast": "最新的季节模型对{season}的预报是{pct}。",
   "forecast_agree": "这与通常的规律一致。",
   "forecast_disagree": "这与通常的规律不一致，所以把握较小。",
   "forecast_weak": "这接近正常水平，所以这次的规律可能比较弱。",
@@ -168,7 +165,6 @@
     "the second rains": "第二个雨季",
     "spring": "春季"
   },
-  "pct_above_cap": "比常年多 {n}% 以上",
   "steps": {
     "flood-docs": {
       "text": "把身份证件、土地证明和电话号码放进密封的塑料袋里。",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1145,10 +1133,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1279,10 +1263,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {

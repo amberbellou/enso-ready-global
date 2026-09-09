@@ -38,8 +38,6 @@
   "agreement_none": "ไม่มีสถิติฝนของพื้นที่นี้ที่เชื่อถือได้สำหรับฤดูนี้ จึงให้ถือว่านี่เป็น {conf}",
   "history": "ในเหตุการณ์ {phase} รุนแรง {n} ครั้งล่าสุด ฝนช่วง {season} ที่นี่เฉลี่ยอยู่ที่ {pct} และมีฝนมากกว่าปกติใน {wet}% ของเหตุการณ์เหล่านั้น",
   "history_recent": "เหตุการณ์ล่าสุด: {recent}",
-  "pct_above": "มากกว่าปกติ {n}%",
-  "pct_below": "น้อยกว่าปกติ {n}%",
   "near_normal": "ใกล้เคียงปกติ",
   "no_data": "ไม่มีข้อมูล",
   "status_line": "สถานะทั่วโลก: {status} (ออกประกาศ {issued})",
@@ -132,7 +130,6 @@
   "risks": "ความเสี่ยงหลัก: {list}",
   "list_sep": ", ",
   "list_last": " และ ",
-  "forecast": "การคาดการณ์ตามฤดูกาลล่าสุดสำหรับ {season} ระบุว่า {pct}",
   "forecast_agree": "ผลนี้ตรงกับรูปแบบที่มักเกิดขึ้น",
   "forecast_disagree": "ผลนี้ไม่ตรงกับรูปแบบที่มักเกิดขึ้น จึงมีความมั่นใจน้อยลง",
   "forecast_weak": "ผลนี้ใกล้เคียงกับค่าปกติ รูปแบบในครั้งนี้จึงอาจอ่อนกว่าเดิม",
@@ -168,7 +165,6 @@
     "the second rains": "ฝนรอบที่สอง",
     "spring": "ฤดูใบไม้ผลิ"
   },
-  "pct_above_cap": "สูงกว่าปกติมากกว่า {n}%",
   "steps": {
     "flood-docs": {
       "text": "เก็บบัตรประชาชน เอกสารที่ดิน และเบอร์โทรศัพท์ ไว้ในถุงพลาสติกที่ปิดสนิท",
@@ -825,14 +821,6 @@
       "hash": "2a46b61e80",
       "mt": true
     },
-    "pct_above": {
-      "hash": "98540154fc",
-      "mt": true
-    },
-    "pct_below": {
-      "hash": "3ebaebc457",
-      "mt": true
-    },
     "near_normal": {
       "hash": "2658423dff",
       "mt": true
@@ -1185,10 +1173,6 @@
       "hash": "4f413364b4",
       "mt": true
     },
-    "forecast": {
-      "hash": "1c18b13750",
-      "mt": true
-    },
     "forecast_agree": {
       "hash": "ec8fc2a412",
       "mt": true
@@ -1319,10 +1303,6 @@
     },
     "local_seasons.spring": {
       "hash": "248902131a",
-      "mt": true
-    },
-    "pct_above_cap": {
-      "hash": "4f496b388c",
       "mt": true
     },
     "steps.flood-docs.text": {
