@@ -137,11 +137,17 @@ export function farmerContext(cropCal, seasonMonths, rainSignValue) {
   if (!cropCal || !cropCal.crops || !seasonMonths.length || !rainSignValue) return null;
   const entries = Object.entries(cropCal.crops);
   const ranked = [...entries].sort((x, y) => { const ax = STAPLE_ORDER.indexOf(x[1].staple), ay = STAPLE_ORDER.indexOf(y[1].staple); return (ax < 0 ? 99 : ax) - (ay < 0 ? 99 : ay) || (y[1].zones || 0) - (x[1].zones || 0); });
-  for (const stage of ["sowing", "harvest"]) for (const [name, c] of ranked) {
-    if (c.all_year) continue;
-    const overlap = (c[stage] || []).find(m => seasonMonths.includes(m));
-    if (overlap === undefined) continue;
-    return { crop: c.staple || name.toLowerCase(), stage: stage === "sowing" ? "planting" : "harvest", window: circularRun(c[stage], overlap), direction: rainSignValue > 0 ? "wetter" : "drier" };
+  for (const stage of ["sowing", "harvest"]) {
+    const hits = [];
+    for (const [name, c] of ranked) {
+      if (c.all_year) continue;
+      const overlap = (c[stage] || []).find(m => seasonMonths.includes(m));
+      if (overlap === undefined) continue;
+      const crop = c.staple || name.toLowerCase();
+      if (!hits.some(h => h.crop === crop)) hits.push({ crop, window: circularRun(c[stage], overlap) });
+      if (hits.length === 3) break;
+    }
+    if (hits.length) return { crop: hits[0].crop, crops: hits.map(h => h.crop), stage: stage === "sowing" ? "planting" : "harvest", window: hits[0].window, direction: rainSignValue > 0 ? "wetter" : "drier" };
   }
   return null;
 }
@@ -170,7 +176,8 @@ export function buildFacts({ lat, lon, cc, status, composites, tele, checklists,
       const events = composites.events[key === "en" ? "El Niño" : "La Niña"];
       const recent = c.recent[seasonIdx].map((v, i) => ({ label: events[events.length - 3 + i], pct: v })).filter(r => r.pct !== null);
       if (n >= MIN_EVENTS && c.pct[seasonIdx] !== null) {
-        history = { season: SEASONS[seasonIdx], composite_pct: c.pct[seasonIdx], wetter_frac: c.wetter_frac[seasonIdx], std: c.std[seasonIdx], n_events: n, recent,
+        const all = (c.events && c.events[seasonIdx]) ? c.events[seasonIdx].map((v, i) => ({ label: events[i], pct: v })).filter(r => r.pct !== null) : [];
+        history = { season: SEASONS[seasonIdx], composite_pct: c.pct[seasonIdx], wetter_frac: c.wetter_frac[seasonIdx], std: c.std[seasonIdx], n_events: n, recent, all,
                     src: cell.src, source: composites.sources[cell.src] };
         agreement = agreementOf(c.pct[seasonIdx], s, c.std[seasonIdx]);
       } else history = { too_few: true, n_events: n, recent, src: cell.src, source: composites.sources[cell.src] };
@@ -295,11 +302,13 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
       if (f.disagreement) text += " " + (S["disagreement_" + f.disagreement] || "");
       else text += " " + (S["forecast_" + facts.forecast_agreement] || "");
       if (facts.forecast_rule && S[facts.forecast_rule.template]) text += " " + S[facts.forecast_rule.template];
+      if (f.monthly && f.monthly.length > 1 && S.forecast_monthly) blocks.push({ type: "para", key: "forecast_monthly", text: fill(S.forecast_monthly, { list: f.monthly.map(m => `${S.months[parseInt(m.ym.slice(5), 10) - 1]} ${m.pct === null ? S.no_data : (m.pct > 0 ? "+" : "") + m.pct + "%"}`).join(", ") }) });
       blocks.push({ type: "forecast", key: "forecast", text, partial: f.n_months < f.of_months ? fill(S.forecast_partial, { n: f.n_months, of: f.of_months }) : null, source: { id: "forecast", label: f.source, url: f.source_url } });
     }
     if (facts.farmer && S.farmer_planting) {
       const f = facts.farmer; const win = seasonLabel(S, f.window);
-      blocks.push({ type: "para", key: "farmer", text: fill(f.stage === "planting" ? S.farmer_planting : S.farmer_harvest, { dir: f.direction === "wetter" ? S.dir_wetter : S.dir_drier, season: seasonLabel(S, facts.signal.months), crop: (S.crops || {})[f.crop] || f.crop, window: win }) });
+      const cropNames = listJoin(S, (f.crops || [f.crop]).map(c => (S.crops || {})[c] || c));
+      blocks.push({ type: "para", key: "farmer", text: fill(f.stage === "planting" ? S.farmer_planting : S.farmer_harvest, { dir: f.direction === "wetter" ? S.dir_wetter : S.dir_drier, season: seasonLabel(S, facts.signal.months), crop: cropNames, window: win }) });
     }
     if (facts.cyclones && S.cyclone_history) {
       const c = facts.cyclones;
@@ -322,7 +331,7 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
       const cs = facts.consistency;
       const lead = cs && S.history_count ? fill(cs.cls === "mixed" ? S.history_mixed : S.history_count, { k: cs.k, n: cs.n, phase: phaseName, season: seasonLabel(S, facts.signal.months), dir: cs.direction === "wetter" ? S.dir_heavier : S.dir_lighter }) + " " : "";
       blocks.push({ type: "history", key: "history", text: lead + fill(S.history, { season: seasonLabel(S, facts.signal.months), n: h.n_events, phase: phaseName, pct: pctPhrase(S, h.composite_pct), wet: Math.round(h.wetter_frac) }),
-                    recent: fill(S.history_recent, { recent }), source: { id: h.src, url: h.source.url, label: h.source.label } });
+                    recent: fill(S.history_recent, { recent }), all: h.all && h.all.length > 3 && S.history_all ? fill(S.history_all, { phase: phaseName, list: h.all.map(r => `${r.label} ${r.pct > 0 ? "+" : ""}${r.pct}%`).join(", ") }) : null, source: { id: h.src, url: h.source.url, label: h.source.label } });
     } else if (facts.history && facts.history.too_few) blocks.push({ type: "para", key: "history", text: S.history_few });
   }
   blocks.push({ type: "status", key: "status", text: fill(S.status_line, { status: facts.status.status_line, issued: facts.status.issued }), synopsis: facts.status.synopsis, source: { url: facts.status.source_url, label: facts.status.source } });

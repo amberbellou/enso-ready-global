@@ -199,7 +199,7 @@ function renderBlocks(blocks, facts, p, extra) {
   const more = h("details", {}, h("summary", {}, ui("tell_more")));
   for (const b of paras.filter(b => !lead.includes(b))) more.append(para(b.text, ...(b.source ? [" ", h("a", { class: "src", href: b.source.url, rel: "noopener" }, "[" + b.source.id + "]")] : [])));
   const hist = blocks.find(b => b.type === "history");
-  if (hist) more.append(h("p", {}, hist.text), h("p", {}, hist.recent, " ", h("a", { class: "src", href: hist.source.url, rel: "noopener" }, "[" + hist.source.label + "]")));
+  if (hist) { more.append(h("p", {}, hist.text), h("p", {}, hist.recent, " ", h("a", { class: "src", href: hist.source.url, rel: "noopener" }, "[" + hist.source.label + "]"))); if (hist.all) more.append(h("p", { class: "muted" }, hist.all)); }
   const st = blocks.find(b => b.type === "status");
   more.append(h("p", { class: "muted" }, st.text, " ", h("a", { class: "src", href: st.source.url, rel: "noopener" }, "[NOAA CPC]")));
   main.append(more);

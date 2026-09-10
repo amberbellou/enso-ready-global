@@ -721,5 +721,7 @@
     "CU": "🌾"
   },
   "headline_noregion": "{name}: El Niño has no well-established effect on the seasons at this exact spot.",
-  "noregion_explain": "This place is not inside any region with a reliable El Niño or La Niña pattern, so this briefing does not predict its rain. Your national weather service remains the source for local outlooks."
+  "noregion_explain": "This place is not inside any region with a reliable El Niño or La Niña pattern, so this briefing does not predict its rain. Your national weather service remains the source for local outlooks.",
+  "forecast_monthly": "Month by month, the model expects: {list}.",
+  "history_all": "Every strong {phase} event since 1979, change from normal: {list}."
 }
