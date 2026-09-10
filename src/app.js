@@ -32,7 +32,7 @@ function langPicker() {
 }
 function mtBanner() {
   if (!state.strings || state.strings._status !== "machine") return null;
-  return h("p", { class: "mt" }, h("a", { href: `https://github.com/amberbellou/enso-ready-global/issues/new?title=${encodeURIComponent("Translation fix (" + state.lang + ")")}`, rel: "noopener" }, ui("mt_banner")));
+  return h("div", { class: "notice", role: "region", "aria-label": ui("important") }, h("div", { class: "notice-title" }, ui("important")), h("a", { href: `https://github.com/amberbellou/enso-ready-global/issues/new?title=${encodeURIComponent("Translation fix (" + state.lang + ")")}`, rel: "noopener" }, ui("mt_banner")));
 }
 
 // --- settings (Annex B.4) ---
@@ -223,7 +223,7 @@ function stepsWidget(block) {
     body.append(h("div", { class: "muted" }, ui("step_of", { i: i + 1, n: steps.length })), h("div", { class: "progress", role: "progressbar", "aria-valuenow": nDone, "aria-valuemax": steps.length }, h("span", { style: `width:${100 * nDone / steps.length}%` })));
     const list = showAll ? steps : [steps[i]];
     for (const s of list) {
-      const el = h("div", { class: "step" + (done[s.id] ? " stepdone" : "") }, h("div", { class: "icon", "aria-hidden": "true" }, s.icon), h("div", { class: "text" }, s.text), h("div", { class: "meta" }, ui("minutes", { n: s.minutes })),
+      const el = h("div", { class: "step care" + (done[s.id] ? " stepdone" : "") }, showAll ? h("span", { class: "tag " + (done[s.id] ? "tag-done" : "tag-todo") }, done[s.id] ? ui("done") : ui("todo")) : null, h("div", { class: "icon", "aria-hidden": "true" }, s.icon), h("div", { class: "text" }, s.text), h("div", { class: "meta" }, ui("minutes", { n: s.minutes })),
         h("details", {}, h("summary", {}, ui("why_matters")), h("p", {}, s.why)),
         h("div", { class: "row" }, h("button", { class: "btn", "aria-pressed": String(!!done[s.id]), onclick: () => { done[s.id] = !done[s.id]; LS.set("done", done); draw(); } }, "✅ " + ui("done")),
           showAll ? null : h("button", { class: "btn secondary", disabled: i >= steps.length - 1 ? "true" : null, onclick: () => { i++; state.stepIdx = i; draw(); } }, ui("next_step") + " →")));

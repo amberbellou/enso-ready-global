@@ -114,7 +114,10 @@
     "retry": "Try again",
     "try_examples": "Try: {examples}",
     "language": "Language",
-    "settings_intro": "Changes apply straight away and are saved on this phone."
+    "settings_intro": "Changes apply straight away and are saved on this phone.",
+    "todo": "To do",
+    "risks_title": "Main risks",
+    "important": "Important"
   },
   "timing_coming_one": "That season starts next month ({season}).",
   "hazards": {
