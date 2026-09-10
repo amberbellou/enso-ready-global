@@ -180,7 +180,12 @@ function renderBlocks(blocks, facts, p, extra) {
   if (nm) main.append(h("p", { class: "place" }, "📍 " + nm));
   main.append(h("h1", { class: "headline " + cls, tabindex: "-1", id: "main" }, stripped.charAt(0).toUpperCase() + stripped.slice(1)));
   const paras = blocks.filter(b => b.type === "para");
-  const LEAD_ICON = { risks: "⚠️", timing: "📅", neutral: "🌤️", farmer: "🌱" };
+  if (facts.signal && facts.signal.hazards.length) {   // main risks as glyph rows (icon + word, never colour alone)
+    const S = state.strings; const ul = h("ul", { class: "risks", "aria-label": ui("risks_title") });
+    for (const hz of facts.signal.hazards.slice(0, 4)) ul.append(h("li", {}, h("span", { class: "glyph", "aria-hidden": "true" }, (S.hazard_icons || {})[hz] || "•"), (S.hazards || {})[hz] || hz));
+    main.append(ul);
+  }
+  const LEAD_ICON = { timing: "📅", neutral: "🌤️", farmer: "🌱" };
   const lead = paras.filter(b => LEAD_ICON[b.key] !== undefined);
   for (const b of lead) main.append(h("p", { class: "lead" }, h("span", { class: "leadicon", "aria-hidden": "true" }, LEAD_ICON[b.key]), h("span", {}, b.text)));
   const st0 = state.data.status;
