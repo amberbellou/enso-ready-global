@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}: El Niño không có ảnh hưởng nào được xác định rõ đối với các mùa ở đúng điểm này.",
   "noregion_explain": "Nơi này không nằm trong vùng nào có quy luật El Niño hoặc La Niña đáng tin cậy, nên bản tin này không dự báo lượng mưa cho nơi này. Cơ quan khí tượng quốc gia của bạn vẫn là nguồn thông tin cho các dự báo tại địa phương.",
+  "forecast_monthly": "Theo từng tháng, mô hình dự đoán: {list}.",
+  "history_all": "Tất cả các đợt {phase} mạnh từ năm 1979 đến nay, mức thay đổi so với bình thường: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}፦ በዚህ ትክክለኛ ቦታ ላይ ኤልኒኖ በወቅቶች ላይ የሚያሳድረው በጥናት የተረጋገጠ ተጽዕኖ የለም።",
   "noregion_explain": "ይህ ቦታ አስተማማኝ የኤልኒኖ ወይም የላኒና አካሄድ ባለበት አካባቢ ውስጥ አይገኝም። ስለዚህ ይህ መግለጫ የዚህን ቦታ ዝናብ አይተነብይም። ለአካባቢው ትንበያ የአገርዎ የአየር ሁኔታ አገልግሎት ምንጭ ሆኖ ይቀጥላል።",
+  "forecast_monthly": "ወር በወር፣ ሞዴሉ እንዲህ ይጠብቃል፦ {list}።",
+  "history_all": "ከ1979 ጀምሮ የተከሰተ ኃይለኛ {phase} ሁሉ፣ ከመደበኛው የተለየው መጠን፦ {list}።",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

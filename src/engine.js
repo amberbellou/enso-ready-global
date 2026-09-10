@@ -93,9 +93,10 @@ export function forecastPct(forecastMonths, wanted) {
   if (!rows.length) return null;
   const anom = rows.reduce((s, r) => s + r.anomaly, 0), mean = rows.reduce((s, r) => s + r.mean, 0);
   const normal = mean - anom;
-  if (normal < 10) return null;               // no meaningful percentage on a near-zero normal
+  if (normal < 10) return null;                     // desert-dry normals make percentages meaningless
   const raw = Math.round(100 * anom / normal);
-  return { pct: Math.max(-100, Math.min(300, raw)), capped: raw > 300, n_months: rows.length, of_months: wanted.length, normal_mm: Math.round(normal), anomaly_mm: Math.round(anom) };
+  const monthly = rows.map(r => { const nrm = r.mean - r.anomaly; return { ym: r.ym, pct: nrm >= 5 ? Math.max(-100, Math.min(300, Math.round(100 * r.anomaly / nrm))) : null }; });
+  return { pct: Math.max(-100, Math.min(300, raw)), capped: raw > 300, n_months: rows.length, of_months: wanted.length, normal_mm: Math.round(normal), anomaly_mm: Math.round(anom), monthly };
 }
 
 // --- facts payload -----------------------------------------------------

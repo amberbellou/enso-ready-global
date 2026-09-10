@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}: El Niño tidak memiliki pengaruh yang sudah terbukti jelas pada musim di titik ini.",
   "noregion_explain": "Tempat ini tidak berada di dalam wilayah mana pun yang memiliki pola El Niño atau La Niña yang dapat dipercaya, jadi laporan ini tidak memperkirakan hujan di tempat ini. Badan meteorologi nasional di negara Anda tetap menjadi sumber untuk prakiraan setempat.",
+  "forecast_monthly": "Bulan demi bulan, model memperkirakan: {list}.",
+  "history_all": "Semua kejadian {phase} yang kuat sejak 1979, perubahan dari keadaan normal: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

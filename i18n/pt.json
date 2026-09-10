@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}: o El Niño não tem efeito bem estabelecido sobre as estações neste ponto exato.",
   "noregion_explain": "Este lugar não fica dentro de nenhuma região com um padrão confiável de El Niño ou La Niña. Por isso, este boletim não prevê a chuva daqui. O serviço meteorológico do seu país continua sendo a fonte das previsões locais.",
+  "forecast_monthly": "Mês a mês, o modelo espera: {list}.",
+  "history_all": "Todos os episódios fortes de {phase} desde 1979, mudança em relação ao normal: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

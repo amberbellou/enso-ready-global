@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}: Walang malinaw na epekto ang El Niño sa mga panahon sa mismong lugar na ito.",
   "noregion_explain": "Ang lugar na ito ay wala sa loob ng anumang rehiyon na may maaasahang padron ng El Niño o La Niña. Kaya hindi hinuhulaan ng ulat na ito ang ulan dito. Ang inyong pambansang serbisyo ng panahon pa rin ang pinagkukunan ng mga lokal na taya.",
+  "forecast_monthly": "Buwan-buwan, ito ang inaasahan ng modelo: {list}.",
+  "history_all": "Lahat ng malakas na {phase} mula noong 1979, at ang pagbabago mula sa karaniwan: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

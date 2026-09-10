@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}: El Niño haina athari inayojulikana vizuri kwa majira mahali hapa hasa.",
   "noregion_explain": "Sehemu hii haiko ndani ya eneo lolote lenye mtindo wa kuaminika wa El Niño au La Niña. Kwa hiyo taarifa hii haitabiri mvua ya sehemu hii. Shirika la hali ya hewa la nchi yako linabaki kuwa chanzo cha utabiri wa eneo lako.",
+  "forecast_monthly": "Mwezi kwa mwezi, modeli inatarajia haya: {list}.",
+  "history_all": "Kila tukio kali la {phase} kuanzia mwaka 1979, mabadiliko kutoka hali ya kawaida: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

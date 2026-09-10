@@ -722,6 +722,8 @@
   },
   "headline_noregion": "{name}：在这个具体地点，厄尔尼诺对各个季节没有明确的影响。",
   "noregion_explain": "这个地方不在任何有可靠厄尔尼诺或拉尼娜规律的区域里，所以这份简报不预测这里的降雨。本地的天气预报，仍然要以你们国家的气象部门为准。",
+  "forecast_monthly": "按月来看，模型预计：{list}。",
+  "history_all": "1979年以来的每一次强{phase}事件，与正常情况相比的变化：{list}。",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2649,6 +2651,14 @@
     },
     "noregion_explain": {
       "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }

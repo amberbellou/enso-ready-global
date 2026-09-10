@@ -94,7 +94,14 @@
     "loading": "Готовим вашу сводку…",
     "error_title": "Не удалось загрузить вашу сводку.",
     "error_body": "Проверьте связь и попробуйте ещё раз. Прошлая сводка, если она была, сохранена на этом телефоне.",
-    "retry": "Попробовать ещё раз"
+    "retry": "Попробовать ещё раз",
+    "browse_countries": "Просмотр по странам",
+    "try_examples": "Попробуйте: {examples}",
+    "language": "Язык",
+    "settings_intro": "Изменения действуют сразу и сохраняются на этом телефоне.",
+    "todo": "Что делать",
+    "risks_title": "Главные риски",
+    "important": "Важно"
   },
   "timing_coming_one": "Этот сезон начинается в следующем месяце ({season}).",
   "hazards": {
@@ -648,7 +655,7 @@
   "history_mixed": "В последних {n} сильных событиях {phase} дожди здесь в сезон {season} были то больше, то меньше нормы.",
   "dir_heavier": "сильнее",
   "dir_lighter": "слабее",
-  "conditions_rain": "За последние три месяца количество дождя здесь было {pct}.",
+  "conditions_rain": "За последние три месяца здесь выпало {pct}.",
   "conditions_usdm": "Монитор засухи США сейчас показывает здесь: {level}.",
   "prov_chip": "{layer}: {source}, {as_of}",
   "layers": {
@@ -680,6 +687,43 @@
     "soybean": "соя",
     "barley": "ячмень"
   },
+  "pct_more_rain": "примерно на {n}% больше дождя, чем обычно",
+  "pct_less_rain": "примерно на {n}% меньше дождя, чем обычно",
+  "forecast_says": "По последнему компьютерному прогнозу на {season} ожидается {pct}.",
+  "pct_more_rain_cap": "более чем на {n}% больше дождя, чем обычно",
+  "hazard_icons": {
+    "FL": "🌊",
+    "FLR": "🌊",
+    "FF": "⚠️",
+    "LS": "⛰️",
+    "DR": "🌵",
+    "WS": "💧",
+    "WF": "🔥",
+    "HZ": "😷",
+    "HT": "🌡️",
+    "EP": "🦟",
+    "CH": "🧪",
+    "RVF": "🐐",
+    "CS": "🌾",
+    "CF": "🌾",
+    "FI": "🍚",
+    "TC": "🌀",
+    "TCE": "🌀",
+    "ST": "🌩️",
+    "HS": "🌊",
+    "SI": "🧂",
+    "FR": "🥶",
+    "SN": "🏔️",
+    "HSN": "❄️",
+    "CD": "🧣",
+    "FLS": "🌊",
+    "MW": "🐛",
+    "CU": "🌾"
+  },
+  "headline_noregion": "{name}: у Эль-Ниньо нет чётко установленного влияния на сезоны именно в этом месте.",
+  "noregion_explain": "Это место не входит ни в один регион с надёжной картиной Эль-Ниньо или Ла-Нинья, поэтому в этой сводке нет прогноза дождя для него. Прогнозы для вашей местности по-прежнему даёт национальная метеослужба.",
+  "forecast_monthly": "По месяцам модель ожидает: {list}.",
+  "history_all": "Все сильные случаи {phase} с 1979 года, отличие от обычного: {list}.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2334,7 +2378,7 @@
       "mt": true
     },
     "conditions_rain": {
-      "hash": "be765c9b56",
+      "hash": "a2ca066d7c",
       "mt": true
     },
     "conditions_usdm": {
@@ -2447,6 +2491,174 @@
     },
     "usdm_levels": {
       "hash": "0702fca5e6",
+      "mt": true
+    },
+    "pct_more_rain": {
+      "hash": "ea559aed3e",
+      "mt": true
+    },
+    "pct_less_rain": {
+      "hash": "8ddfb4ecf6",
+      "mt": true
+    },
+    "ui.browse_countries": {
+      "hash": "c092ec5fa4",
+      "mt": true
+    },
+    "ui.try_examples": {
+      "hash": "d5f8a97c77",
+      "mt": true
+    },
+    "ui.language": {
+      "hash": "89b86ab0e6",
+      "mt": true
+    },
+    "ui.settings_intro": {
+      "hash": "47ed03c88a",
+      "mt": true
+    },
+    "ui.todo": {
+      "hash": "8665aed362",
+      "mt": true
+    },
+    "ui.risks_title": {
+      "hash": "2ad090cd9a",
+      "mt": true
+    },
+    "ui.important": {
+      "hash": "4b6d6a3015",
+      "mt": true
+    },
+    "forecast_says": {
+      "hash": "ec03b53c08",
+      "mt": true
+    },
+    "pct_more_rain_cap": {
+      "hash": "1a9ceb0f1d",
+      "mt": true
+    },
+    "hazard_icons.FL": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FLR": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FF": {
+      "hash": "76e163cfa2",
+      "mt": true
+    },
+    "hazard_icons.LS": {
+      "hash": "5859e3cce7",
+      "mt": true
+    },
+    "hazard_icons.DR": {
+      "hash": "630b7aec7c",
+      "mt": true
+    },
+    "hazard_icons.WS": {
+      "hash": "250a9753d2",
+      "mt": true
+    },
+    "hazard_icons.WF": {
+      "hash": "d8f26c88ff",
+      "mt": true
+    },
+    "hazard_icons.HZ": {
+      "hash": "be8ef91bdb",
+      "mt": true
+    },
+    "hazard_icons.HT": {
+      "hash": "38f9570e45",
+      "mt": true
+    },
+    "hazard_icons.EP": {
+      "hash": "b4d5dc82d8",
+      "mt": true
+    },
+    "hazard_icons.CH": {
+      "hash": "70cfacb643",
+      "mt": true
+    },
+    "hazard_icons.RVF": {
+      "hash": "1762f3b53d",
+      "mt": true
+    },
+    "hazard_icons.CS": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.CF": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.FI": {
+      "hash": "65ea87c0b7",
+      "mt": true
+    },
+    "hazard_icons.TC": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.TCE": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.ST": {
+      "hash": "58c696d5b7",
+      "mt": true
+    },
+    "hazard_icons.HS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.SI": {
+      "hash": "9d2bba853f",
+      "mt": true
+    },
+    "hazard_icons.FR": {
+      "hash": "71619db0cc",
+      "mt": true
+    },
+    "hazard_icons.SN": {
+      "hash": "a7097b8b83",
+      "mt": true
+    },
+    "hazard_icons.HSN": {
+      "hash": "f3ef63a3cd",
+      "mt": true
+    },
+    "hazard_icons.CD": {
+      "hash": "1f806064be",
+      "mt": true
+    },
+    "hazard_icons.FLS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.MW": {
+      "hash": "007a4b2695",
+      "mt": true
+    },
+    "hazard_icons.CU": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "headline_noregion": {
+      "hash": "b7a1f2e5bc",
+      "mt": true
+    },
+    "noregion_explain": {
+      "hash": "d91690c81e",
+      "mt": true
+    },
+    "forecast_monthly": {
+      "hash": "d0fcade407",
+      "mt": true
+    },
+    "history_all": {
+      "hash": "8cc4a00ee0",
       "mt": true
     }
   }
