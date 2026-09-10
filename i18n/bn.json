@@ -94,7 +94,14 @@
     "loading": "আপনার সংক্ষিপ্ত তথ্য আনা হচ্ছে…",
     "error_title": "আমরা আপনার সংক্ষিপ্ত তথ্য আনতে পারিনি।",
     "error_body": "আপনার সংযোগ দেখে নিন, তারপর আবার চেষ্টা করুন। আগের তথ্য থাকলে সেটি এই ফোনে রাখা আছে।",
-    "retry": "আবার চেষ্টা করুন"
+    "retry": "আবার চেষ্টা করুন",
+    "browse_countries": "দেশ অনুযায়ী দেখুন",
+    "try_examples": "দেখে নিন: {examples}",
+    "language": "ভাষা",
+    "settings_intro": "পরিবর্তন সঙ্গে সঙ্গেই কাজ করে এবং এই ফোনে সংরক্ষণ হয়।",
+    "todo": "যা করতে হবে",
+    "risks_title": "প্রধান ঝুঁকি",
+    "important": "গুরুত্বপূর্ণ"
   },
   "timing_coming_one": "সেই মৌসুম পরের মাসে শুরু হবে ({season})।",
   "hazards": {
@@ -641,7 +648,7 @@
   "history_mixed": "শেষ {n}টি শক্তিশালী {phase} ঘটনায় এখানে {season} সময়ের বৃষ্টি কখনও বেশি, কখনও কম হয়েছে।",
   "dir_heavier": "বেশি",
   "dir_lighter": "কম",
-  "conditions_rain": "গত তিন মাসে এখানে বৃষ্টি ছিল {pct}।",
+  "conditions_rain": "গত তিন মাসে এই জায়গায় হয়েছে {pct}।",
   "conditions_usdm": "মার্কিন খরা পর্যবেক্ষণ (US Drought Monitor) এখন এখানে {level} দেখাচ্ছে।",
   "prov_chip": "{layer}: {source}, {as_of}",
   "layers": {
@@ -680,6 +687,41 @@
     "চরম খরা",
     "ব্যতিক্রমী খরা"
   ],
+  "pct_more_rain": "স্বাভাবিকের চেয়ে প্রায় {n}% বেশি বৃষ্টি",
+  "pct_less_rain": "স্বাভাবিকের চেয়ে প্রায় {n}% কম বৃষ্টি",
+  "forecast_says": "{season}-এর জন্য সর্বশেষ কম্পিউটার পূর্বাভাসে আশা করা হচ্ছে {pct}।",
+  "pct_more_rain_cap": "স্বাভাবিকের চেয়ে {n}%-এর বেশি বৃষ্টি",
+  "hazard_icons": {
+    "FL": "🌊",
+    "FLR": "🌊",
+    "FF": "⚠️",
+    "LS": "⛰️",
+    "DR": "🌵",
+    "WS": "💧",
+    "WF": "🔥",
+    "HZ": "😷",
+    "HT": "🌡️",
+    "EP": "🦟",
+    "CH": "🧪",
+    "RVF": "🐐",
+    "CS": "🌾",
+    "CF": "🌾",
+    "FI": "🍚",
+    "TC": "🌀",
+    "TCE": "🌀",
+    "ST": "🌩️",
+    "HS": "🌊",
+    "SI": "🧂",
+    "FR": "🥶",
+    "SN": "🏔️",
+    "HSN": "❄️",
+    "CD": "🧣",
+    "FLS": "🌊",
+    "MW": "🐛",
+    "CU": "🌾"
+  },
+  "headline_noregion": "{name}: ঠিক এই জায়গার ঋতুর উপর এল নিনোর কোনো সুপ্রতিষ্ঠিত প্রভাব নেই।",
+  "noregion_explain": "এই জায়গাটি এমন কোনো অঞ্চলের ভিতরে নয় যেখানে এল নিনো বা লা নিনার নির্ভরযোগ্য ধরন দেখা যায়। তাই এই বার্তায় এখানকার বৃষ্টির পূর্বাভাস দেওয়া হয় না। স্থানীয় পূর্বাভাসের উৎস আগের মতোই আপনার দেশের আবহাওয়া দপ্তর।",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2334,7 +2376,7 @@
       "mt": true
     },
     "conditions_rain": {
-      "hash": "be765c9b56",
+      "hash": "a2ca066d7c",
       "mt": true
     },
     "conditions_usdm": {
@@ -2447,6 +2489,166 @@
     },
     "usdm_levels": {
       "hash": "0702fca5e6",
+      "mt": true
+    },
+    "pct_more_rain": {
+      "hash": "ea559aed3e",
+      "mt": true
+    },
+    "pct_less_rain": {
+      "hash": "8ddfb4ecf6",
+      "mt": true
+    },
+    "ui.browse_countries": {
+      "hash": "c092ec5fa4",
+      "mt": true
+    },
+    "ui.try_examples": {
+      "hash": "d5f8a97c77",
+      "mt": true
+    },
+    "ui.language": {
+      "hash": "89b86ab0e6",
+      "mt": true
+    },
+    "ui.settings_intro": {
+      "hash": "47ed03c88a",
+      "mt": true
+    },
+    "ui.todo": {
+      "hash": "8665aed362",
+      "mt": true
+    },
+    "ui.risks_title": {
+      "hash": "2ad090cd9a",
+      "mt": true
+    },
+    "ui.important": {
+      "hash": "4b6d6a3015",
+      "mt": true
+    },
+    "forecast_says": {
+      "hash": "ec03b53c08",
+      "mt": true
+    },
+    "pct_more_rain_cap": {
+      "hash": "1a9ceb0f1d",
+      "mt": true
+    },
+    "hazard_icons.FL": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FLR": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FF": {
+      "hash": "76e163cfa2",
+      "mt": true
+    },
+    "hazard_icons.LS": {
+      "hash": "5859e3cce7",
+      "mt": true
+    },
+    "hazard_icons.DR": {
+      "hash": "630b7aec7c",
+      "mt": true
+    },
+    "hazard_icons.WS": {
+      "hash": "250a9753d2",
+      "mt": true
+    },
+    "hazard_icons.WF": {
+      "hash": "d8f26c88ff",
+      "mt": true
+    },
+    "hazard_icons.HZ": {
+      "hash": "be8ef91bdb",
+      "mt": true
+    },
+    "hazard_icons.HT": {
+      "hash": "38f9570e45",
+      "mt": true
+    },
+    "hazard_icons.EP": {
+      "hash": "b4d5dc82d8",
+      "mt": true
+    },
+    "hazard_icons.CH": {
+      "hash": "70cfacb643",
+      "mt": true
+    },
+    "hazard_icons.RVF": {
+      "hash": "1762f3b53d",
+      "mt": true
+    },
+    "hazard_icons.CS": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.CF": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.FI": {
+      "hash": "65ea87c0b7",
+      "mt": true
+    },
+    "hazard_icons.TC": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.TCE": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.ST": {
+      "hash": "58c696d5b7",
+      "mt": true
+    },
+    "hazard_icons.HS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.SI": {
+      "hash": "9d2bba853f",
+      "mt": true
+    },
+    "hazard_icons.FR": {
+      "hash": "71619db0cc",
+      "mt": true
+    },
+    "hazard_icons.SN": {
+      "hash": "a7097b8b83",
+      "mt": true
+    },
+    "hazard_icons.HSN": {
+      "hash": "f3ef63a3cd",
+      "mt": true
+    },
+    "hazard_icons.CD": {
+      "hash": "1f806064be",
+      "mt": true
+    },
+    "hazard_icons.FLS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.MW": {
+      "hash": "007a4b2695",
+      "mt": true
+    },
+    "hazard_icons.CU": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "headline_noregion": {
+      "hash": "b7a1f2e5bc",
+      "mt": true
+    },
+    "noregion_explain": {
+      "hash": "d91690c81e",
       "mt": true
     }
   }

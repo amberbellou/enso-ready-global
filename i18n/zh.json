@@ -94,7 +94,14 @@
     "loading": "正在获取你的简报…",
     "error_title": "我们无法加载你的简报。",
     "error_body": "请检查网络连接，然后再试一次。如果你之前有简报，它会保存在这部手机上。",
-    "retry": "再试一次"
+    "retry": "再试一次",
+    "browse_countries": "按国家浏览",
+    "try_examples": "试试：{examples}",
+    "language": "语言",
+    "settings_intro": "改动会马上生效，并保存在这台手机上。",
+    "todo": "要做的事",
+    "risks_title": "主要风险",
+    "important": "重要"
   },
   "timing_coming_one": "那个季节下个月开始（{season}）。",
   "hazards": {
@@ -641,7 +648,7 @@
   "history_mixed": "在最近 {n} 次强{phase}事件中，这里{season}的雨量有时多、有时少。",
   "dir_heavier": "多",
   "dir_lighter": "少",
-  "conditions_rain": "过去三个月，这里的雨量{pct}。",
+  "conditions_rain": "过去三个月，这个地方的{pct}。",
   "conditions_usdm": "美国干旱监测目前显示，这里是{level}。",
   "prov_chip": "{layer}：{source}，{as_of}",
   "layers": {
@@ -680,6 +687,41 @@
     "极度干旱",
     "特大干旱"
   ],
+  "pct_more_rain": "雨量比平常多约{n}%",
+  "pct_less_rain": "雨量比平常少约{n}%",
+  "forecast_says": "最新的电脑预报预计，{season}的{pct}。",
+  "pct_more_rain_cap": "雨量比平常多{n}%以上",
+  "hazard_icons": {
+    "FL": "🌊",
+    "FLR": "🌊",
+    "FF": "⚠️",
+    "LS": "⛰️",
+    "DR": "🌵",
+    "WS": "💧",
+    "WF": "🔥",
+    "HZ": "😷",
+    "HT": "🌡️",
+    "EP": "🦟",
+    "CH": "🧪",
+    "RVF": "🐐",
+    "CS": "🌾",
+    "CF": "🌾",
+    "FI": "🍚",
+    "TC": "🌀",
+    "TCE": "🌀",
+    "ST": "🌩️",
+    "HS": "🌊",
+    "SI": "🧂",
+    "FR": "🥶",
+    "SN": "🏔️",
+    "HSN": "❄️",
+    "CD": "🧣",
+    "FLS": "🌊",
+    "MW": "🐛",
+    "CU": "🌾"
+  },
+  "headline_noregion": "{name}：在这个具体地点，厄尔尼诺对各个季节没有明确的影响。",
+  "noregion_explain": "这个地方不在任何有可靠厄尔尼诺或拉尼娜规律的区域里，所以这份简报不预测这里的降雨。本地的天气预报，仍然要以你们国家的气象部门为准。",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2334,7 +2376,7 @@
       "mt": true
     },
     "conditions_rain": {
-      "hash": "be765c9b56",
+      "hash": "a2ca066d7c",
       "mt": true
     },
     "conditions_usdm": {
@@ -2447,6 +2489,166 @@
     },
     "usdm_levels": {
       "hash": "0702fca5e6",
+      "mt": true
+    },
+    "pct_more_rain": {
+      "hash": "ea559aed3e",
+      "mt": true
+    },
+    "pct_less_rain": {
+      "hash": "8ddfb4ecf6",
+      "mt": true
+    },
+    "ui.browse_countries": {
+      "hash": "c092ec5fa4",
+      "mt": true
+    },
+    "ui.try_examples": {
+      "hash": "d5f8a97c77",
+      "mt": true
+    },
+    "ui.language": {
+      "hash": "89b86ab0e6",
+      "mt": true
+    },
+    "ui.settings_intro": {
+      "hash": "47ed03c88a",
+      "mt": true
+    },
+    "ui.todo": {
+      "hash": "8665aed362",
+      "mt": true
+    },
+    "ui.risks_title": {
+      "hash": "2ad090cd9a",
+      "mt": true
+    },
+    "ui.important": {
+      "hash": "4b6d6a3015",
+      "mt": true
+    },
+    "forecast_says": {
+      "hash": "ec03b53c08",
+      "mt": true
+    },
+    "pct_more_rain_cap": {
+      "hash": "1a9ceb0f1d",
+      "mt": true
+    },
+    "hazard_icons.FL": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FLR": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FF": {
+      "hash": "76e163cfa2",
+      "mt": true
+    },
+    "hazard_icons.LS": {
+      "hash": "5859e3cce7",
+      "mt": true
+    },
+    "hazard_icons.DR": {
+      "hash": "630b7aec7c",
+      "mt": true
+    },
+    "hazard_icons.WS": {
+      "hash": "250a9753d2",
+      "mt": true
+    },
+    "hazard_icons.WF": {
+      "hash": "d8f26c88ff",
+      "mt": true
+    },
+    "hazard_icons.HZ": {
+      "hash": "be8ef91bdb",
+      "mt": true
+    },
+    "hazard_icons.HT": {
+      "hash": "38f9570e45",
+      "mt": true
+    },
+    "hazard_icons.EP": {
+      "hash": "b4d5dc82d8",
+      "mt": true
+    },
+    "hazard_icons.CH": {
+      "hash": "70cfacb643",
+      "mt": true
+    },
+    "hazard_icons.RVF": {
+      "hash": "1762f3b53d",
+      "mt": true
+    },
+    "hazard_icons.CS": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.CF": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.FI": {
+      "hash": "65ea87c0b7",
+      "mt": true
+    },
+    "hazard_icons.TC": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.TCE": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.ST": {
+      "hash": "58c696d5b7",
+      "mt": true
+    },
+    "hazard_icons.HS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.SI": {
+      "hash": "9d2bba853f",
+      "mt": true
+    },
+    "hazard_icons.FR": {
+      "hash": "71619db0cc",
+      "mt": true
+    },
+    "hazard_icons.SN": {
+      "hash": "a7097b8b83",
+      "mt": true
+    },
+    "hazard_icons.HSN": {
+      "hash": "f3ef63a3cd",
+      "mt": true
+    },
+    "hazard_icons.CD": {
+      "hash": "1f806064be",
+      "mt": true
+    },
+    "hazard_icons.FLS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.MW": {
+      "hash": "007a4b2695",
+      "mt": true
+    },
+    "hazard_icons.CU": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "headline_noregion": {
+      "hash": "b7a1f2e5bc",
+      "mt": true
+    },
+    "noregion_explain": {
+      "hash": "d91690c81e",
       "mt": true
     }
   }

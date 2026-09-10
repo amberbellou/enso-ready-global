@@ -94,7 +94,14 @@
     "loading": "Đang lấy bản tin của bạn…",
     "error_title": "Chúng tôi không tải được bản tin của bạn.",
     "error_body": "Hãy kiểm tra kết nối rồi thử lại. Bản tin gần nhất, nếu bạn đã có, vẫn được lưu trên điện thoại này.",
-    "retry": "Thử lại"
+    "retry": "Thử lại",
+    "browse_countries": "Xem theo quốc gia",
+    "try_examples": "Thử: {examples}",
+    "language": "Ngôn ngữ",
+    "settings_intro": "Thay đổi có hiệu lực ngay và được lưu trên điện thoại này.",
+    "todo": "Việc cần làm",
+    "risks_title": "Những rủi ro chính",
+    "important": "Quan trọng"
   },
   "timing_coming_one": "Mùa đó bắt đầu vào tháng sau ({season}).",
   "hazards": {
@@ -641,7 +648,7 @@
   "history_mixed": "Trong {n} sự kiện {phase} mạnh gần đây nhất, mưa mùa {season} ở đây có lúc nhiều hơn, có lúc ít hơn.",
   "dir_heavier": "nhiều hơn",
   "dir_lighter": "ít hơn",
-  "conditions_rain": "Trong ba tháng qua, lượng mưa ở đây là {pct}.",
+  "conditions_rain": "Trong ba tháng qua, nơi này có {pct}.",
   "conditions_usdm": "US Drought Monitor (cơ quan theo dõi hạn hán của Hoa Kỳ) hiện cho thấy ở đây có {level}.",
   "prov_chip": "{layer}: {source}, {as_of}",
   "layers": {
@@ -680,6 +687,41 @@
     "hạn hán rất nghiêm trọng",
     "hạn hán đặc biệt nghiêm trọng"
   ],
+  "pct_more_rain": "mưa nhiều hơn bình thường khoảng {n}%",
+  "pct_less_rain": "mưa ít hơn bình thường khoảng {n}%",
+  "forecast_says": "Dự báo máy tính mới nhất cho {season} cho rằng sẽ có {pct}.",
+  "pct_more_rain_cap": "mưa nhiều hơn bình thường trên {n}%",
+  "hazard_icons": {
+    "FL": "🌊",
+    "FLR": "🌊",
+    "FF": "⚠️",
+    "LS": "⛰️",
+    "DR": "🌵",
+    "WS": "💧",
+    "WF": "🔥",
+    "HZ": "😷",
+    "HT": "🌡️",
+    "EP": "🦟",
+    "CH": "🧪",
+    "RVF": "🐐",
+    "CS": "🌾",
+    "CF": "🌾",
+    "FI": "🍚",
+    "TC": "🌀",
+    "TCE": "🌀",
+    "ST": "🌩️",
+    "HS": "🌊",
+    "SI": "🧂",
+    "FR": "🥶",
+    "SN": "🏔️",
+    "HSN": "❄️",
+    "CD": "🧣",
+    "FLS": "🌊",
+    "MW": "🐛",
+    "CU": "🌾"
+  },
+  "headline_noregion": "{name}: El Niño không có ảnh hưởng nào được xác định rõ đối với các mùa ở đúng điểm này.",
+  "noregion_explain": "Nơi này không nằm trong vùng nào có quy luật El Niño hoặc La Niña đáng tin cậy, nên bản tin này không dự báo lượng mưa cho nơi này. Cơ quan khí tượng quốc gia của bạn vẫn là nguồn thông tin cho các dự báo tại địa phương.",
   "_meta": {
     "all_year": {
       "hash": "f1c9633186",
@@ -2334,7 +2376,7 @@
       "mt": true
     },
     "conditions_rain": {
-      "hash": "be765c9b56",
+      "hash": "a2ca066d7c",
       "mt": true
     },
     "conditions_usdm": {
@@ -2447,6 +2489,166 @@
     },
     "usdm_levels": {
       "hash": "0702fca5e6",
+      "mt": true
+    },
+    "pct_more_rain": {
+      "hash": "ea559aed3e",
+      "mt": true
+    },
+    "pct_less_rain": {
+      "hash": "8ddfb4ecf6",
+      "mt": true
+    },
+    "ui.browse_countries": {
+      "hash": "c092ec5fa4",
+      "mt": true
+    },
+    "ui.try_examples": {
+      "hash": "d5f8a97c77",
+      "mt": true
+    },
+    "ui.language": {
+      "hash": "89b86ab0e6",
+      "mt": true
+    },
+    "ui.settings_intro": {
+      "hash": "47ed03c88a",
+      "mt": true
+    },
+    "ui.todo": {
+      "hash": "8665aed362",
+      "mt": true
+    },
+    "ui.risks_title": {
+      "hash": "2ad090cd9a",
+      "mt": true
+    },
+    "ui.important": {
+      "hash": "4b6d6a3015",
+      "mt": true
+    },
+    "forecast_says": {
+      "hash": "ec03b53c08",
+      "mt": true
+    },
+    "pct_more_rain_cap": {
+      "hash": "1a9ceb0f1d",
+      "mt": true
+    },
+    "hazard_icons.FL": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FLR": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.FF": {
+      "hash": "76e163cfa2",
+      "mt": true
+    },
+    "hazard_icons.LS": {
+      "hash": "5859e3cce7",
+      "mt": true
+    },
+    "hazard_icons.DR": {
+      "hash": "630b7aec7c",
+      "mt": true
+    },
+    "hazard_icons.WS": {
+      "hash": "250a9753d2",
+      "mt": true
+    },
+    "hazard_icons.WF": {
+      "hash": "d8f26c88ff",
+      "mt": true
+    },
+    "hazard_icons.HZ": {
+      "hash": "be8ef91bdb",
+      "mt": true
+    },
+    "hazard_icons.HT": {
+      "hash": "38f9570e45",
+      "mt": true
+    },
+    "hazard_icons.EP": {
+      "hash": "b4d5dc82d8",
+      "mt": true
+    },
+    "hazard_icons.CH": {
+      "hash": "70cfacb643",
+      "mt": true
+    },
+    "hazard_icons.RVF": {
+      "hash": "1762f3b53d",
+      "mt": true
+    },
+    "hazard_icons.CS": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.CF": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "hazard_icons.FI": {
+      "hash": "65ea87c0b7",
+      "mt": true
+    },
+    "hazard_icons.TC": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.TCE": {
+      "hash": "3e13af1758",
+      "mt": true
+    },
+    "hazard_icons.ST": {
+      "hash": "58c696d5b7",
+      "mt": true
+    },
+    "hazard_icons.HS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.SI": {
+      "hash": "9d2bba853f",
+      "mt": true
+    },
+    "hazard_icons.FR": {
+      "hash": "71619db0cc",
+      "mt": true
+    },
+    "hazard_icons.SN": {
+      "hash": "a7097b8b83",
+      "mt": true
+    },
+    "hazard_icons.HSN": {
+      "hash": "f3ef63a3cd",
+      "mt": true
+    },
+    "hazard_icons.CD": {
+      "hash": "1f806064be",
+      "mt": true
+    },
+    "hazard_icons.FLS": {
+      "hash": "be25fe9cf3",
+      "mt": true
+    },
+    "hazard_icons.MW": {
+      "hash": "007a4b2695",
+      "mt": true
+    },
+    "hazard_icons.CU": {
+      "hash": "1ac73d3cfc",
+      "mt": true
+    },
+    "headline_noregion": {
+      "hash": "b7a1f2e5bc",
+      "mt": true
+    },
+    "noregion_explain": {
+      "hash": "d91690c81e",
       "mt": true
     }
   }

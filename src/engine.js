@@ -271,7 +271,10 @@ export function renderBriefing(facts, strings, { placeName = null } = {}) {
   const S = strings; const name = placeName || S.this_area; const ph = facts.status.phase;
   const phaseName = ph === "el_nino" ? S.el_nino : ph === "la_nina" ? S.la_nina : S.neutral;
   const blocks = [];
-  if (!facts.signal || ph === "neutral") {
+  if (!facts.signal && ph !== "neutral" && S.headline_noregion) {
+    blocks.push({ type: "headline", text: fill(S.headline_noregion, { name }) });
+    blocks.push({ type: "para", key: "neutral", text: S.noregion_explain });
+  } else if (!facts.signal || ph === "neutral") {
     blocks.push({ type: "headline", text: fill(S.headline_neutral, { name }) });
     blocks.push({ type: "para", key: "neutral", text: S.neutral_explain });
   } else {

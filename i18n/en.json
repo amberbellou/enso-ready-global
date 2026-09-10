@@ -652,7 +652,7 @@
   "history_mixed": "In the last {n} strong {phase} events, {season} rain here went both ways.",
   "dir_heavier": "heavier",
   "dir_lighter": "lighter",
-  "conditions_rain": "Over the last three months, rain here was {pct}.",
+  "conditions_rain": "In the last three months, this place had {pct}.",
   "conditions_usdm": "The US Drought Monitor currently shows {level} here.",
   "usdm_levels": [
     "abnormally dry conditions",
@@ -719,5 +719,7 @@
     "FLS": "🌊",
     "MW": "🐛",
     "CU": "🌾"
-  }
+  },
+  "headline_noregion": "{name}: El Niño has no well-established effect on the seasons at this exact spot.",
+  "noregion_explain": "This place is not inside any region with a reliable El Niño or La Niña pattern, so this briefing does not predict its rain. Your national weather service remains the source for local outlooks."
 }
