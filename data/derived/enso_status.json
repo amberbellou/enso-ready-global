@@ -1,12 +1,12 @@
 {
  "source": "NOAA Climate Prediction Center, ENSO Diagnostic Discussion",
  "source_url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
- "issued": "13 August 2026",
+ "issued": "10 September 2026",
  "status": "El Niño Advisory",
  "phase": "el_nino",
  "level": "advisory",
  "expected_strength": "very strong",
  "headline_probability_pct": 90,
  "synopsis": "El Niño is strengthening, with a greater than 90% chance of a very strong event during the Northern Hemisphere fall and winter 2026-27.",
- "fetched_at": "2026-09-07T11:19:29.453Z"
+ "fetched_at": "2026-09-11T12:15:34.450Z"
 }
